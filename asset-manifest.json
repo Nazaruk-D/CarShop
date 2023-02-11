@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CarShop/static/css/main.49dbb4c2.css",
-    "main.js": "/CarShop/static/js/main.2ae7d9db.js",
+    "main.js": "/CarShop/static/js/main.83f6ba1b.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/solarPanels.jfif": "/CarShop/static/media/solarPanels.ca96bddb758d659d3686.jfif",
     "static/media/solarRoof.webp": "/CarShop/static/media/solarRoof.beca7b95705f936de68a.webp",
@@ -12,11 +12,11 @@
     "static/media/Accessories.jfif": "/CarShop/static/media/Accessories.027ada94d343f5d81f6d.jfif",
     "index.html": "/CarShop/index.html",
     "main.49dbb4c2.css.map": "/CarShop/static/css/main.49dbb4c2.css.map",
-    "main.2ae7d9db.js.map": "/CarShop/static/js/main.2ae7d9db.js.map",
+    "main.83f6ba1b.js.map": "/CarShop/static/js/main.83f6ba1b.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49dbb4c2.css",
-    "static/js/main.2ae7d9db.js"
+    "static/js/main.83f6ba1b.js"
   ]
 }
