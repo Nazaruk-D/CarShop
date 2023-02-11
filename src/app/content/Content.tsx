@@ -1,20 +1,48 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './Content.module.scss'
-import Button from "../../common/components/Button/Button";
+import Car from "./Car/Car";
+// @ts-ignore
+import model3 from '../../common/assets/model3.jfif'
+// @ts-ignore
+import modelY from '../../common/assets/modelY.jfif'
+// @ts-ignore
+import modelS from '../../common/assets/modelS.jfif'
+// @ts-ignore
+import modelX from '../../common/assets/modelX.jfif'
+// @ts-ignore
+import solarPanels from '../../common/assets/solarPanels.jfif'
+import solarRoof from '../../common/assets/solarRoof.webp'
+// @ts-ignore
+import accessories from '../../common/assets/Accessories.jfif'
+import {logDOM} from "@testing-library/react";
+
 
 const Content = () => {
+    const [scroll, setScroll] = useState(0);
+
+    const handleScroll = () => {
+        setScroll(window.scrollY);
+        // console.log(window.scrollY)
+    };
+
+    const handleUpButton = () => {
+        window.scrollTo(0, 0);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
         <div className={s.contentContainer}>
-            <div className={s.contentBlock}>
-                <div className={s.titleBlock}>
-                    <h1 className={s.description}>Model 3</h1>
-                    <h3 className={s.conditions}>Leasing starting at $349/mo</h3>
-                </div>
-                <div className={s.buttonBlock}>
-                    <Button title={'Custom order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'} onClick={()=>{}}/>
-                    <Button title={'Demo Drive'} backgroundColor={'rgba(244, 244, 244, 0.65)'} color={'rgba(23, 26, 32, 0.8)'} onClick={()=>{}}/>
-                </div>
-            </div>
+            <Car backgroundImage={model3} model={'Model 3'} conditions={'Leasing starting at $349/mo'} firstButtonName={'Custom Order'} secondButtonName={'Demo Drive'}/>
+            <Car backgroundImage={modelY} model={'Model Y'} firstButtonName={'Custom Order'} secondButtonName={'Demo Drive'}/>
+            <Car backgroundImage={modelS} model={'Model S'} conditions={'Schedule a Demo Drive'} firstButtonName={'Custom Order'} secondButtonName={'View Inventory'}/>
+            <Car backgroundImage={modelX} model={'Model X'} conditions={'Schedule a Demo Drive'} firstButtonName={'Custom Order'} secondButtonName={'View Inventory'}/>
+            <Car backgroundImage={solarPanels} model={'Solar Panels'} conditions={'Lowest Cost Solar Panels in America'} firstButtonName={'Order Now'} secondButtonName={'Learn More'}/>
+            <Car backgroundImage={solarRoof} model={'Solar Roof'} conditions={'Produce Clean Energy From Your Roof'} firstButtonName={'Order Now'} secondButtonName={'Learn More'}/>
+            <Car backgroundImage={accessories} model={'Accessories'} firstButtonName={'Shop Now'} secondButtonName={'Learn More'}/>
         </div>
     );
 };

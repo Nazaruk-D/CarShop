@@ -15,9 +15,9 @@ const Button: React.FC<ButtonPropsType> = ({title, color, onClick, backgroundCol
     }
 
     return (
-        <div>
+        <>
             <button style={{backgroundColor, color}} onClick={onClickHandler} className={s.button}>{title}</button>
-        </div>
+        </>
     );
 };
 

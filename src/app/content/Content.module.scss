@@ -2,40 +2,40 @@
 
 .contentContainer {
   @include flex(column, center, center, wrap);
-  width: 100%;
-  height: 100vh;
-  background: center / contain no-repeat url('./../../common/assets/HMModel3.jfif');
-  background-size: 100%;
+  //width: 100%;
+  //height: 100vh;
+  //background: center / contain no-repeat url('./../../common/assets/HMModel3.jfif');
+  //background-size: 100%;
 
-  .contentBlock {
-    @include flex(column, center, center, wrap);
-    width: 90%;
-    height: 75%;
-    padding-top: 60px;
+  //.contentBlock {
+  //  @include flex(column, center, center, wrap);
+  //  width: 90%;
+  //  height: 75%;
+  //  padding-top: 60px;
     //background-color: rgba(255, 255, 255, 0.7);
 
-    .titleBlock{
-      @include flex(column, flex-start, center, wrap);
-      width: 100%;
-      height: 50%;
-      //background-color: blue;
-
-      .description{
-        @include text(38px, 28px, 700);
-        padding: 0;
-        margin: 0;
-      }
-
-      .conditions{
-        @include text(20px, 18px, 400);
-      }
-    }
-
-    .buttonBlock {
-      @include flex(row, space-evenly, flex-end, wrap);
-      width: 40%;
-      height: 50%;
-      //background-color: green;
-    }
-  }
+    //.titleBlock{
+    //  @include flex(column, flex-start, center, wrap);
+    //  width: 100%;
+    //  height: 50%;
+    //  //background-color: blue;
+    //
+    //  .description{
+    //    @include text(38px, 28px, 700);
+    //    padding: 0;
+    //    margin: 0;
+    //  }
+    //
+    //  .conditions{
+    //    @include text(20px, 18px, 400);
+    //  }
+    //}
+    //
+    //.buttonBlock {
+    //  @include flex(row, space-evenly, flex-end, wrap);
+    //  width: 40%;
+    //  height: 50%;
+    //  //background-color: green;
+    //}
+  //}
 }
