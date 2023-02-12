@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./Car.module.scss";
-import Button from "../../../common/components/Button/Button";
+import Button from "../../../../common/components/Button/Button";
 import {Element} from "react-scroll";
 
 

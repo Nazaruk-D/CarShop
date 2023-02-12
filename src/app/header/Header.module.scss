@@ -3,7 +3,7 @@
 
 .headerContainer {
   @include flex(row, flex-start, center, wrap);
-  position: fixed;
+  position: absolute;
   height: 60px;
   top: 0;
   left: 0;
@@ -30,6 +30,8 @@
       @include text(14px, 0, 600);
       padding-right: 35px;
       box-sizing: border-box;
+      text-decoration: none;
+      color: black
     }
   }
 
