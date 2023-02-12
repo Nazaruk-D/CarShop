@@ -4,8 +4,6 @@
   @include flex(column, center, center, wrap);
   width: 100%;
   height: 100vh;
-  //background: center / contain no-repeat url('./../../../common/assets/HMModel3.jfif');
-  //background-image: url('./../../../common/assets/HMModel3.jfif');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -20,7 +18,6 @@
       @include flex(column, flex-start, center, wrap);
       width: 100%;
       height: 50%;
-      //background-color: blue;
 
       .description {
         @include text(38px, 28px, 700);
@@ -34,10 +31,9 @@
     }
 
     .buttonBlock {
-      @include flex(row, space-evenly, flex-end, wrap);
-      width: 40%;
+      @include flex(row, center, flex-end, wrap);
+      width: 100%;
       height: 50%;
-      //background-color: green;
     }
   }
 }
