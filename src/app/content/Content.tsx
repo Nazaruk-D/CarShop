@@ -15,7 +15,6 @@ import solarRoof from '../../common/assets/solarRoof.webp'
 // @ts-ignore
 import accessories from '../../common/assets/Accessories.jfif'
 import {scroller} from 'react-scroll'
-// import {Link} from 'react-scroll'
 
 
 const Content = () => {
@@ -30,8 +29,6 @@ const Content = () => {
             setScroll(prev => prev - 1)
         }
     };
-    console.log(cars.length)
-    console.log(scroll)
 
     useEffect(() => {
         window.addEventListener("wheel", (e) => handleClickScroll(e))
