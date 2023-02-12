@@ -1,21 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import s from './MainPage.module.scss'
-import Car from "./Car/Car";
-// @ts-ignore
-import model3 from '../../../common/assets/model3.jfif'
-// @ts-ignore
-import modelY from '../../../common/assets/modelY.jfif'
-// @ts-ignore
-import modelS from '../../../common/assets/modelS.jfif'
-// @ts-ignore
-import modelX from '../../../common/assets/modelX.jfif'
-// @ts-ignore
-import solarPanels from '../../../common/assets/solarPanels.jfif'
-import solarRoof from '../../../common/assets/solarRoof.webp'
-// @ts-ignore
-import accessories from '../../../common/assets/Accessories.jfif'
 import {scroller} from 'react-scroll'
 import Header from "../../header/Header";
+import Model3 from "./Model3/Model3";
+import ModelY from "./ModelY/ModelY";
+import ModelS from "./ModelS/ModelS";
+import ModelX from "./ModelX/ModelX";
+import SolarPanels from "./SolarPanels/SolarPanels";
+import SolarRoof from "./SolarRoof/SolarRoof";
+import Accessories from "./Accessories/Accessories";
 
 
 const MainPage = () => {
@@ -51,26 +44,16 @@ const MainPage = () => {
     }, [scroll, cars])
 
     return (
-        <>
-            <Header position={'fixed'}/>
             <div className={s.contentContainer}>
-                <Car backgroundImage={model3} model={'Model 3'} conditions={'Leasing starting at $349/mo'}
-                     firstButtonName={'Custom Order'} secondButtonName={'Demo Drive'}/>
-                <Car backgroundImage={modelY} model={'Model Y'} firstButtonName={'Custom Order'}
-                     secondButtonName={'Demo Drive'}/>
-                <Car backgroundImage={modelS} model={'Model S'} conditions={'Schedule a Demo Drive'}
-                     firstButtonName={'Custom Order'} secondButtonName={'View Inventory'}/>
-                <Car backgroundImage={modelX} model={'Model X'} conditions={'Schedule a Demo Drive'}
-                     firstButtonName={'Custom Order'} secondButtonName={'View Inventory'}/>
-                <Car backgroundImage={solarPanels} model={'Solar Panels'}
-                     conditions={'Lowest Cost Solar Panels in America'}
-                     firstButtonName={'Order Now'} secondButtonName={'Learn More'}/>
-                <Car backgroundImage={solarRoof} model={'Solar Roof'} conditions={'Produce Clean Energy From Your Roof'}
-                     firstButtonName={'Order Now'} secondButtonName={'Learn More'}/>
-                <Car backgroundImage={accessories} model={'Accessories'} firstButtonName={'Shop Now'}
-                     secondButtonName={'Learn More'}/>
+                <Header position={'fixed'}/>
+                <Model3/>
+                <ModelY/>
+                <ModelS/>
+                <ModelX/>
+                <SolarPanels/>
+                <SolarRoof/>
+                <Accessories/>
             </div>
-        </>
     );
 };
 
