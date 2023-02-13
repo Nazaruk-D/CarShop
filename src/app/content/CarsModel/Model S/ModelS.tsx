@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from "../../../header/Header";
 import FirstBlock from "./FirstBlock/FirstBlock";
+import Display from "./Display/Display";
+import TransitionBlock from "./TransitionBlock/TransitionBlock";
 
 
 const ModelS = () => {
@@ -8,6 +10,8 @@ const ModelS = () => {
         <div>
             <Header/>
             <FirstBlock/>
+            <TransitionBlock/>
+            <Display/>
         </div>
     );
 };

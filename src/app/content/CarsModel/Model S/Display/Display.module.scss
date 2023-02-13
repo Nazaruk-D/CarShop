@@ -1,0 +1,6 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.displayContainer {
+  @include background(no-repeat, center, cover);
+  height: 100vh;
+}
