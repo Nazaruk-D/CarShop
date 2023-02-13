@@ -1,0 +1,33 @@
+@import '../../../common/styles/sass/mixins';
+
+
+.characteristicsBlock {
+  @include flex(column, center, center, nowrap);
+  width: 150px;
+  height: 60px;
+
+  .topTextBlock {
+    @include flex(row, center, flex-end, nowrap);
+    height: 50%;
+
+    .mainInfo {
+      @include flex(row, center, flex-end, nowrap);
+      @include text(26px, 26px, 700);
+      padding-right: 10px;
+      width: 50%;
+    }
+
+    .measurement {
+      @include flex(row, center, flex-end, nowrap);
+      @include text(18px, 18px, 500);
+      width: 50%;
+      height: 100%;
+
+    }
+  }
+
+  .bottomText {
+    @include text(12px, 12px, 500);
+    height: 50%;
+  }
+}
