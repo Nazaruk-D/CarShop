@@ -12,3 +12,12 @@
     justify-content: $justifyContent;
     flex-wrap: $wrap;
 }
+
+
+@mixin background($repeat, $position, $size) {
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+

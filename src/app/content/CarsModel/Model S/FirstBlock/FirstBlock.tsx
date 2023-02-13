@@ -1,9 +1,9 @@
 import React from 'react';
 import PresentationBlock from "../../../../../common/components/PresentationBlock/PresentationBlock";
 // @ts-ignore
-import modelS from "../../../../../common/assets/modelS.jfif";
-import Button from "../../../../../common/components/Button/Button";
+import modelS from "../../../../../common/assets/modelSBlack.jfif";
 import Characteristics from "../../../../../common/components/Characteristics/Characteristics";
+import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
 
 const FirstBlock = () => {
     return (
@@ -12,15 +12,15 @@ const FirstBlock = () => {
                 <Characteristics topText={'396'}  measurement={'mi'} bottomText={'Range (EPA est.)'}/>
             </div>
             <div style={{marginRight: 20}}>
-                <Characteristics topText={'396'}  measurement={'mi'} bottomText={'Range (EPA est.)'}/>
+                <Characteristics topText={'1.99'}  measurement={'s'} bottomText={'0-60 mph*'}/>
             </div>
             <div style={{marginRight: 20}}>
-                <Characteristics topText={'396'}  measurement={'mi'} bottomText={'Range (EPA est.)'}/>
+                <Characteristics topText={'200'}  measurement={'mph'} bottomText={'Top Speed†'}/>
             </div>
             <div style={{marginRight: 20}}>
-                <Characteristics topText={'396'}  measurement={'mi'} bottomText={'Range (EPA est.)'}/>
+                <Characteristics topText={'1,020'}  measurement={'hp'} bottomText={'Range (EPA est.)'}/>
             </div>
-            <Button title={"New button"} backgroundColor={'rgba(0, 0, 0, 0)'} color={'white'} onClick={()=>{}}/>
+            <PrimaryButton title={'add'} onClick={()=>{}}/>
         </PresentationBlock>
     );
 };

@@ -1,0 +1,14 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.transitionContainer {
+  @include flex(row, center,center, wrap);
+  position: relative;
+  height: 20vh;
+  background-color: black;
+  box-shadow: 0px 0px 78px 50px #000000;
+
+  .transitionBlock {
+    @include text(32px, 32px, 600);
+    color: white;
+  }
+}
