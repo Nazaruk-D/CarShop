@@ -24,7 +24,7 @@
   }
 
   .descriptionBlock {
-    @include flex(column, center, center, wrap);
+    @include flex(column, flex-start, center, wrap);
     background-color: black;
     width: 100%;
     height: 20%;
@@ -41,7 +41,6 @@
 
       .description {
         @include text(15px, 15px, 400);
-
       }
     }
   }

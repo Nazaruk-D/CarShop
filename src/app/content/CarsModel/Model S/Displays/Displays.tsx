@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Displays.module.scss'
 // @ts-ignore
 import video from '../../../../../common/assets/video/ModelSDisplay.mp4'
+import RoundButton from "../../../../../common/components/RoundButton/RoundButton";
 
 const Displays = () => {
     return (
@@ -28,6 +29,13 @@ const Displays = () => {
             </div>
             <div className={s.descriptionBlock}>
                 <div className={s.fullDescription}>
+                    <div style={{marginBottom: '20px'}}>
+                        <RoundButton/>
+                        <RoundButton/>
+                        <RoundButton/>
+                        <RoundButton/>
+                        <RoundButton/>
+                    </div>
                     <div className={s.title}>Cinematic Experience</div>
                     <div className={s.description}>A 17” touchscreen with left-right tilt offers 2200 x 1300 resolution,
                         true colors and exceptional responsiveness for gaming, movies and more.
