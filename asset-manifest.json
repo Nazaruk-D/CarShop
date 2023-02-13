@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.8b175b95.css",
-    "main.js": "/CarShop/static/js/main.176b4f18.js",
+    "main.css": "/CarShop/static/css/main.ce66d8d1.css",
+    "main.js": "/CarShop/static/js/main.441f526a.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/solarPanels.jfif": "/CarShop/static/media/solarPanels.ca96bddb758d659d3686.jfif",
     "static/media/solarRoof.webp": "/CarShop/static/media/solarRoof.beca7b95705f936de68a.webp",
     "static/media/model3.jfif": "/CarShop/static/media/model3.2c7b329a47ee7e6d6791.jfif",
     "static/media/modelY.jfif": "/CarShop/static/media/modelY.3ee2543e2246ab3f57b4.jfif",
+    "static/media/DesktopLHD.jfif": "/CarShop/static/media/DesktopLHD.c47d98a0a8e7d5eb7b21.jfif",
     "static/media/modelX.jfif": "/CarShop/static/media/modelX.d962dca41247cbc26d7f.jfif",
     "static/media/modelS.jfif": "/CarShop/static/media/modelS.b42df6c58e825a0e3249.jfif",
+    "static/media/modelSBlack.jfif": "/CarShop/static/media/modelSBlack.852d59c6b3c32258e31d.jfif",
     "static/media/Accessories.jfif": "/CarShop/static/media/Accessories.027ada94d343f5d81f6d.jfif",
     "index.html": "/CarShop/index.html",
-    "main.8b175b95.css.map": "/CarShop/static/css/main.8b175b95.css.map",
-    "main.176b4f18.js.map": "/CarShop/static/js/main.176b4f18.js.map",
+    "main.ce66d8d1.css.map": "/CarShop/static/css/main.ce66d8d1.css.map",
+    "main.441f526a.js.map": "/CarShop/static/js/main.441f526a.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b175b95.css",
-    "static/js/main.176b4f18.js"
+    "static/css/main.ce66d8d1.css",
+    "static/js/main.441f526a.js"
   ]
 }
