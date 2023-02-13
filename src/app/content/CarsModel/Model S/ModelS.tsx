@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from "../../../header/Header";
 import FirstBlock from "./FirstBlock/FirstBlock";
-import Display from "./Display/Display";
 import TransitionBlock from "./TransitionBlock/TransitionBlock";
+import Interior from "./Interior/Interior";
+import Displays from "./Displays/Displays";
 
 
 const ModelS = () => {
@@ -11,7 +12,8 @@ const ModelS = () => {
             <Header/>
             <FirstBlock/>
             <TransitionBlock/>
-            <Display/>
+            <Interior/>
+            <Displays/>
         </div>
     );
 };
