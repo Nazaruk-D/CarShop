@@ -1,12 +1,12 @@
 import React from 'react';
-import s from './Display.module.scss'
+import s from './Interior.module.scss'
 // @ts-ignore
 import displayImage from './../../../../../common/assets/DesktopLHD.jfif'
 
-const Display = () => {
+const Interior = () => {
     return (
         <div className={s.displayContainer} style={{backgroundImage: `url(${displayImage})`}}></div>
     );
 };
 
-export default Display;
+export default Interior;

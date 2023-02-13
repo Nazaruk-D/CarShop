@@ -1,0 +1,33 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.displaysContainer {
+  @include flex(column, center, center, wrap);
+  height: 100vh;
+  background-color: black;
+
+  .videoBlock{
+    @include flex(column, center, center, wrap);
+    background-color: red;
+    width: 100%;
+    height: 70%;
+
+    .video {
+      width: 70%;
+      height: 80%;
+      background-color: white;
+      border-radius: 20px;
+    }
+  }
+
+  .descriptionBlock {
+    @include flex(column, center, center, wrap);
+    background-color: blue;
+    width: 100%;
+    height: 30%;
+    .description {
+      width: 70%;
+      height: 80%;
+      background-color: white;
+    }
+  }
+}
