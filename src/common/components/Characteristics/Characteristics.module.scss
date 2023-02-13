@@ -8,22 +8,21 @@
   height: 60px;
 
   .topTextBlock {
-    @include flex(row, center, flex-end, nowrap);
+    @include flex(row, space-around, flex-end, nowrap);
+    width: 85px;
     height: 50%;
 
     .mainInfo {
       @include flex(row, center, flex-end, nowrap);
       @include text(26px, 26px, 600);
-      padding-right: 10px;
-      width: 50%;
     }
 
     .measurement {
-      @include flex(row, center, flex-end, nowrap);
+      @include flex(row, flex-start, flex-end, nowrap);
       @include text(18px, 18px, 600);
+      padding-left: 10px;
       width: 50%;
       height: 100%;
-
     }
   }
 

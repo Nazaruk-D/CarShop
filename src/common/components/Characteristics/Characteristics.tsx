@@ -12,7 +12,9 @@ const Characteristics: React.FC<CharacteristicsPropsType> = ({bottomText, topTex
         <div className={s.characteristicsBlock}>
             <div className={s.topTextBlock}>
                 <div className={s.mainInfo}>{topText}</div>
-                <div className={s.measurement}>{measurement}</div>
+                {measurement &&
+                    <div className={s.measurement}>{measurement}</div>
+                }
             </div>
             <div className={s.bottomText}>
                 <p>{bottomText}</p>
