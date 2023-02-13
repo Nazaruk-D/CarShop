@@ -3,8 +3,8 @@ import s from './PrimaryButton.module.scss'
 
 type ButtonPropsType = {
     title: string
-    color: string
-    secondColor: string
+    color: 'white' | 'black'
+    secondColor: 'white' | 'black'
     onClick: () => void
 }
 

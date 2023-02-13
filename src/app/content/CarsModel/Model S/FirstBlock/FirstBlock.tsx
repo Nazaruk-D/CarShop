@@ -20,7 +20,7 @@ const FirstBlock = () => {
             <div style={{marginRight: 20}}>
                 <Characteristics topText={'1,020'}  measurement={'hp'} bottomText={'Range (EPA est.)'}/>
             </div>
-            <PrimaryButton title={'add'} onClick={()=>{}}/>
+            <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={()=>{}}/>
         </PresentationBlock>
     );
 };

@@ -2,10 +2,11 @@
 
 .button {
   @include text(15px,0, 600);
-  width: 250px;
+  width: 210px;
   height: 40px;
   border-radius: 4px;
   margin: 10px;
   background-color: rgba(0,0,0,0);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
