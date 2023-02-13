@@ -3,6 +3,7 @@ import MainPage from "../content/MainPage/MainPage";
 import React from "react";
 import ErrorPage from "../../common/components/ErrorPage/ErrorPage";
 import ModelS from "../content/CarsModel/Model S/ModelS";
+import ModelY from "../content/CarsModel/Model Y/ModelY";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -34,7 +35,7 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.modelY,
-        element: <div>model y</div>
+        element: <ModelY/>
     },
     {
         path: routes.solarRoof,
