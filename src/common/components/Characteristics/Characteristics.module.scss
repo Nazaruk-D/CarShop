@@ -3,6 +3,7 @@
 
 .characteristicsBlock {
   @include flex(column, center, center, nowrap);
+  color: white;
   width: 150px;
   height: 60px;
 
@@ -12,14 +13,14 @@
 
     .mainInfo {
       @include flex(row, center, flex-end, nowrap);
-      @include text(26px, 26px, 700);
+      @include text(26px, 26px, 600);
       padding-right: 10px;
       width: 50%;
     }
 
     .measurement {
       @include flex(row, center, flex-end, nowrap);
-      @include text(18px, 18px, 500);
+      @include text(18px, 18px, 600);
       width: 50%;
       height: 100%;
 
@@ -27,7 +28,7 @@
   }
 
   .bottomText {
-    @include text(12px, 12px, 500);
+    @include text(12px, 12px, 600);
     height: 50%;
   }
 }

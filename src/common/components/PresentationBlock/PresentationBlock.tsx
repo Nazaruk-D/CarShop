@@ -18,7 +18,7 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                         <h1 className={s.description}>{model}</h1>
                         <h3 className={s.conditions}>{conditions}</h3>
                     </div>
-                    <div className={s.buttonBlock}>
+                    <div className={s.bottomBlock}>
                         {children}
                     </div>
                 </div>
