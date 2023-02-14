@@ -1,0 +1,18 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.advantagesContainer {
+  @include background(no-repeat, center, cover);
+  @include flex(column, flex-end, center, no-wrap);
+  height: 72vh;
+  .characteristicsContainer {
+    width: 60%;
+    @include flex(row, space-around, flex-end, no-wrap);
+    margin-bottom: 80px;
+    & div {
+      width: 280px;
+      @include text(15px, 15px, 600);
+      text-align: center;
+
+    }
+  }
+}

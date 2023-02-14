@@ -3,6 +3,7 @@ import Header from "../../../header/Header";
 import FirstBlock from "./FirstBlock/FirstBlock";
 import Safety from "./Safety/Safety";
 import Interior from "./Interior/Interior";
+import Advantages from "./Advantages/Advantages";
 
 const ModelY = () => {
     return (
@@ -11,6 +12,7 @@ const ModelY = () => {
             <FirstBlock/>
             <Safety/>
             <Interior/>
+            <Advantages/>
         </div>
     );
 };
