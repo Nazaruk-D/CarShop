@@ -26,7 +26,7 @@ const ModelS = () => {
             <Header/>
             <FirstBlock/>
             <Interior/>
-            <Advantages data={advantagesData} backgroundImage={ModelSPerformanceHero}/>
+            <Advantages data={advantagesData} backgroundImage={ModelSPerformanceHero} title={'Test'} subtitle={'Test'} description={'Dimon privet'}/>
         </div>
     );
 };

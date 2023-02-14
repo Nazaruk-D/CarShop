@@ -5,22 +5,29 @@ import modelYRed from '../../../../../common/assets/modelYRed.jfif'
 import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";
+import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
 
 type AdvantagesPropsType = {
     backgroundImage: string
     data: CharacteristicsPropsType[]
+    title: string
+    subtitle: string
+    description: string
 }
 
-const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data}) => {
+const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,subtitle, description}) => {
     return (
-        <div className={s.advantagesContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
-            <div className={s.characteristicsContainer}>
-                {data.map((d, i) => <div style={{marginRight: 20}} key={i}>
-                    <Characteristics topText={d.topText}
-                                     measurement={d.measurement}
-                                     bottomText={d.bottomText}/>
-                </div>)}
+        <div className={s.mainBlock}>
+            <div className={s.advantagesContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
+                <div className={s.characteristicsContainer}>
+                    {data.map((d, i) => <div style={{marginRight: 20}} key={i}>
+                        <Characteristics topText={d.topText}
+                                         measurement={d.measurement}
+                                         bottomText={d.bottomText}/>
+                    </div>)}
+                </div>
             </div>
+            <TitleBlock title={title} subtitle={subtitle} description={description}/>
         </div>
     );
 };
