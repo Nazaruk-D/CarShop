@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Characteristics.module.scss'
 
-type CharacteristicsPropsType = {
+export type CharacteristicsPropsType = {
     topText: string
     measurement?: string
     bottomText: string
