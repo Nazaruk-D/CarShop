@@ -1,0 +1,7 @@
+@import '../../../../../../common/styles/sass/mixins';
+
+.displaysContainer {
+  @include flex(column, center, center, wrap);
+  height: 100vh;
+
+}
