@@ -5,6 +5,7 @@ import Safety from "./Safety/Safety";
 import Comfort from "./Comfort/Comfort";
 import Advantages from "./Advantages/Advantages";
 import Autopilot from "./Autopilot/Autopilot";
+import Interior from "./Interior/Interior";
 
 const ModelY = () => {
     return (
@@ -15,6 +16,7 @@ const ModelY = () => {
             <Comfort/>
             <Advantages/>
             <Autopilot/>
+            <Interior/>
         </div>
     );
 };
