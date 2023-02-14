@@ -6,7 +6,7 @@ import Advantages from "../commonComponents/Advantages/Advantages";
 import {CharacteristicsPropsType} from "../../../../common/components/Characteristics/Characteristics";
 // @ts-ignore
 import ModelSPerformanceHero from '../../../../common/assets/ModelSPerformanceHero.jfif'
-import ElectricPowertrain from "./ElectricPowertrain/ElectricPowertrain";
+import ElectricPowerTrain from "./ElectricPowerTrain/ElectricPowerTrain";
 
 
 const advantagesData: CharacteristicsPropsType[] = [
@@ -28,7 +28,7 @@ const ModelS = () => {
             <FirstBlock/>
             <Interior/>
             <Advantages data={advantagesData} backgroundImage={ModelSPerformanceHero} title={'Test'} subtitle={'Test'} description={'Dimon privet'}/>
-            <ElectricPowertrain/>
+            <ElectricPowerTrain/>
         </div>
     );
 };

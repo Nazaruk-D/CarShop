@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './ElectricPowertrain.module.scss'
+import s from './ElectricPowerTrain.module.scss'
 
 const ElectricPowerTrain = () => {
     return (
