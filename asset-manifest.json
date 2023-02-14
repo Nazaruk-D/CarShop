@@ -1,10 +1,15 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.22984166.css",
-    "main.js": "/CarShop/static/js/main.92105ea0.js",
+    "main.css": "/CarShop/static/css/main.db642a8d.css",
+    "main.js": "/CarShop/static/js/main.d9286fb6.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
+    "static/media/1.mp4": "/CarShop/static/media/1.dc4f8f3f1304bc6b3771.mp4",
+    "static/media/5.mp4": "/CarShop/static/media/5.714b0e11309fb4b23d4a.mp4",
+    "static/media/4.mp4": "/CarShop/static/media/4.ace0076da9e8a10cd8c7.mp4",
+    "static/media/2.mp4": "/CarShop/static/media/2.341d843ee1e171d0aa16.mp4",
     "static/media/ModelSDisplay.mp4": "/CarShop/static/media/ModelSDisplay.4eac528e4c63aaf133b9.mp4",
     "static/media/solarPanels.jfif": "/CarShop/static/media/solarPanels.ca96bddb758d659d3686.jfif",
+    "static/media/safetyImage.png": "/CarShop/static/media/safetyImage.1cfd8d795a82b2035a85.png",
     "static/media/solarRoof.webp": "/CarShop/static/media/solarRoof.beca7b95705f936de68a.webp",
     "static/media/model3.jfif": "/CarShop/static/media/model3.2c7b329a47ee7e6d6791.jfif",
     "static/media/modelY.jfif": "/CarShop/static/media/modelY.3ee2543e2246ab3f57b4.jfif",
@@ -14,13 +19,14 @@
     "static/media/modelYSecond.jfif": "/CarShop/static/media/modelYSecond.79e91881eed908aaab13.jfif",
     "static/media/modelSBlack.jfif": "/CarShop/static/media/modelSBlack.852d59c6b3c32258e31d.jfif",
     "static/media/Accessories.jfif": "/CarShop/static/media/Accessories.027ada94d343f5d81f6d.jfif",
+    "static/media/firstInteriorModelY.jfif": "/CarShop/static/media/firstInteriorModelY.e30d94c4029a40bb39c6.jfif",
     "index.html": "/CarShop/index.html",
-    "main.22984166.css.map": "/CarShop/static/css/main.22984166.css.map",
-    "main.92105ea0.js.map": "/CarShop/static/js/main.92105ea0.js.map",
+    "main.db642a8d.css.map": "/CarShop/static/css/main.db642a8d.css.map",
+    "main.d9286fb6.js.map": "/CarShop/static/js/main.d9286fb6.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22984166.css",
-    "static/js/main.92105ea0.js"
+    "static/css/main.db642a8d.css",
+    "static/js/main.d9286fb6.js"
   ]
 }
