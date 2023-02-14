@@ -8,6 +8,7 @@ import Autopilot from "./Autopilot/Autopilot";
 import Interior from "./Interior/Interior";
 
 const ModelY = () => {
+    //переделать advantages на common компонент
     return (
         <div>
             <Header/>

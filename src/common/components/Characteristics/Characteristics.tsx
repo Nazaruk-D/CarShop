@@ -10,12 +10,17 @@ export type CharacteristicsPropsType = {
 const Characteristics: React.FC<CharacteristicsPropsType> = ({bottomText, topText, measurement}) => {
     return (
         <div className={s.characteristicsBlock}>
-            <div className={s.topTextBlock}>
-                <div className={s.mainInfo}>{topText}</div>
-                {measurement &&
-                    <div className={s.measurement}>{measurement}</div>
-                }
-            </div>
+            {measurement
+                ? <div className={s.topTextBlock}>
+                    <div className={s.topTextContainer}>
+                        <div className={s.mainInfo}>{topText}</div>
+                        <div className={s.measurement}>{measurement}</div>
+                    </div>
+                </div>
+                : <div className={s.mainTopTextBlock}>
+                    <div className={s.mainInfo}>{topText}</div>
+                </div>
+            }
             <div className={s.bottomText}>
                 <p>{bottomText}</p>
             </div>
