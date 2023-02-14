@@ -7,9 +7,7 @@ import firstInteriorModelY from '../../../../../common/assets/firstInteriorModel
 const Comfort = () => {
     return (
         <div className={s.comfortContainer}>
-            <TitleBlock title={'A Place For Everything'} subtitle={'Utility'}
-                        description={'Model Y provides maximum versatility—able to carry 7 passengers and their cargo. Each second row seat folds flat independently, creating flexible storage for skis, furniture, luggage and more. The liftgate opens to a low trunk floor that makes loading and unloading easy and quick. Chat with a Tesla Advisor to learn more about Model Y or schedule a demo drive today.'}/>
-            <div className={s.imageBlock}>
+           <div className={s.imageBlock}>
                 <div className={s.imageContainer} style={{backgroundImage: `url(${firstInteriorModelY})`}}></div>
             </div>
             <div className={s.descriptionBlock}>

@@ -1,5 +1,9 @@
 @import '../../../../../common/styles/sass/mixins';
 
+.mainContainer {
+
+}
+
 .safetyContainer {
   height: 100vh;
   @include flex(row, center, center, no-wrap);
