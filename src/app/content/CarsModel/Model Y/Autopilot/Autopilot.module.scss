@@ -1,0 +1,29 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.autopilotContainer {
+  @include background(no-repeat, center, cover);
+  @include flex(column, center, flex-start, no-wrap);
+  height: 72vh;
+  .textContainer {
+    width: 20%;
+    height: 100%;
+    margin-left: 65px;
+    @include flex(column, space-around, flex-start, no-wrap);
+
+    .textBlock {
+      .topText {
+        @include text(24px, 24px, 600);
+        margin-top: 0;
+        .icon {
+          width: 45px;
+          height: 45px;
+          @include background(no-repeat, center, contain);
+        }
+      }
+      .bottomText {
+        @include text(14px, 14px, 600);
+        margin-top: 15px;
+      }
+    }
+  }
+}

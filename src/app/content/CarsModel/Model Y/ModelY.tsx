@@ -4,6 +4,7 @@ import FirstBlock from "./FirstBlock/FirstBlock";
 import Safety from "./Safety/Safety";
 import Interior from "./Interior/Interior";
 import Advantages from "./Advantages/Advantages";
+import Autopilot from "./Autopilot/Autopilot";
 
 const ModelY = () => {
     return (
@@ -13,6 +14,7 @@ const ModelY = () => {
             <Safety/>
             <Interior/>
             <Advantages/>
+            <Autopilot/>
         </div>
     );
 };
