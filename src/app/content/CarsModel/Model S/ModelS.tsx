@@ -10,6 +10,7 @@ const ModelS = () => {
             <Header/>
             <FirstBlock/>
             <Interior/>
+
         </div>
     );
 };
