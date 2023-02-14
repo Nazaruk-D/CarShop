@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../../../header/Header";
 import FirstBlock from "./FirstBlock/FirstBlock";
 import Safety from "./Safety/Safety";
-import Interior from "./Interior/Interior";
+import Comfort from "./Comfort/Comfort";
 import Advantages from "./Advantages/Advantages";
 import Autopilot from "./Autopilot/Autopilot";
 
@@ -12,7 +12,7 @@ const ModelY = () => {
             <Header/>
             <FirstBlock/>
             <Safety/>
-            <Interior/>
+            <Comfort/>
             <Advantages/>
             <Autopilot/>
         </div>

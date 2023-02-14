@@ -1,10 +1,10 @@
 import React from 'react';
-import s from './Interior.module.scss'
+import s from './Comfort.module.scss'
 import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
 //@ts-ignore
 import firstInteriorModelY from '../../../../../common/assets/firstInteriorModelY.jfif'
 
-const Interior = () => {
+const Comfort = () => {
     return (
         <div className={s.interiorContainer}>
             <TitleBlock title={'A Place For Everything'} subtitle={'Utility'}
@@ -30,4 +30,4 @@ const Interior = () => {
     );
 };
 
-export default Interior;
+export default Comfort;
