@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "../../../header/Header";
 import FirstBlock from "./FirstBlock/FirstBlock";
 import Safety from "./Safety/Safety";
+import Interior from "./Interior/Interior";
 
 const ModelY = () => {
     return (
@@ -9,6 +10,7 @@ const ModelY = () => {
             <Header/>
             <FirstBlock/>
             <Safety/>
+            <Interior/>
         </div>
     );
 };
