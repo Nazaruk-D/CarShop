@@ -1,11 +1,15 @@
 import React from 'react';
-import s from './Interior.module.scss'
-// @ts-ignore
-import displayImage from './../../../../../common/assets/DesktopLHD.jfif'
+import TransitionBlock from "./TransitionBlock/TransitionBlock";
+import Displays from "./Displays/Displays";
+import SalonBackground from "./SalonBackground/SalonBackground";
 
 const Interior = () => {
     return (
-        <div className={s.displayContainer} style={{backgroundImage: `url(${displayImage})`}}></div>
+        <>
+            <TransitionBlock/>
+            <SalonBackground/>
+            <Displays/>
+        </>
     );
 };
 
