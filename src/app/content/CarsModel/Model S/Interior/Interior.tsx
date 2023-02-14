@@ -2,6 +2,7 @@ import React from 'react';
 import TransitionBlock from "./TransitionBlock/TransitionBlock";
 import Displays from "./Displays/Displays";
 import SalonBackground from "./SalonBackground/SalonBackground";
+import Salon from "./Salon/Salon";
 
 const Interior = () => {
     return (
@@ -9,6 +10,7 @@ const Interior = () => {
             <TransitionBlock/>
             <SalonBackground/>
             <Displays/>
+            <Salon/>
         </>
     );
 };
