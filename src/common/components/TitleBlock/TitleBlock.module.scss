@@ -28,7 +28,8 @@
       height: 60%;
       width: 60%;
       margin-left: 10px;
-      @include flex(row, center, center, no-wrap);
+      @include flex(column, flex-start, center, no-wrap);
+      margin-top: 40px;
 
       .description {
         margin-top: 0;

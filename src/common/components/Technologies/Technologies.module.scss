@@ -1,0 +1,17 @@
+@import '../../../common/styles/sass/mixins';
+
+.textBlock {
+  .topText {
+    @include text(24px, 24px, 600);
+    margin-top: 0;
+    .icon {
+      width: 45px;
+      height: 45px;
+      @include background(no-repeat, center, contain);
+    }
+  }
+  .bottomText {
+    @include text(14px, 14px, 600);
+    margin-top: 15px;
+  }
+}
