@@ -10,6 +10,7 @@
       border-radius: 20px;
       background-color: black;
       @include background(no-repeat, center, cover);
+      transition: background-image 0.5s;
     }
   }
   .descriptionBlock {
