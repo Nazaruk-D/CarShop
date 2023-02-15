@@ -34,7 +34,7 @@ const ElectricPowerTrain = () => {
                 <div className={s.info}>
                     <div className={s.firstContainer} style={{opacity: isFirstActive ? 1 : 0.5}} onClick={() => {setIsFirstActive(true)}}>
                         <div className={s.firstBlock}>
-                            <div>
+                            <div className={s.text}>
                                 <h4 className={s.title}>Model S</h4>
                                 <span className={s.description}>Dual Motor All-Wheel Drive unlocks more range than any other vehicle in our current lineup, with insane power and maximum control.</span>
                             </div>
@@ -47,7 +47,7 @@ const ElectricPowerTrain = () => {
                     </div>
                     <div className={s.secondContainer} style={{opacity: !isFirstActive ? 1 : 0.5}} onClick={() => {setIsFirstActive(false)}}>
                         <div className={s.secondBlock}>
-                            <div>
+                            <div className={s.text}>
                                 <h4 className={s.title}>Model S Plaid</h4>
                                 <span className={s.description}>Maintain 1,000+ horsepower all the way to 200 mph with Tri-Motor All-Wheel Drive, featuring torque vectoring and three independent carbon-sleeved rotors.</span>
                             </div>

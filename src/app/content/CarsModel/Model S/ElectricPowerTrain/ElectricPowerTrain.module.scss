@@ -60,14 +60,19 @@
           height: 100%;
           border-top: 5px solid black;
 
-          .title {
-            @include text(18px, 18px, 500);
-            margin-top: 10px;
-            margin-bottom: 20px;
-          }
+          .text {
+            width: 100%;
+            height: 60%;
 
-          .description {
-            @include text(16px, 16px, 400);
+            .title {
+              @include text(18px, 18px, 500);
+              margin-top: 10px;
+              margin-bottom: 15px;
+            }
+
+            .description {
+              @include text(16px, 16px, 400);
+            }
           }
 
           .characteristics {
@@ -92,19 +97,25 @@
           height: 100%;
           border-top: 5px solid black;
 
-          .title {
-            @include text(18px, 18px, 500);
-            margin-top: 10px;
-            margin-bottom: 20px;
+          .text {
+            width: 100%;
+            height: 60%;
+
+            .title {
+              @include text(18px, 18px, 500);
+              margin-top: 10px;
+              margin-bottom: 15px;
+            }
+
+            .description {
+              @include text(16px, 16px, 400);
+            }
           }
 
-          .description {
-            @include text(16px, 16px, 400);
-          }
 
           .characteristics {
             @include flex(row, center, center, nowrap);
-            height: 30%;
+            height: 40%;
             width: 100%;
           }
         }
