@@ -27,7 +27,7 @@ const ModelS = () => {
             <Header/>
             <FirstBlock/>
             <Interior/>
-            <Advantages data={advantagesData} backgroundImage={ModelSPerformanceHero} title={'Test'} subtitle={'Test'} description={'Dimon privet'}/>
+            <Advantages data={advantagesData} backgroundImage={ModelSPerformanceHero} title={'Plaid'} subtitle={'Beyond Ludicrous'} description={'Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.'}/>
             <ElectricPowerTrain/>
         </div>
     );
