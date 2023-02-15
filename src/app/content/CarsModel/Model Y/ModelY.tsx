@@ -127,7 +127,7 @@ const longRangeSpecsData: SpecsType[] = [
 const ModelY = () => {
     return (
         <div>
-            <Header/>
+            <Header color={'white'}/>
             <FirstBlock/>
             <Safety backgroundImage={safetyImage}
                     subtitle={'Safety'}
