@@ -24,6 +24,71 @@
         position: absolute;
         bottom: 8%;
       }
+
+      .pseudoContainer {
+        width: 100%;
+        height: 100%;
+
+        .firstBlock {
+          width: 100%;
+          height: 100%;
+
+          .firstPseudo {
+            @include text(16px, 28px, 600);
+            @include pseudo(absolute, '', '', '', 36.5vh, 22vh, '');
+          }
+
+          &::before {
+            @include pseudo(absolute, '', 25vh, 3px, 35vh, 24%, black);
+          }
+
+          &::after {
+            @include pseudo(absolute, '', 5px, 5px, 34.66vh, 48vh, white);
+            border: 2px solid black;
+            border-radius: 1000%;
+          }
+        }
+
+        .secondBlock {
+          width: 100%;
+          height: 100%;
+
+          .secondPseudo {
+            @include text(16px, 28px, 600);
+            @include pseudo(absolute, '', '', '', 61.5vh, 15vh, '');
+          }
+
+          &::before {
+            @include pseudo(absolute, '', 15vh, 3px, 60vh, 17%, black);
+          }
+
+          &::after {
+            @include pseudo(absolute, '', 5px, 5px, 59.6vh, 32vh, white);
+            border: 2px solid black;
+            border-radius: 1000%;
+          }
+        }
+
+        .thirdBlock {
+          width: 100%;
+          height: 100%;
+
+          .thirdPseudo {
+            @include text(16px, 28px, 600);
+            @include pseudo(absolute, '', '', '', 65vh, 71vh, '');
+          }
+
+          &::before {
+            @include pseudo(absolute, '', 16vh, 3px, 63.5vh, 57%, black);
+          }
+
+          &::after {
+            @include pseudo(absolute, '', 5px, 5px, 63.15vh, 72.1vh, white);
+            border: 2px solid black;
+            border-radius: 1000%;
+          }
+        }
+      }
     }
 
     .descriptionBlock {

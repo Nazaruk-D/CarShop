@@ -55,6 +55,20 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                                                                             bottomText={c.bottomText}/>
                         </div>)}
                     </div>
+                    {characteristicsData
+                        ? ''
+                        : <div className={s.pseudoContainer}>
+                            <div className={s.firstBlock}>
+                                <span className={s.firstPseudo}>Impact Protection</span>
+                            </div>
+                            <div className={s.secondBlock}>
+                                <span className={s.secondPseudo}>Rigid Structure</span>
+                            </div>
+                            <div className={s.thirdBlock}>
+                                <span className={s.thirdPseudo}>Low Center of Gravity</span>
+                            </div>
+                        </div>
+                    }
                 </div>
                 <div className={s.descriptionBlock}>
                     <div className={s.xxx}></div>

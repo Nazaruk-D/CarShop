@@ -20,4 +20,14 @@
     background-size: $size;
 }
 
+@mixin pseudo($position, $content, $height, $width, $left, $top, $backgroundColor) {
+    position: $position;
+    content: $content;
+    height: $height;
+    width: $width;
+    left: $left;
+    top: $top;
+    background-color: $backgroundColor;
+}
+
 
