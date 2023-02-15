@@ -47,7 +47,7 @@ const CarDesign = () => {
                 textColor={'white'}
                 secondColor={'black'}
                 description={'With a drag coefficient of just .208 Cd, the lowest on the planet, Model S is built for speed, endurance and range. Improved aerodynamics and a wider chassis offer more responsive performance so you can take corners quicker and with more confidence.'}/>
-                <CollageBlock data={data}/>
+            <CollageBlock data={data}/>
         </div>
     );
 };
