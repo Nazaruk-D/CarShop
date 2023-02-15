@@ -1,0 +1,43 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include flex(row, center, center, no-wrap);
+  height: 100vh;
+
+  .imageContainer {
+    width: 50%;
+    height: 100%;
+    @include flex(row, flex-end, center, no-wrap);
+
+    .image {
+      @include background(no-repeat, center, contain);
+      width: 90%;
+      height: 100%;
+    }
+  }
+
+  .orderContainer {
+    @include flex(column, center, center, no-wrap);
+    width: 50%;
+
+    .titleBlock {
+      margin-left: 50px;
+
+      .title {
+        @include text(32px, 32px, 600);
+        margin-bottom: 28px;
+      }
+
+      .buttonsBlock {
+        @include flex(row, flex-start, center, no-wrap);
+        width: 100%;
+
+        & button {
+          width: 200px;
+          margin-left: 0;
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+}
