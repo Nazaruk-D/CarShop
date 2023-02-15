@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../../../header/Header";
 import FirstBlock from "./FirstBlock/FirstBlock";
 import Comfort from "./Comfort/Comfort";
-import Autopilot from "./Autopilot/Autopilot";
+import Autopilot from "../commonComponents/Autopilot/Autopilot";
 import Interior from "./Interior/Interior";
 import Advantages from "../commonComponents/Advantages/Advantages";
 import Specs, {SpecsType} from "../commonComponents/Specs/Specs";
