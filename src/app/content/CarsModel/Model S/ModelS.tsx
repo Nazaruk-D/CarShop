@@ -61,22 +61,26 @@ const travelData: DataPropsType = {
         {
             title: 'San Francisco to Los Angeles',
             distance: '383 miles',
-            image: map1
+            image: map1,
+            interval: 4000
         },
         {
             title: 'Berkeley to Lake Tahoe',
             distance: '178 miles',
-            image: map2
+            image: map2,
+            interval: 4000
         },
         {
             title: 'Manhattan to Boston',
             distance: '211 miles',
-            image: map3
+            image: map3,
+            interval: 4000
         },
         {
             title: 'Fort Lauderdale to Orlando',
             distance: '195 miles',
-            image: map4
+            image: map4,
+            interval: 4000
         },
     ]
 }
@@ -88,22 +92,26 @@ const featuresData: DataPropsType = {
         {
             title: 'Navigate on Autopilot',
             description: 'Active guidance from on-ramp to off-ramp',
-            image: video1
+            image: video1,
+            interval: 15000
         },
         {
             title: 'Auto Lane Change',
             description: 'Automatically change lanes while driving on the highway',
-            image: video2
+            image: video2,
+            interval: 9000
         },
         {
             title: 'Summon',
             description: 'Automatically retrieve your car',
-            image: video3
+            image: video3,
+            interval: 5000
         },
         {
             title: 'Autopark',
             description: 'Parallel and perpendicular parking with a single touch',
-            image: video4
+            image: video4,
+            interval: 10000
         },
     ]
 }

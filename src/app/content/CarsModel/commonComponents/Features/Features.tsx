@@ -16,6 +16,8 @@ type FeaturesPropsData = {
     distance?: string
     description?: string
     image: string
+    interval?: number
+
 }
 
 const Features: React.FC<FeaturesPropsType> = ({data}) => {
@@ -28,7 +30,7 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
             } else {
                 setItem(item + 1)
             }
-        }, 4000)
+        }, data.infoBlock[item].interval)
         return () => clearTimeout(timer);
     }, [item])
 
