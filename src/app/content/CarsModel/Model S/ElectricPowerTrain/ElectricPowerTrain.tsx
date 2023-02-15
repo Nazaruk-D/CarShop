@@ -39,9 +39,9 @@ const ElectricPowerTrain = () => {
                                 <span className={s.description}>Dual Motor All-Wheel Drive unlocks more range than any other vehicle in our current lineup, with insane power and maximum control.</span>
                             </div>
                             <div className={s.characteristics}>
-                                <Characteristics topText={'3.1'} measurement={'s'} bottomText={'0-60 mph'}/>
-                                <Characteristics topText={'405'} measurement={'mi'} bottomText={'Range (EPA est.)'}/>
-                                <Characteristics topText={'670'} measurement={'hp'} bottomText={'Peak Power'}/>
+                                <Characteristics topText={'3.1'} measurement={'s'} bottomText={'0-60 mph'} color={'black'}/>
+                                <Characteristics topText={'405'} measurement={'mi'} bottomText={'Range (EPA est.)'} color={'black'}/>
+                                <Characteristics topText={'670'} measurement={'hp'} bottomText={'Peak Power'} color={'black'}/>
                             </div>
                         </div>
                     </div>
@@ -52,9 +52,9 @@ const ElectricPowerTrain = () => {
                                 <span className={s.description}>Maintain 1,000+ horsepower all the way to 200 mph with Tri-Motor All-Wheel Drive, featuring torque vectoring and three independent carbon-sleeved rotors.</span>
                             </div>
                             <div className={s.characteristics}>
-                                <Characteristics topText={'1.99'} measurement={'s*'} bottomText={'0-60 mph'}/>
-                                <Characteristics topText={'396'} measurement={'mi'} bottomText={'Range (EPA est.)'}/>
-                                <Characteristics topText={'1020'} measurement={'hp'} bottomText={'Peak Power'}/>
+                                <Characteristics topText={'1.99'} measurement={'s*'} bottomText={'0-60 mph'} color={'black'}/>
+                                <Characteristics topText={'396'} measurement={'mi'} bottomText={'Range (EPA est.)'} color={'black'}/>
+                                <Characteristics topText={'1020'} measurement={'hp'} bottomText={'Peak Power'} color={'black'}/>
                             </div>
                         </div>
                     </div>
