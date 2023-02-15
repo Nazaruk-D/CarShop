@@ -13,11 +13,13 @@ type AdvantagesPropsType = {
     title: string
     subtitle: string
     description: string
+    textColor?: 'white' | 'black'
+    secondColor?: 'white' | 'black'
 }
 
-const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,subtitle, description}) => {
+const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,subtitle, description, textColor, secondColor}) => {
     return (
-        <div className={s.mainBlock}>
+        <div className={s.mainBlock} style={{color: textColor}}>
             <div className={s.advantagesContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
                 <div className={s.characteristicsContainer}>
                     {data.map((d, i) => <div style={{marginRight: 20}} key={i}>
@@ -27,7 +29,7 @@ const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,
                     </div>)}
                 </div>
             </div>
-            <TitleBlock title={title} subtitle={subtitle} description={description}/>
+            <TitleBlock title={title} subtitle={subtitle} description={description} color={textColor} secondColor={secondColor}/>
         </div>
     );
 };
