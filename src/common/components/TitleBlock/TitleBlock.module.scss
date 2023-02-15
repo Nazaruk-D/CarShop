@@ -21,9 +21,10 @@
       .buttonsBlock {
         width: 100%;
         margin-bottom: 35px;
-        @include flex(row, center, center, no-wrap);
+        @include flex(row, flex-start, center, no-wrap);
         & button {
           margin-left: 0;
+          width: 200px;
         }
       }
     }

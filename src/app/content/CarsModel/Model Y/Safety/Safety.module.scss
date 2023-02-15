@@ -46,6 +46,9 @@
           width: 100%;
           margin-bottom: 35px;
           @include flex(column, space-around, center, no-wrap);
+          & button {
+            width: 100%;
+          }
         }
       }
     }

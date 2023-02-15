@@ -9,6 +9,7 @@ import {CharacteristicsPropsType} from "../../../../common/components/Characteri
 //@ts-ignore
 import modelYRed from '../../../../common/assets/modelYRed.jfif'
 import Advantages from "../commonComponents/Advantages/Advantages";
+import Specs from "./Specs/Specs";
 
 const advantagesData: CharacteristicsPropsType[] = [
     {
@@ -32,6 +33,7 @@ const ModelY = () => {
             <Advantages data={advantagesData} backgroundImage={modelYRed} title={'Dual Motor'} subtitle={'All-Wheel Drive'} description={'Tesla All-Wheel Drive has two ultra-responsive, independent electric motors that digitally control torque to the front and rear wheels—for far better handling, traction and stability control. Model Y is capable in rain, snow, mud and off-road.'}/>
             <Autopilot/>
             <Interior/>
+            <Specs/>
         </div>
     );
 };
