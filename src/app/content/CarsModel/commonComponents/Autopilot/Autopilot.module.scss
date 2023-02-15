@@ -5,11 +5,12 @@
     @include background(no-repeat, center, cover);
     @include flex(column, center, flex-start, no-wrap);
     height: 72vh;
+
     .textContainer {
+      @include flex(column, space-around, flex-start, no-wrap);
       width: 20%;
       height: 100%;
       margin-left: 65px;
-      @include flex(column, space-around, flex-start, no-wrap);
     }
   }
 }
