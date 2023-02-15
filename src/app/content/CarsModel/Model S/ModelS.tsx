@@ -11,6 +11,7 @@ import PlaidRangeWebDesktop8mb from '../../../../common/assets/video/PlaidRangeW
 import ElectricPowerTrain from "./ElectricPowerTrain/ElectricPowerTrain";
 import CarDesign from "./CarDesign/CarDesign";
 import Safety from "../commonComponents/Safety/Safety";
+import TravelMap from "./TravelMap/TravelMap";
 
 
 const advantagesData: CharacteristicsPropsType[] = [
@@ -52,7 +53,7 @@ const ModelS = () => {
                 backgroundImage={PlaidRangeWebDesktop8mb}
                 characteristicsData={characteristicsData}
                 description={'With up to 405 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.'}/>
-
+            <TravelMap/>
         </div>
     );
 };
