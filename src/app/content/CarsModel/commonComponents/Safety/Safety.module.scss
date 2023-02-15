@@ -6,9 +6,9 @@
     height: 100vh;
 
     .imageBlock {
-      @include background(no-repeat, center, auto auto);
+      @include background(no-repeat, center, contain);
       position: relative;
-      width: 77%;
+      width: 70%;
       height: 100%;
       background-color: #f4f4f4;
 
@@ -29,7 +29,7 @@
     .descriptionBlock {
       @include flex(column, space-between, center, no-wrap);
       height: 100%;
-      width: 23%;
+      width: 30%;
 
       .textContainer {
         @include flex(column, space-between, center, no-wrap);
@@ -67,6 +67,9 @@
           @include flex(column, space-around, center, no-wrap);
           width: 100%;
           margin-bottom: 35px;
+          & button {
+            width: 100%;
+          }
         }
       }
     }
