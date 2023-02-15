@@ -25,17 +25,6 @@ const CollageBlock: React.FC<CollageBlockPropsType> = ({data}) => {
     return (
         <div className={s.salonContainer}>
             <div className={s.salonBlock}>
-                {/*<SalonContainer title={title}*/}
-                {/*                description={description}*/}
-                {/*                backgroundImage={backgroundImage}/>*/}
-                {/*<SalonContainer title={title}*/}
-                {/*                description={description}*/}
-                {/*                videoLink={videoLink}*/}
-                {/*                position={"row-reverse"}*/}
-                {/*                start={"flex-start"}/>*/}
-                {/*<SalonContainer title={title}*/}
-                {/*                description={description}*/}
-                {/*                backgroundImage={backgroundImage}/>*/}
                 {data.map((data, i) => <SalonContainer key={i}
                                                        position={data.imagePosition}
                                                        start={data.flex}

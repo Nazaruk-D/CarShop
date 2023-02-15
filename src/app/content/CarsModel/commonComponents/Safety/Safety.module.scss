@@ -1,0 +1,74 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  .safetyContainer {
+    @include flex(row, center, center, no-wrap);
+    height: 100vh;
+
+    .imageBlock {
+      @include background(no-repeat, center, auto auto);
+      position: relative;
+      width: 77%;
+      height: 100%;
+      background-color: #f4f4f4;
+
+      .videoJs {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .characteristics{
+        @include flex(row, center, center, no-wrap);
+        width: 100%;
+        position: absolute;
+        bottom: 8%;
+      }
+    }
+
+    .descriptionBlock {
+      @include flex(column, space-between, center, no-wrap);
+      height: 100%;
+      width: 23%;
+
+      .textContainer {
+        @include flex(column, space-between, center, no-wrap);
+        height: 100%;
+        width: 80%;
+
+        .text {
+          margin-top: 26px;
+          width: 100%;
+
+          .titleBlock {
+            .subtitle {
+              @include text(20px, 28px, 400);
+              margin-bottom: 0;
+            }
+
+            .title {
+              @include text(30px, 28px, 600);
+              margin-top: 0;
+            }
+          }
+
+          .description {
+            .paragraph {
+              margin-top: 0;
+            }
+
+            .paragraphTitle {
+              @include text(16px, 28px, 500);
+            }
+          }
+        }
+
+        .buttonsBlock {
+          @include flex(column, space-around, center, no-wrap);
+          width: 100%;
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+}
