@@ -5,11 +5,12 @@ export type CharacteristicsPropsType = {
     topText: string
     measurement?: string
     bottomText: string
+    color?: string
 }
 
-const Characteristics: React.FC<CharacteristicsPropsType> = ({bottomText, topText, measurement}) => {
+const Characteristics: React.FC<CharacteristicsPropsType> = ({bottomText, topText, measurement, color}) => {
     return (
-        <div className={s.characteristicsBlock}>
+        <div className={s.characteristicsBlock} style={{color}}>
             {measurement
                 ? <div className={s.topTextBlock}>
                     <div className={s.topTextContainer}>
