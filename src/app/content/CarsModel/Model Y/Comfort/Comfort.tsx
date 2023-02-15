@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import s from './Comfort.module.scss'
+import RoundButton from "../../../../../common/components/RoundButton/RoundButton";
+import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
 //@ts-ignore
 import firstInteriorModelY from '../../../../../common/assets/firstInteriorModelY.jfif'
 //@ts-ignore
 import secondInteriorModelY from '../../../../../common/assets/secondInteriorModelY.jfif'
-import RoundButton from "../../../../../common/components/RoundButton/RoundButton";
-import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
-
 
 const Comfort = () => {
     const [isFirstActive, setIsFirstActive] = useState(true)
@@ -20,7 +19,8 @@ const Comfort = () => {
 
     return (
         <div className={s.mainContainer}>
-            <TitleBlock title={'A Place For Everything'} subtitle={'Utility'}
+            <TitleBlock title={'A Place For Everything'}
+                        subtitle={'Utility'}
                         description={'Model Y provides maximum versatility—able to carry 7 passengers and their cargo. Each second row seat folds flat independently, creating flexible storage for skis, furniture, luggage and more. The liftgate opens to a low trunk floor that makes loading and unloading easy and quick. Chat with a Tesla Advisor to learn more about Model Y or schedule a demo drive today.'}/>
             <div className={s.comfortContainer}>
                 <div className={s.imageBlock}>

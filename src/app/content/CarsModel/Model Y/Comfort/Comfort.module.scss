@@ -2,43 +2,50 @@
 
 .comfortContainer {
   .imageBlock {
-    height: 73vh;
     @include flex(column, center, center, no-wrap);
+    height: 73vh;
+
     .imageContainer {
+      @include background(no-repeat, center, cover);
       width: 94%;
       height: 100%;
-      border-radius: 20px;
       background-color: black;
-      @include background(no-repeat, center, cover);
       transition: background-image 0.5s;
+      border-radius: 20px;
     }
   }
+
   .descriptionBlock {
-    height: 27vh;
     @include flex(column, center, center, no-wrap);
+    height: 27vh;
+
     .descriptionContainer {
+      @include flex(column, center, flex-start, no-wrap);
       height: 100%;
       width: 45%;
-      @include flex(column, center, flex-start, no-wrap);
+
       .buttonsBlock {
         @include flex(row, center, center, no-wrap);
+
         .buttonOne {
           width: 12px;
           height: 12px;
-          border-radius: 6px;
           background-color: black;
-          cursor: pointer;
+          border-radius: 6px;
           margin-right: 10px;
+          cursor: pointer;
         }
+
         .buttonTwo {
           width: 12px;
           height: 12px;
-          border-radius: 6px;
           background-color: #c5c5c5;
-          cursor: pointer;
+          border-radius: 6px;
           margin-right: 9px;
+          cursor: pointer;
         }
       }
+
       .description {
         margin-top: 10px;
       }
