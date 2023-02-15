@@ -7,10 +7,14 @@ import {CharacteristicsPropsType} from "../../../../common/components/Characteri
 // @ts-ignore
 import ModelSPerformanceHero from '../../../../common/assets/ModelSPerformanceHero.jfif'
 // @ts-ignore
+import ModelSSafetyHeroDesktopGlobal from '../../../../common/assets/ModelSSafetyHeroDesktopGlobal.jfif'
+// @ts-ignore
 import PlaidRangeWebDesktop8mb from '../../../../common/assets/video/PlaidRangeWebDesktop8mb.mp4'
 import ElectricPowerTrain from "./ElectricPowerTrain/ElectricPowerTrain";
 import CarDesign from "./CarDesign/CarDesign";
 import Safety from "../commonComponents/Safety/Safety";
+import TravelMap from "./TravelMap/TravelMap";
+import Autopilot from "../commonComponents/Autopilot/Autopilot";
 
 
 const advantagesData: CharacteristicsPropsType[] = [
@@ -52,7 +56,15 @@ const ModelS = () => {
                 backgroundImage={PlaidRangeWebDesktop8mb}
                 characteristicsData={characteristicsData}
                 description={'With up to 405 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.'}/>
-
+            <TravelMap/>
+            <Safety
+                subtitle={'Safety'}
+                title={'High Impact Protection'}
+                backgroundImage={ModelSSafetyHeroDesktopGlobal}
+                backgroundColor={'white'}
+                flexDirection={'row-reverse'}
+                description={'Model S is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack for incredible occupant protection and low rollover risk. Every new Model S includes Tesla’s latest active safety features, such as Automatic Emergency Braking, at no extra cost.'}/>
+            <Autopilot/>
         </div>
     );
 };

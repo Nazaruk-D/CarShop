@@ -15,6 +15,7 @@ type SafetyPropsType = {
     img?: string
     flexDirection?: 'row' | 'row-reverse'
     characteristicsData?: CharacteristicsPropsType[]
+    backgroundColor?: string
 }
 
 const Safety: React.FC<SafetyPropsType> = ({
@@ -24,12 +25,13 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                flexDirection,
                                                subtitle,
                                                description,
-                                               characteristicsData
+                                               characteristicsData,
+                                               backgroundColor
                                            }) => {
     return (
         <div className={s.mainContainer}>
-            <div className={s.safetyContainer}>
-                <div className={s.imageBlock} style={{backgroundImage: `url(${backgroundImage})`, flexDirection}}>
+            <div className={s.safetyContainer} style={{flexDirection}}>
+                <div className={s.imageBlock} style={{backgroundImage: `url(${backgroundImage})`, backgroundColor}}>
                     <video
                         autoPlay
                         id="my-player"
@@ -47,10 +49,11 @@ const Safety: React.FC<SafetyPropsType> = ({
                         data-setup='{}'>
                     </video>
                     <div className={s.characteristics}>
-                            {characteristicsData?.map((c, i) => <div style={{marginRight: 40}}><Characteristics key={i}
-                                                                                      topText={c.topText}
-                                                                                      measurement={c.measurement}
-                                                                                      bottomText={c.bottomText}/></div> )}
+                        {characteristicsData?.map((c, i) => <div style={{marginRight: 40}}><Characteristics key={i}
+                                                                                                            topText={c.topText}
+                                                                                                            measurement={c.measurement}
+                                                                                                            bottomText={c.bottomText}/>
+                        </div>)}
                     </div>
                 </div>
                 <div className={s.descriptionBlock}>
