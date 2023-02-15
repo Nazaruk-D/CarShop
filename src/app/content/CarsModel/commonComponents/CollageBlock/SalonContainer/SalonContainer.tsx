@@ -6,8 +6,8 @@ type SalonContainerPropType = {
     videoLink?: string
     title: string
     description: string
-    position?: "row-reverse"
-    start?: "flex-start"
+    position?: "row-reverse" | "row"
+    start?: "flex-start" | "flex-end"
 }
 
 const SalonContainer: React.FC<SalonContainerPropType> = ({videoLink, position, description, title, backgroundImage, start}) => {

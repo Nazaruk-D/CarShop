@@ -1,5 +1,4 @@
-@import '../../../../../../../common/styles/sass/mixins';
-
+@import '../../../../../../common/styles/sass/mixins';
 
 .salonContainer {
   @include flex(row, center, center, wrap);
