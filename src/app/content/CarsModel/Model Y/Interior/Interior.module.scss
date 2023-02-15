@@ -5,11 +5,13 @@
     @include background(no-repeat, center, cover);
     @include flex(column, center, flex-end, no-wrap);
     height: 72vh;
+
     .textContainer {
+      @include flex(column, space-around, flex-start, no-wrap);
       width: 20%;
       height: 100%;
       margin-right: 65px;
-      @include flex(column, space-around, flex-start, no-wrap);
+
       & div {
         color: white;
       }
