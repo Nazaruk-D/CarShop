@@ -5,6 +5,7 @@ import Button from "../../../../../common/components/Button/Button";
 import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";
+import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 
 
 type SafetyPropsType = {
@@ -32,22 +33,7 @@ const Safety: React.FC<SafetyPropsType> = ({
         <div className={s.mainContainer}>
             <div className={s.safetyContainer} style={{flexDirection}}>
                 <div className={s.imageBlock} style={{backgroundImage: `url(${backgroundImage})`, backgroundColor}}>
-                    <video
-                        autoPlay
-                        id="my-player"
-                        className={s.videoJs}
-                        preload="auto"
-                        muted
-                        playsInline
-                        controls={false}
-                        data-autoplay-desktop={true}
-                        data-autoplay-portrait={true}
-                        data-autoplay-mobile={true}
-                        data-play-on-hover={false}
-                        src={backgroundImage}
-                        loop
-                        data-setup='{}'>
-                    </video>
+                    <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>
                     <div className={s.characteristics}>
                         {characteristicsData?.map((c, i) => <div style={{marginRight: 40}}><Characteristics key={i}
                                                                                                             topText={c.topText}
