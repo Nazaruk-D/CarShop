@@ -11,10 +11,7 @@ export type SpecsPropsType = {
     backgroundImage: string
 }
 
-export type SpecsType = {
-    topText: string
-    bottomText: string
-}
+export type SpecsType = [string, string]
 
 const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData, backgroundImage}) => {
     const [isActive, setIsActive] = useState(true)
@@ -40,14 +37,15 @@ const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData,
                         <div className={s.specsContainer}>
                             {isActive
                             ? firstSpecsData.map((d, i) =>
-                                        <div className={s.spec} key={i}>
-                                            <span className={s.specTitle}>{d.topText}</span>
-                                            <span className={s.specSubtitle}>{d.bottomText}</span>
-                                        </div>)
+                                    <div className={s.spec} key={i}>
+                                        <span className={s.specTitle}>{d[0]}</span>
+                                        <span className={s.specSubtitle}>{d[1]}</span>
+                                    </div>
+                                )
                             : secondSpecsData.map((d, i) =>
                                     <div className={s.spec} key={i}>
-                                        <span className={s.specTitle}>{d.topText}</span>
-                                        <span className={s.specSubtitle}>{d.bottomText}</span>
+                                        <span className={s.specTitle}>{d[0]}</span>
+                                        <span className={s.specSubtitle}>{d[1]}</span>
                                     </div>)
                             }
                         </div>

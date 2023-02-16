@@ -48,80 +48,32 @@ const characteristicsData: CharacteristicsPropsType[] = [
     },
 ]
 const performanceSpecsData: SpecsType[] = [
-    {
-        topText: 'Battery', bottomText: 'Long Range',
-    },
-    {
-        topText: 'Weight', bottomText: '4,398 lbs',
-    },
-    {
-        topText: '*Acceleration', bottomText: '3.5 s 0-60 mph with rollout subtracted',
-    },
-    {
-        topText: 'Max Cargo Volume', bottomText: '76 cu ft',
-    },
-    {
-        topText: 'Range', bottomText: '303 miles (EPA est.)',
-    },
-    {
-        topText: 'Top Speed', bottomText: '155 mph',
-    },
-    {
-        topText: 'Drive', bottomText: 'Dual Motor All-Wheel Drive',
-    },
-    {
-        topText: 'Displays', bottomText: '15" Center Touchscreen',
-    },
-    {
-        topText: 'Seating', bottomText: 'Up to 5',
-    },
-    {
-        topText: 'Supercharging Max/Payment Type', bottomText: '250 kW Max; Pay Per Use',
-    },
-    {
-        topText: 'Wheels', bottomText: '21"',
-    },
-    {
-        topText: 'Warranty', bottomText: 'Basic Vehicle - 4 years or 50,000 mi, whichever comes first Battery & Drive Unit - 8 years or 120,000 mi, whichever comes first',
-    },
+    ['Battery', 'Long Range'],
+    ['Weight', '4,398 lbs'],
+    ['*Acceleration', '3.5 s 0-60 mph with rollout subtracted'],
+    ['Max Cargo Volume', '76 cu ft'],
+    ['Range', '303 miles (EPA est.)'],
+    ['Top Speed', '155 mph'],
+    ['Drive', 'Dual Motor All-Wheel Drive'],
+    ['Displays', '15" Center Touchscreen'],
+    ['Seating', 'Up to 5'],
+    ['Supercharging Max/Payment Type', '250 kW Max; Pay Per Use'],
+    ['Wheels', '21"'],
+    ['Warranty', 'Basic Vehicle - 4 years or 50,000 mi, whichever comes first Battery & Drive Unit - 8 years or 120,000 mi, whichever comes first'],
 ]
 const longRangeSpecsData: SpecsType[] = [
-    {
-        topText: 'Battery', bottomText: 'Long Range',
-    },
-    {
-        topText: 'Weight', bottomText: '4,363 lbs',
-    },
-    {
-        topText: '*Acceleration', bottomText: '4.8 s 0-60 mph',
-    },
-    {
-        topText: 'Max Cargo Volume', bottomText: '76 cu ft',
-    },
-    {
-        topText: 'Range', bottomText: '330 miles (EPA est.)',
-    },
-    {
-        topText: 'Top Speed', bottomText: '135 mph',
-    },
-    {
-        topText: 'Drive', bottomText: 'Dual Motor All-Wheel Drive',
-    },
-    {
-        topText: 'Displays', bottomText: '15" Center Touchscreen',
-    },
-    {
-        topText: 'Seating', bottomText: 'Up to 7',
-    },
-    {
-        topText: 'Supercharging Max/Payment Type', bottomText: '250 kW Max; Pay Per Use',
-    },
-    {
-        topText: 'Wheels', bottomText: '19" or 20"',
-    },
-    {
-        topText: 'Warranty', bottomText: 'Basic Vehicle - 4 years or 50,000 mi, whichever comes first Battery & Drive Unit - 8 years or 120,000 mi, whichever comes first',
-    },
+    ['Battery', 'Long Range'],
+    ['Weight', '4,363 lbs'],
+    ['*Acceleration', '4.8 s 0-60 mph'],
+    ['Max Cargo Volume', '76 cu ft'],
+    ['Range', '330 miles (EPA est.)'],
+    ['Top Speed', '135 mph'],
+    ['Drive', 'Dual Motor All-Wheel Drive'],
+    ['Displays', '15" Center Touchscreen'],
+    ['Seating', 'Up to 7'],
+    ['Supercharging Max/Payment Type', '250 kW Max; Pay Per Use'],
+    ['Wheels', '19" or 20"'],
+    ['Warranty', 'Basic Vehicle - 4 years or 50,000 mi, whichever comes first Battery & Drive Unit - 8 years or 120,000 mi, whichever comes first'],
 ]
 
 const ModelY = () => {
