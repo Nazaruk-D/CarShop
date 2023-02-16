@@ -18,6 +18,7 @@ import modelYBlack from '../../../../common/assets/modelYBlack.jfif'
 // @ts-ignore
 import sideModelY from '../../../../common/assets/sideModelY.jfif'
 import Order from "../commonComponents/Order/Order";
+import Footer from "../commonComponents/Footer/Footer";
 
 const advantagesData: CharacteristicsPropsType[] = [
     {
@@ -103,6 +104,7 @@ const ModelY = () => {
                    secondSpecsData={longRangeSpecsData}
                    backgroundImage={modelYBlack}/>
             <Order carName={'Model Y'} backgroundImage={sideModelY}/>
+            <Footer description={'yes'}/>
         </div>
     );
 };

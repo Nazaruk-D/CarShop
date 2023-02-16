@@ -1,0 +1,37 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include flex(column, space-between, center, no-wrap);
+
+  .descriptionContainer {
+    width: 670px;
+    height: 110px;
+    text-align: center;
+
+    .description {
+      @include text(14px, 14px, 400);
+      color: rgb(119, 119, 119);
+    }
+
+    .link {
+      @include text(14px, 14px, 400);
+      color: rgb(119, 119, 119);
+      text-decoration: underline black;
+      cursor: pointer;
+    }
+  }
+
+  .menuContainer {
+    @include flex(row, center, center, wrap);
+    width: 60%;
+    height: 70px;
+
+    .menuText {
+      @include text(13px, 14px, 600);
+      color: rgb(119, 119, 119);
+      padding-right: 15px;
+      cursor: pointer;
+    }
+  }
+
+}
