@@ -22,7 +22,7 @@ const TopBlock = () => {
             <Header color={'white'}/>
             <FirstBlock characteristicsData={characteristicsData}
                         model={'Model Y'}
-                        conditions={'Performance'}
+                        conditions={'Schedule a Demo Drive'}
                         backgroundImage={modelYSecond}/>
         </>
     );

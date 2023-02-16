@@ -16,7 +16,10 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                 <div className={s.carBlock}>
                     <div className={s.titleBlock}>
                         <h1 className={s.description}>{model}</h1>
-                        <h3 className={s.conditions}>{conditions}</h3>
+                        {conditions === 'Schedule a Demo Drive'
+                        ? <h3 className={s.demoDrive}>{conditions}</h3>
+                        : <h3 className={s.conditions}>{conditions}</h3>
+                        }
                     </div>
                     <div className={s.bottomBlock}>
                         {children}
