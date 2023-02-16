@@ -2,6 +2,7 @@ import React from 'react';
 import TopBlock from "./TopBlock/TopBlock";
 import SafetyAndAdvantages from "./SafetyAndAdvantages/SafetyAndAdvantages";
 import RangeAndAutopilot from "./RangeAndAutopilot/RangeAndAutopilot";
+import Interior from "../commonComponents/Interior/Interior";
 
 const Model3 = () => {
     return (
@@ -9,6 +10,7 @@ const Model3 = () => {
             <TopBlock/>
             <SafetyAndAdvantages/>
             <RangeAndAutopilot/>
+            <Interior/>
         </div>
     );
 };
