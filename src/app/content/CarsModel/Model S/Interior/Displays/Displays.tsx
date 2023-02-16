@@ -10,7 +10,7 @@ import video3 from '../../../../../../common/assets/video/ModelSDisplay.mp4'
 import video4 from '../../../../../../common/assets/video/4.mp4'
 // @ts-ignore
 import video5 from '../../../../../../common/assets/video/5.mp4'
-import VideoPlayer from "./VideoPlayer/VideoPlayer";
+import VideoBlock from "./VideoBlock/VideoBlock";
 
 
 export type VideoType = {
@@ -76,7 +76,7 @@ const Displays = React.memo(() => {
 
     return (
         <div className={s.displaysContainer}>
-            <VideoPlayer id={newVideo!.id} title={newVideo!.title} description={newVideo!.description}
+            <VideoBlock id={newVideo!.id} title={newVideo!.title} description={newVideo!.description}
                          setDuration={setDuration} link={newVideo!.link} onClick={changeVideoId}/>
         </div>
     );

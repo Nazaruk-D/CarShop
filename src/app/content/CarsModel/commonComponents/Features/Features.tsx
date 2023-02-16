@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import s from './Features.module.scss'
+import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 
 export type FeaturesPropsType = {
     data: DataPropsType
@@ -46,22 +47,7 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
                     </div>
                 </div>
                 <div className={s.map} style={{backgroundImage: `url(${data.infoBlock[item].image})`}}>
-                    <video
-                        autoPlay
-                        id="my-player"
-                        className={s.videoJs}
-                        preload="auto"
-                        muted
-                        playsInline
-                        controls={false}
-                        data-autoplay-desktop={true}
-                        data-autoplay-portrait={true}
-                        data-autoplay-mobile={true}
-                        data-play-on-hover={false}
-                        src={data.infoBlock[item].image}
-                        loop
-                        data-setup='{}'>
-                    </video>
+                    <VideoPlayer link={data.infoBlock[item].image} style={{"width": "100%"}}/>
                 </div>
                 <div className={s.infoBlock}>
                     {data.infoBlock.map((d, i) => <div className={s.info}
