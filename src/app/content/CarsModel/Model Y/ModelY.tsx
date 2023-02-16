@@ -1,22 +1,20 @@
 import React from 'react';
-import Header from "../../../header/Header";
-import FirstBlock from "./FirstBlock/FirstBlock";
 import SafetyAndComfort from "./SafetyAndComfort/SafetyAndComfort";
 import AdvantagesAndRange from "./AdvantagesAndRange/AdvantagesAndRange";
 import Footer from "../commonComponents/Footer/Footer";
 import AutopilotAndInterior from "./AutopilotAndInterior/AutopilotAndInterior";
 import SpecsAndOrder from "./SpecsAndOrder/SpecsAndOrder";
+import TopBlock from "./TopBlock/TopBlock";
 
 const ModelY = () => {
     return (
         <div>
-            <Header color={'white'}/>
-            <FirstBlock/>
+            <TopBlock/>
             <SafetyAndComfort/>
             <AdvantagesAndRange/>
             <AutopilotAndInterior/>
             <SpecsAndOrder/>
-            <Footer description={true}/>
+            <Footer/>
         </div>
     );
 };
