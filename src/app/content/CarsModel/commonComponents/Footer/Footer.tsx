@@ -2,11 +2,10 @@ import React from 'react';
 import s from './Footer.module.scss'
 
 export type FooterPropsType = {
-    // description: "yes" | "no"
-    description: boolean
+    description?: boolean
 }
 
-const Footer: React.FC<FooterPropsType> = ({description}) => {
+const Footer: React.FC<FooterPropsType> = ({description = true}) => {
     return (
         <div className={s.mainContainer}>
             {description && <div className={s.descriptionContainer}>

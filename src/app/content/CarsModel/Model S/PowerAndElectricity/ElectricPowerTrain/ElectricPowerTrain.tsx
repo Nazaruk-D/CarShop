@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import s from './ElectricPowerTrain.module.scss'
 // @ts-ignore
-import firstImage from '../../../../../common/assets/ModelSDualMotorPowertrain-CarouselDesktop.jfif'
+import firstImage from '../../../../../../common/assets/ModelSDualMotorPowertrain-CarouselDesktop.jfif'
 // @ts-ignore
-import secondImage from '../../../../../common/assets/ModelSPlaidTriMotorPowertrainCarouselDesktop.jfif'
-import Characteristics from "../../../../../common/components/Characteristics/Characteristics";
+import secondImage from '../../../../../../common/assets/ModelSPlaidTriMotorPowertrainCarouselDesktop.jfif'
+import Characteristics from "../../../../../../common/components/Characteristics/Characteristics";
 
 const ElectricPowerTrain = () => {
     const [isFirstActive, setIsFirstActive] = useState(true)
