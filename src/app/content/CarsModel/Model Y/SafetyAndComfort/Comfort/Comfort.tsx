@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import s from './Comfort.module.scss'
-import RoundButton from "../../../../../common/components/RoundButton/RoundButton";
-import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
+import RoundButton from "../../../../../../common/components/RoundButton/RoundButton";
+import TitleBlock from "../../../../../../common/components/TitleBlock/TitleBlock";
 //@ts-ignore
-import firstInteriorModelY from '../../../../../common/assets/firstInteriorModelY.jfif'
+import firstInteriorModelY from '../../../../../../common/assets/firstInteriorModelY.jfif'
 //@ts-ignore
-import secondInteriorModelY from '../../../../../common/assets/secondInteriorModelY.jfif'
+import secondInteriorModelY from '../../../../../../common/assets/secondInteriorModelY.jfif'
 
 const Comfort = () => {
     const [isFirstActive, setIsFirstActive] = useState(true)

@@ -86,7 +86,7 @@
           }
 
           &::after {
-            @include pseudo(absolute, '', 5px, 5px, 63.15vh, 72.1vh, white);
+            @include pseudo(absolute, '', 5px, 5px, 63.15vh, 56.1vh, white);
             border: 2px solid black;
             border-radius: 1000%;
           }

@@ -1,11 +1,11 @@
 import React from 'react';
 import s from './Interior.module.scss';
-import Technologies from "../../../../../common/components/Technologies/Technologies";
-import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
-import wifiLogo from '../../../../../common/assets/wifiLogo.svg';
-import teslaTopViewIcon from '../../../../../common/assets/teslaTopViewIcon.svg';
+import Technologies from "../../../../../../common/components/Technologies/Technologies";
+import TitleBlock from "../../../../../../common/components/TitleBlock/TitleBlock";
+import wifiLogo from '../../../../../../common/assets/wifiLogo.svg';
+import teslaTopViewIcon from '../../../../../../common/assets/teslaTopViewIcon.svg';
 //@ts-ignore
-import modelYInterior from '../../../../../common/assets/modelYInterior.jfif';
+import modelYInterior from '../../../../../../common/assets/modelYInterior.jfif';
 
 const Interior = () => {
     return (
