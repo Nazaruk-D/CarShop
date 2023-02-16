@@ -5,6 +5,7 @@ import ErrorPage from "../../common/components/ErrorPage/ErrorPage";
 import ModelS from "../content/CarsModel/Model S/ModelS";
 import ModelY from "../content/CarsModel/Model Y/ModelY";
 import Model3 from "../content/CarsModel/Model 3/Model3";
+import ModelX from "../content/CarsModel/Model X/ModelX";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.modelX,
-        element: <div>model X</div>
+        element: <ModelX/>
     },
     {
         path: routes.modelY,
