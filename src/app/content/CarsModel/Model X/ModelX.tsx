@@ -3,7 +3,7 @@ import React from 'react';
 const ModelX = () => {
     return (
         <div>
-
+Hi
         </div>
     );
 };
