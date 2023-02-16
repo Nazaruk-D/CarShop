@@ -104,7 +104,7 @@ const ModelY = () => {
                    secondSpecsData={longRangeSpecsData}
                    backgroundImage={modelYBlack}/>
             <Order carName={'Model Y'} backgroundImage={sideModelY}/>
-            <Footer description={'yes'}/>
+            <Footer description={true}/>
         </div>
     );
 };
