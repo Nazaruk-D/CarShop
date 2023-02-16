@@ -41,7 +41,10 @@ const SpecsAndOrder = () => {
             <Specs title={'Model Y'}
                    firstSpecsData={performanceSpecsData}
                    secondSpecsData={longRangeSpecsData}
-                   backgroundImage={modelYBlack}/>
+                   backgroundImage={modelYBlack}
+                   fistButtonName={'Performance'}
+                   secondButtonName={'Long Range AWD'}
+            />
             <Order carName={'Model Y'} backgroundImage={sideModelY}/>
         </>
     );

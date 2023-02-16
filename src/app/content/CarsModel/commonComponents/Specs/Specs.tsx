@@ -9,11 +9,13 @@ export type SpecsPropsType = {
     firstSpecsData: SpecsType[]
     secondSpecsData: SpecsType[]
     backgroundImage: string
+    fistButtonName: string
+    secondButtonName: string
 }
 
 export type SpecsType = [string, string]
 
-const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData, backgroundImage}) => {
+const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData, backgroundImage, secondButtonName,fistButtonName}) => {
     const [isActive, setIsActive] = useState(true)
 
     return (
@@ -27,10 +29,10 @@ const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData,
                             <span className={s.subtitle}>Specs</span>
                         </div>
                         <div className={s.buttonsContainer}>
-                            <SpecsButton title={'Performance'}
+                            <SpecsButton title={fistButtonName}
                                          color={isActive}
                                          onClick={() => setIsActive(true)}/>
-                            <SpecsButton title={'Long Range AWD'}
+                            <SpecsButton title={secondButtonName}
                                          color={!isActive}
                                          onClick={() => setIsActive(false)}/>
                         </div>
