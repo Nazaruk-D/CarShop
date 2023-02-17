@@ -6,6 +6,7 @@ import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";
 import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
+import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 
 type AdvantagesPropsType = {
     backgroundImage: string
@@ -21,6 +22,7 @@ const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,
     return (
         <div className={s.mainBlock} style={{color: textColor}}>
             <div className={s.advantagesContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
+                <VideoPlayer link={backgroundImage} style={{width: "100%", height: "79%", objectFit: "cover"}}/>
                 <div className={s.characteristicsContainer}>
                     {data.map((d, i) => <div style={{marginRight: 20}} key={i}>
                         <Characteristics topText={d.topText}
