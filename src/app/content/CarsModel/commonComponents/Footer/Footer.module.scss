@@ -5,7 +5,7 @@
 
   .descriptionContainer {
     width: 670px;
-    height: 110px;
+    height: 14vh;
     text-align: center;
 
     .description {
@@ -24,7 +24,7 @@
   .menuContainer {
     @include flex(row, center, center, wrap);
     width: 60%;
-    height: 70px;
+    height: 8vh;
 
     .menuText {
       @include text(13px, 14px, 600);

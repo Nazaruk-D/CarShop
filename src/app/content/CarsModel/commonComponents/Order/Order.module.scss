@@ -2,7 +2,7 @@
 
 .mainContainer {
   @include flex(row, center, center, no-wrap);
-  height: 100vh;
+  height: 78vh;
 
   .imageContainer {
     width: 50%;
