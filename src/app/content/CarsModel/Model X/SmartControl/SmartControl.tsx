@@ -1,10 +1,10 @@
 import React from 'react';
 import Safety from "../../commonComponents/Safety/Safety";
 // @ts-ignore
-import PlaidRangeWebDesktop8mb from "../../../../../common/assets/video/PlaidRangeWebDesktop8mb.mp4";
+import ModelXRangeHeroDesktopLHD from "../../../../../common/assets/Model-X-Range-Hero-Desktop-LHD.jfif";
 import Features, {DataPropsType} from "../../commonComponents/Features/Features";
 // @ts-ignore
-import ModelSSafetyHeroDesktopGlobal from "../../../../../common/assets/ModelSSafetyHeroDesktopGlobal.jfif";
+import ModelXSafetyHeroDesktop from "../../../../../common/assets/Model-X-Safety-Hero-Desktop.jfif";
 import Autopilot from "../../commonComponents/Autopilot/Autopilot";
 import {CharacteristicsPropsType} from "../../../../../common/components/Characteristics/Characteristics";
 import map1 from "../../../../../common/assets/map1.jpg";
@@ -23,10 +23,10 @@ import video4 from "../../../../../common/assets/video/WM5XUG_parking.mp4-2000_E
 
 const characteristicsData: CharacteristicsPropsType[] = [
     {
-        topText: '405', measurement: 'mi', bottomText: 'Go anywhere with up to 405 miles of estimated range on a single charge',
+        topText: '348', measurement: 'mi', bottomText: 'Go anywhere with up to 348 miles of estimated range on a single charge',
     },
     {
-        topText: '15', measurement: 'min', bottomText: 'Recharge up to 200 miles in 15 minutes at Supercharger locations',
+        topText: '15', measurement: 'min', bottomText: 'Recharge up to 175 miles in 15 minutes with the latest Supercharger technology',
     },
     {
         topText: '40,000', measurement: '+', bottomText: 'Superchargers placed along popular routes',
@@ -100,17 +100,18 @@ const SmartControl = () => {
             <Safety
                 subtitle={'Range'}
                 title={'Go Anywhere'}
-                backgroundImage={PlaidRangeWebDesktop8mb}
+                backgroundSize={"cover"}
+                backgroundImage={ModelXRangeHeroDesktopLHD}
                 characteristicsData={characteristicsData}
-                description={'With up to 405 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.'}/>
+                description={'With up to 348 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model X or schedule a demo drive today.'}/>
             <Features data={travelData}/>
             <Safety
                 subtitle={'Safety'}
-                title={'High Impact Protection'}
-                backgroundImage={ModelSSafetyHeroDesktopGlobal}
+                title={'Built for Safety'}
+                backgroundImage={ModelXSafetyHeroDesktop}
                 backgroundColor={'white'}
                 flexDirection={'row-reverse'}
-                description={'Model S is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack for incredible occupant protection and low rollover risk. Every new Model S includes Tesla’s latest active safety features, such as Automatic Emergency Braking, at no extra cost.'}/>
+                description={'Model X is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack that enable exceptional occupant protection and low rollover risk. Every Model X includes Tesla’s latest active safety features, such as Automatic Emergency Braking, at no extra cost.'}/>
             <Autopilot/>
             <Features data={featuresData}/>
         </>

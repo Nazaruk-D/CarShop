@@ -17,6 +17,7 @@ type SafetyPropsType = {
     flexDirection?: 'row' | 'row-reverse'
     characteristicsData?: CharacteristicsPropsType[]
     backgroundColor?: string
+    backgroundSize?: string
 }
 
 const Safety: React.FC<SafetyPropsType> = ({
@@ -27,12 +28,13 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                subtitle,
                                                description,
                                                characteristicsData,
-                                               backgroundColor
+                                               backgroundColor,
+                                               backgroundSize
                                            }) => {
     return (
         <div className={s.mainContainer}>
             <div className={s.safetyContainer} style={{flexDirection}}>
-                <div className={s.imageBlock} style={{backgroundImage: `url(${backgroundImage})`, backgroundColor}}>
+                <div className={s.imageBlock} style={{backgroundImage: `url(${backgroundImage})`, backgroundColor, backgroundSize}}>
                     <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>
                     <div className={s.characteristics}>
                         {characteristicsData?.map((c, i) => <div style={{marginRight: 40}}><Characteristics key={i}

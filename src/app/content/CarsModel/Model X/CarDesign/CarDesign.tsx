@@ -2,35 +2,37 @@ import React from 'react';
 import s from './CarDesign.module.scss'
 import Advantages from "../../commonComponents/Advantages/Advantages";
 // @ts-ignore
-import ModelSPerformanceHero from "../../../../../common/assets/ModelSExteriorHeroDesktopGlobal.jfif";
+import ModelXExteriorHeroDesktopGlobal from "../../../../../common/assets/Model-X-Exterior-Hero-Desktop-Global.jfif";
 // @ts-ignore
-import ModelSExteriorGridADesktopGlobal from "../../../../../common/assets/ModelSExteriorGridADesktopGlobal.jfif";
+import ModelXExteriorGridADesktopGlobal from "../../../../../common/assets/Model-X-Exterior-Grid-A-Desktop-Global.jfif";
 // @ts-ignore
-import ModelSExteriorGridBDesktopGlobal from "../../../../../common/assets/ModelSExteriorGridBDesktopGlobal.jfif";
+import ModelXExteriorGridBDesktopGlobal from "../../../../../common/assets/Model-X-Exterior-Grid-B-Desktop-Global.jfif";
 // @ts-ignore
-import ModelSExteriorGridCDesktopGlobal from "../../../../../common/assets/ModelSExteriorGridCDesktopGlobal.jfif";
+import ModelXExteriorGridCDesktopGlobal from "../../../../../common/assets/Model-X-Exterior-Grid-C-Desktop-Global.jfif";
+
 import CollageBlock, {DataProps} from "../../commonComponents/CollageBlock/CollageBlock";
+
 
 
 const data: DataProps[] = [
     {
-        backgroundImage: ModelSExteriorGridADesktopGlobal,
+        backgroundImage: ModelXExteriorGridADesktopGlobal,
         title: 'Relentless Performance',
-        description: 'Staggered, performance wheels and tires keep the car planted and help transfer maximum power down to the road.',
+        description: 'Performance wheels and tires keep the SUV planted, transferring even more power down to the road.',
         imagePosition: "row-reverse",
         flex: "flex-start"
     },
     {
-        backgroundImage: ModelSExteriorGridBDesktopGlobal,
+        backgroundImage: ModelXExteriorGridBDesktopGlobal,
         title: 'Optimized Aerodynamics',
-        description: 'Attention to detail on all exterior surfaces makes Model S the most aerodynamic production car on Earth.',
+        description: 'Attention to detail on all exterior surfaces makes Model X the most aerodynamic production SUV on Earth.',
         imagePosition: "row",
         flex: "flex-end"
     },
     {
-        backgroundImage: ModelSExteriorGridCDesktopGlobal,
+        backgroundImage: ModelXExteriorGridCDesktopGlobal,
         title: 'Refined Styling',
-        description: 'An iconic silhouette meets refreshed, elegant proportions.',
+        description: 'Exterior design combines an iconic look with elegant details.',
         imagePosition: "row-reverse",
         flex: "flex-start"
     },
@@ -39,14 +41,13 @@ const data: DataProps[] = [
 const CarDesign = () => {
     return (
         <div className={s.carDesignContainer}>
-            <Advantages
-                data={[]}
-                backgroundImage={ModelSPerformanceHero}
-                title={'Exterior'}
-                subtitle={'Designed for Efficiency'}
-                textColor={'white'}
-                secondColor={'black'}
-                description={'With a drag coefficient of just .208 Cd, the lowest on the planet, Model S is built for speed, endurance and range. Improved aerodynamics and a wider chassis offer more responsive performance so you can take corners quicker and with more confidence.'}/>
+          <Advantages data={[]}
+                        backgroundImage={ModelXExteriorHeroDesktopGlobal}
+                        title={'Designed for Efficiency'}
+                        subtitle={'Exterior'}
+                        textColor={'white'}
+                        secondColor={'black'}
+                        description={'Model X has a drag coefficient of just .24 Cd, the lowest of any production SUV on the planet. Refined aerodynamic elements work together with new wheels and tires to help you travel farther, with sharper handling and better ride comfort.'}/>
             <CollageBlock data={data}/>
         </div>
     );

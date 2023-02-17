@@ -4,6 +4,9 @@ import Advantages from "../../commonComponents/Advantages/Advantages";
 import ModelXPerformanceHeroDesktopLHD from "../../../../../common/assets/Model-X-Performance-Hero-Desktop-LHD.jfif";
 import ElectricPowerTrain, {SomeType} from "../../commonComponents/ElectricPowerTrain/ElectricPowerTrain";
 import {CharacteristicsPropsType} from "../../../../../common/components/Characteristics/Characteristics";
+import Safety from "../../commonComponents/Safety/Safety";
+// @ts-ignore
+import ModelXUtilityHeroDesktopLHD from "../../../../../common/assets/Model-X-Utility-Hero-Desktop-LHD.jfif";
 
 
 const advantagesData: CharacteristicsPropsType[] = [
@@ -39,6 +42,24 @@ const electricPowerTrainData: SomeType[] = [
     },
 ]
 
+const characteristicsData: CharacteristicsPropsType[] = [
+    {
+        topText: '92',
+        measurement: 'ft³',
+        bottomText: 'Up to 92 ft³ of storage',
+    },
+    {
+        topText: '5,000',
+        measurement: 'lbs',
+        bottomText: 'Tow up to 5,000 lbs',
+    },
+    {
+        topText: 'Door',
+        measurement: '',
+        bottomText: 'Falcon Wing Doors',
+    },
+]
+
 
 const PowerAndElectricity = () => {
 
@@ -46,6 +67,15 @@ const PowerAndElectricity = () => {
         <>
             <Advantages data={advantagesData} backgroundImage={ModelXPerformanceHeroDesktopLHD} title={'Beyond Ludicrous'} subtitle={'Plaid'} description={'With the most power and quickest acceleration of any SUV, Model X Plaid is the highest performing SUV ever built. Updated battery architecture enables both Long Range and Plaid configurations to complete back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model X or schedule a demo drive today.'}/>
             <ElectricPowerTrain data={electricPowerTrainData} title={"Electric Powertrain"} description={"Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions."}/>
+            <Safety backgroundImage={ModelXUtilityHeroDesktopLHD}
+                    subtitle={'Utility'}
+                    title={'Even More Capable'}
+                    flexDirection={'row-reverse'}
+                    characteristicsData={characteristicsData}
+                    backgroundSize={"cover"}
+                    backgroundColor={"white"}
+                    description={'With ample storage and 5,000 lbs of towing capacity, Model X is built for maximum utility. Front doors open and close automatically, Falcon Wing rear doors allow for easier loading and a trailer hitch comes standard, so you can bring your gear with you wherever you go.'}/>
+
         </>
     );
 };
