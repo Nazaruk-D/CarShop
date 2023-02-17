@@ -7,7 +7,7 @@ import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlaye
 import loading from "../../../../../common/assets/video/loading.mp4";
 
 export type FirstBlockPropsType = {
-    model: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs'
+    model: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs' | 'Solar Roof'
     characteristicsData: FirstBlockType[]
     conditions: string
     backgroundImage: string
