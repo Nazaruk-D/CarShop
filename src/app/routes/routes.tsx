@@ -6,6 +6,7 @@ import ModelS from "../content/CarsModel/Model S/ModelS";
 import ModelY from "../content/CarsModel/Model Y/ModelY";
 import Model3 from "../content/CarsModel/Model 3/Model3";
 import ModelX from "../content/CarsModel/Model X/ModelX";
+import SolarPanels from "../content/CarsModel/Solar Panels/SolarPanels";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -45,6 +46,6 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.solarPanels,
-        element: <div>Solar Panels</div>
+        element: <SolarPanels/>
     },
 ])
