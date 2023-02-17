@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoPlayer from "../../../../common/components/VideoPlayer/VideoPlayer";
 // @ts-ignore
-import loading from "../../../../common/assets/video/logo.mp4"
+import loading from "../../../../common/assets/video/loading.mp4"
 
 const SolarPanels = () => {
 
