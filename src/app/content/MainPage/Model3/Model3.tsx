@@ -6,7 +6,7 @@ import PresentationBlock from "../../../../common/components/PresentationBlock/P
 
 const Model3 = () => {
     return (
-        <PresentationBlock backgroundImage={model3} model={'Model 3'} conditions={'Leasing starting at $349/mo'}>
+        <PresentationBlock color={'black'} backgroundImage={model3} model={'Model 3'} conditions={'Leasing starting at $349/mo'}>
             <Button title={'Custom Order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
                     onClick={() => {
                     }}/>

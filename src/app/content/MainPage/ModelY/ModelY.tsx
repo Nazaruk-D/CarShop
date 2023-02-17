@@ -6,7 +6,7 @@ import Button from "../../../../common/components/Button/Button";
 
 const ModelY = () => {
     return (
-        <PresentationBlock backgroundImage={modelY} model={'Model Y'} conditions={'Leasing starting at $349/mo'}>
+        <PresentationBlock color={'black'} backgroundImage={modelY} model={'Model Y'} conditions={'Leasing starting at $349/mo'}>
             <Button title={'Custom Order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
                     onClick={() => {
                     }}/>

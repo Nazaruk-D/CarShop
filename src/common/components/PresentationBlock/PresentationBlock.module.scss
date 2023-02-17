@@ -51,6 +51,30 @@
           }
         }
       }
+
+      .demoDriveBlack {
+        @include text(20px, 25px, 500);
+        color: rgba(0, 0, 0, 0.75);
+        position: relative;
+        transition: color 0.2s ease-in-out;
+        cursor: pointer;
+
+        &::before {
+          @include pseudo(absolute, '', 1px, 210px, 106px, '', rgba(0, 0, 0, 0.75));
+          bottom: 0;
+          transform: translate(-50%, 50%);
+          transition: 0.2s ease-in-out;
+        }
+
+        &:hover {
+          color: rgb(0, 0, 0);
+
+          &::before {
+            height: 2px;
+            bottom: -1px;
+          }
+        }
+      }
     }
 
     .bottomBlock {

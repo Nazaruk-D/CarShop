@@ -6,7 +6,7 @@ import Button from "../../../../common/components/Button/Button";
 
 const SolarPanels = () => {
     return (
-        <PresentationBlock backgroundImage={solarPanels} model={'Solar Panels'} conditions={'Lowest Cost Solar Panels in America'}>
+        <PresentationBlock color={'black'} backgroundImage={solarPanels} model={'Solar Panels'} conditions={'Lowest Cost Solar Panels in America'}>
             <Button title={'Order Now'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
                     onClick={() => {
                     }}/>
