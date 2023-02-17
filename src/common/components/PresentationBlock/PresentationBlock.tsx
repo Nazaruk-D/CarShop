@@ -17,10 +17,6 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                 <div className={s.carBlock}>
                     <div className={s.titleBlock} style={{color}}>
                         <h1 className={s.description}>{model}</h1>
-                        {/*{conditions === 'Schedule a Demo Drive'*/}
-                        {/*? <h3 className={s.demoDrive}>{conditions}</h3>*/}
-                        {/*: <h3 className={s.conditions}>{conditions}</h3>*/}
-                        {/*}*/}
                         {conditions === 'Schedule a Demo Drive'
                             && color === 'black'
                             &&  <h3 className={s.demoDriveBlack}>{conditions}</h3>}
@@ -28,7 +24,10 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                             && color !== 'black'
                             &&  <h3 className={s.demoDrive}>{conditions}</h3>}
                         {conditions !== 'Schedule a Demo Drive'
+                            && conditions !== 'Schedule a Virtual Consultation'
                             &&  <h3 className={s.conditions}>{conditions}</h3>}
+                        {conditions === 'Schedule a Virtual Consultation'
+                            &&  <h3 className={s.virtualConsultation}>{conditions}</h3>}
                     </div>
                     <div className={s.bottomBlock}>
                         {children}
