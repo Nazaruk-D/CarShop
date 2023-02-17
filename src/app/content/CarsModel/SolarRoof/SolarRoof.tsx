@@ -25,7 +25,14 @@ const SolarRoof = () => {
                     flexDirection={"row-reverse"}
                     backgroundSize={"cover"}
                     description={"Powerwall is a compact home battery that is bundled with Solar Roof, providing you with 24/7 energy security. It stores the energy you produce with Solar Roof so you can power your home anytime—at night or during an outage."}/>
-         </div>
+            <Safety backgroundImage={hammerVideo}
+                    subtitle={"Durability"}
+                    title={"Take on the Elements"}
+                    characteristicsData={[]}
+                    flexDirection={"row"}
+                    backgroundSize={"cover"}
+                    description={"Solar Roof is comprised of both glass solar tiles and steel roofing tiles. Glass solar tiles produce energy, while architectural-grade steel tiles add longevity and corrosion resistance to your roof. Both are durable, strong and engineered for all-weather protection. With a 25-year warranty, Solar Roof will continue to produce clean energy and protect your home for decades to come."}/>
+        </div>
     );
 };
 
