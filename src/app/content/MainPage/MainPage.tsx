@@ -17,9 +17,10 @@ const MainPage = () => {
     const [scroll, setScroll] = useState(0)
 
     const handleClickScroll = (e: WheelEvent) => {
-        if (e.deltaY === 150) {
+        console.log(e.deltaY)
+        if (e.deltaY > 50) {
             setScroll(prev => prev + 1)
-        } else if (e.deltaY === -150) {
+        } else if (e.deltaY < -50) {
             setScroll(prev => prev - 1)
         }
     };
