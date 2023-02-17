@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CarShop/static/css/main.72a8bc2d.css",
-    "main.js": "/CarShop/static/js/main.702388de.js",
+    "main.js": "/CarShop/static/js/main.41567c4f.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
     "static/media/1.mp4": "/CarShop/static/media/1.dc4f8f3f1304bc6b3771.mp4",
@@ -20,7 +20,6 @@
     "static/media/Model-X-Performance-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-X-Performance-Hero-Desktop-LHD.e1115bc74a74535c9cbe.jfif",
     "static/media/safetyImage.png": "/CarShop/static/media/safetyImage.1cfd8d795a82b2035a85.png",
     "static/media/model3Second.jfif": "/CarShop/static/media/model3Second.0713400e9970ce723718.jfif",
-    "static/media/logo.mp4": "/CarShop/static/media/logo.17e3b0a77a3f4251f88b.mp4",
     "static/media/model3Blue.jfif": "/CarShop/static/media/model3Blue.a7dbc373c9089ac0422a.jfif",
     "static/media/model3Red.jfif": "/CarShop/static/media/model3Red.92f842efa8e2b6a0b58b.jfif",
     "static/media/Model-X-Exterior-Grid-B-Desktop-Global.jfif": "/CarShop/static/media/Model-X-Exterior-Grid-B-Desktop-Global.d136bd34cfd5dd5c49cc.jfif",
@@ -33,6 +32,7 @@
     "static/media/modelYRed.jfif": "/CarShop/static/media/modelYRed.8f1b307f094978d6056c.jfif",
     "static/media/Model-S-Specs-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-S-Specs-Hero-Desktop-LHD.1d5615cbbb28713fbeed.jfif",
     "static/media/model3Safety.jfif": "/CarShop/static/media/model3Safety.4fc0f6cb865d168a1218.jfif",
+    "static/media/loading.mp4": "/CarShop/static/media/loading.2472b3c5c47d4bf9ad9e.mp4",
     "static/media/modelY.jfif": "/CarShop/static/media/modelY.3ee2543e2246ab3f57b4.jfif",
     "static/media/ModelSPerformanceHero.jfif": "/CarShop/static/media/ModelSPerformanceHero.6a17ef9d3530f64f6197.jfif",
     "static/media/Model-X-Utility-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-X-Utility-Hero-Desktop-LHD.580e179ea31e0fde34dc.jfif",
@@ -76,11 +76,11 @@
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
     "main.72a8bc2d.css.map": "/CarShop/static/css/main.72a8bc2d.css.map",
-    "main.702388de.js.map": "/CarShop/static/js/main.702388de.js.map",
+    "main.41567c4f.js.map": "/CarShop/static/js/main.41567c4f.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72a8bc2d.css",
-    "static/js/main.702388de.js"
+    "static/js/main.41567c4f.js"
   ]
 }
