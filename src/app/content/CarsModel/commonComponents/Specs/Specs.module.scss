@@ -86,7 +86,7 @@
 
   .bottomBlock {
     @include flex(column, center, center, no-wrap);
-    height: 20vh;
+    height: 15vh;
     background-color: black;
 
     .bottomContainer {

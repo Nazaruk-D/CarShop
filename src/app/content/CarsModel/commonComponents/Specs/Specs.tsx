@@ -58,9 +58,6 @@ const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData,
                 <div className={s.bottomContainer}>
                     <PrimaryButton title={'Owner\'s Manual'} color={'white'} secondColor={'black'} onClick={() => {
                     }}/>
-                    <Button title={'Compare'} backgroundColor={'rgba(244, 244, 244, 0.15)'}
-                            color={'rgba(255,255,255,0.8)'} onClick={() => {
-                    }}/>
                 </div>
             </div>
         </div>
