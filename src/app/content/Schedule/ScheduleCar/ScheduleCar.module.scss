@@ -1,0 +1,5 @@
+@import '../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include flex(column, center, center, wrap);
+}
