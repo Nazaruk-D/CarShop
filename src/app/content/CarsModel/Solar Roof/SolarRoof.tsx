@@ -20,6 +20,8 @@ import InverterSolar from "../../../../common/assets/InverterSolar.jpg";
 import SPteslaAppD from "../../../../common/assets/SPteslaAppD.jfif";
 import PanelMeasure from "../../../../common/assets/PanelMeasure.png";
 import Specs, {SpecsType} from "../commonComponents/Specs/Specs";
+import SolarOrder from "../commonComponents/SolarOrder/SolarOrder";
+import Footer from "../commonComponents/Footer/Footer";
 
 const featuresData: DataPropsType = {
     title: 'Trusted Expertise',
@@ -98,6 +100,8 @@ const SolarRoof = () => {
                    firstSpecsData={solarRoofSpecsData}
                    secondSpecsData={[]}
                    backgroundImage={PanelMeasure}/>
+            <SolarOrder title={"Transform Your Roof"}/>
+            <Footer description={false}/>
         </div>
     );
 };

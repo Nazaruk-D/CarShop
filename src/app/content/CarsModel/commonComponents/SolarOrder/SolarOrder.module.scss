@@ -1,0 +1,59 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include flex(column, center, center, no-wrap);
+  height: 92vh;
+  background-color: black;
+
+  .titleBlock {
+    @include text(30px, 30px, 600);
+    @include flex(column, center, center, no-wrap);
+    color: white;
+    margin-top: 3.5vh;
+  }
+
+  .descriptionBlock {
+    @include text(16px, 20px, 400);
+    width: 370px;
+    margin: 20px;
+    text-align: center;
+    color: white;
+  }
+
+  .buttonsBlock {
+    @include flex(column, center, center, no-wrap);
+
+    & button {
+      width: 280px;
+      margin: 7px;
+    }
+
+    .updatesButton {
+      @include text(15px,0, 400);
+      @include flex(column, center, center, no-wrap);
+      width: 280px;
+      height: 40px;
+      color: white;
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+      transition: color 0.2s ease-in-out;
+
+      &::before {
+        @include pseudo(absolute, '', 1px, 83px, 140.5px, 30px, rgba(255,255,255,0.75));
+        bottom: 0;
+        transform: translate(-50%, 50%);
+        transition: 0.2s ease-in-out;
+      }
+
+      &:hover {
+        color: rgba(255,255,255,1);
+
+        &::before {
+          height: 2px;
+          bottom: -1px;
+        }
+      }
+    }
+  }
+}
