@@ -8,6 +8,41 @@ import Safety from "../commonComponents/Safety/Safety";
 import SolarRoofNightHouse from "../../../../common/assets/SolarRoofNightHouse.jfif";
 //@ts-ignore
 import hammerVideo from "../../../../common/assets/video/hammerVideo.mp4";
+import Features, {DataPropsType} from "../commonComponents/Features/Features";
+//@ts-ignore
+import video1 from "../../../../common/assets/video/Carousel_Design.mp4";
+//@ts-ignore
+import video2 from "../../../../common/assets/video/Carousel_Installation2.mp4";
+//@ts-ignore
+import video3 from "../../../../common/assets/video/Carousel_PowerOn.mp4";
+import InverterSolar from "../../../../common/assets/InverterSolar.jpg";
+
+const featuresData: DataPropsType = {
+    title: 'Trusted Expertise',
+    subtitle: 'Installation',
+    description: 'Our in-house team of energy professionals has installed nearly 4.0 GW of solar across approximately 480,000 roofs—cumulatively generating over 25.0 TWhs of clean energy. From design to power on, we take care of everything. Chat with a Tesla Advisor to ask any questions about Solar Roof.',
+    infoBlock: [
+        {
+            title: 'Design',
+            description: 'Aerial imagery and 3D modeling determine your custom design',
+            image: video1,
+            interval: 9000
+        },
+        {
+            title: 'Installation',
+            description: 'Our integrated design enables quick tile and Powerwall installation',
+            image: video2,
+            interval: 7000
+        },
+        {
+            title: 'Power On',
+            description: 'Final cleanup is completed before system activation',
+            image: video3,
+            interval: 8000
+        },
+    ]
+}
+
 
 const SolarRoof = () => {
     return (
@@ -32,6 +67,14 @@ const SolarRoof = () => {
                     flexDirection={"row"}
                     backgroundSize={"cover"}
                     description={"Solar Roof is comprised of both glass solar tiles and steel roofing tiles. Glass solar tiles produce energy, while architectural-grade steel tiles add longevity and corrosion resistance to your roof. Both are durable, strong and engineered for all-weather protection. With a 25-year warranty, Solar Roof will continue to produce clean energy and protect your home for decades to come."}/>
+            <Features data={featuresData}/>
+            <Safety backgroundImage={InverterSolar}
+                    subtitle={"Efficiency"}
+                    title={"Maximum Solar Production"}
+                    characteristicsData={[]}
+                    flexDirection={"row-reverse"}
+                    backgroundSize={"cover"}
+                    description={"Generate the most energy possible, even on roofs with complicated angles and intermittent sunlight. Glass solar tiles and architectural-grade steel tiles, vent covers and ridge caps come together to form a roof that is both durable and powerful. With Tesla Solar Inverter, your fully integrated system is safe, reliable and outage ready. And built-in connectivity ensures Tesla Solar Inverter continues to improve with each over-the-air software update."}/>
         </div>
     );
 };
