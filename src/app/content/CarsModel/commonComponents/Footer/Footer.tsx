@@ -3,11 +3,12 @@ import s from './Footer.module.scss'
 
 export type FooterPropsType = {
     description?: boolean
+    backgroundColor?: string
 }
 
-const Footer: React.FC<FooterPropsType> = ({description = true}) => {
+const Footer: React.FC<FooterPropsType> = ({description = true, backgroundColor}) => {
     return (
-        <div className={s.mainContainer}>
+        <div className={s.mainContainer} style={{backgroundColor}}>
             {description && <div className={s.descriptionContainer}>
                 <span className={s.description}>Certain high data usage vehicle features require at least Standard Connectivity, including maps, navigation and voice commands. Access to features that use cellular data and third-party licenses are subject to change. </span>
                 <span className={s.link}>Learn more about Standard Connectivity and any limitations.</span>

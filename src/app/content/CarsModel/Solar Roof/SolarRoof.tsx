@@ -101,7 +101,7 @@ const SolarRoof = () => {
                    secondSpecsData={[]}
                    backgroundImage={PanelMeasure}/>
             <SolarOrder title={"Transform Your Roof"}/>
-            <Footer description={false}/>
+            <Footer description={false} backgroundColor={"black"}/>
         </div>
     );
 };
