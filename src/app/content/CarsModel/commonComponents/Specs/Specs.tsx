@@ -9,8 +9,8 @@ export type SpecsPropsType = {
     firstSpecsData: SpecsType[]
     secondSpecsData: SpecsType[]
     backgroundImage: string
-    fistButtonName: string
-    secondButtonName: string
+    fistButtonName?: string
+    secondButtonName?: string
 }
 
 export type SpecsType = [string, string]
@@ -29,12 +29,15 @@ const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData,
                             <span className={s.subtitle}>Specs</span>
                         </div>
                         <div className={s.buttonsContainer}>
-                            <SpecsButton title={fistButtonName}
-                                         color={isActive}
-                                         onClick={() => setIsActive(true)}/>
-                            <SpecsButton title={secondButtonName}
-                                         color={!isActive}
-                                         onClick={() => setIsActive(false)}/>
+                            {fistButtonName && <SpecsButton title={fistButtonName}
+                                                            color={isActive}
+                                                            onClick={() => setIsActive(true)}/>
+                            }
+
+                            {secondButtonName && <SpecsButton title={secondButtonName}
+                                                              color={!isActive}
+                                                              onClick={() => setIsActive(false)}/>
+                            }
                         </div>
                         <div className={s.specsContainer}>
                             {isActive
@@ -54,12 +57,16 @@ const Specs: React.FC<SpecsPropsType> = ({title,firstSpecsData, secondSpecsData,
                     </div>
                 </div>
             </div>
-            <div className={s.bottomBlock}>
-                <div className={s.bottomContainer}>
-                    <PrimaryButton title={'Owner\'s Manual'} color={'white'} secondColor={'black'} onClick={() => {
-                    }}/>
+            {fistButtonName
+            ? <div className={s.bottomBlock}>
+                    <div className={s.bottomContainer}>
+                        <PrimaryButton title={'Owner\'s Manual'} color={'white'} secondColor={'black'} onClick={() => {
+                        }}/>
+                    </div>
                 </div>
-            </div>
+            : ''
+            }
+
         </div>
     );
 };

@@ -16,6 +16,10 @@ import video2 from "../../../../common/assets/video/Carousel_Installation2.mp4";
 //@ts-ignore
 import video3 from "../../../../common/assets/video/Carousel_PowerOn.mp4";
 import InverterSolar from "../../../../common/assets/InverterSolar.jpg";
+//@ts-ignore
+import SPteslaAppD from "../../../../common/assets/SPteslaAppD.jfif";
+import PanelMeasure from "../../../../common/assets/PanelMeasure.png";
+import Specs, {SpecsType} from "../commonComponents/Specs/Specs";
 
 const featuresData: DataPropsType = {
     title: 'Trusted Expertise',
@@ -42,6 +46,16 @@ const featuresData: DataPropsType = {
         },
     ]
 }
+
+const solarRoofSpecsData: SpecsType[] = [
+    ['Tile and Power Warranty', '25 years'],
+    ['Fire Rating', 'Class A (highest rating)'],
+    ['Solar Glass Tiles', '72 W'],
+    ['Hail Rating', 'Class 3'],
+    ['Steel Tiles', 'Corrosion and weather resistant'],
+    ['Roof Pitch', '≥ 2:12'],
+    ['Wind Rating', 'Class F (highest rating)'],
+]
 
 
 const SolarRoof = () => {
@@ -75,6 +89,15 @@ const SolarRoof = () => {
                     flexDirection={"row-reverse"}
                     backgroundSize={"cover"}
                     description={"Generate the most energy possible, even on roofs with complicated angles and intermittent sunlight. Glass solar tiles and architectural-grade steel tiles, vent covers and ridge caps come together to form a roof that is both durable and powerful. With Tesla Solar Inverter, your fully integrated system is safe, reliable and outage ready. And built-in connectivity ensures Tesla Solar Inverter continues to improve with each over-the-air software update."}/>
+            <Advantages data={[]}
+                        backgroundImage={SPteslaAppD}
+                        title={'Monitor and Optimize'}
+                        subtitle={'Control'}
+                        description={'With the Tesla app, you can monitor your energy production in real time. Control your system from anywhere with instant alerts and remote access.'}/>
+            <Specs title={'Solar Roof'}
+                   firstSpecsData={solarRoofSpecsData}
+                   secondSpecsData={[]}
+                   backgroundImage={PanelMeasure}/>
         </div>
     );
 };

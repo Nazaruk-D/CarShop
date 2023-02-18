@@ -7,7 +7,7 @@ import ModelY from "../content/CarsModel/Model Y/ModelY";
 import Model3 from "../content/CarsModel/Model 3/Model3";
 import ModelX from "../content/CarsModel/Model X/ModelX";
 import SolarPanels from "../content/CarsModel/Solar Panels/SolarPanels";
-import SolarRoof from "../content/CarsModel/SolarRoof/SolarRoof";
+import SolarRoof from "../content/CarsModel/Solar Roof/SolarRoof";
 
 export const routes = {
     mainPage: '/CarShop/',
