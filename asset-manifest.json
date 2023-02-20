@@ -1,9 +1,12 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.72a8bc2d.css",
-    "main.js": "/CarShop/static/js/main.0ff396e3.js",
+    "main.css": "/CarShop/static/css/main.5677b1f2.css",
+    "main.js": "/CarShop/static/js/main.49058c01.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
+    "static/media/hammerVideo.mp4": "/CarShop/static/media/hammerVideo.ba2f129cf21c5f7e4eac.mp4",
+    "static/media/Carousel_Design.mp4": "/CarShop/static/media/Carousel_Design.1af3f9cc62493f22ae16.mp4",
+    "static/media/Carousel_Installation2.mp4": "/CarShop/static/media/Carousel_Installation2.1983e7e89d272517d189.mp4",
     "static/media/solarAssessmentDesktop.mp4": "/CarShop/static/media/solarAssessmentDesktop.291ef57cb1c0b697a47b.mp4",
     "static/media/1.mp4": "/CarShop/static/media/1.dc4f8f3f1304bc6b3771.mp4",
     "static/media/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4": "/CarShop/static/media/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.f2e72fd66de0cb134f4b.mp4",
@@ -13,11 +16,15 @@
     "static/media/A7I6LP_lane_change_0.mp4-2000_PYSUF4.mp4": "/CarShop/static/media/A7I6LP_lane_change_0.mp4-2000_PYSUF4.bec2d312d25bcbc8f337.mp4",
     "static/media/4.mp4": "/CarShop/static/media/4.ace0076da9e8a10cd8c7.mp4",
     "static/media/2.mp4": "/CarShop/static/media/2.341d843ee1e171d0aa16.mp4",
+    "static/media/Carousel_PowerOn.mp4": "/CarShop/static/media/Carousel_PowerOn.c497916e5e2099aaa552.mp4",
+    "static/media/SolarRoofDesign.jfif": "/CarShop/static/media/SolarRoofDesign.3fce757ed5b04c57d8e1.jfif",
     "static/media/Model-X-Range-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-X-Range-Hero-Desktop-LHD.1d160fe379d50bc1ed3f.jfif",
     "static/media/ModelSDisplay.mp4": "/CarShop/static/media/ModelSDisplay.4eac528e4c63aaf133b9.mp4",
+    "static/media/SolarRoofTop.jfif": "/CarShop/static/media/SolarRoofTop.fc8c84b0495115e40845.jfif",
     "static/media/ZZNM9S_summon_1.mp4-2000_OQKCDY.mp4": "/CarShop/static/media/ZZNM9S_summon_1.mp4-2000_OQKCDY.5d9bee810cdd7ca5e8e7.mp4",
     "static/media/25HeroD.jfif": "/CarShop/static/media/25HeroD.ca96bddb758d659d3686.jfif",
     "static/media/solarPanels.jfif": "/CarShop/static/media/solarPanels.ca96bddb758d659d3686.jfif",
+    "static/media/SolarRoofNightHouse.jfif": "/CarShop/static/media/SolarRoofNightHouse.781d8fc848450e30fff8.jfif",
     "static/media/ModelSExteriorGridBDesktopGlobal.jfif": "/CarShop/static/media/ModelSExteriorGridBDesktopGlobal.cbbe5c11b2e369ee2d1e.jfif",
     "static/media/Model-X-Performance-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-X-Performance-Hero-Desktop-LHD.e1115bc74a74535c9cbe.jfif",
     "static/media/safetyImage.png": "/CarShop/static/media/safetyImage.1cfd8d795a82b2035a85.png",
@@ -31,8 +38,10 @@
     "static/media/model3.jfif": "/CarShop/static/media/model3.2c7b329a47ee7e6d6791.jfif",
     "static/media/autopilotImage.jfif": "/CarShop/static/media/autopilotImage.2a53e2b89c4bab45c68e.jfif",
     "static/media/Model-X-Specs-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-X-Specs-Hero-Desktop-LHD.b20bc6941a2488609711.jfif",
+    "static/media/PanelMeasure.png": "/CarShop/static/media/PanelMeasure.3b011e70166bd7fe10e7.png",
     "static/media/model3RangeCut.jpg": "/CarShop/static/media/model3RangeCut.1cc89c2b3fbaeda3e8cd.jpg",
     "static/media/modelYInterior.jfif": "/CarShop/static/media/modelYInterior.5f38ec2a23202230a9ee.jfif",
+    "static/media/InverterSolar.jpg": "/CarShop/static/media/InverterSolar.d02e68e377c628be53fc.jpg",
     "static/media/InverterV8D.jpg": "/CarShop/static/media/InverterV8D.d02e68e377c628be53fc.jpg",
     "static/media/modelYRed.jfif": "/CarShop/static/media/modelYRed.8f1b307f094978d6056c.jfif",
     "static/media/Model-S-Specs-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-S-Specs-Hero-Desktop-LHD.1d5615cbbb28713fbeed.jfif",
@@ -82,12 +91,12 @@
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.72a8bc2d.css.map": "/CarShop/static/css/main.72a8bc2d.css.map",
-    "main.0ff396e3.js.map": "/CarShop/static/js/main.0ff396e3.js.map",
+    "main.5677b1f2.css.map": "/CarShop/static/css/main.5677b1f2.css.map",
+    "main.49058c01.js.map": "/CarShop/static/js/main.49058c01.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72a8bc2d.css",
-    "static/js/main.0ff396e3.js"
+    "static/css/main.5677b1f2.css",
+    "static/js/main.49058c01.js"
   ]
 }
