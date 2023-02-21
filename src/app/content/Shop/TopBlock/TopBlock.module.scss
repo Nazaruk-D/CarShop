@@ -1,0 +1,25 @@
+@import '../../../../common/styles/sass/mixins';
+
+.container {
+  @include flex(column, flex-end, center, wrap);
+  color: white;
+
+  .title {
+    @include text(44px, 44px, 500);
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .subTitle {
+    @include text(26px, 26px, 600);
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .roundButtonBlock {
+    @include flex(row, center, center, nowrap);
+    width: 300px;
+    height: 20px;
+  }
+}
