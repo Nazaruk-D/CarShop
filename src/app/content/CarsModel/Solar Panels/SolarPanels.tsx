@@ -19,6 +19,8 @@ import Specs, {SpecsType} from "../commonComponents/Specs/Specs";
 import modelSBlack from "../../../../common/assets/Model-S-Specs-Hero-Desktop-LHD.jfif";
 // @ts-ignore
 import SpecsD from "../../../../common/assets/SpecsD.jfif";
+import SolarOrder from "../commonComponents/SolarOrder/SolarOrder";
+import Footer from "../commonComponents/Footer/Footer";
 
 const solarPanelSpecsData: SpecsType[] = [
     ['Wattage', '400 W'],
@@ -31,19 +33,6 @@ const solarPanelSpecsData: SpecsType[] = [
     ['Inverter Dimensions', '26" x 16" x 6"'],
     ['Inverter Warranty', '12.5 years'],
 ]
-const modelSSpecsData: SpecsType[] = [
-    ['Range (EPA est.)', '405 mi'],
-    ['Peak Power', '670 hp'],
-    ['Wheels', '19" or 21"'],
-    ['Cargo', '28 cu ft'],
-    ['Acceleration', '3.1 s 0-60 mph'],
-    ['Top Speed', '149 mph'],
-    ['Drag Coefficient', '0.208 Cd'],
-    ['Weight', '4,561 lbs'],
-    ['Powertrain', 'Dual Motor'],
-    ['Supercharging Max', '250 kW'],
-]
-
 
 const SolarPanels = () => {
 
@@ -68,6 +57,7 @@ const SolarPanels = () => {
                     title={"Sleek and Durable"}
                     flexDirection={"row-reverse"}
                     backgroundSize={"cover"}
+                    characteristicsData={[]}
                     description={"Our solar panels are low-profile and durable — quietly converting sunlight to energy for decades to come. Integrated hardware and simple design achieve this by securing the panels close to your roof and to each other for a minimalist aesthetic. Schedule a virtual consultation with a Tesla Advisor to learn more."}/>
             <Advantages data={[]}
                         backgroundImage={PWInverterHeroD}
@@ -76,13 +66,14 @@ const SolarPanels = () => {
                         description={'Your Powerwall can be bundled with solar, allowing you to generate clean energy and store it for use anytime—at night or during an outage.'}/>
             <Advantages data={[]}
                         backgroundImage={solarAssessmentDesktop}
-                        title={'Power On'}
-                        subtitle={'Order and Installation'}
+                        title={'Order and Installation'}
+                        subtitle={'Power On'}
                         description={'From permitting to powering on, we’ll take care of everything. After you order, we’ll gather remote aerial imagery of your home, design your system, take care of any necessary permits and schedule your installation. Chat with a Tesla Advisor or request a call to learn more.'}/>
             <Safety backgroundImage={InverterV8D}
                     subtitle={"Efficiency"}
                     title={"Maximum Solar Production"}
                     flexDirection={"row-reverse"}
+                    characteristicsData={[]}
                     backgroundSize={"cover"}
                     description={"Tesla solar panels are designed to be highly efficient, delivering maximum solar production year-round, even on roofs with complicated angles. Powered by Tesla Solar Inverter, your fully integrated system is safe and reliable."}/>
             <Advantages data={[]}
@@ -94,9 +85,9 @@ const SolarPanels = () => {
                    firstSpecsData={solarPanelSpecsData}
                    secondSpecsData={[]}
                    backgroundImage={SpecsD}
-                   fistButtonName={'Model S Plaid'}
-                   secondButtonName={'Model S'}
             />
+            <SolarOrder title={"Power Your Home"}/>
+            <Footer description={false} backgroundColor={"black"}/>
         </div>
     );
 };

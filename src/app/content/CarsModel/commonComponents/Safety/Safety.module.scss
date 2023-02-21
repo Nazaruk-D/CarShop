@@ -8,7 +8,6 @@
     .imageBlock {
       @include background(no-repeat, center, contain);
       position: relative;
-      //background-size: cover;
       width: 70%;
       height: 100%;
       background-color: #f4f4f4;
