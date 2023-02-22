@@ -25,7 +25,7 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
                 <NavLink to={routes.solarPanels} className={s.menuText} style={{color}}>Solar Panels</NavLink>
             </div>
             <div className={s.accountBlock}>
-                <div className={s.accountText}>Shop</div>
+                <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
                 <div className={s.accountText}>Account</div>
                 <div className={s.accountText}>Menu</div>
             </div>
