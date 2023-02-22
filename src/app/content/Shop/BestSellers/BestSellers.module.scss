@@ -16,9 +16,9 @@
 
   .bestSellersBlock {
     @include flex(row, flex-start, center, nowrap);
+    position: relative;
     width: 100%;
     overflow: hidden;
-
 
     .block {
       width: 55vh;
@@ -29,6 +29,42 @@
     .subTitle {
       @include text(18px, 18px, 500);
       margin-top: 20px;
+    }
+
+    .leftArrow {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: rgba(80, 80, 80, 0.4);
+      cursor: pointer;
+
+      &:after {
+        position: absolute;
+        color: white;
+        content: '<';
+        left: 12px;
+        top: 3px;
+        font-size: 25px;
+      }
+    }
+
+    .rightArrow {
+      position: absolute;
+      right: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: rgba(80, 80, 80, 0.4);
+      cursor: pointer;
+      &:after {
+        position: absolute;
+        color: white;
+        content: '>';
+        right: 12px;
+        top: 3px;
+        font-size: 25px;
+      }
     }
   }
 
