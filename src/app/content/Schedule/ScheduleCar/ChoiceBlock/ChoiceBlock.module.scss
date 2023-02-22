@@ -2,7 +2,7 @@
 
 .mainContainer {
   @include flex(column, center, center, no-wrap);
-  height: 120vh;
+  height: 110vh;
   width: 100%;
 
   .contentContainer {
