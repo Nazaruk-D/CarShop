@@ -5,10 +5,11 @@ type SmallRoundButtonPropsType = {
     onClick: () => void
     color?: string
     size?: string
+    opacity?: number
 }
 
-const SmallRoundButton: React.FC<SmallRoundButtonPropsType> = ({onClick, color}) => {
-    return <div className={s.smallRoundButton} onClick={onClick} style={{backgroundColor: color}}>.</div>
+const SmallRoundButton: React.FC<SmallRoundButtonPropsType> = ({onClick, color, opacity}) => {
+    return <div className={s.smallRoundButton} onClick={onClick} style={{backgroundColor: color, opacity}}>.</div>
 };
 
 export default SmallRoundButton;

@@ -51,9 +51,9 @@ const TopBlock = () => {
                             color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
                     }}/>
                     <div className={s.roundButtonBlock}>
-                        <SmallRoundButton onClick={() => setPage(0)}/>
-                        <SmallRoundButton onClick={() => setPage(1)}/>
-                        <SmallRoundButton onClick={() => setPage(2)}/>
+                        <SmallRoundButton onClick={() => setPage(0)} opacity={page === 0 ? 1 : 0.5}/>
+                        <SmallRoundButton onClick={() => setPage(1)} opacity={page === 1 ? 1 : 0.5}/>
+                        <SmallRoundButton onClick={() => setPage(2)} opacity={page === 2 ? 1 : 0.5}/>
                     </div>
                 </div>
             </PresentationBlock>
