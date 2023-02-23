@@ -3,6 +3,13 @@ import s from './BestSellers.module.scss'
 import img161659900A02000 from './../../../../common/assets/shop/1616599-00-A_0_2000.avif'
 import wallConnector from './../../../../common/assets/shop/Gen3WC.avif'
 import petLiner from './../../../../common/assets/shop/PetLiner.avif'
+import ConsoleTrays from './../../../../common/assets/shop/ConsoleTrays.avif'
+import RearCargoLinerSet from './../../../../common/assets/shop/RearCargoLinerSet.avif'
+import SAEJ1772ChargingAdapter from './../../../../common/assets/shop/SAEJ1772ChargingAdapter.avif'
+import AutomaticGarageOpener from './../../../../common/assets/shop/AutomaticGarageOpener.avif'
+import KeyFob from './../../../../common/assets/shop/KeyFob.avif'
+import AirFilter from './../../../../common/assets/shop/AirFilter.avif'
+import WeatherInteriorLiners from './../../../../common/assets/shop/WeatherInteriorLiners.avif'
 
 
 const items: itemsType[] = [
@@ -22,18 +29,38 @@ const items: itemsType[] = [
         link: 'xxx',
     },
     {
-        image: img161659900A02000,
-        subTitle: "Model 4",
+        image: ConsoleTrays,
+        subTitle: "Model 3/Y Center Console Trays",
         link: 'xxx',
     },
     {
-        image: img161659900A02000,
-        subTitle: "Model 5",
+        image: RearCargoLinerSet,
+        subTitle: "Model Y All-Weather Rear Cargo Liner Set",
         link: 'xxx',
     },
     {
-        image: img161659900A02000,
-        subTitle: "Model 6",
+        image: SAEJ1772ChargingAdapter,
+        subTitle: "SAE J1772 Charging Adapter",
+        link: 'xxx',
+    },
+    {
+        image: AutomaticGarageOpener,
+        subTitle: "Model 3/Y Automatic Garage Opener",
+        link: 'xxx',
+    },
+    {
+        image: KeyFob,
+        subTitle: "Model 3/Y Key Fob",
+        link: 'xxx',
+    },
+    {
+        image: AirFilter,
+        subTitle: "Model 3/Y Air Filter",
+        link: 'xxx',
+    },
+    {
+        image: WeatherInteriorLiners,
+        subTitle: "Model 3 All-Weather Interior Liners",
         link: 'xxx',
     },
 ]
