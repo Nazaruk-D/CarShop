@@ -23,7 +23,7 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
             </div>
             <div className={s.accountBlock}>
                 <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
-                <div className={s.accountText}>Account</div>
+                <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>
                 <div className={s.accountText}>Menu</div>
             </div>
         </div>
