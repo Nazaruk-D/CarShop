@@ -1,0 +1,14 @@
+@import '../../../common/styles/sass/mixins';
+
+
+.logoBlock {
+  @include flex(row, flex-start, center, wrap);
+  width: 20%;
+  height: 100%;
+  padding-left: 40px;
+  box-sizing: border-box;
+
+  .logo {
+    width: 100px;
+  }
+}

@@ -1,6 +1,5 @@
 @import '../../common/styles/sass/mixins';
 
-
 .headerContainer {
   @include flex(row, flex-start, center, wrap);
   position: absolute;
@@ -8,18 +7,6 @@
   top: 0;
   left: 0;
   right: 0;
-
-  .logoBlock {
-    @include flex(row, flex-start, center, wrap);
-    width: 20%;
-    height: 100%;
-    padding-left: 40px;
-    box-sizing: border-box;
-
-    .logo {
-      width: 100px;
-    }
-  }
 
   .menuBlock {
     @include flex(row, center, center, wrap);
@@ -35,7 +22,7 @@
       color: black;
 
       &:hover {
-        background-color: rgba(108, 108, 108,0.2);
+        background-color: rgba(108, 108, 108, 0.2);
       }
     }
   }
@@ -55,13 +42,13 @@
       color: black;
 
       &:hover {
-        background-color: rgba(108, 108, 108,0.2);
+        background-color: rgba(108, 108, 108, 0.2);
       }
 
-    //.accountText{
-    //  @include text(14px, 0, 600);
-    //  padding-right: 35px;
-    //  box-sizing: border-box;
+      //.accountText{
+      //  @include text(14px, 0, 600);
+      //  padding-right: 35px;
+      //  box-sizing: border-box;
     }
   }
 }

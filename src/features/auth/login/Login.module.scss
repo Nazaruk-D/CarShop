@@ -1,0 +1,89 @@
+@import '../../../common/styles/sass/mixins';
+
+.loginContainer {
+  width: 100%;
+  height: 100vh;
+
+  .header {
+    height: 60px;
+  }
+
+  .loginForm {
+    @include flex(column, flex-start, center, wrap);
+    height: 85vh;
+
+    .loginBlock {
+      width: 320px;
+      height: 600px;
+
+      .title {
+        @include text(34px, 34px, 600);
+      }
+
+      .form {
+        @include flex(column, flex-start, flex-start, wrap);
+        color: #696969;
+
+        .input {
+          width: 100%;
+          padding: 13px;
+          border: 0;
+          border-radius: 3px;
+          box-sizing: border-box;
+          background-color: #F4F4F4;
+          margin-top: 5px;
+          margin-bottom: 30px;
+        }
+
+        .button {
+          @include text(14px, 14px, 600);
+          width: 100%;
+          padding: 13px;
+          border: 0;
+          border-radius: 3px;
+          box-sizing: border-box;
+          background-color: #566cd0;
+          color: white;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #566cd0;
+          }
+        }
+      }
+
+      .orBlock {
+        @include flex(row, center, center, wrap);
+        width: 100%;
+        color: #777777;
+        margin: 40px 0;
+
+        .linebreak {
+          width: 45%;
+        }
+
+        .or {
+          text-align: center;
+          width: 10%;
+        }
+      }
+
+      .button {
+        @include text(14px, 14px, 600);
+        width: 100%;
+        padding: 13px;
+        border: 0;
+        border-radius: 3px;
+        box-sizing: border-box;
+        background-color: #f3f3f3;
+        color: #696969;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #e8e8e8;
+        }
+      }
+    }
+  }
+}
+
