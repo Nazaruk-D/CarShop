@@ -1,0 +1,66 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainBlock {
+  @include flex(column, center, center, no-wrap);
+  height: 110vh;
+  width: 100%;
+
+  .contentContainer {
+    @include flex(column, flex-start, center, no-wrap);
+    width: 65%;
+    height: 100%;
+
+    .titleBlock {
+      width: 100%;
+      @include flex(row, flex-start, center, no-wrap);
+
+      .title {
+        @include text(32px, 32px, 600);
+        margin-top: 60px;
+        margin-left: 10px;
+      }
+    }
+
+    .formBlock {
+      width: 100%;
+
+      .form {
+        @include flex(column, center, flex-start, wrap);
+        margin-top: 45px;
+
+        .inputBlock {
+          @include flex(column, center, flex-start, wrap);
+          margin-left: 10px;
+          margin-bottom: 30px;
+
+          .label {
+            @include text(15px, 15px, 500);
+            margin-bottom: 10px;
+            color: rgba(1,1,1,0.7);
+          }
+
+          .error {
+            margin-top: 7px;
+            @include text(15px, 15px, 500);
+            color: #bd1010;
+          }
+
+          & input, select {
+            @include text(15px, 15px, 600);
+            color: rgba(1,1,1,0.7);
+            padding-left: 8px;
+            width: 320px;
+            height: 40px;
+            background-color: rgba(0,0,0,0.05);
+            border: 0;
+            border-radius: 5px;
+            transition: outline-width 0.2s ease-in-out;
+            &:focus {
+              outline: 1px solid rgba(0,0,0,0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
