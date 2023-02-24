@@ -1,0 +1,7 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include background(no-repeat, center, cover);
+  height: 51vh;
+  width: 100%;
+}
