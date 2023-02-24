@@ -1,2 +1,12 @@
 @import '../../../common/styles/sass/mixins';
 
+
+.presentationBlock {
+  @include flex(column, center,center, wrap);
+
+  .title {
+    @include text(38px, 38px, 600);
+    color: white;
+    margin-bottom: 20px;
+  }
+}
