@@ -25,39 +25,99 @@
       width: 100%;
 
       .form {
-        @include flex(column, center, flex-start, wrap);
+        width: 700px;
         margin-top: 45px;
 
-        .inputBlock {
-          @include flex(column, center, flex-start, wrap);
-          margin-left: 10px;
-          margin-bottom: 30px;
+        .inputsContainer {
+          @include flex(row, space-between, flex-start, wrap);
 
-          .label {
-            @include text(15px, 15px, 500);
-            margin-bottom: 10px;
-            color: rgba(1,1,1,0.7);
-          }
+          .inputBlock {
+            @include flex(column, center, flex-start, wrap);
+            width: 330px;
+            margin-left: 10px;
+            margin-bottom: 30px;
 
-          .error {
-            margin-top: 7px;
-            @include text(15px, 15px, 500);
-            color: #bd1010;
-          }
-
-          & input, select {
-            @include text(15px, 15px, 600);
-            color: rgba(1,1,1,0.7);
-            padding-left: 8px;
-            width: 320px;
-            height: 40px;
-            background-color: rgba(0,0,0,0.05);
-            border: 0;
-            border-radius: 5px;
-            transition: outline-width 0.2s ease-in-out;
-            &:focus {
-              outline: 1px solid rgba(0,0,0,0.2);
+            .label {
+              @include text(15px, 15px, 500);
+              margin-bottom: 10px;
+              color: rgba(1,1,1,0.7);
             }
+
+            .error {
+              margin-top: 7px;
+              @include text(15px, 15px, 500);
+              color: #bd1010;
+            }
+
+            & input, select {
+              @include text(15px, 15px, 600);
+              color: rgba(1,1,1,0.7);
+              padding-left: 8px;
+              width: 310px;
+              height: 40px;
+              background-color: rgba(0,0,0,0.05);
+              border: 0;
+              border-radius: 5px;
+
+              &:focus {
+                outline: 1px solid rgba(0,0,0,0.2);
+              }
+            }
+
+            & select {
+              width: 318px;
+            }
+          }
+        }
+
+        .checkboxesContainer {
+          @include flex(column, center, flex-start, wrap);
+          margin-top: 30px;
+
+          .checkboxBlock {
+            margin-left: 10px;
+            @include flex(row, center, center, wrap);
+            margin-bottom: 5px;
+
+
+            & input {
+              width: 25px;
+              height: 25px;
+            }
+
+            .title {
+              @include text(15px, 15px, 500);
+              color: rgba(1,1,1,0.7);
+              margin-left: 5px;
+            }
+          }
+
+        }
+
+        .descriptionContainer {
+          margin-left: 10px;
+          margin-top: 20px;
+
+          .description {
+            @include text(14px, 14px, 400);
+            color: rgba(1,1,1,0.8);
+          }
+        }
+
+        .submitButton {
+          @include text(15px,0, 600);
+          width: 318px;
+          height: 40px;
+          border: 0;
+          border-radius: 4px;
+          margin: 35px 10px 0;
+          background-color: rgba(22, 63, 246, 0.85);
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out;
+
+          &:hover {
+            background-color: rgba(8, 41, 178, 0.85);
           }
         }
       }
