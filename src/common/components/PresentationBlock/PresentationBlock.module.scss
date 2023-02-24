@@ -34,6 +34,8 @@
         position: relative;
         transition: color 0.2s ease-in-out;
         cursor: pointer;
+        text-decoration: none;
+        margin-top: 17px;
 
         &::before {
           @include pseudo(absolute, '', 1px, 210px, 106px, '', rgba(255,255,255,0.75));
@@ -82,6 +84,8 @@
         position: relative;
         transition: color 0.2s ease-in-out;
         cursor: pointer;
+        text-decoration: none;
+        margin-top: 17px;
 
         &::before {
           @include pseudo(absolute, '', 1px, 210px, 106px, '', rgba(0, 0, 0, 0.75));

@@ -1,6 +1,8 @@
 import React from 'react';
 import s from "./PresentationBlock.module.scss";
 import {Element} from "react-scroll";
+import {NavLink} from "react-router-dom";
+import {routes} from "../../../app/routes/routes";
 
 
 type CarPropsType = {
@@ -11,6 +13,8 @@ type CarPropsType = {
     color?: string
 }
 
+//                <NavLink to={routes.modelS} className={s.menuText} style={{color}}>Model S</NavLink>
+
 const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroundImage,children, color}) => {
     return (
         <Element name={model} className={s.carContainer} style={{backgroundImage: `url(${backgroundImage})`}} id={model}>
@@ -19,10 +23,10 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                         <h1 className={s.description}>{model}</h1>
                         {conditions === 'Schedule a Demo Drive'
                             && color === 'black'
-                            &&  <h3 className={s.demoDriveBlack}>{conditions}</h3>}
+                            &&  <NavLink to={routes.drive} className={s.demoDriveBlack}>{conditions}</NavLink>}
                         {conditions === 'Schedule a Demo Drive'
                             && color !== 'black'
-                            &&  <h3 className={s.demoDrive}>{conditions}</h3>}
+                            &&  <NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink>}
                         {conditions !== 'Schedule a Demo Drive'
                             && conditions !== 'Schedule a Virtual Consultation'
                             &&  <h3 className={s.conditions}>{conditions}</h3>}
