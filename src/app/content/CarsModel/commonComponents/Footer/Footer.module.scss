@@ -2,6 +2,7 @@
 
 .mainContainer {
   @include flex(column, space-between, center, no-wrap);
+  width: 100%;
 
   .descriptionContainer {
     width: 670px;
