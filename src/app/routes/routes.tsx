@@ -12,6 +12,7 @@ import Shop from "../content/Shop/Shop";
 import ScheduleCar from "../content/Schedule/ScheduleCar/ScheduleCar";
 import Login from "../../features/auth/login/Login";
 import Registration from "../../features/auth/registration/Registration";
+import ScheduleSolar from "../content/Schedule/ScheduleSolar/ScheduleSolar";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -25,6 +26,7 @@ export const routes = {
     login: '/CarShop/login',
     registration: '/CarShop/registration',
     drive: '/CarShop/drive',
+    consultation: '/CarShop/consultation',
 }
 
 export const router = createBrowserRouter([
@@ -72,5 +74,9 @@ export const router = createBrowserRouter([
     {
         path: routes.drive,
         element: <ScheduleCar/>
+    },
+    {
+        path: routes.consultation,
+        element: <ScheduleSolar/>
     },
 ])
