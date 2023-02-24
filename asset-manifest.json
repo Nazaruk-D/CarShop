@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.6c03e829.css",
-    "main.js": "/CarShop/static/js/main.fe15461b.js",
+    "main.css": "/CarShop/static/css/main.72fc004b.css",
+    "main.js": "/CarShop/static/js/main.6f2f789b.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
     "static/media/hammerVideo.mp4": "/CarShop/static/media/hammerVideo.ba2f129cf21c5f7e4eac.mp4",
@@ -45,6 +45,7 @@
     "static/media/InverterV8D.jpg": "/CarShop/static/media/InverterV8D.d02e68e377c628be53fc.jpg",
     "static/media/modelYRed.jfif": "/CarShop/static/media/modelYRed.8f1b307f094978d6056c.jfif",
     "static/media/Model-S-Specs-Hero-Desktop-LHD.jfif": "/CarShop/static/media/Model-S-Specs-Hero-Desktop-LHD.1d5615cbbb28713fbeed.jfif",
+    "static/media/energyHeroSolar.jfif": "/CarShop/static/media/energyHeroSolar.40866e780b10bed41f71.jfif",
     "static/media/model3Safety.jfif": "/CarShop/static/media/model3Safety.4fc0f6cb865d168a1218.jfif",
     "static/media/loading.mp4": "/CarShop/static/media/loading.2472b3c5c47d4bf9ad9e.mp4",
     "static/media/modelY.jfif": "/CarShop/static/media/modelY.3ee2543e2246ab3f57b4.jfif",
@@ -90,6 +91,10 @@
     "static/media/Model-S-Order-Hero-Desktop-Mobile-Global.jfif": "/CarShop/static/media/Model-S-Order-Hero-Desktop-Mobile-Global.c1ff9f0148b3ca6baec6.jfif",
     "static/media/sideModel3.jfif": "/CarShop/static/media/sideModel3.05e1af42d5bd276a3a60.jfif",
     "static/media/MS_web.avif": "/CarShop/static/media/MS_web.b670ea806fc1ee713083.avif",
+    "static/media/modelXSchedule.jpg": "/CarShop/static/media/modelXSchedule.158cb190249549c6dd31.jpg",
+    "static/media/modelYSchedule.jpg": "/CarShop/static/media/modelYSchedule.68027af0571e75085c0d.jpg",
+    "static/media/model3Schedule.jpg": "/CarShop/static/media/model3Schedule.88fa70e42d8435a91a33.jpg",
+    "static/media/modelSSchedule.jpg": "/CarShop/static/media/modelSSchedule.e7cef1add7ba59884add.jpg",
     "static/media/modelYBlack.jfif": "/CarShop/static/media/modelYBlack.10dd2876d72f9ab17c37.jfif",
     "static/media/sideModelY.jfif": "/CarShop/static/media/sideModelY.a65381979d35ce10ffa5.jfif",
     "static/media/MX_web.avif": "/CarShop/static/media/MX_web.a41d958fba5e767677bc.avif",
@@ -106,19 +111,19 @@
     "static/media/Men_web.avif": "/CarShop/static/media/Men_web.4f7a4a71b5844915ff70.avif",
     "static/media/SAEJ1772ChargingAdapter.avif": "/CarShop/static/media/SAEJ1772ChargingAdapter.4022020fb0ee0a98daa1.avif",
     "static/media/Women_web.avif": "/CarShop/static/media/Women_web.9e3a15bec180ab6fa9ae.avif",
-    "static/media/teslaTopViewIcon.svg": "/CarShop/static/media/teslaTopViewIcon.0e27a7036741f9083cf1fc6ca339f485.svg",
+    "static/media/teslaTopViewIcon.svg": "/CarShop/static/media/teslaTopViewIcon.524288b98059b99e96b702413067f465.svg",
     "static/media/Gen3WC.avif": "/CarShop/static/media/Gen3WC.1612be1692fd241109b8.avif",
     "static/media/Kids_web.avif": "/CarShop/static/media/Kids_web.2809a06a6ec46d4cb173.avif",
     "static/media/wifiLogo.svg": "/CarShop/static/media/wifiLogo.ef69a318d70707051489ead031576b09.svg",
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.6c03e829.css.map": "/CarShop/static/css/main.6c03e829.css.map",
-    "main.fe15461b.js.map": "/CarShop/static/js/main.fe15461b.js.map",
+    "main.72fc004b.css.map": "/CarShop/static/css/main.72fc004b.css.map",
+    "main.6f2f789b.js.map": "/CarShop/static/js/main.6f2f789b.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c03e829.css",
-    "static/js/main.fe15461b.js"
+    "static/css/main.72fc004b.css",
+    "static/js/main.6f2f789b.js"
   ]
 }
