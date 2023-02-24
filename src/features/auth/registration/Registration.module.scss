@@ -8,11 +8,11 @@
     height: 60px;
   }
 
-  .loginForm {
+  .registrationForm {
     @include flex(column, flex-start, center, wrap);
     height: 85vh;
 
-    .loginBlock {
+    .registrationBlock {
       width: 320px;
       height: 600px;
 
@@ -31,8 +31,12 @@
           border-radius: 3px;
           box-sizing: border-box;
           background-color: #F4F4F4;
-          margin-top: 35px;
-          //margin-bottom: 30px;
+          margin-top: 30px;
+        }
+
+        .rules {
+          @include text( 13px, 18px, 400);
+          margin: 20px 0;
         }
 
         .button {
@@ -53,39 +57,6 @@
           &:disabled {
             background-color: #9a9a9a;
           }
-        }
-      }
-
-      .orBlock {
-        @include flex(row, center, center, wrap);
-        width: 100%;
-        color: #777777;
-        margin-top: 30px;
-
-        .linebreak {
-          width: 45%;
-        }
-
-        .or {
-          text-align: center;
-          width: 10%;
-        }
-      }
-
-      .button {
-        @include text(14px, 14px, 600);
-        width: 100%;
-        padding: 13px;
-        border: 0;
-        border-radius: 3px;
-        box-sizing: border-box;
-        background-color: #f3f3f3;
-        color: #696969;
-        cursor: pointer;
-        margin-top: 30px;
-
-        &:hover {
-          background-color: #e8e8e8;
         }
       }
     }

@@ -11,6 +11,7 @@ import SolarRoof from "../content/CarsModel/Solar Roof/SolarRoof";
 import Shop from "../content/Shop/Shop";
 import ScheduleCar from "../content/Schedule/ScheduleCar/ScheduleCar";
 import Login from "../../features/auth/login/Login";
+import Registration from "../../features/auth/registration/Registration";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -22,6 +23,7 @@ export const routes = {
     solarPanels: '/CarShop/solarpanels',
     shop: '/CarShop/shop',
     login: '/CarShop/login',
+    registration: '/CarShop/registration',
     drive: '/CarShop/drive',
 }
 
@@ -62,6 +64,10 @@ export const router = createBrowserRouter([
     {
         path: routes.login,
         element: <Login/>
+    },
+    {
+        path: routes.registration,
+        element: <Registration/>
     },
     {
         path: routes.drive,
