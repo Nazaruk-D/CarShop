@@ -11,6 +11,7 @@ import LifeStyle from "../../../common/assets/shop/LifeStyle_web.avif"
 import Button from "../../../common/components/Button/Button";
 import s from "./Shop.module.scss"
 import Footer from "../CarsModel/commonComponents/Footer/Footer";
+import ClothesBlock from "./ClothesBlock/ClothesBlock";
 
 const Shop = () => {
     return (
@@ -47,7 +48,7 @@ const Shop = () => {
                     <Button title={'Shop now'} onClick={()=>{}} color={"94a3b8"} backgroundColor={"94a3b8"}/>
                 </div>
             </PresentationBlock>
-
+            <ClothesBlock/>
             <PresentationBlock backgroundImage={LifeStyle} model={''}>
                 <div className={s.presentationBlock}>
                     <div className={s.title}>Lifestyle</div>
