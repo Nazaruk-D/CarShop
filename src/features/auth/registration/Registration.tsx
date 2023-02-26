@@ -3,6 +3,8 @@ import s from "./Registration.module.scss"
 import {useFormik} from "formik";
 import Logo from "../../../common/components/Logo/Logo";
 import Footer from "../../../app/content/CarsModel/commonComponents/Footer/Footer";
+import {useAppDispatch} from "../../../app/store/store";
+import {registrationTC} from "../auth-reducer";
 
 
 export type FormikErrorType = {
@@ -14,6 +16,7 @@ export type FormikErrorType = {
 }
 
 const Registration = () => {
+    const dispatch = useAppDispatch()
 
     const formik = useFormik({
         initialValues: {
@@ -60,7 +63,8 @@ const Registration = () => {
             return errors
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
+            dispatch(registrationTC(values))
             formik.resetForm()
         },
     });
