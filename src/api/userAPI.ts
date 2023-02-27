@@ -5,6 +5,7 @@ export const authAPI = {
         return instance.get<UserData>(`auth/me`)
     },
     registration(data: RegistrationDataType) {
+        console.log(data)
         return instance.post<UserData>(`auth/register`, data)
     },
     login(data: LoginDataType) {
@@ -19,7 +20,8 @@ export const authAPI = {
 export type UserData = {
     _id: string
     email: string
-    name: string
+    firstName: string
+    lastName: string
     avatar?: string
     isAdmin: boolean
     rememberMe: boolean

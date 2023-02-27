@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 import {routes} from "../../../app/routes/routes";
 import {useAppDispatch} from "../../../app/store/store";
 import {loginTC} from "../auth-reducer";
+import {initializeAppTC} from "../../../app/app-reducer";
 
 export type FormikErrorType = {
     email?: string
@@ -75,6 +76,7 @@ const Login = () => {
                     <button className={s.button} onClick={() => navigate(routes.registration)}>Create Account</button>
                 </div>
             </div>
+            <button onClick={() => dispatch(initializeAppTC())}>Me запрос</button>
             <Footer description={false}/>
         </div>
     );

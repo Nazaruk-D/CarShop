@@ -1,10 +1,12 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {authAPI} from "../api/userAPI";
+import {setIsLoggedInAC} from "../features/auth/auth-reducer";
 
 export const initializeAppTC = createAsyncThunk(('app/initializeApp'), async (param, {dispatch}) => {
     try {
-        // const res = await authAPI.me()
+        const res = await authAPI.me()
         // if (res.data.resultCode === StatusCode.OK) {
-            // dispatch(setIsLoggedInAC({value: true}));
+        //     dispatch(setIsLoggedInAC({value: true}));
         // } else {
             // handleServerAppError(res.data, dispatch)
         // }
