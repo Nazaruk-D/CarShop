@@ -13,8 +13,11 @@ type HeaderPropsType = {
 
 const Header: React.FC<HeaderPropsType> = ({position, color}) => {
     const dispatch = useAppDispatch()
-    const initialize = useAppSelector(s => s.app.initialized)
+    // const initialize = useAppSelector(s => s.app.initialized)
+    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
 
+
+    //зарефакторить
     useEffect(() => {
         dispatch(initializeAppTC())
     }, [])
@@ -32,7 +35,7 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
             </div>
             <div className={s.accountBlock}>
                 <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
-                {initialize
+                {isLoggedIn
                     ? <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
                     : <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>
                 }

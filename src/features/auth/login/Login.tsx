@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./Login.module.scss"
 import Logo from "../../../common/components/Logo/Logo";
 import Footer from "../../../app/content/CarsModel/commonComponents/Footer/Footer";
 import {Field, useFormik} from "formik";
 import {useNavigate} from "react-router-dom";
 import {routes} from "../../../app/routes/routes";
-import {useAppDispatch} from "../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../app/store/store";
 import {loginTC} from "../auth-reducer";
 import {initializeAppTC} from "../../../app/app-reducer";
 
@@ -17,6 +17,7 @@ export type FormikErrorType = {
 const Login = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
+    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
 
     const formik = useFormik({
         initialValues: {
@@ -38,11 +39,15 @@ const Login = () => {
             return errors
         },
         onSubmit: values => {
-            // alert(JSON.stringify(values, null, 2));
             dispatch(loginTC(values))
             formik.resetForm()
         },
     });
+
+
+    if(isLoggedIn) {
+        navigate(routes.profile)
+    }
 
     return (
         <div className={s.loginContainer}>

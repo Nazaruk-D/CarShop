@@ -28,16 +28,16 @@ export const logoutTC = createAsyncThunk(('auth/logout'), async (param, thunkAPI
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await authAPI.logout()
-        if (res.status === 200) {
-            // thunkAPI.dispatch(setIsLoggedInAC({value: false}))
+        // if (res.status === 200) {
+            thunkAPI.dispatch(setIsLoggedInAC({value: false}))
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
             // thunkAPI.dispatch(clearTodosDataAC())
             //Зачистить данные после положительного ответа
             return
-        } else {
-            // handleServerAppError(res.data, thunkAPI.dispatch)
-            return thunkAPI.rejectWithValue({})
-        }
+        // } else {
+        //     // handleServerAppError(res.data, thunkAPI.dispatch)
+        //     return thunkAPI.rejectWithValue({})
+        // }
     } catch (error: any) {
         // handleServerNetworkError(error, thunkAPI.dispatch)
         return thunkAPI.rejectWithValue({})
