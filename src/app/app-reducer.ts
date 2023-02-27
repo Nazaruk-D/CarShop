@@ -5,12 +5,14 @@ import {setIsLoggedInAC} from "../features/auth/auth-reducer";
 export const initializeAppTC = createAsyncThunk(('app/initializeApp'), async (param, {dispatch}) => {
     try {
         const res = await authAPI.me()
+        console.log(res.data)
         // if (res.data.resultCode === StatusCode.OK) {
-        //     dispatch(setIsLoggedInAC({value: true}));
+            dispatch(setIsLoggedInAC({value: true}));
         // } else {
             // handleServerAppError(res.data, dispatch)
         // }
     } catch (err: any) {
+        console.log(err)
         // handleServerNetworkError(err, dispatch)
     }
 })

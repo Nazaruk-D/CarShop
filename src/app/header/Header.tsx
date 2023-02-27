@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
+import {useAppDispatch, useAppSelector} from "../store/store";
+import {initializeAppTC} from "../app-reducer";
 
 type HeaderPropsType = {
     position?: 'fixed'
@@ -10,6 +12,13 @@ type HeaderPropsType = {
 }
 
 const Header: React.FC<HeaderPropsType> = ({position, color}) => {
+    const dispatch = useAppDispatch()
+    const initialize = useAppSelector(s => s.app.initialized)
+
+    useEffect(() => {
+        dispatch(initializeAppTC())
+    }, [])
+
     return (
         <div className={s.headerContainer} style={{position, color}}>
             <Logo color={color}/>
@@ -23,7 +32,10 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
             </div>
             <div className={s.accountBlock}>
                 <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
-                <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>
+                {initialize
+                    ? <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
+                    : <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>
+                }
                 <div className={s.accountText}>Menu</div>
             </div>
         </div>
