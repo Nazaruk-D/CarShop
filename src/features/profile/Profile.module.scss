@@ -1,1 +1,7 @@
 @import '../../common/styles/sass/mixins';
+
+.mainPage {
+  @include flex(column, center, center, no-wrap);
+  width: 100%;
+  height: 100vh;
+}
