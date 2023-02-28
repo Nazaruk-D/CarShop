@@ -5,6 +5,7 @@ import Logo from "../../../common/components/Logo/Logo";
 import Footer from "../../../app/content/CarsModel/commonComponents/Footer/Footer";
 import {useAppDispatch} from "../../../app/store/store";
 import {registrationTC} from "../auth-reducer";
+import ErrorWindow from "../../../common/components/ErrorWindow/ErrorWindow";
 
 
 export type FormikErrorType = {
@@ -119,6 +120,7 @@ const Registration = () => {
                 </div>
             </div>
             <Footer description={false}/>
+            <ErrorWindow/>
         </div>
     );
 };

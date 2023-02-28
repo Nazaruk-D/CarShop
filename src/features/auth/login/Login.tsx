@@ -8,6 +8,7 @@ import {routes} from "../../../app/routes/routes";
 import {useAppDispatch, useAppSelector} from "../../../app/store/store";
 import {loginTC} from "../auth-reducer";
 import {initializeAppTC} from "../../../app/app-reducer";
+import ErrorWindow from "../../../common/components/ErrorWindow/ErrorWindow";
 
 export type FormikErrorType = {
     email?: string
@@ -79,12 +80,11 @@ const Login = () => {
                         <div className={s.or}>Or</div>
                         <div className={s.linebreak}><hr/></div>
                     </div>
-                    {/*<button className={s.button} onClick={() => navigate(routes.registration)}>Create Account</button>*/}
-                    <button className={s.button}>Create Account</button>
+                    <button className={s.button} onClick={() => navigate(routes.registration)}>Create Account</button>
                 </div>
             </div>
-            {/*<button onClick={() => dispatch(initializeAppTC())}>Me запрос</button>*/}
             <Footer description={false}/>
+            <ErrorWindow/>
         </div>
     );
 };
