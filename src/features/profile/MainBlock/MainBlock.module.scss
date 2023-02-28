@@ -1,7 +1,7 @@
 @import '../../../common/styles/sass/mixins';
 
 .mainBlock {
-  @include flex(row, center, center, no-wrap);
+  @include flex(row, flex-start, center, no-wrap);
   width: 100%;
   height: 100vh;
 
@@ -45,9 +45,8 @@
   }
 
   .contentContainer {
-    width: 75%;
+    width: 58%;
     height: 100vh;
-    border: 1px solid;
 
   }
 }

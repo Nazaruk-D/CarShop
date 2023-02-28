@@ -1,53 +1,15 @@
-@import '../../../common/styles/sass/mixins';
+@import '../../../../common/styles/sass/mixins';
 
 .mainBlock {
-  @include flex(row, center, center, no-wrap);
+  height: 100%;
   width: 100%;
-  height: 100vh;
+  padding-top: 130px;
 
-  .navBlock {
-    @include flex(column, center, center, no-wrap);
-    width: 25%;
-    height: 100vh;
+  .titleBlock {
 
-    .navContainer {
-      @include flex(column, center, flex-start, no-wrap);
-      width: 100%;
-      height: 100%;
-
-      .buttonBlock {
-        @include flex(row, flex-start, center, no-wrap);
-        margin-left: 60px;
-        width: 200px;
-        height: 70px;
-
-        .icon {
-          width: 20px;
-          height: 20px;
-          background-color: black;
-        }
-
-        .navButton {
-          @include text(20px, 20px, 600);
-          padding-left: 13px;
-          text-decoration: none;
-          color: rgba(1,1,1,0.6);
-          margin-top: 0;
-          cursor: pointer;
-          transition: color 0.3s ease-in-out;
-
-          &:hover {
-            color: rgba(1,1,1,1);
-          }
-        }
-      }
+    .title {
+      @include text(35px, 35px, 600);
+      margin-top: 0;
     }
-  }
-
-  .contentContainer {
-    width: 75%;
-    height: 100vh;
-    border: 1px solid;
-
   }
 }
