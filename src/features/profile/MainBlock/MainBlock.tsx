@@ -6,11 +6,18 @@ import {logoutTC} from "../../auth/auth-reducer";
 import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
+import { FiUser, FiArchive, FiLogOut } from "react-icons/fi";
+
 
 const MainBlock = () => {
     const [isActive, setIsActive] = useState(true)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
+
+    const greyColor = isActive ? {} : {color: 'black'};
+    const blackColor = isActive ? {color: 'black'} : {};
+    const activeIcon = isActive ? {backgroundColor: 'rgba(1,1,1,0.05)', color: 'black'} : {}
+    const disableIcon = isActive ? {} : {backgroundColor: 'rgba(1,1,1,0.05)', color: 'black'}
 
     const onClickHandler = () => {
         dispatch(logoutTC())
@@ -22,15 +29,15 @@ const MainBlock = () => {
             <div className={s.navBlock}>
                 <div className={s.navContainer}>
                     <div className={s.buttonBlock}>
-                        <div className={s.icon}></div>
-                        <span style={isActive ? {color: 'black'} : {}} className={s.navButton} onClick={()=>{setIsActive(true)}}>Profile Settings</span>
+                        <div className={s.icon} style={activeIcon}><FiUser/></div>
+                        <span style={blackColor} className={s.navButton} onClick={()=>{setIsActive(true)}}>Profile Settings</span>
                     </div>
                     <div className={s.buttonBlock}>
-                        <div className={s.icon}></div>
-                        <span style={isActive ? {} : {color: 'black'}} className={s.navButton} onClick={()=>{setIsActive(false)}}>Orders</span>
+                        <div className={s.icon} style={disableIcon}><FiArchive/></div>
+                        <span style={greyColor} className={s.navButton} onClick={()=>{setIsActive(false)}}>Orders</span>
                     </div>
                     <div className={s.buttonBlock}>
-                        <div className={s.icon}></div>
+                        <div className={s.icon}><FiLogOut/></div>
                         <span onClick={onClickHandler} className={s.navButton}>Sign Out</span>
                     </div>
                 </div>
