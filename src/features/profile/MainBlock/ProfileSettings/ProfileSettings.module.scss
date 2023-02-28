@@ -13,29 +13,73 @@
   }
 
   .contentBlock {
-    @include flex(row, space-between, center, no-wrap);
+    @include flex(column, center, flex-start, no-wrap);
     width: 100%;
-    padding-top: 20px;
 
-    .itemBlock {
-      @include flex(column, flex-start, flex-start, no-wrap);
-      width: 200px;
-      height: 100px;
+    .mainSettings {
+      @include flex(row, flex-start, center, no-wrap);
+      width: 100%;
+      margin-top: 20px;
 
-      .itemTitle {
-        @include text(16px, 16px, 600);
-        color: rgba(1,1,1,0.6);
 
+      .itemBlock {
+        @include flex(column, flex-start, flex-start, no-wrap);
+        width: 200px;
+        height: 100px;
+        margin-right: 110px;
+
+        .itemTitle {
+          @include text(16px, 16px, 600);
+          color: rgba(1,1,1,0.6);
+
+        }
+        .itemDescription {
+          @include text(16px, 16px, 600);
+          margin-top: 7px;
+
+        }
+        .itemButton {
+          @include text(16px, 16px, 400);
+          margin-top: 10px;
+          text-decoration: underline;
+        }
       }
-      .itemDescription {
-        @include text(16px, 16px, 600);
-        margin-top: 7px;
+    }
 
+    .securityTitleBlock {
+
+      .securityTitle {
+        @include text(27px, 27px, 600);
+        margin-top: 15px;
       }
-      .itemButton {
-        @include text(16px, 16px, 400);
-        margin-top: 10px;
-        text-decoration: underline;
+    }
+
+    .securitySettings {
+      @include flex(row, flex-start, center, no-wrap);
+      width: 100%;
+      margin-top: 20px;
+
+      .itemBlock {
+        @include flex(column, flex-start, flex-start, no-wrap);
+        width: 200px;
+        height: 100px;
+        margin-right: 110px;
+
+        .itemTitle {
+          @include text(16px, 16px, 600);
+          color: rgba(1,1,1,0.6);
+
+        }
+        .itemDescription {
+          @include text(16px, 16px, 600);
+          margin-top: 7px;
+
+        }
+        .itemButton {
+          @include text(16px, 16px, 400);
+          margin-top: 10px;
+          text-decoration: underline;
+        }
       }
     }
 
