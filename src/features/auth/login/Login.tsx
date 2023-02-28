@@ -44,10 +44,11 @@ const Login = () => {
         },
     });
 
-
-    if(isLoggedIn) {
-        navigate(routes.profile)
-    }
+    useEffect(() => {
+        if(isLoggedIn) {
+            navigate(routes.profile)
+        }
+    },[isLoggedIn])
 
     return (
         <div className={s.loginContainer}>
@@ -78,10 +79,11 @@ const Login = () => {
                         <div className={s.or}>Or</div>
                         <div className={s.linebreak}><hr/></div>
                     </div>
-                    <button className={s.button} onClick={() => navigate(routes.registration)}>Create Account</button>
+                    {/*<button className={s.button} onClick={() => navigate(routes.registration)}>Create Account</button>*/}
+                    <button className={s.button}>Create Account</button>
                 </div>
             </div>
-            <button onClick={() => dispatch(initializeAppTC())}>Me запрос</button>
+            {/*<button onClick={() => dispatch(initializeAppTC())}>Me запрос</button>*/}
             <Footer description={false}/>
         </div>
     );

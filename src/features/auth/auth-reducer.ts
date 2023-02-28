@@ -1,24 +1,29 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {authAPI, LoginDataType, RegistrationDataType} from "../../api/userAPI";
 import {setAppStatusAC} from "../../app/app-reducer";
+import {handleServerAppError, handleServerNetworkError} from "../../utils/error-utils";
+import {AxiosError} from "axios";
 
 
 export const loginTC = createAsyncThunk<undefined, LoginDataType, { rejectValue: { errors: Array<string>, fieldErrors?: Array<any> } }>(('auth/login'), async (param: LoginDataType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await authAPI.login(param)
-        if (res._id) {
+        // console.log(res)
+        // if (res.message === 'Login successful') {
+        //     debugger
+            // thunkAPI.dispatch(setIsLoggedInAC({value: true}))
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
             return
-        } else {
-            // handleServerAppError(res.data, thunkAPI.dispatch)
-            // return thunkAPI.rejectWithValue({errors: res.data.messages, fieldErrors: res.data.fieldsErrors})
-            return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
-        }
+        // } else {
+        //     handleServerAppError(res.message, thunkAPI.dispatch)
+        //     return thunkAPI.rejectWithValue({errors: [res.message], fieldErrors: [res.message]})
+            // return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
+        // }
     } catch (err: any) {
-        // const error: AxiosError = err
-        // handleServerNetworkError(error, thunkAPI.dispatch)
-        // return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
+        const error: AxiosError = err.response.data
+        handleServerNetworkError(error, thunkAPI.dispatch)
+        return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
     } finally {
         thunkAPI.dispatch(setAppStatusAC({status: 'idle'}))
     }

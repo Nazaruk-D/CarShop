@@ -18,6 +18,7 @@ export const authAPI = {
 
 
 export type UserData = {
+    message: string
     _id: string
     email: string
     firstName: string
