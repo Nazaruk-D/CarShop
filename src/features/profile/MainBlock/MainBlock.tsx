@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import s from "./MainBlock.module.scss"
 import {useAppDispatch} from "../../../app/store/store";
-import {NavLink, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {logoutTC} from "../../auth/auth-reducer";
 import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
