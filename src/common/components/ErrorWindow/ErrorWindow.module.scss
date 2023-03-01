@@ -1,0 +1,17 @@
+@import '../../../common/styles/sass/mixins';
+
+.error {
+  transform: scale(0);
+}
+
+.errorActive {
+  @include flex(row, flex-start, center, wrap);
+  height: 50px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  position: fixed;
+  left: 100px;
+  bottom: 90px;
+  background-color: rgba(227, 227, 227, 0.5);
+  transform: scale(1);
+}

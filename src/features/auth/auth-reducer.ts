@@ -61,10 +61,14 @@ export const registrationTC = createAsyncThunk<undefined, RegistrationDataType, 
             return
         } else {
             // handleServerAppError(res.data, thunkAPI.dispatch)
+
             return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
         }
-    } catch (error: any) {
+    } catch (err: any) {
         thunkAPI.dispatch(setAppStatusAC({status: 'failed'}))
+        const error: AxiosError = err.response.data
+        handleServerNetworkError(error, thunkAPI.dispatch)
+        return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
         // handleServerNetworkError(error, thunkAPI.dispatch)
         // return thunkAPI.rejectWithValue({})
     }
