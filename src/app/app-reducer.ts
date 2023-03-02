@@ -13,7 +13,11 @@ export const initializeAppTC = createAsyncThunk(('app/initializeApp'), async (pa
             handleServerAppError(res.data, dispatch)
         }
     } catch (err: any) {
-        handleServerNetworkError(err, dispatch)
+        if (err.request.status === 401){
+            return
+        } else {
+            handleServerNetworkError(err, dispatch)
+        }
     } finally {
         dispatch(setAppStatusAC({status: 'idle'}))
     }
