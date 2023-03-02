@@ -6,7 +6,6 @@ import {handleServerAppError, handleServerNetworkError} from "../utils/error-uti
 export const initializeAppTC = createAsyncThunk(('app/initializeApp'), async (param, {dispatch}) => {
     try {
         const res = await authAPI.me()
-        console.log(res.data)
         if (res.status === 200) {
             dispatch(setAppStatusAC({status: 'loading'}))
             dispatch(setIsLoggedInAC({value: true}));
@@ -14,7 +13,6 @@ export const initializeAppTC = createAsyncThunk(('app/initializeApp'), async (pa
             handleServerAppError(res.data, dispatch)
         }
     } catch (err: any) {
-        console.log(err)
         handleServerNetworkError(err, dispatch)
     } finally {
         dispatch(setAppStatusAC({status: 'idle'}))

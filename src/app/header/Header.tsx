@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
-import {useAppDispatch, useAppSelector} from "../store/store";
-import {initializeAppTC} from "../app-reducer";
+import {useAppSelector} from "../store/store";
 
 type HeaderPropsType = {
     position?: 'fixed'
@@ -27,10 +26,28 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
             </div>
             <div className={s.accountBlock}>
                 <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
-                {isLoggedIn
-                    ? <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
-                    : <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>
-                }
+                {/*{isLoggedIn*/}
+                {/*    ? <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>*/}
+                {/*    : <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>*/}
+                {/*}*/}
+                <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
+            {/*    {!toggleMenu*/}
+            {/*        ? <div className={s.burgerContainer} onClick={onClickHandler}>*/}
+            {/*            <div className={s.burger}><span></span></div>*/}
+            {/*        </div>*/}
+            {/*        : <div className={s.burgerContainerActive} onClick={onClickHandler}>*/}
+            {/*            <div className={s.burgerActive}></div>*/}
+            {/*        </div>*/}
+            {/*    }*/}
+            {/*    <Nav setModal={setModal}/>*/}
+            {/*</div>*/}
+            {/*{toggleMenu &&*/}
+            {/*    <div className={s.miniNavbar} style={bgMiniNav}>*/}
+            {/*        <MiniNav/>*/}
+            {/*    </div>*/}
+            {/*}*/}
+
+
                 <div className={s.accountText}>Menu</div>
             </div>
         </div>

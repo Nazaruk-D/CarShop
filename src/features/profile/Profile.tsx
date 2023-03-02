@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./Profile.module.scss"
 import Header from "../../app/header/Header";
 import MainBlock from "./MainBlock/MainBlock";
@@ -13,13 +13,14 @@ const Profile = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
 
-
-    if (!isLoggedIn) {
-        navigate(routes.login)
-    }
-    else {
-        dispatch(fetchProfileTC())
-    }
+    useEffect(() => {
+        if (!isLoggedIn) {
+            navigate(routes.login)
+        }
+        else {
+            dispatch(fetchProfileTC())
+        }
+    }, [isLoggedIn])
 
     return (
         <div className={s.mainPage}>

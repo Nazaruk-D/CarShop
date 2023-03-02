@@ -12,7 +12,6 @@ import Accessories from "./Accessories/Accessories";
 
 
 const MainPage = () => {
-    console.log('content render')
     const cars = ['Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
     const [scroll, setScroll] = useState(0)
 
