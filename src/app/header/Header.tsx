@@ -12,15 +12,7 @@ type HeaderPropsType = {
 }
 
 const Header: React.FC<HeaderPropsType> = ({position, color}) => {
-    const dispatch = useAppDispatch()
-    // const initialize = useAppSelector(s => s.app.initialized)
     const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
-
-
-    //зарефакторить
-    useEffect(() => {
-        dispatch(initializeAppTC())
-    }, [])
 
     return (
         <div className={s.headerContainer} style={{position, color}}>

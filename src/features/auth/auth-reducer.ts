@@ -1,15 +1,15 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {authAPI, LoginDataType, RegistrationDataType} from "../../api/userAPI";
 import {setAppStatusAC} from "../../app/app-reducer";
-import {handleServerAppError, handleServerNetworkError} from "../../utils/error-utils";
+import {handleServerNetworkError} from "../../utils/error-utils";
 import {AxiosError} from "axios";
+import {clearProfileDataAC} from "../profile/profile-reducer";
 
 
 export const loginTC = createAsyncThunk<undefined, LoginDataType, { rejectValue: { errors: Array<string>, fieldErrors?: Array<any> } }>(('auth/login'), async (param: LoginDataType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await authAPI.login(param)
-        // console.log(res)
         // if (res.message === 'Login successful') {
         //     debugger
             // thunkAPI.dispatch(setIsLoggedInAC({value: true}))
@@ -33,16 +33,15 @@ export const logoutTC = createAsyncThunk(('auth/logout'), async (param, thunkAPI
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await authAPI.logout()
-        // if (res.status === 200) {
+        if (res.status === 200) {
+            thunkAPI.dispatch(clearProfileDataAC())
             thunkAPI.dispatch(setIsLoggedInAC({value: false}))
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
-            // thunkAPI.dispatch(clearTodosDataAC())
-            //Зачистить данные после положительного ответа
             return
-        // } else {
-        //     // handleServerAppError(res.data, thunkAPI.dispatch)
-        //     return thunkAPI.rejectWithValue({})
-        // }
+        } else {
+            // handleServerAppError(res.data, thunkAPI.dispatch)
+            return thunkAPI.rejectWithValue({})
+        }
     } catch (error: any) {
         // handleServerNetworkError(error, thunkAPI.dispatch)
         return thunkAPI.rejectWithValue({})

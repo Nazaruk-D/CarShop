@@ -1,19 +1,23 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {authAPI} from "../api/userAPI";
 import {setIsLoggedInAC} from "../features/auth/auth-reducer";
+import {handleServerAppError, handleServerNetworkError} from "../utils/error-utils";
 
 export const initializeAppTC = createAsyncThunk(('app/initializeApp'), async (param, {dispatch}) => {
     try {
         const res = await authAPI.me()
         console.log(res.data)
-        // if (res.data.resultCode === StatusCode.OK) {
+        if (res.status === 200) {
+            dispatch(setAppStatusAC({status: 'loading'}))
             dispatch(setIsLoggedInAC({value: true}));
-        // } else {
-            // handleServerAppError(res.data, dispatch)
-        // }
+        } else {
+            handleServerAppError(res.data, dispatch)
+        }
     } catch (err: any) {
         console.log(err)
-        // handleServerNetworkError(err, dispatch)
+        handleServerNetworkError(err, dispatch)
+    } finally {
+        dispatch(setAppStatusAC({status: 'idle'}))
     }
 })
 
@@ -41,9 +45,7 @@ const slice = createSlice({
 })
 
 export const appReducer = slice.reducer;
-
 export const {setAppStatusAC, setAppErrorAC} = slice.actions;
-
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
 
 
