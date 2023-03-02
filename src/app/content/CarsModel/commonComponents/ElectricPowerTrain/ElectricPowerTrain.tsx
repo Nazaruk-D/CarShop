@@ -8,6 +8,8 @@ import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";
 
+const Fade = require("react-reveal/Fade")
+
 
 export type ElectricPowerTrainPropsType = {
     title: string
@@ -22,7 +24,7 @@ export type SomeType = {
 }
 
 
-const ElectricPowerTrain: React.FC<ElectricPowerTrainPropsType> = ({title, description,data }) => {
+const ElectricPowerTrain: React.FC<ElectricPowerTrainPropsType> = ({title, description, data}) => {
     const [isFirstActive, setIsFirstActive] = useState(true)
 
     useEffect(() => {
@@ -36,8 +38,10 @@ const ElectricPowerTrain: React.FC<ElectricPowerTrainPropsType> = ({title, descr
         <div className={s.ElectricContainer}>
             <div className={s.ElectricBlock}>
                 <div className={s.text}>
-                    <h2 className={s.title}>{title}</h2>
-                    <span className={s.description}>{description}</span>
+                    <Fade bottom cascade>
+                        <h2 className={s.title}>{title}</h2>
+                        <span className={s.description}>{description}</span>
+                    </Fade>
                 </div>
                 <div className={s.image}>
                     <div className={s.imageBlock}
@@ -53,8 +57,10 @@ const ElectricPowerTrain: React.FC<ElectricPowerTrainPropsType> = ({title, descr
                                 <span className={s.description}>{data[0].description}</span>
                             </div>
                             <div className={s.characteristics}>
-                                {data[0].characteristicsData.map( (d, i) => <Characteristics key={i} topText={d.topText} measurement={d.measurement} bottomText={d.bottomText}
-                                                                         color={d.color}/>)}
+                                {data[0].characteristicsData.map((d, i) => <Characteristics key={i} topText={d.topText}
+                                                                                            measurement={d.measurement}
+                                                                                            bottomText={d.bottomText}
+                                                                                            color={d.color}/>)}
                             </div>
                         </div>
                     </div>
@@ -67,8 +73,10 @@ const ElectricPowerTrain: React.FC<ElectricPowerTrainPropsType> = ({title, descr
                                 <span className={s.description}>{data[1].description}</span>
                             </div>
                             <div className={s.characteristics}>
-                                {data[1].characteristicsData.map( (d, i) => <Characteristics key={i} topText={d.topText} measurement={d.measurement} bottomText={d.bottomText}
-                                                                                             color={d.color}/>)}
+                                {data[1].characteristicsData.map((d, i) => <Characteristics key={i} topText={d.topText}
+                                                                                            measurement={d.measurement}
+                                                                                            bottomText={d.bottomText}
+                                                                                            color={d.color}/>)}
                             </div>
                         </div>
                     </div>

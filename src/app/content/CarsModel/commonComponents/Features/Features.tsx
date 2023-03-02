@@ -2,18 +2,18 @@ import React, {useEffect, useState} from 'react';
 import s from './Features.module.scss'
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
+const Fade = require("react-reveal/Fade")
+
 
 export type FeaturesPropsType = {
     data: DataPropsType
 }
-
 export type DataPropsType = {
     title: string
     description: string
     subtitle?: string
     infoBlock: FeaturesPropsData[]
 }
-
 type FeaturesPropsData = {
     title: string
     distance?: string
@@ -22,6 +22,7 @@ type FeaturesPropsData = {
     interval?: number
 
 }
+
 
 const Features: React.FC<FeaturesPropsType> = ({data}) => {
     const [item, setItem] = useState(0)
@@ -47,15 +48,23 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
             <div className={s.travelMapContainer} style={styleWide}>
                 <div className={s.travelMapBlock} style={style}>
                     {data.subtitle
-                    ? <>
+                        ? <>
                             <div className={s.map}
                                  style={{backgroundImage: `url(${data.infoBlock[item].image})`, height: '75%'}}>
-                                <VideoPlayer link={data.infoBlock[item].image} style={{"width": "100%", "height": "100%", "object-fit": "cover", "border-radius": '30px'}}/>
+                                <VideoPlayer link={data.infoBlock[item].image} style={{
+                                    "width": "100%",
+                                    "height": "100%",
+                                    "object-fit": "cover",
+                                    "border-radius": '30px'
+                                }}/>
                             </div>
                             <div className={s.infoBlock}>
                                 {data.infoBlock.map((d, i) => <div className={s.wideInfo}
                                                                    key={i}
-                                                                   style={{opacity: item === i ? 1 : 0.5, borderTop: item === i ? '3px solid black' : '2px solid black'}}
+                                                                   style={{
+                                                                       opacity: item === i ? 1 : 0.5,
+                                                                       borderTop: item === i ? '3px solid black' : '2px solid black'
+                                                                   }}
                                                                    onClick={() => setItem(i)}>
                                     <div className={s.title}>{d.title}</div>
                                     <div className={s.distance}>{d.distance}</div>
@@ -63,23 +72,29 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
                                 </div>)}
                             </div>
                         </>
-                    : <>
+                        : <>
                             <div className={s.text}>
-                                <h2 className={s.title}>
-                                    {data.title}
-                                </h2>
-                                <div className={s.description}>
-                                    {data.description}
-                                </div>
+                                <Fade bottom>
+                                    <h2 className={s.title}>
+                                        {data.title}
+                                    </h2>
+                                    <div className={s.description}>
+                                        {data.description}
+                                    </div>
+                                </Fade>
                             </div>
                             <div className={s.map}
                                  style={{backgroundImage: `url(${data.infoBlock[item].image})`}}>
-                                <VideoPlayer link={data.infoBlock[item].image} style={{"width": "100%", "object-fit": "cover", "height": "100%"}}/>
+                                <VideoPlayer link={data.infoBlock[item].image}
+                                             style={{"width": "100%", "object-fit": "cover", "height": "100%"}}/>
                             </div>
                             <div className={s.infoBlock}>
                                 {data.infoBlock.map((d, i) => <div className={s.info}
                                                                    key={i}
-                                                                   style={{opacity: item === i ? 1 : 0.5, borderTop: item === i ? '4px solid black' : '2px solid black'}}
+                                                                   style={{
+                                                                       opacity: item === i ? 1 : 0.5,
+                                                                       borderTop: item === i ? '4px solid black' : '2px solid black'
+                                                                   }}
                                                                    onClick={() => setItem(i)}>
                                     <div className={s.title}>{d.title}</div>
                                     <div className={s.distance}>{d.distance}</div>

@@ -7,6 +7,8 @@ import Characteristics, {
 } from "../../../../../common/components/Characteristics/Characteristics";
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 
+const Fade = require("react-reveal/Fade")
+
 
 type SafetyPropsType = {
     backgroundImage: string
@@ -34,7 +36,8 @@ const Safety: React.FC<SafetyPropsType> = ({
     return (
         <div className={s.mainContainer}>
             <div className={s.safetyContainer} style={{flexDirection}}>
-                <div className={s.imageBlock} style={{backgroundImage: `url(${backgroundImage})`, backgroundColor, backgroundSize}}>
+                <div className={s.imageBlock}
+                     style={{backgroundImage: `url(${backgroundImage})`, backgroundColor, backgroundSize}}>
                     <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>
                     <div className={s.characteristics}>
                         {characteristicsData?.map((c, i) => <div style={{marginRight: 40}}><Characteristics key={i}
@@ -59,21 +62,27 @@ const Safety: React.FC<SafetyPropsType> = ({
                     }
                 </div>
                 <div className={s.descriptionBlock}>
-                    <div className={s.xxx}></div>
                     <div className={s.textContainer}>
                         <div className={s.text}>
                         <span className={s.titleBlock}>
-                            <h3 className={s.subtitle}>{subtitle}</h3>
-                            <h2 className={s.title}>{title}</h2>
+                            <Fade bottom>
+                                <h3 className={s.subtitle}>{subtitle}</h3>
+                                <h2 className={s.title}>{title}</h2>
+                            </Fade>
                         </span>
-                            {description}
+                            <Fade bottom>
+                                {description}
+                            </Fade>
                         </div>
                         <div className={s.buttonsBlock}>
-                            <PrimaryButton title={'Order now'} color={'black'} secondColor={'white'} onClick={() => {
-                            }}/>
-                            <Button title={'View Inventory'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
-                                    color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
-                            }}/>
+                            <Fade bottom>
+                                <PrimaryButton title={'Order now'} color={'black'} secondColor={'white'}
+                                               onClick={() => {
+                                               }}/>
+                                <Button title={'View Inventory'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
+                                        color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
+                                }}/>
+                            </Fade>
                         </div>
                     </div>
                 </div>

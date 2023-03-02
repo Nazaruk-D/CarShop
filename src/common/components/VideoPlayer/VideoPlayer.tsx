@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 
+
 type VideoPlayerPropsType = {
     link: string
     id?: number
@@ -25,7 +26,6 @@ const VideoPlayer: React.FC<VideoPlayerPropsType> = ({link, setDuration, id, sty
             autoPlay
             id="my-player"
             style={style}
-            // className={s.videoJs}
             preload="auto"
             muted
             playsInline

@@ -8,6 +8,7 @@ import Characteristics, {
 import TitleBlock from "../../../../../common/components/TitleBlock/TitleBlock";
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 
+
 type AdvantagesPropsType = {
     backgroundImage: string
     data: CharacteristicsPropsType[]
@@ -18,7 +19,15 @@ type AdvantagesPropsType = {
     secondColor?: 'white' | 'black'
 }
 
-const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,subtitle, description, textColor, secondColor}) => {
+const Advantages: React.FC<AdvantagesPropsType> = ({
+                                                       backgroundImage,
+                                                       data,
+                                                       title,
+                                                       subtitle,
+                                                       description,
+                                                       textColor,
+                                                       secondColor
+                                                   }) => {
     return (
         <div className={s.mainBlock} style={{color: textColor}}>
             <div className={s.advantagesContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
@@ -31,7 +40,8 @@ const Advantages: React.FC<AdvantagesPropsType> = ({backgroundImage, data,title,
                     </div>)}
                 </div>
             </div>
-            <TitleBlock title={title} subtitle={subtitle} description={description} color={textColor} secondColor={secondColor}/>
+            <TitleBlock title={title} subtitle={subtitle} description={description} color={textColor}
+                        secondColor={secondColor}/>
         </div>
     );
 };

@@ -2,7 +2,7 @@
 
 .salonContainer {
   @include flex(row, center, center, wrap);
-  height: 33.4%;
+  height: 300px;
 
   .image {
     @include background(no-repeat, center, cover);

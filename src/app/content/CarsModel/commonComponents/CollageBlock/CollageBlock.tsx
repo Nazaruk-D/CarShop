@@ -1,12 +1,6 @@
 import React from 'react';
 import s from './CollageBlock.module.scss'
 import SalonContainer from "./SalonContainer/SalonContainer";
-// // @ts-ignore
-// import MSInteriorDesktop from '../../../../../../common/assets/MSInteriorDesktop.jfif'
-// // @ts-ignore
-// import MSInteriorGridDesktop from '../../../../../../common/assets/MSInteriorGridDesktop.jfif'
-// // @ts-ignore
-// import video from '../../../../../../common/assets/video/audio.mp4'
 
 type CollageBlockPropsType = {
     data: DataProps[]

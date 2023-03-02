@@ -29,8 +29,8 @@
       }
 
       .demoDrive {
-        @include text(20px, 25px, 500);
-        color: rgba(255,255,255,0.75);
+        @include text(20px, 40px, 500);
+        color: rgba(255, 255, 255, 0.75);
         position: relative;
         transition: color 0.2s ease-in-out;
         cursor: pointer;
@@ -38,14 +38,14 @@
         margin-top: 17px;
 
         &::before {
-          @include pseudo(absolute, '', 1px, 210px, 106px, '', rgba(255,255,255,0.75));
+          @include pseudo(absolute, '', 1px, 210px, 106px, '', rgba(255, 255, 255, 0.75));
           bottom: 0;
           transform: translate(-50%, 50%);
           transition: 0.2s ease-in-out;
         }
 
         &:hover {
-          color: rgba(255,255,255,1);
+          color: rgba(255, 255, 255, 1);
 
           &::before {
             height: 2px;
@@ -56,20 +56,20 @@
 
       .virtualConsultation {
         @include text(20px, 25px, 500);
-        color: rgba(255,255,255,0.75);
+        color: rgba(255, 255, 255, 0.75);
         position: relative;
         transition: color 0.2s ease-in-out;
         cursor: pointer;
 
         &::before {
-          @include pseudo(absolute, '', 1px, 284px, 143px, '', rgba(255,255,255,0.75));
+          @include pseudo(absolute, '', 1px, 284px, 143px, '', rgba(255, 255, 255, 0.75));
           bottom: 0;
           transform: translate(-50%, 50%);
           transition: 0.2s ease-in-out;
         }
 
         &:hover {
-          color: rgba(255,255,255,1);
+          color: rgba(255, 255, 255, 1);
 
           &::before {
             height: 2px;
@@ -79,7 +79,7 @@
       }
 
       .demoDriveBlack {
-        @include text(20px, 25px, 500);
+        @include text(20px, 40px, 500);
         color: rgba(0, 0, 0, 0.75);
         position: relative;
         transition: color 0.2s ease-in-out;

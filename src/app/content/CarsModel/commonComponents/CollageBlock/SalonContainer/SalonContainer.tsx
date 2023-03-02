@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './SalonContainer.module.scss'
+const Fade = require("react-reveal/Fade")
 
 type SalonContainerPropType = {
     backgroundImage?: string
@@ -13,6 +14,7 @@ type SalonContainerPropType = {
 const SalonContainer: React.FC<SalonContainerPropType> = ({videoLink, position, description, title, backgroundImage, start}) => {
     return (
         <div className={s.salonContainer} style={{flexDirection: position}}>
+            <Fade bottom>
             <div className={s.image} style={{backgroundImage: `url(${backgroundImage})`}}>
                         <video
                             autoPlay
@@ -37,6 +39,7 @@ const SalonContainer: React.FC<SalonContainerPropType> = ({videoLink, position, 
                     <div className={s.description}>{description}</div>
                 </div>
             </div>
+            </Fade>
         </div>
     );
 };

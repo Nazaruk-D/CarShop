@@ -6,6 +6,8 @@ import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlaye
 // @ts-ignore
 import loading from "../../../../../common/assets/video/loading.mp4";
 
+const Fade = require("react-reveal/Fade")
+
 export type FirstBlockPropsType = {
     model: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs' | 'Solar Roof'
     characteristicsData: FirstBlockType[]
@@ -28,7 +30,7 @@ const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, 
     }
 
     useEffect(() => {
-        let timer = setTimeout(()=>{
+        let timer = setTimeout(() => {
             setIsLoading(false)
         }, 3000)
         return () => clearTimeout(timer)
@@ -58,7 +60,9 @@ const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, 
                                      bottomText={c.bottomText}/>
                 </div>))
             }
-            <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={onClickHandler}/>
+            <Fade bottom>
+                <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={onClickHandler}/>
+            </Fade>
         </PresentationBlock>
     );
 };
