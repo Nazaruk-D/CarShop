@@ -10,12 +10,12 @@ const Model3 = () => {
     return (
         <PresentationBlock color={'black'} backgroundImage={model3} model={'Model 3'}
                            conditions={'Leasing starting at $349/mo'}>
-            <Fade left>
+            <Fade bottom>
                 <Button title={'Custom Order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
                         onClick={() => {
                         }}/>
             </Fade>
-            <Fade right>
+            <Fade bottom>
                 <Button title={'Demo Drive'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
                         color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
                 }}/>

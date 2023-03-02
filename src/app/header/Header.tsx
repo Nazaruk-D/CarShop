@@ -3,7 +3,6 @@ import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
-import Nav from "./Nav";
 
 const Fade = require("react-reveal/Fade")
 
@@ -34,42 +33,26 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
 
     return (
         <div className={s.headerContainer} style={{position, color}}>
-            {/*<div className={s.logoNav}>*/}
-            {/*    <Logo color={color}/>*/}
-            {/*</div>*/}
-            {/*{!logo &&*/}
-            {/*    <div className={s.logo}>*/}
-            {/*        <Logo color={color}/>*/}
-            {/*    </div>*/}
-            {/*}*/}
-            {/*{toggleMenu*/}
-            {/*    ? <Nav color={color!}/>*/}
-            {/*    : <div className={s.menuButtonBlock}>*/}
-            {/*        <button className={s.menuButton} onClick={onClickHandler}>Menu</button>*/}
-            {/*    </div>*/}
-            {/*}*/}
-
-
-            {/*<div className={s.logoNav}>*/}
-            {/*    <Logo color={color}/>*/}
-            {/*</div>*/}
-            {/*{toggleMenu*/}
-            {/*    ? <Nav color={color!}/>*/}
-            {/*    : <div className={s.menuButtonBlock}>*/}
-            {/*        <button className={s.menuButton} onClick={onClickHandler}>Menu</button>*/}
-            {/*    </div>*/}
-            {/*}*/}
-
-
             {logo &&
-                // <div style={{width: "50%", paddingLeft: "20px", boxSizing: "border-box", backgroundColor: 'yellow'}}><Logo color={color}/></div>
                 <div className={s.logo}><Logo color={color}/></div>
             }
             {!toggleMenu
-                ? <>
-                    <Nav color={color!}/>
+                ? <div  className={s.menuContainer}>
+                    <div className={s.menuBlock}>
+                        <NavLink to={routes.modelS} className={s.menuText} style={{color}}>Model S</NavLink>
+                        <NavLink to={routes.model3} className={s.menuText} style={{color}}>Model 3</NavLink>
+                        <NavLink to={routes.modelX} className={s.menuText} style={{color}}>Model X</NavLink>
+                        <NavLink to={routes.modelY} className={s.menuText} style={{color}}>Model Y</NavLink>
+                        <NavLink to={routes.solarRoof} className={s.menuText} style={{color}}>Solar Roof</NavLink>
+                        <NavLink to={routes.solarPanels} className={s.menuText} style={{color}}>Solar Panels</NavLink>
+                    </div>
+                    <div className={s.accountBlock}>
+                        <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
+                        <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
+                        <NavLink to={routes.cybertruck} className={s.accountText} style={{color}}>Сybertruck</NavLink>
+                    </div>
                     <div className={s.close} onClick={closeHandler}>X</div>
-                </>
+                </div>
                 : <div className={s.menuButtonBlock}>
                     <button className={s.menuButton} onClick={onClickHandler}>Menu</button>
                 </div>

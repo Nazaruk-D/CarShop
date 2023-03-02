@@ -10,17 +10,81 @@
   left: 0;
   right: 0;
   bottom: 0;
-  //background-color: red;
 
   .logo {
     @include flex(row, flex-start, center, wrap);
     width: 20%;
-    padding-left: 50px;
-    box-sizing: border-box;
-    //background-color: blue;
+  }
 
+  .menuContainer {
+    @include flex(row, flex-start, center, wrap);
+    width: 80%;
     @media screen and (max-width: $mediaWidth) {
-      //display: none;
+      width: 100%;
+    }
+
+    .menuBlock {
+      @include flex(row, center, center, wrap);
+      width: 70%;
+
+
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(row, flex-start, flex-start, wrap);
+        width: 65%;
+        height: 150%;
+      }
+
+      .menuText {
+        @include text(14px, 0, 600);
+        width: 80px;
+        margin-right: 10px;
+        padding: 15px 15px;
+        border-radius: 3px;
+        text-decoration: none;
+        color: black;
+
+
+        &:hover {
+          background-color: rgba(108, 108, 108, 0.2);
+        }
+      }
+    }
+
+    .accountBlock {
+      @include flex(row, flex-end, center, nowrap);
+      width: 30%;
+      height: 150%;
+
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(row, flex-start, center, wrap);
+        width: 25%;
+        height: 150%;
+      }
+
+      .accountText {
+        @include text(14px, 0, 600);
+        margin-right: 10px;
+        padding: 15px 15px;
+        border-radius: 3px;
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          background-color: rgba(108, 108, 108, 0.2);
+        }
+      }
+    }
+
+    .close {
+      display: none;
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(column, flex-start, center, wrap);
+        width: 10%;
+        padding-top: 10px;
+        box-sizing: border-box;
+        height: 150%;
+
+      }
     }
   }
 
@@ -36,69 +100,6 @@
       background-color: rgba(108, 108, 108, 0.2);
       cursor: pointer;
       margin-right: 20px;
-    }
-  }
-
-  .menuBlock {
-    @include flex(row, center, center, wrap);
-    width: 60%;
-    height: 100%;
-
-    @media screen and (max-width: $mediaWidth) {
-      @include flex(column, flex-start, flex-start, wrap);
-      //width: 60%;
-      height: 150%;
-    }
-
-    .menuText {
-      @include text(14px, 0, 600);
-      margin-right: 10px;
-      padding: 15px 15px;
-      border-radius: 3px;
-      text-decoration: none;
-      color: black;
-
-
-      &:hover {
-        background-color: rgba(108, 108, 108, 0.2);
-      }
-    }
-  }
-
-  .accountBlock {
-    @include flex(row, flex-end, center, nowrap);
-    width: 20%;
-    height: 100%;
-
-    @media screen and (max-width: $mediaWidth) {
-      @include flex(row, flex-start, center, wrap);
-      width: 30%;
-      height: 150%;
-    }
-
-    .accountText {
-      @include text(14px, 0, 600);
-      margin-right: 10px;
-      padding: 15px 15px;
-      border-radius: 3px;
-      text-decoration: none;
-      color: black;
-
-      &:hover {
-        background-color: rgba(108, 108, 108, 0.2);
-      }
-    }
-  }
-
-  .close {
-    display: none;
-    @media screen and (max-width: $mediaWidth) {
-      //display: flex;
-      @include flex(column, flex-start, flex-start, wrap);
-      width: 60%;
-      padding-top: 10px;
-      box-sizing: border-box;
-      height: 150%;
     }
   }
 }
