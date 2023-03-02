@@ -3,6 +3,7 @@ import React from 'react';
 import model3 from "../../../../common/assets/model3.jfif";
 import Button from "../../../../common/components/Button/Button";
 import PresentationBlock from "../../../../common/components/PresentationBlock/PresentationBlock";
+
 const Fade = require("react-reveal/Fade")
 
 const Model3 = () => {
