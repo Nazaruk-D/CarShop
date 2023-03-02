@@ -28,6 +28,7 @@ export const routes = {
     shop: '/CarShop/shop',
     login: '/CarShop/login',
     profile: '/CarShop/profile',
+    cybertruck: '/CarShop/cybertruck',
     registration: '/CarShop/registration',
     drive: '/CarShop/drive',
     consultation: '/CarShop/consultation',

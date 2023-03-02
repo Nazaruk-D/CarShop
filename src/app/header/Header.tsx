@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
-import {useAppSelector} from "../store/store";
+const Fade = require("react-reveal/Fade")
 
 type HeaderPropsType = {
     position?: 'fixed'
@@ -11,7 +11,7 @@ type HeaderPropsType = {
 }
 
 const Header: React.FC<HeaderPropsType> = ({position, color}) => {
-    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
+    const [toggleMenu, setToggleMenu] = useState<boolean>(false)
 
     return (
         <div className={s.headerContainer} style={{position, color}}>
@@ -26,29 +26,8 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
             </div>
             <div className={s.accountBlock}>
                 <NavLink to={routes.shop} className={s.accountText} style={{color}}>Shop</NavLink>
-                {/*{isLoggedIn*/}
-                {/*    ? <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>*/}
-                {/*    : <NavLink to={routes.login} className={s.accountText} style={{color}}>Account</NavLink>*/}
-                {/*}*/}
                 <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
-            {/*    {!toggleMenu*/}
-            {/*        ? <div className={s.burgerContainer} onClick={onClickHandler}>*/}
-            {/*            <div className={s.burger}><span></span></div>*/}
-            {/*        </div>*/}
-            {/*        : <div className={s.burgerContainerActive} onClick={onClickHandler}>*/}
-            {/*            <div className={s.burgerActive}></div>*/}
-            {/*        </div>*/}
-            {/*    }*/}
-            {/*    <Nav setModal={setModal}/>*/}
-            {/*</div>*/}
-            {/*{toggleMenu &&*/}
-            {/*    <div className={s.miniNavbar} style={bgMiniNav}>*/}
-            {/*        <MiniNav/>*/}
-            {/*    </div>*/}
-            {/*}*/}
-
-
-                <div className={s.accountText}>Menu</div>
+                <NavLink to={routes.cybertruck} className={s.accountText} style={{color}}>Сybertruck</NavLink>
             </div>
         </div>
     );
