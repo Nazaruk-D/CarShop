@@ -27,8 +27,6 @@
     .menuBlock {
       @include flex(row, center, center, wrap);
       width: 70%;
-
-
       @media screen and (max-width: $mediaWidth) {
         @include flex(row, flex-start, flex-start, wrap);
         width: 65%;
@@ -36,13 +34,17 @@
       }
 
       .menuText {
+        @include flex(row, cenet, cenet, nowrap);
         @include text(14px, 0, 600);
-        width: 80px;
         margin-right: 10px;
         padding: 15px 15px;
         border-radius: 3px;
         text-decoration: none;
         color: black;
+        box-sizing: border-box;
+        @media screen and (max-width: $mediaWidth) {
+          width: 110px;
+        }
 
 
         &:hover {

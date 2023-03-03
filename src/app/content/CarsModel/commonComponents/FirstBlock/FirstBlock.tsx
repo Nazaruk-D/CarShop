@@ -3,6 +3,7 @@ import PresentationBlock from "../../../../../common/components/PresentationBloc
 import Characteristics from "../../../../../common/components/Characteristics/Characteristics";
 import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
+import s from "./FirstBlock.module.scss"
 // @ts-ignore
 import loading from "../../../../../common/assets/video/loading.mp4";
 
@@ -22,47 +23,24 @@ export type FirstBlockType = {
 }
 
 const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, conditions, backgroundImage}) => {
-
-    // Refactor
-    const [isLoading, setIsLoading] = useState(false)
-    const onClickHandler = () => {
-        setIsLoading(true)
-    }
-
-    useEffect(() => {
-        let timer = setTimeout(() => {
-            setIsLoading(false)
-        }, 3000)
-        return () => clearTimeout(timer)
-    }, [isLoading])
-
-    if (isLoading) {
-        return <div style={{
-            width: "100%",
-            height: "100vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "white"
-        }}>
-            <VideoPlayer link={loading} style={{width: "80px"}}/>
-        </div>
-    }
-    // Refactor
-
     return (
         <PresentationBlock backgroundImage={backgroundImage} model={model} conditions={conditions}>
-            {characteristicsData.map((c, i) => (
-                <div style={{marginRight: 20}}>
-                    <Characteristics key={i}
-                                     topText={c.topText}
-                                     measurement={c.measurement}
-                                     bottomText={c.bottomText}/>
-                </div>))
-            }
-            <Fade bottom>
-                <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={onClickHandler}/>
-            </Fade>
+            <div className={s.haracteristics}>
+                {characteristicsData.map((c, i) => (
+                    <div style={{marginRight: 20}}>
+                        <Characteristics key={i}
+                                         topText={c.topText}
+                                         measurement={c.measurement}
+                                         bottomText={c.bottomText}/>
+                    </div>
+                ))
+                }
+            </div>
+            <div className={s.button}>
+                <Fade bottom>
+                    <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={()=>{}}/>
+                </Fade>
+            </div>
         </PresentationBlock>
     );
 };
