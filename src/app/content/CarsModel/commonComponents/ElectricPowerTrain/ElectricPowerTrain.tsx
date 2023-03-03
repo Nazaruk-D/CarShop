@@ -35,8 +35,8 @@ const ElectricPowerTrain: React.FC<ElectricPowerTrainPropsType> = ({title, descr
     }, [isFirstActive])
 
     return (
-        <div className={s.ElectricContainer}>
-            <div className={s.ElectricBlock}>
+        <div className={s.electricContainer}>
+            <div className={s.electricBlock}>
                 <div className={s.text}>
                     <Fade bottom cascade>
                         <h2 className={s.title}>{title}</h2>

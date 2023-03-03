@@ -1,21 +1,35 @@
 @import '../../../../../common/styles/sass/mixins';
 @import '../../../../../common/styles/sass/variables';
 
-.ElectricContainer {
+.electricContainer {
   @include flex(column, center, center, wrap);
   width: 100%;
   height: 100vh;
   background-color: #eee;
+  @media screen and (max-width: $mediaWidth) {
+    height: 120vh;
 
-  .ElectricBlock {
+  }
+
+  .electricBlock {
     width: 77%;
     height: 100%;
+    @media screen and (max-width: $mediaWidth) {
+      width: 100%;
+    }
 
     .text {
       @include flex(column, center, flex-start, nowrap);
       width: 60%;
-      height: 20%;
+      height: 18%;
       margin: 0 20px;
+      @media screen and (max-width: $mediaWidth) {
+        width: 90%;
+        height: 30%;
+        padding: 10px 0;
+        box-sizing: border-box;
+
+      }
 
       .title {
         @include text(30px, 28px, 600);
@@ -24,6 +38,11 @@
 
       .description {
         margin-top: 0;
+        @media screen and (max-width: $mediaWidth) {
+          width: 100%;
+          padding: 10px 0;
+          box-sizing: border-box;
+        }
       }
     }
 
@@ -31,6 +50,9 @@
       @include flex(column, center, center, nowrap);
       width: 100%;
       height: 55%;
+      @media screen and (max-width: $mediaWidth) {
+        height: 20%;
+      }
 
       .imageBlock {
         @include background(no-repeat, center, cover);
@@ -38,13 +60,17 @@
         height: 100%;
         border-radius: 20px;
         background-size: auto 125%;
+        @media screen and (max-width: $mediaWidth) {
+          width: 100%;
+          border-radius: 0;
+        }
       }
     }
 
     .info {
       @include flex(row, space-between, center, wrap);
       width: 100%;
-      height: 25%;
+      height: 30%;
 
       .firstContainer {
         @include flex(row, flex-end, center, wrap);
@@ -53,16 +79,26 @@
         padding-right: 10px;
         box-sizing: border-box;
         cursor: pointer;
+        @media screen and (max-width: $mediaWidth) {
+          height: 180%;
+        }
 
         .firstBlock {
           @include flex(column, space-between, flex-start, wrap);
           width: 80%;
           height: 100%;
           border-top: 5px solid black;
+          @media screen and (max-width: $mediaWidth) {
+            @include flex(column, flex-start, flex-start, wrap);
+          }
 
           .text {
             width: 100%;
             height: 60%;
+            @media screen and (max-width: $mediaWidth) {
+              @include flex(column, flex-start, flex-start, wrap);
+              height: 50%;
+            }
 
             .title {
               @include text(18px, 18px, 500);
@@ -79,6 +115,10 @@
             @include flex(row, center, center, nowrap);
             height: 40%;
             width: 100%;
+            @media screen and (max-width: $mediaWidth) {
+              @include flex(column, center, center, nowrap);
+
+            }
           }
         }
       }
@@ -90,16 +130,26 @@
         padding-left: 10px;
         box-sizing: border-box;
         cursor: pointer;
+        @media screen and (max-width: $mediaWidth) {
+          height: 180%;
+        }
 
         .secondBlock {
-          @include flex(column, space-between, flex-start, wrap);
+          @include flex(column, flex-start, space-between, wrap);
           width: 80%;
           height: 100%;
           border-top: 5px solid black;
+          @media screen and (max-width: $mediaWidth) {
+            @include flex(column, flex-start, flex-start, wrap);
+          }
 
           .text {
             width: 100%;
             height: 60%;
+            @media screen and (max-width: $mediaWidth) {
+              @include flex(column, flex-start, flex-start, wrap);
+              height: 50%;
+            }
 
             .title {
               @include text(18px, 18px, 500);
@@ -117,6 +167,10 @@
             @include flex(row, center, center, nowrap);
             height: 40%;
             width: 100%;
+            @media screen and (max-width: $mediaWidth) {
+              @include flex(column, center, center, nowrap);
+
+            }
           }
         }
       }
