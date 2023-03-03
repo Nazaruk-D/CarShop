@@ -29,7 +29,7 @@ const Advantages: React.FC<AdvantagesPropsType> = ({
                                                        secondColor
                                                    }) => {
     return (
-        <div className={s.mainBlock} style={{color: textColor}}>
+        <div style={{color: textColor}}>
             <div className={s.advantagesContainer} style={{backgroundImage: `url(${backgroundImage})`}}>
                 <VideoPlayer link={backgroundImage} style={{width: "100%", height: "79%", objectFit: "cover"}}/>
                 <div className={s.characteristicsContainer}>

@@ -1,13 +1,22 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .advantagesContainer {
   @include background(no-repeat, center, cover);
   @include flex(column, flex-end, center, no-wrap);
   height: 72vh;
+
   .characteristicsContainer {
     width: 60%;
     @include flex(row, space-around, flex-end, no-wrap);
     margin-bottom: 80px;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(row, center, center, wrap);
+      margin-bottom: 0;
+      width: 100%;
+      height: 200px;
+    }
+
     & div {
       @include text(15px, 15px, 600);
       text-align: center;
