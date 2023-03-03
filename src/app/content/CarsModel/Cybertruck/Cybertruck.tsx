@@ -8,6 +8,8 @@ import cybertruckSkeleton from "../../../../common/assets/cybertruckSkeleton.jpg
 import cybertruckVideo from "../../../../common/assets/video/cybertruckVideo.mp4"
 import cybertruckRoad from "../../../../common/assets/cybertruckRoad.jpg"
 import CybertruckCarousel from "./CybertruckCarousel/CybertruckCarousel";
+import Footer from "../commonComponents/Footer/Footer";
+import Order from "./Order/Order";
 
 
 const Cybertruck = () => {
@@ -21,6 +23,8 @@ const Cybertruck = () => {
             <CybertruckFeatures backgroundImage={cybertruckRoad} title={'TESLA ARMOR GLASS'} description={'Ultra-strong glass and polymer-layered composite can absorb and redirect impact force for improved performance and damage tolerance.'}/>
             <CybertruckCarousel/>
             <CybertruckFeatures titleSize={'big'} backgroundImage={cybertruckVideo} title={'PERFORMANCE AND EFFICIENCY'} description={'Now entering a new class of strength, speed and versatility—only possible with an all-electric design. The powerful drivetrain and low center of gravity provides extraordinary traction control and torque—enabling acceleration from 0-60 mph in as little as 2.9 seconds and up to 500 miles of range.'}/>
+            <Order/>
+            <Footer backgroundColor={'black'} description={false}/>
         </div>
     );
 };

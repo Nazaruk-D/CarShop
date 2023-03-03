@@ -1,0 +1,32 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainBlock {
+  @include flex(row, center, center, nowrap);
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+
+  .orderBlock {
+    @include flex(column, center, center, nowrap);
+    width: 40%;
+    height: 100%;
+
+    .logo {
+      @include background(no-repeat, center, contain);
+      width: 50%;
+      height: 20%;
+    }
+  }
+
+  .imgBlock {
+    @include flex(column, center, center, nowrap);
+    width: 60%;
+    height: 100%;
+
+    .image {
+      @include background(no-repeat, center, contain);
+      width: 100%;
+      height: 40%
+    }
+  }
+}
