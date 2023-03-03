@@ -18,16 +18,18 @@
   }
 
   .titleContainer {
-    @include flex(row, center, center, nowrap);
+    @include flex(row, center, flex-start, nowrap);
     width: 90%;
     height: 16%;
+    padding-top: 15px;
 
     .title {
-      @include text(16px, 22px, 500);
+      @include text(15px, 21px, 500);
       width: 30%;
       letter-spacing: 3px;
       color: white;
       text-shadow: 0 0 5px white;
+      margin-top: 0;
     }
 
     .description {
