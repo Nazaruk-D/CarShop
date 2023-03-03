@@ -1,0 +1,15 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include flex(column, flex-start, center, no-wrap);
+  width: 100%;
+  height: 120vh;
+  background-color: black;
+
+  .imageContainer {
+    @include background(no-repeat, center, cover);
+    width: 100%;
+    height: 80vh;
+    transition: background-image 0.5s;
+  }
+}
