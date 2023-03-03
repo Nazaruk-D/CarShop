@@ -1,0 +1,13 @@
+@import '../../../common/styles/sass/mixins';
+
+.button {
+  @include text(13px,13px, 600);
+  letter-spacing: 2px;
+  width: 210px;
+  height: 40px;
+  margin: 10px;
+  background-color: rgba(0,0,0,0);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
