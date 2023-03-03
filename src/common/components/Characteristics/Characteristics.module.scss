@@ -11,7 +11,7 @@
   @media screen and (max-width: $mediaWidth) {
     @include flex(row, center, center, wrap);
     width: 140px;
-    height: 5px;
+    height: 80px;
   }
 
   .topTextBlock {
