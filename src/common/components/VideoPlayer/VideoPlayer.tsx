@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from 'react';
+import s from './VideoPlayer.module.scss'
 
 
 type VideoPlayerPropsType = {
@@ -23,6 +24,7 @@ const VideoPlayer: React.FC<VideoPlayerPropsType> = ({link, setDuration, id, sty
     return (
         <video
             ref={videoRef}
+            className={s.videoPlayer}
             autoPlay
             id="my-player"
             style={style}

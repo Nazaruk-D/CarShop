@@ -1,4 +1,5 @@
 @import '../../../common/styles/sass/mixins';
+@import '../../../common/styles/sass/variables';
 
 
 .characteristicsBlock {
@@ -6,6 +7,12 @@
   color: white;
   width: 200px;
   height: 60px;
+
+  @media screen and (max-width: $mediaWidth) {
+    @include flex(row, center, center, wrap);
+    width: 140px;
+    height: 5px;
+  }
 
   .topTextBlock {
     @include flex(row, space-around, flex-end, nowrap);

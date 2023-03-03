@@ -1,4 +1,5 @@
 @import '../../../../../../../common/styles/sass/mixins';
+@import '../../../../../../../common/styles/sass/variables';
 
 .videoBlock {
   @include flex(column, center, center, wrap);
@@ -6,11 +7,22 @@
   width: 100%;
   height: 80%;
 
+  @media screen and (max-width: $mediaWidth) {
+    @include flex(column, flex-start, center, wrap);
+    width: 100%;
+    height: auto;
+  }
+
   .video {
     @include flex(column, center, center, wrap);
     position: relative;
     width: 100%;
     height: 100%;
+
+    @media screen and (max-width: $mediaWidth) {
+      width: 100%;
+      height: 60%;
+    }
   }
 }
 
@@ -20,10 +32,21 @@
   width: 100%;
   height: 20%;
 
+  @media screen and (max-width: $mediaWidth) {
+    @include flex(column, flex-start, center, wrap);
+    width: 100%;
+    height: auto;
+  }
+
   .fullDescription {
     width: 40%;
     height: 80%;
     color: white;
+
+    @media screen and (max-width: $mediaWidth) {
+      width: 80%;
+      height: auto;
+    }
 
     .title {
       @include text(18px, 18px, 500);

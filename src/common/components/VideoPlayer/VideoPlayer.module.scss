@@ -1,0 +1,11 @@
+@import '../../../common/styles/sass/mixins';
+@import '../../../common/styles/sass/variables';
+
+
+.videoPlayer {
+  @media screen and (max-width: $mediaWidth) {
+    //background-color: red;
+    width: 100%;
+    //height: 100%;
+  }
+}

@@ -116,7 +116,7 @@
       height: 50%;
 
       @media screen and (max-width: $mediaWidth) {
-        @include flex(column, flex-end, center, wrap);
+        @include flex(row, center, center, wrap);
       }
     }
   }

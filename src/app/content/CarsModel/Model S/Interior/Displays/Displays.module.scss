@@ -1,7 +1,13 @@
 @import '../../../../../../common/styles/sass/mixins';
+@import '../../../../../../common/styles/sass/variables';
 
 .displaysContainer {
   @include flex(column, center, center, wrap);
   height: 115vh;
 
+  @media screen and (max-width: $mediaWidth) {
+    height: 100vh;
+    background-color: black;
+
+  }
 }
