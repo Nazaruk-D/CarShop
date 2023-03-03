@@ -1,0 +1,39 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainBlock {
+  @include flex(column, center, center, nowrap);
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+
+  .imageContainer {
+    width: 90%;
+    height: 78%;
+
+    .image {
+      @include background(no-repeat, center, cover);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .titleContainer {
+    @include flex(column, center, center, nowrap);
+    width: 90%;
+    height: 16%;
+
+    .title {
+      @include text(25px, 25px, 500);
+      width: 65%;
+      letter-spacing: 5px;
+      color: white;
+      text-shadow: 0 0 5px white;
+    }
+
+    .description {
+      @include text(17px, 19px, 400);
+      width: 65%;
+      color: white;
+    }
+  }
+}
