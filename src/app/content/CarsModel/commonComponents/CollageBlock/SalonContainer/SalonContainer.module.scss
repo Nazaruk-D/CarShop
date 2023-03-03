@@ -1,13 +1,24 @@
 @import '../../../../../../common/styles/sass/mixins';
+@import '../../../../../../common/styles/sass/variables';
 
 .salonContainer {
   @include flex(row, center, center, wrap);
   height: 300px;
+  @media screen and (max-width: $mediaWidth) {
+    @include flex(column, flex-end, center, wrap);
+    width: 100%;
+    height: 100%;
+  }
 
   .image {
     @include background(no-repeat, center, cover);
     width: 49%;
     height: 100%;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, flex-end, center, wrap);
+      width: 100%;
+      height: auto;
+    }
 
     .videoJs {
       width: 100%;
@@ -19,16 +30,28 @@
     @include flex(row, flex-end, center, wrap);
     width: 50%;
     height: 100%;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, flex-start, center, wrap);
+      width: 100%;
+      //height: 60%;
+    }
+
 
     .descriptionBlock {
       @include flex(column, center, flex-start, wrap);
       width: 75%;
       height: 100%;
       color: white;
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(column, flex-start, flex-start, wrap);
+        width: 100%;
+        padding: 20px 20px 50px;
+      }
 
       .title {
         @include text(16px, 16px, 600);
         margin-bottom: 10px;
+
       }
     }
   }
