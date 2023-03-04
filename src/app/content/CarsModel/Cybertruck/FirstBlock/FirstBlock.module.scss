@@ -1,0 +1,34 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainBlock {
+  @include background(no-repeat, center, cover);
+  @include flex(column, space-between, center, nowrap);
+  width: 100%;
+  height: 100vh;
+
+  .titleBlock {
+    @include flex(column, center, center, nowrap);
+    width: 100%;
+    height: 50%;
+
+    .logoContainer {
+      @include background(no-repeat, center, contain);
+      width: 400px;
+      height: 120px;
+    }
+
+    .title {
+      @include text(12px, 12px, 500);
+      letter-spacing: 2px;
+    }
+  }
+
+  .buttonBlock {
+    width: 100%;
+    height: 20%;
+    @include flex(column, center, center, nowrap);
+    & button {
+      width: 270px;
+    }
+  }
+}

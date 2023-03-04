@@ -3,7 +3,7 @@
 
 .headerContainer {
   @include flex(row, flex-end, center, wrap);
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 60px;
   top: 0;

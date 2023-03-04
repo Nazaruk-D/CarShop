@@ -16,6 +16,7 @@ import ScheduleSolar from "../content/Schedule/ScheduleSolar/ScheduleSolar";
 import Profile from "../../features/profile/Profile";
 import {useAppDispatch} from "../store/store";
 import {initializeAppTC} from "../app-reducer";
+import Cybertruck from "../content/CarsModel/Cybertruck/Cybertruck";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -87,5 +88,9 @@ export const router = createBrowserRouter([
     {
         path: routes.consultation,
         element: <ScheduleSolar/>
+    },
+    {
+        path: routes.cybertruck,
+        element: <Cybertruck/>
     },
 ])
