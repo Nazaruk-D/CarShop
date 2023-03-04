@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.19f73cbd.css",
+    "main.css": "/CarShop/static/css/main.df1fcaa9.css",
     "main.js": "/CarShop/static/js/main.13d5e520.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
@@ -132,12 +132,12 @@
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.19f73cbd.css.map": "/CarShop/static/css/main.19f73cbd.css.map",
+    "main.df1fcaa9.css.map": "/CarShop/static/css/main.df1fcaa9.css.map",
     "main.13d5e520.js.map": "/CarShop/static/js/main.13d5e520.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.19f73cbd.css",
+    "static/css/main.df1fcaa9.css",
     "static/js/main.13d5e520.js"
   ]
 }
