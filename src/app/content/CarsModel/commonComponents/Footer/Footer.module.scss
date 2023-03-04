@@ -1,4 +1,5 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   @include flex(column, space-between, center, no-wrap);
@@ -8,6 +9,9 @@
     width: 670px;
     height: 14vh;
     text-align: center;
+    @media screen and (max-width: $mediaWidth) {
+      width: 100%;
+    }
 
     .description {
       @include text(14px, 14px, 400);
