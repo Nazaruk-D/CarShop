@@ -1,9 +1,13 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   .safetyContainer {
     @include flex(row, center, center, no-wrap);
     height: 100vh;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, center, center, no-wrap);
+    }
 
     .imageBlock {
       @include background(no-repeat, center, contain);
@@ -11,18 +15,29 @@
       width: 70%;
       height: 100%;
       background-color: #f4f4f4;
+      @media screen and (max-width: $mediaWidth) {
+        width: 150%;
+      }
 
       .characteristics{
         @include flex(row, center, center, no-wrap);
         width: 100%;
         position: absolute;
         bottom: 8%;
+        @media screen and (max-width: $mediaWidth) {
+          width: 100%;
+          bottom: 15%;
+          left: 3%;
+        }
       }
 
       .pseudoContainer {
         @include pseudo(absolute, '', '', '', 0, 0, '');
         width: 100%;
         height: 100%;
+        @media screen and (max-width: $mediaWidth) {
+          display: none;
+        }
 
         .firstBlock {
           @include pseudo(absolute, '', '', '', 0, 0, '');
@@ -93,6 +108,9 @@
       @include flex(column, space-between, center, no-wrap);
       height: 100%;
       width: 30%;
+      @media screen and (max-width: $mediaWidth) {
+        width: 100%;
+      }
 
       .textContainer {
         @include flex(column, space-between, center, no-wrap);
