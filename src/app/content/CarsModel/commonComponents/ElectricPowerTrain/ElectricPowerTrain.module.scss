@@ -7,7 +7,7 @@
   height: 100vh;
   background-color: #eee;
   @media screen and (max-width: $mediaWidth) {
-    height: 120vh;
+    height: 130vh;
   }
 
   .electricBlock {
@@ -66,36 +66,40 @@
     }
 
     .info {
-      @include flex(row, space-between, center, wrap);
+      @include flex(row, space-between, flex-start, wrap);
+      margin-top: 30px;
       width: 100%;
       height: 30%;
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(row, flex-start, flex-start, wrap);
+        //height: 180%;
+      }
 
       .firstContainer {
-        @include flex(row, flex-end, center, wrap);
+        @include flex(row, flex-end, flex-start, wrap);
         width: 50%;
-        height: 80%;
         padding-right: 10px;
         box-sizing: border-box;
         cursor: pointer;
         @media screen and (max-width: $mediaWidth) {
-          height: 180%;
         }
 
         .firstBlock {
           @include flex(column, space-between, flex-start, wrap);
           width: 80%;
-          height: 100%;
           border-top: 5px solid black;
           @media screen and (max-width: $mediaWidth) {
             @include flex(column, flex-start, flex-start, wrap);
           }
 
           .text {
+            @include flex(column, flex-start, flex-start, wrap);
             width: 100%;
-            height: 60%;
+            height: 120px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, flex-start, flex-start, wrap);
-              height: 50%;
+              //height: 50%;
+              height: 250px;
             }
 
             .title {
@@ -113,6 +117,7 @@
             @include flex(row, center, center, nowrap);
             height: 40%;
             width: 100%;
+            margin-top: 10px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, center, center, nowrap);
 
@@ -124,12 +129,12 @@
       .secondContainer {
         @include flex(row, flex-start, center, wrap);
         width: 50%;
-        height: 80%;
+        //height: 80%;
         padding-left: 10px;
         box-sizing: border-box;
         cursor: pointer;
         @media screen and (max-width: $mediaWidth) {
-          height: 180%;
+          //height: 180%;
         }
 
         .secondBlock {
@@ -142,11 +147,13 @@
           }
 
           .text {
+            @include flex(column, flex-start, flex-start, wrap);
             width: 100%;
-            height: 60%;
+            height: 120px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, flex-start, flex-start, wrap);
-              height: 50%;
+              //height: 50%;
+              height: 250px;
             }
 
             .title {
@@ -165,6 +172,7 @@
             @include flex(row, center, center, nowrap);
             height: 40%;
             width: 100%;
+            margin-top: 20px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, center, center, nowrap);
 
