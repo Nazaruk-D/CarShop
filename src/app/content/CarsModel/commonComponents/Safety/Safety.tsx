@@ -33,9 +33,12 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                backgroundColor,
                                                backgroundSize
                                            }) => {
+
+    const mobileDirection = window. innerWidth < 1200 ? {} : {flexDirection}
+
     return (
         <div className={s.mainContainer}>
-            <div className={s.safetyContainer} style={{flexDirection}}>
+            <div className={s.safetyContainer} style={mobileDirection}>
                 <div className={s.imageBlock}
                      style={{backgroundImage: `url(${backgroundImage})`, backgroundColor, backgroundSize}}>
                     <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>

@@ -1,16 +1,26 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   .autopilotContainer {
     @include background(no-repeat, center, cover);
     @include flex(column, center, flex-start, no-wrap);
     height: 72vh;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, flex-start, center, no-wrap);
+    }
 
     .textContainer {
       @include flex(column, space-around, flex-start, no-wrap);
       width: 20%;
       height: 100%;
       margin-left: 65px;
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(column, space-evenly, flex-start, no-wrap);
+        height: 45%;
+        margin-left: 0;
+        width: 90%;
+      }
     }
   }
 }
