@@ -1,20 +1,32 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainBlock {
   @include flex(row, center, center, nowrap);
   width: 100%;
   height: 100vh;
   background-color: black;
+  @media screen and (max-width: $mediaWidth) {
+    @include flex(column, center, center, nowrap);
+    height: 60vh;
+  }
 
   .orderBlock {
     @include flex(column, center, center, nowrap);
     width: 40%;
     height: 100%;
+    @media screen and (max-width: $mediaWidth) {
+      width: 90%;
+    }
 
     .logo {
       @include background(no-repeat, center, contain);
       width: 50%;
       height: 20%;
+      @media screen and (max-width: $mediaWidth) {
+        width: 90%;
+        height: 30%;
+      }
     }
   }
 
@@ -22,11 +34,17 @@
     @include flex(column, center, center, nowrap);
     width: 60%;
     height: 100%;
+    @media screen and (max-width: $mediaWidth) {
+      width: 90%;
+    }
 
     .image {
       @include background(no-repeat, center, contain);
       width: 100%;
-      height: 40%
+      height: 40%;
+      @media screen and (max-width: $mediaWidth) {
+        height: 80%;
+      }
     }
   }
 }

@@ -1,16 +1,25 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   @include flex(column, center, center, no-wrap);
   width: 100%;
   height: 120vh;
   background-color: black;
+  @media screen and (max-width: $mediaWidth) {
+    height: 60vh;
+  }
 
   .imageContainer {
     @include background(no-repeat, center, cover);
     width: 100%;
     height: 80vh;
     transition: background-image 0.5s;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, center, flex-start, nowrap);
+      width: 100%;
+      height: 30%;
+    }
   }
 
   .descriptionBlock {
@@ -22,6 +31,9 @@
       @include flex(column, center, flex-start, no-wrap);
       width: 50%;
       height: 80%;
+      @media screen and (max-width: $mediaWidth) {
+        width: 90%;
+      }
 
       .buttonsContainer {
         @include flex(row, flex-start, center, no-wrap);
