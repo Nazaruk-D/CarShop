@@ -13,6 +13,7 @@
     height: 100%;
     @include flex(row, flex-end, center, no-wrap);
     @media screen and (max-width: $mediaWidth) {
+      @include flex(row, center, center, no-wrap);
       height: 50%;
       width: 100%;
     }

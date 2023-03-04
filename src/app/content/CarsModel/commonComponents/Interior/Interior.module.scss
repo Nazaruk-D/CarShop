@@ -1,16 +1,24 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   .interiorContainer {
     @include background(no-repeat, center, cover);
     @include flex(column, center, flex-end, no-wrap);
     height: 72vh;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, center, flex-start, no-wrap);
+    }
 
     .textContainer {
       @include flex(column, space-around, flex-start, no-wrap);
       width: 20%;
       height: 100%;
       margin-right: 65px;
+      @media screen and (max-width: $mediaWidth) {
+        width: 40%;
+        margin-left: 35px;
+      }
 
       & div {
         color: white;

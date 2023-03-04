@@ -6,9 +6,7 @@
   @include flex(column, flex-end, center, no-wrap);
   height: 72vh;
   @media screen and (max-width: $mediaWidth) {
-    //@include flex(row, center, center, wrap);
     height: 55vh;
-
   }
 
   .characteristicsContainer {
