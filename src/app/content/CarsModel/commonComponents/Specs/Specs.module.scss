@@ -1,31 +1,51 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   .contentContainer {
     @include flex(row, center, flex-start, no-wrap);
     height: 100vh;
     background-color: black;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, flex-start, center, no-wrap);
+      height: 150vh;
+    }
 
     .imageBlock {
       @include background(no-repeat, center, contain);
       width: 50%;
       height: 100%;
+      @media screen and (max-width: $mediaWidth) {
+        width: 100%;
+        height: 30%;
+      }
     }
 
     .specsBlock {
       @include flex(column, space-between, center, no-wrap);
       height: 100%;
       width: 50%;
+      @media screen and (max-width: $mediaWidth) {
+        width: 90%;
+        height: 50%;
+      }
 
       .contentBlock {
         width: 70%;
         height: 100%;
         margin-top: 35px;
+        @media screen and (max-width: $mediaWidth) {
+          width: 100%;
+        }
 
         .titleContainer {
           @include flex(row, flex-start, center, no-wrap);
           width: 100%;
           height: 90px;
+          @media screen and (max-width: $mediaWidth) {
+            @include flex(row, center, center, no-wrap);
+            height: 70px;
+          }
 
           .title {
             @include text(30px, 30px, 600);
@@ -42,21 +62,21 @@
 
         .buttonsContainer {
           width: 100%;
+          @media screen and (max-width: $mediaWidth) {
+            @include flex(row, center, center, no-wrap);
+          }
         }
 
         .specsContainer {
           @include flex(row, flex-start, flex-start, wrap);
           width: 100%;
-          //height: 40%;
           padding-top: 30px;
-          //background-color: red;
 
           .spec {
             @include flex(column, flex-start, flex-start, wrap);
             width: 50%;
             position: relative;
             padding: 15px 0 25px;
-            //background-color: blue;
 
             .specTitle {
               @include text(15px, 20px, 600);
@@ -88,6 +108,9 @@
     @include flex(column, center, center, no-wrap);
     height: 15vh;
     background-color: black;
+    @media screen and (max-width: $mediaWidth) {
+      height: 13vh;
+    }
 
     .bottomContainer {
       @include flex(column, center, center, no-wrap);
