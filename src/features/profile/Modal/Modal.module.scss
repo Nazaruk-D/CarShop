@@ -1,0 +1,117 @@
+@import '../../../common/styles/sass/mixins';
+
+
+.modalBlock {
+  @include flex(column, center, center, no-wrap);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+
+
+  .modalContent {
+    @include flex(column, center, center, no-wrap);
+    width: 750px;
+    min-height: 200px;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+
+    .closeBlock::after {
+      color: black;
+      content: "✖";
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 20px;
+      position: absolute;
+      right: 25px;
+      top: 20px;
+    }
+
+    .titleBlock {
+      @include flex(row, flex-start, center, no-wrap);
+      width: 100%;
+
+      .title {
+        @include text(30px, 30px, 600);
+        padding-left: 45px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .form {
+      width: 100%;
+
+      .inputsBlock {
+        @include flex(row, flex-start, center, no-wrap);
+        padding-left: 45px;
+
+
+        .inputContainer {
+          @include flex(column, center, flex-start, wrap);
+          width: 330px;
+          margin-bottom: 30px;
+          margin-right: 10px;
+
+          .label {
+            @include text(15px, 15px, 500);
+            margin-bottom: 10px;
+            color: rgba(1,1,1,0.7);
+          }
+
+          .error {
+            @include text(15px, 15px, 500);
+            margin-top: 7px;
+            color: #bd1010;
+          }
+
+          & input, select {
+            @include text(15px, 15px, 600);
+            width: 310px;
+            height: 40px;
+            padding-left: 8px;
+            border-radius: 5px;
+            border: 0;
+            color: rgba(1,1,1,0.7);
+            background-color: rgba(0,0,0,0.05);
+
+            &:focus {
+              outline: 1px solid rgba(0,0,0,0.2);
+            }
+          }
+
+          & select {
+            width: 318px;
+          }
+        }
+      }
+    }
+
+
+    .buttonBlock {
+      width: 100%;
+      padding-left: 45px;
+
+      .submitButton {
+        @include text(15px,0, 600);
+        width: 200px;
+        height: 40px;
+        border: 0;
+        border-radius: 4px;
+        background-color: rgba(22, 63, 246, 0.85);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        margin-bottom: 30px;
+
+        &:hover {
+          background-color: rgba(8, 41, 178, 0.85);
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React from "react"
 import s from './ContactBlock.module.scss'
 import {Formik, Form, Field, useFormik} from 'formik';
 
-type ErrorsType = {
+export type ErrorsType = {
     email?: string
     firstName?: string
     lastName?: string
