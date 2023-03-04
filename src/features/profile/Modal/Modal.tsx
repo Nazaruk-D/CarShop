@@ -5,7 +5,7 @@ import {ErrorsType} from "../../../app/content/Schedule/ScheduleCar/ContactBlock
 import {useAppSelector} from "../../../app/store/store";
 
 export type ModalPropsType = {
-    setModalActive: any
+    setModalActive: (modalActive: boolean) => void
 }
 
 const Modal: React.FC<ModalPropsType> = ({setModalActive}) => {

@@ -2,8 +2,10 @@ import React from 'react';
 import s from "./ProfileSettings.module.scss"
 import {useAppSelector} from "../../../../app/store/store";
 
-
-const ProfileSettings = () => {
+export type ProfileSettingsPropsType = {
+    setModalActive: (modalActive: boolean) => void
+}
+const ProfileSettings: React.FC<ProfileSettingsPropsType> = ({setModalActive}) => {
     const {id, email, firstName, lastName, avatar, role, updatedAt, createdAt} = useAppSelector(s => s.profile.user)
 
     return (
@@ -16,7 +18,7 @@ const ProfileSettings = () => {
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Full Name</span>
                         <span className={s.itemDescription}>{firstName} {lastName}</span>
-                        <span className={s.itemButton}>Edit</span>
+                        <span className={s.itemButton} onClick={() => setModalActive(true)}>Edit</span>
                     </div>
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Address</span>

@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   backdrop-filter: blur(3px);
-
+  z-index: 1000;
 
   .modalContent {
     @include flex(column, center, center, no-wrap);

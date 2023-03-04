@@ -13,7 +13,7 @@ const Profile = () => {
     const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
-    const [modalActive, setModalActive] = useState(true)
+    const [modalActive, setModalActive] = useState(false)
 
     useEffect(() => {
         if (!isLoggedIn) {
@@ -27,7 +27,7 @@ const Profile = () => {
     return (
         <div className={s.mainPage}>
             <Header/>
-            <MainBlock/>
+            <MainBlock setModalActive={setModalActive}/>
             {modalActive && <Modal setModalActive={setModalActive}/>}
         </div>
     );

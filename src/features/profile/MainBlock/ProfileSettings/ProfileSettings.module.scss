@@ -1,7 +1,6 @@
 @import '../../../../common/styles/sass/mixins';
 
 .mainBlock {
-  height: 100%;
   width: 100%;
   padding-top: 130px;
 
@@ -42,6 +41,7 @@
           @include text(16px, 16px, 400);
           margin-top: 10px;
           text-decoration: underline;
+          cursor: pointer;
         }
       }
     }

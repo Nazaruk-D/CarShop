@@ -8,8 +8,11 @@ import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
 import { FiUser, FiArchive, FiLogOut } from "react-icons/fi";
 
+export type MainPropsType = {
+    setModalActive: (modalActive: boolean) => void
+}
 
-const MainBlock = () => {
+const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
     const [isActive, setIsActive] = useState(true)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
@@ -44,7 +47,7 @@ const MainBlock = () => {
             </div>
             <div className={s.contentContainer}>
                 {isActive
-                ? <ProfileSettings/>
+                ? <ProfileSettings setModalActive={setModalActive}/>
                 : <Orders/>
                 }
             </div>
