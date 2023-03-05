@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
 import MainPage from "../content/MainPage/MainPage";
-import React, {useEffect} from "react";
+import React from "react";
 import ErrorPage from "../../common/components/ErrorPage/ErrorPage";
 import ModelS from "../content/CarsModel/Model S/ModelS";
 import ModelY from "../content/CarsModel/Model Y/ModelY";
@@ -14,8 +14,6 @@ import Login from "../../features/auth/login/Login";
 import Registration from "../../features/auth/registration/Registration";
 import ScheduleSolar from "../content/Schedule/ScheduleSolar/ScheduleSolar";
 import Profile from "../../features/profile/Profile";
-import {useAppDispatch} from "../store/store";
-import {initializeAppTC} from "../app-reducer";
 import Cybertruck from "../content/CarsModel/Cybertruck/Cybertruck";
 
 export const routes = {

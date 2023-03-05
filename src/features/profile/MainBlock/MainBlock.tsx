@@ -6,17 +6,12 @@ import {logoutTC} from "../../auth/auth-reducer";
 import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
-import {FiArchive, FiLogOut, FiUser} from "react-icons/fi";
-import { FiUser, FiArchive, FiLogOut, FiUsers } from "react-icons/fi";
-import {useModal} from "../Modal/useModal";
-import Modal from "../Modal/Modal";
-import {IconType} from "react-icons";
+import {FiArchive, FiLogOut, FiUser, FiUsers} from "react-icons/fi";
 import OrdersPanel from "./OrdersPanel/OrdersPanel";
 import UsersList from "./UsersList/UsersList";
 
 
-const MainBlock = () => {
-    const [isActive, setIsActive] = useState(true)
+
 const userNavData: NavDataType[] = [
     {id: 0, name: 'Profile Settings', icon: <FiUser/>},
     {id: 1, name: 'Orders History', icon: <FiArchive/>},
@@ -67,7 +62,7 @@ const MainBlock = () => {
                 </div>
             </div>
             <div className={s.contentContainer}>
-                {item === 0 && <ProfileSettings setModalActive={setModalActive}/>}
+                {item === 0 && <ProfileSettings/>}
                 {item === 1 && role === 'user' && <Orders/>}
                 {item === 1 && role === 'admin' && <OrdersPanel/>}
                 {item === 2 && role === 'admin' && <UsersList/>}
