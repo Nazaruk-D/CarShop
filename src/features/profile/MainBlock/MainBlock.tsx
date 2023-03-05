@@ -6,15 +6,10 @@ import {logoutTC} from "../../auth/auth-reducer";
 import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
-import { FiUser, FiArchive, FiLogOut } from "react-icons/fi";
-import {useModal} from "../Modal/useModal";
-import Modal from "../Modal/Modal";
+import {FiArchive, FiLogOut, FiUser} from "react-icons/fi";
 
-export type MainPropsType = {
-    setModalActive: (modalActive: boolean) => void
-}
 
-const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
+const MainBlock = () => {
     const [isActive, setIsActive] = useState(true)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
@@ -41,15 +36,15 @@ const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
                         <div className={s.icon} style={disableIcon}><FiArchive/></div>
                         <span style={greyColor} className={s.navButton} onClick={()=>{setIsActive(false)}}>Orders</span>
                     </div>
-                    <div className={s.buttonBlock}>
+                    <div className={s.buttonBlock} onClick={onClickHandler}>
                         <div className={s.icon}><FiLogOut/></div>
-                        <span onClick={onClickHandler} className={s.navButton}>Sign Out</span>
+                        <span  className={s.navButton}>Sign Out</span>
                     </div>
                 </div>
             </div>
             <div className={s.contentContainer}>
                 {isActive
-                ? <ProfileSettings setModalActive={setModalActive}/>
+                ? <ProfileSettings/>
                 : <Orders/>
                 }
             </div>
