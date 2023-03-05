@@ -13,6 +13,49 @@
   }
 
   .contentBlock {
-    @include flex(row, flex-start, center, no-wrap);
+    @include flex(column, center, flex-start, nowrap);
+
+    .tableTitles {
+      margin-top: 20px;
+      @include flex(row, flex-start, center, nowrap);
+      border-bottom: 1px solid;
+
+
+      .field {
+        @include flex(column, center, flex-start, nowrap);
+        @include text(15px, 15px, 500);
+        width: 140px;
+        height: 30px;
+      }
+
+      .fieldId {
+        @include flex(column, center, flex-start, nowrap);
+        @include text(15px, 15px, 500);
+        width: 40px;
+        height: 30px;
+      }
+    }
+  }
+
+  .dataBlock {
+    @include flex(column, center, flex-start, nowrap);
+
+    .data {
+      @include flex(row, flex-start, center, nowrap);
+
+      .dataField {
+        @include flex(column, center, flex-start, nowrap);
+        @include text(13px, 13px, 400);
+        width: 140px;
+        height: 30px;
+      }
+
+      .dataFieldId {
+        @include flex(column, center, flex-start, nowrap);
+        @include text(13px, 13px, 400);
+        width: 40px;
+        height: 30px;
+      }
+    }
   }
 }
