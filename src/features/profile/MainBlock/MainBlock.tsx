@@ -10,6 +10,8 @@ import { FiUser, FiArchive, FiLogOut, FiUsers } from "react-icons/fi";
 import {useModal} from "../Modal/useModal";
 import Modal from "../Modal/Modal";
 import {IconType} from "react-icons";
+import OrdersPanel from "./OrdersPanel/OrdersPanel";
+import UsersList from "./UsersList/UsersList";
 
 export type MainPropsType = {
     setModalActive: (modalActive: boolean) => void
@@ -67,8 +69,8 @@ const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
             <div className={s.contentContainer}>
                 {item === 0 && <ProfileSettings setModalActive={setModalActive}/>}
                 {item === 1 && role === 'user' && <Orders/>}
-                {item === 1 && role === 'admin' && <div>Orders Panel</div>}
-                {item === 2 && role === 'admin' && <div>Users List</div>}
+                {item === 1 && role === 'admin' && <OrdersPanel/>}
+                {item === 2 && role === 'admin' && <UsersList/>}
             </div>
         </div>
     );

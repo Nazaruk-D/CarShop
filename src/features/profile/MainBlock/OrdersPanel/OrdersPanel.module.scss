@@ -1,0 +1,18 @@
+@import '../../../../common/styles/sass/mixins';
+
+.mainBlock {
+  height: 100%;
+  width: 100%;
+  padding-top: 130px;
+
+  .titleBlock {
+    .title {
+      @include text(35px, 35px, 600);
+      margin-top: 0;
+    }
+  }
+
+  .contentBlock {
+    @include flex(row, flex-start, center, no-wrap);
+  }
+}
