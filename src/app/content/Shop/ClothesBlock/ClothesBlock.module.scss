@@ -1,9 +1,14 @@
 @import '../../../../common/styles/sass/mixins';
+@import '../../../../common/styles/sass/variables';
 
 .clothesContainer {
   @include flex(row, space-between, center, wrap);
   width: 100%;
   height: 100vh;
+  @media screen and (max-width: $mediaWidth) {
+    @include flex(column, space-between, center, wrap);
+    height: auto;
+  }
 
   .clothesBlock {
     @include background(no-repeat, center, cover);
@@ -12,6 +17,10 @@
     height: 100vh;
     padding-bottom: 3%;
     box-sizing: border-box;
+    @media screen and (max-width: $mediaWidth) {
+     width: 100%;
+      height: 80vh;
+    }
 
     .title {
       @include text(26px, 26px, 600);
