@@ -9,6 +9,8 @@ export type ErrorsType = {
     phoneNumber?: string
     contactPreference?: string
     zipCode?: string
+    password?: string
+    confirmPassword?: string
 }
 
 const ContactBlock = () => {
