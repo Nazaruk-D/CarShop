@@ -56,7 +56,6 @@
       @include flex(row, flex-end, center, nowrap);
       width: 30%;
       height: 150%;
-
       @media screen and (max-width: $mediaWidth) {
         @include flex(row, flex-start, center, wrap);
         width: 25%;
@@ -85,7 +84,6 @@
         padding-top: 10px;
         box-sizing: border-box;
         height: 150%;
-
       }
     }
   }

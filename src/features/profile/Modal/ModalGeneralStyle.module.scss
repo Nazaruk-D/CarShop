@@ -1,4 +1,5 @@
 @import '../../../common/styles/sass/mixins';
+@import '../../../common/styles/sass/variables';
 
 .titleBlock {
   @include flex(row, flex-start, center, no-wrap);
@@ -14,16 +15,29 @@
 
 .form {
   width: 100%;
+  @media screen and (max-width: $mediaWidth) {
+    width: 90%;
+  }
 
   .inputsBlock {
     @include flex(row, flex-start, flex-start, nowrap);
     padding-left: 45px;
+    @media screen and (max-width: $mediaWidth) {
+      @include flex(column, flex-start, flex-start, nowrap);
+      padding: 0;
+      width: 100%;
+    }
+
 
     .inputContainer {
       @include flex(column, center, flex-start, wrap);
       width: 330px;
       margin-bottom: 30px;
       margin-right: 10px;
+      @media screen and (max-width: $mediaWidth) {
+
+        width: 100%;
+      }
 
       .label {
         @include text(15px, 15px, 500);
