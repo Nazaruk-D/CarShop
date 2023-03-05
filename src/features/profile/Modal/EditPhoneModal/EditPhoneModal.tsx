@@ -1,16 +1,16 @@
 import React from 'react';
 import {useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
-import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import Modal from "../Modal";
 import s from "../ModalGeneralStyle.module.scss";
+import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
 
 type EditPhoneModalPropType = {
     setModalActive: (modalActive: boolean) => void
     hide: () => void
 }
 
-const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive,hide}) => {
+const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}) => {
     const phoneNumber = useAppSelector(s => s.profile.user.firstName)
 
     const formik = useFormik({
@@ -18,7 +18,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive,hide})
             phoneNumber: phoneNumber,
         },
         validate: (values) => {
-            const errors: ErrorsType = {};
+            const errors: FormikModalErrorType = {};
             if (!values.phoneNumber) {
                 errors.phoneNumber = 'Required';
             } else if (values.phoneNumber.length < 3) {
@@ -49,7 +49,8 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive,hide})
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton} onClick={hide} disabled={!(formik.isValid && formik.dirty)}>
+                    <button type="submit" className={s.submitButton} onClick={hide}
+                            disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>

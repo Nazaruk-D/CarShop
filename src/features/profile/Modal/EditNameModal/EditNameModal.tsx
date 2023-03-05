@@ -2,12 +2,21 @@ import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
 import {useAppSelector} from "../../../../app/store/store";
-import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import {useFormik} from "formik";
 
 type EditNameModalPropType = {
     setModalActive: (modalActive: boolean) => void
     hide: () => void
+}
+
+export type FormikModalErrorType = {
+    address?: string
+    email?: string
+    firstName?: string
+    lastName?: string
+    password?: string
+    confirmPassword?: string
+    phoneNumber?: string
 }
 
 const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) => {
@@ -19,7 +28,7 @@ const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) =
             lastName: lastName,
         },
         validate: (values) => {
-            const errors: ErrorsType = {};
+            const errors: FormikModalErrorType = {};
 
             if (!values.firstName) {
                 errors.firstName = 'Required';

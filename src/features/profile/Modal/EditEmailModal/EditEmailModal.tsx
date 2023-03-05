@@ -2,15 +2,15 @@ import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
 import {useAppSelector} from "../../../../app/store/store";
-import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import {useFormik} from "formik";
+import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
 
 type EditEmailModalPropType = {
     setModalActive: (modalActive: boolean) => void
     hide: () => void
 }
 
-const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive,hide}) => {
+const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive, hide}) => {
     const email = useAppSelector(s => s.profile.user.email)
 
     const formik = useFormik({
@@ -18,7 +18,7 @@ const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive,hide})
             email: email,
         },
         validate: (values) => {
-            const errors: ErrorsType = {};
+            const errors: FormikModalErrorType = {};
             if (!values.email) {
                 errors.email = 'Email required'
             } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {

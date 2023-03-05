@@ -2,8 +2,8 @@ import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import {useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
-import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import Modal from "../Modal";
+import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
 
 
 type EditAddressModalPropType = {
@@ -11,7 +11,7 @@ type EditAddressModalPropType = {
     hide: () => void
 }
 
-const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hide}) => {
+const EditAddressModal: React.FC<EditAddressModalPropType> = ({setModalActive, hide}) => {
     const {firstName} = useAppSelector(s => s.profile.user)
 
     const formik = useFormik({
@@ -19,7 +19,7 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
             address: firstName,
         },
         validate: (values) => {
-            const errors: ErrorsType = {};
+            const errors: FormikModalErrorType = {};
             if (!values.address) {
                 errors.address = 'Required';
             } else if (values.address.length < 3) {
@@ -50,7 +50,8 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton} onClick={hide} disabled={!(formik.isValid && formik.dirty)}>
+                    <button type="submit" className={s.submitButton} onClick={hide}
+                            disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>
@@ -60,3 +61,4 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
 };
 
 export default EditAddressModal;
+

@@ -1,22 +1,22 @@
 import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
-import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import {useFormik} from "formik";
+import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
 
 type EditPasswordModalPropType = {
     setModalActive: (modalActive: boolean) => void
     hide: () => void
 }
 
-const EditPasswordModal: React.FC<EditPasswordModalPropType> = ({setModalActive,hide}) => {
+const EditPasswordModal: React.FC<EditPasswordModalPropType> = ({setModalActive, hide}) => {
     const formik = useFormik({
         initialValues: {
             password: "",
             confirmPassword: "",
         },
         validate: (values) => {
-            const errors: ErrorsType = {};
+            const errors: FormikModalErrorType = {};
 
             if (!values.password) {
                 errors.password = 'Password required'
