@@ -56,7 +56,7 @@ const EditPasswordModal: React.FC<EditPasswordModalPropType> = ({setModalActive,
                             <span className={s.error}>{formik.errors.password}</span>}
                     </div>
                     <div className={s.inputContainer}>
-                        <span className={s.label}>Last Name</span>
+                        <span className={s.label}>Confirm Password</span>
                         <input
                             style={formik.errors.confirmPassword && formik.touched.confirmPassword ? {border: `1px solid #bd1010`} : {}}
                             type={"password"}

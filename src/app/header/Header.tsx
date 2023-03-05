@@ -4,8 +4,6 @@ import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
 
-const Fade = require("react-reveal/Fade")
-
 type HeaderPropsType = {
     position?: 'fixed'
     color?: string
@@ -57,7 +55,6 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
                     <button className={s.menuButton} onClick={onClickHandler}>Menu</button>
                 </div>
             }
-
         </div>
     );
 };
