@@ -34,7 +34,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive,hide})
     return (
         <Modal setModalActive={setModalActive} hide={hide}>
             <div className={s.titleBlock}>
-                <h1 className={s.title}>Edit address</h1>
+                <h1 className={s.title}>Edit Contact Phone Number</h1>
             </div>
             <form onSubmit={formik.handleSubmit} className={s.form}>
                 <div className={s.inputsBlock}>
