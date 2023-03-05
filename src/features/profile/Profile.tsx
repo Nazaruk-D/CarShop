@@ -7,13 +7,16 @@ import {routes} from "../../app/routes/routes";
 import {useNavigate} from "react-router-dom";
 import {fetchProfileTC} from "./profile-reducer";
 import Modal from "./Modal/Modal";
+import {useModal} from "./Modal/useModal";
 
 
 const Profile = () => {
     const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
-    const [modalActive, setModalActive] = useState(false)
+    const [modalActive, setModalActive] = useState(true)
+
+
 
     useEffect(() => {
         if (!isLoggedIn) {
@@ -28,7 +31,7 @@ const Profile = () => {
         <div className={s.mainPage}>
             <Header/>
             <MainBlock setModalActive={setModalActive}/>
-            {modalActive && <Modal setModalActive={setModalActive}/>}
+            {/*{editNameModal && <Modal setModalActive={setModalActive}/>}*/}
         </div>
     );
 };

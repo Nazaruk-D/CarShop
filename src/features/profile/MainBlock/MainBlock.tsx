@@ -7,6 +7,8 @@ import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
 import { FiUser, FiArchive, FiLogOut } from "react-icons/fi";
+import {useModal} from "../Modal/useModal";
+import Modal from "../Modal/Modal";
 
 export type MainPropsType = {
     setModalActive: (modalActive: boolean) => void

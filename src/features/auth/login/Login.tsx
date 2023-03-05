@@ -2,12 +2,11 @@ import React, {useEffect} from 'react';
 import s from "./Login.module.scss"
 import Logo from "../../../common/components/Logo/Logo";
 import Footer from "../../../app/content/CarsModel/commonComponents/Footer/Footer";
-import {Field, useFormik} from "formik";
+import {useFormik} from "formik";
 import {useNavigate} from "react-router-dom";
 import {routes} from "../../../app/routes/routes";
 import {useAppDispatch, useAppSelector} from "../../../app/store/store";
 import {loginTC} from "../auth-reducer";
-import {initializeAppTC} from "../../../app/app-reducer";
 import ErrorWindow from "../../../common/components/ErrorWindow/ErrorWindow";
 
 export type FormikErrorType = {
