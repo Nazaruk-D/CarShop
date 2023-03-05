@@ -21,9 +21,9 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
         validate: (values) => {
             const errors: ErrorsType = {};
             if (!values.address) {
-                errors.firstName = 'Required';
+                errors.address = 'Required';
             } else if (values.address.length < 3) {
-                errors.firstName = 'Must be 3 characters or more';
+                errors.address = 'Must be 3 characters or more';
             }
             return errors;
         },
@@ -50,7 +50,7 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton} onClick={hide}>
+                    <button type="submit" className={s.submitButton} onClick={hide} disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>

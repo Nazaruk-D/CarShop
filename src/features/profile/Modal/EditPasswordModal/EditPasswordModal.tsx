@@ -67,7 +67,7 @@ const EditPasswordModal: React.FC<EditPasswordModalPropType> = ({setModalActive,
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton}>
+                    <button type="submit" className={s.submitButton} disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>

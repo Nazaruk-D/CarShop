@@ -11,6 +11,7 @@ export type ErrorsType = {
     zipCode?: string
     password?: string
     confirmPassword?: string
+    address?: string
 }
 
 const ContactBlock = () => {

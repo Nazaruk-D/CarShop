@@ -49,7 +49,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive,hide})
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton} onClick={hide}>
+                    <button type="submit" className={s.submitButton} onClick={hide} disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>
