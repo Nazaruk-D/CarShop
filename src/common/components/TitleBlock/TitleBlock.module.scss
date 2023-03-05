@@ -5,16 +5,16 @@
   @include flex(column, center, center, no-wrap);
   height: 35vh;
   @media screen and (max-width: $mediaWidth) {
-    height: 55vh;
+    height: 60vh;
   }
 
   .textContainer {
-    @include flex(row, center, center, no-wrap);
+    @include flex(row, center, center, nowrap);
     width: 77%;
     height: 100%;
     @media screen and (max-width: $mediaWidth) {
-      @include flex(column, flex-start, flex-start, no-wrap);
-      width: 100%;
+      @include flex(column, flex-start, flex-start, nowrap);
+      width: 80%;
       margin: 0;
       box-sizing: border-box;
     }
@@ -23,8 +23,6 @@
       height: 60%;
       width: 40%;
       @media screen and (max-width: $mediaWidth) {
-        padding: 10px;
-        box-sizing: border-box;
         width: 100%;
         height: 50%;
       }
@@ -40,9 +38,13 @@
       }
 
       .buttonsBlock {
+        @include flex(row, flex-start, center, nowrap);
         width: 100%;
         margin-bottom: 35px;
-        @include flex(row, flex-start, center, no-wrap);
+        @media screen and (max-width: $mediaWidth) {
+          @include flex(column, center, center, nowrap);
+          margin: 0;
+        }
 
         & button {
           margin-left: 0;
@@ -58,6 +60,7 @@
       margin-top: 40px;
       @media screen and (max-width: $mediaWidth) {
         @include flex(column, flex-start, flex-start, no-wrap);
+        height: 60%;
         width: 100%;
       }
 

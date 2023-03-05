@@ -1,8 +1,15 @@
 @import '../../../../common/styles/sass/mixins';
+@import '../../../../common/styles/sass/variables';
 
 .mainBlock {
   width: 100%;
   padding-top: 130px;
+  box-sizing: border-box;
+  @media screen and (max-width: $mediaWidth) {
+    width: 90%;
+    padding-top: 100px;
+    box-sizing: border-box;
+  }
 
   .titleBlock {
     .title {
@@ -12,31 +19,38 @@
   }
 
   .contentBlock {
-    @include flex(column, center, flex-start, no-wrap);
+    @include flex(column, center, flex-start, nowrap);
     width: 100%;
 
+
     .mainSettings {
-      @include flex(row, flex-start, center, no-wrap);
+      @include flex(row, flex-start, center, nowrap);
       width: 100%;
       margin-top: 20px;
-
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(column, center, flex-start, wrap);
+      }
 
       .itemBlock {
-        @include flex(column, flex-start, flex-start, no-wrap);
+        @include flex(column, flex-start, flex-start, nowrap);
         width: 200px;
         height: 100px;
         margin-right: 110px;
+        @media screen and (max-width: $mediaWidth) {
+          margin: 0;
+        }
 
         .itemTitle {
           @include text(16px, 16px, 600);
-          color: rgba(1,1,1,0.6);
+          color: rgba(1, 1, 1, 0.6);
 
         }
+
         .itemDescription {
           @include text(16px, 16px, 600);
           margin-top: 7px;
-
         }
+
         .itemButton {
           @include text(16px, 16px, 400);
           margin-top: 10px;
@@ -47,7 +61,6 @@
     }
 
     .securityTitleBlock {
-
       .securityTitle {
         @include text(27px, 27px, 600);
         margin-top: 15px;
@@ -58,23 +71,31 @@
       @include flex(row, flex-start, center, no-wrap);
       width: 100%;
       margin-top: 20px;
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(column, center, flex-start, wrap);
+      }
 
       .itemBlock {
         @include flex(column, flex-start, flex-start, no-wrap);
         width: 200px;
         height: 100px;
         margin-right: 110px;
+        @media screen and (max-width: $mediaWidth) {
+          margin: 0;
+        }
 
         .itemTitle {
           @include text(16px, 16px, 600);
-          color: rgba(1,1,1,0.6);
+          color: rgba(1, 1, 1, 0.6);
 
         }
+
         .itemDescription {
           @include text(16px, 16px, 600);
           margin-top: 7px;
 
         }
+
         .itemButton {
           @include text(16px, 16px, 400);
           margin-top: 10px;
@@ -82,6 +103,5 @@
         }
       }
     }
-
   }
 }

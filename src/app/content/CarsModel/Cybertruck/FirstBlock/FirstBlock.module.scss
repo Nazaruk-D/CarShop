@@ -1,4 +1,5 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainBlock {
   @include background(no-repeat, center, cover);
@@ -6,20 +7,28 @@
   width: 100%;
   height: 100vh;
 
+
   .titleBlock {
     @include flex(column, center, center, nowrap);
     width: 100%;
     height: 50%;
 
+
     .logoContainer {
       @include background(no-repeat, center, contain);
       width: 400px;
       height: 120px;
+      @media screen and (max-width: $mediaWidth) {
+        width: 80%;
+      }
     }
 
     .title {
       @include text(12px, 12px, 500);
       letter-spacing: 2px;
+      @media screen and (max-width: $mediaWidth) {
+        width: 80%;
+      }
     }
   }
 

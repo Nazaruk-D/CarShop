@@ -4,20 +4,20 @@
 .mainContainer {
   .contentContainer {
     @include flex(row, center, flex-start, no-wrap);
-    height: 100vh;
+    //height: 100vh;
     background-color: black;
     @media screen and (max-width: $mediaWidth) {
       @include flex(column, flex-start, center, no-wrap);
-      height: 150vh;
+      //min-height: 120vh;
     }
 
     .imageBlock {
       @include background(no-repeat, center, contain);
       width: 50%;
-      height: 100%;
+      height: 100vh;
       @media screen and (max-width: $mediaWidth) {
         width: 100%;
-        height: 30%;
+        height: 30vh;
       }
     }
 

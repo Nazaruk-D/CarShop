@@ -1,9 +1,13 @@
 @import '../../../../../common/styles/sass/mixins';
+@import '../../../../../common/styles/sass/variables';
 
 .mainContainer {
   @include flex(column, center, center, no-wrap);
   height: 92vh;
   background-color: black;
+  @media screen and (max-width: $mediaWidth) {
+    height: 70vh;
+  }
 
   .titleBlock {
     @include text(30px, 30px, 600);

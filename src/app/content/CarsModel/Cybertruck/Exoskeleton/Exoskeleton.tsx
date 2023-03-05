@@ -5,7 +5,7 @@ import cybertruckSide from "../../../../../common/assets/cybertruckSide.jpg"
 const Exoskeleton = () => {
 
     return (
-        <div className={s.mainBlock} >
+        <div className={s.mainBlock}>
             <div className={s.imageContainer}>
                 <div className={s.image} style={{backgroundImage: `url(${cybertruckSide})`}}></div>
             </div>
