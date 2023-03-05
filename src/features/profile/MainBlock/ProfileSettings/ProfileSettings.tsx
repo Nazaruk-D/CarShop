@@ -5,6 +5,7 @@ import {useModal} from "../../Modal/useModal";
 import Modal from "../../Modal/Modal";
 import EditNameModal from "../../Modal/EditNameModal/EditNameModal";
 import EditAddressModal from "../../Modal/EditAddressModal/EditAddressModal";
+import EditPhoneModal from "../../Modal/EditPhoneModal/EditPhoneModal";
 
 export type ProfileSettingsPropsType = {
     setModalActive: (modalActive: boolean) => void
@@ -44,7 +45,7 @@ const ProfileSettings: React.FC<ProfileSettingsPropsType> = ({setModalActive}) =
                     </div>
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Contact Phone Number</span>
-                        <span className={s.itemButton}>Add New</span>
+                        <span className={s.itemButton} onClick={() => togglePhoneNumberModal()}>Add New</span>
                     </div>
                 </div>
                 <div className={s.securityTitleBlock}>
@@ -66,6 +67,7 @@ const ProfileSettings: React.FC<ProfileSettingsPropsType> = ({setModalActive}) =
             {/*{editNameModal && <Modal setModalActive={setModalActive} hide={toggleEditNameModal}/>}*/}
             {editNameModal && <EditNameModal setModalActive={toggleEditNameModal} hide={toggleEditNameModal}/>}
             {editAddressModal && <EditAddressModal setModalActive={toggleEditAddressModal} hide={toggleEditAddressModal}/>}
+            {editPhoneNumberModal && <EditPhoneModal setModalActive={togglePhoneNumberModal} hide={togglePhoneNumberModal}/>}
         </div>
     );
 };

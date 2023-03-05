@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "./EditNameModal.module.scss"
+import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
 import {useAppSelector} from "../../../../app/store/store";
 import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";

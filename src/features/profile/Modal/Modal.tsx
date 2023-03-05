@@ -1,9 +1,5 @@
 import s from "./Modal.module.scss"
-import React, {useEffect, useRef, useState} from "react";
-import {useFormik} from "formik";
-import {ErrorsType} from "../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
-import {useAppSelector} from "../../../app/store/store";
-import {useModal} from "./useModal";
+import React from "react";
 
 export type ModalPropsType = {
     setModalActive: (modalActive: boolean) => void

@@ -1,4 +1,4 @@
-@import '../../../../common/styles/sass/mixins';
+@import '../../../common/styles/sass/mixins';
 
 .titleBlock {
   @include flex(row, flex-start, center, no-wrap);

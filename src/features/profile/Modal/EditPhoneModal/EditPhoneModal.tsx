@@ -1,29 +1,28 @@
 import React from 'react';
-import s from "../ModalGeneralStyle.module.scss"
 import {useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
 import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import Modal from "../Modal";
+import s from "../ModalGeneralStyle.module.scss";
 
-
-type EditAddressModalPropType = {
+type EditPhoneModalPropType = {
     setModalActive: (modalActive: boolean) => void
     hide: () => void
 }
 
-const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hide}) => {
-    const {firstName} = useAppSelector(s => s.profile.user)
+const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive,hide}) => {
+    const phoneNumber = useAppSelector(s => s.profile.user.firstName)
 
     const formik = useFormik({
         initialValues: {
-            address: firstName,
+            phoneNumber: phoneNumber,
         },
         validate: (values) => {
             const errors: ErrorsType = {};
-            if (!values.address) {
-                errors.firstName = 'Required';
-            } else if (values.address.length < 3) {
-                errors.firstName = 'Must be 3 characters or more';
+            if (!values.phoneNumber) {
+                errors.phoneNumber = 'Required';
+            } else if (values.phoneNumber.length < 3) {
+                errors.phoneNumber = 'Must be 3 characters or more';
             }
             return errors;
         },
@@ -42,11 +41,11 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
                     <div className={s.inputContainer}>
                         <span className={s.label}>Address</span>
                         <input
-                            style={formik.errors.address && formik.touched.address ? {border: `1px solid #bd1010`} : {}}
-                            {...formik.getFieldProps('address')}
+                            style={formik.errors.phoneNumber && formik.touched.phoneNumber ? {border: `1px solid #bd1010`} : {}}
+                            {...formik.getFieldProps('phoneNumber')}
                         />
-                        {formik.errors.address && formik.touched.address &&
-                            <span className={s.error}>{formik.errors.address}</span>}
+                        {formik.errors.phoneNumber && formik.touched.phoneNumber &&
+                            <span className={s.error}>{formik.errors.phoneNumber}</span>}
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
@@ -59,4 +58,4 @@ const EditAddressModal:React.FC<EditAddressModalPropType> = ({setModalActive, hi
     );
 };
 
-export default EditAddressModal;
+export default EditPhoneModal;
