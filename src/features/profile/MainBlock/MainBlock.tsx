@@ -9,20 +9,27 @@ import Orders from "./Orders/Orders";
 import { FiUser, FiArchive, FiLogOut } from "react-icons/fi";
 import {useModal} from "../Modal/useModal";
 import Modal from "../Modal/Modal";
+import {IconType} from "react-icons";
 
 export type MainPropsType = {
     setModalActive: (modalActive: boolean) => void
 }
 
+const navData: NavDataType[] = [
+    {id: 0, name: 'Profile Settings', icon: <FiUser/>},
+    {id: 1, name: 'Orders', icon: <FiArchive/>},
+]
+
+type NavDataType = {
+    id: number
+    name: string
+    icon: JSX.Element
+}
+
 const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
-    const [isActive, setIsActive] = useState(true)
+    const [item, setItem] = useState(1)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
-
-    const greyColor = isActive ? {} : {color: 'black'};
-    const blackColor = isActive ? {color: 'black'} : {};
-    const activeIcon = isActive ? {backgroundColor: 'rgba(1,1,1,0.05)', color: 'black'} : {}
-    const disableIcon = isActive ? {} : {backgroundColor: 'rgba(1,1,1,0.05)', color: 'black'}
 
     const onClickHandler = () => {
         dispatch(logoutTC())
@@ -33,14 +40,10 @@ const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
         <div className={s.mainBlock}>
             <div className={s.navBlock}>
                 <div className={s.navContainer}>
-                    <div className={s.buttonBlock}>
-                        <div className={s.icon} style={activeIcon}><FiUser/></div>
-                        <span style={blackColor} className={s.navButton} onClick={()=>{setIsActive(true)}}>Profile Settings</span>
-                    </div>
-                    <div className={s.buttonBlock}>
-                        <div className={s.icon} style={disableIcon}><FiArchive/></div>
-                        <span style={greyColor} className={s.navButton} onClick={()=>{setIsActive(false)}}>Orders</span>
-                    </div>
+                    {navData.map((b, i) => <div className={s.buttonBlock} onClick={() => setItem(i)}>
+                        <div className={s.icon} style={{backgroundColor: item === i ? 'rgba(1,1,1,0.05)' : '',}}>{b.icon}</div>
+                        <span style={{color: item === i ? 'black' : '',}} className={s.navButton} >{b.name}</span>
+                    </div>)}
                     <div className={s.buttonBlock}>
                         <div className={s.icon}><FiLogOut/></div>
                         <span onClick={onClickHandler} className={s.navButton}>Sign Out</span>
@@ -48,10 +51,8 @@ const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
                 </div>
             </div>
             <div className={s.contentContainer}>
-                {isActive
-                ? <ProfileSettings setModalActive={setModalActive}/>
-                : <Orders/>
-                }
+                {item === 0 && <ProfileSettings setModalActive={setModalActive}/>}
+                {item === 1 && <Orders/>}
             </div>
         </div>
     );
