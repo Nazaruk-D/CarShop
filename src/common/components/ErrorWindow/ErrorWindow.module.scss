@@ -1,4 +1,5 @@
 @import '../../../common/styles/sass/mixins';
+@import '../../../common/styles/sass/variables';
 
 .error {
   transform: scale(0);
@@ -14,4 +15,7 @@
   bottom: 90px;
   background-color: rgba(227, 227, 227, 0.5);
   transform: scale(1);
+  @media screen and (max-width: $mediaWidth) {
+    left: 10px;
+  }
 }

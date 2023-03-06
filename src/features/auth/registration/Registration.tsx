@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./Registration.module.scss"
 import {useFormik} from "formik";
 import Logo from "../../../common/components/Logo/Logo";
 import Footer from "../../../app/content/CarsModel/commonComponents/Footer/Footer";
-import {useAppDispatch} from "../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../app/store/store";
 import {registrationTC} from "../auth-reducer";
 import ErrorWindow from "../../../common/components/ErrorWindow/ErrorWindow";
+import {routes} from "../../../app/routes/routes";
+import {useNavigate} from "react-router-dom";
 
 
 export type FormikErrorType = {
@@ -18,6 +20,8 @@ export type FormikErrorType = {
 
 const Registration = () => {
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+    const isRegistered = useAppSelector(s => s.auth.isRegistered)
 
     const formik = useFormik({
         initialValues: {
@@ -36,7 +40,7 @@ const Registration = () => {
             }
 
             if (!values.lastName) {
-                errors.lastName = 'First Name is required'
+                errors.lastName = 'Last Name is required'
             } else if (values.lastName.length < 3) {
                 errors.lastName = 'Last Name must be min 3 characters long.'
             }
@@ -68,6 +72,10 @@ const Registration = () => {
             formik.resetForm()
         },
     });
+
+    if (isRegistered) {
+        navigate(routes.login)
+    }
 
     return (
         <div className={s.loginContainer}>

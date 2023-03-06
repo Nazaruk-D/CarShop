@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
 import {IoMdClose} from "react-icons/io";
-// import {IoMdClose} from "react-icons/Io";
 
 
 type HeaderPropsType = {
