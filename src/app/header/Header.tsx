@@ -3,6 +3,9 @@ import s from './Header.module.scss'
 import {NavLink} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
+import {IoMdClose} from "react-icons/io";
+// import {IoMdClose} from "react-icons/Io";
+
 
 type HeaderPropsType = {
     position?: 'fixed'
@@ -31,11 +34,10 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
 
     return (
         <div className={s.headerContainer} style={{position, color}}>
-            {logo &&
                 <div className={s.logo}><Logo color={color}/></div>
-            }
             {!toggleMenu
                 ? <div  className={s.menuContainer}>
+                    <div className={s.close} onClick={closeHandler}><IoMdClose style={{}}/></div>
                     <div className={s.menuBlock}>
                         <NavLink to={routes.modelS} className={s.menuText} style={{color}}>Model S</NavLink>
                         <NavLink to={routes.model3} className={s.menuText} style={{color}}>Model 3</NavLink>
@@ -49,7 +51,6 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
                         <NavLink to={routes.profile} className={s.accountText} style={{color}}>Account</NavLink>
                         <NavLink to={routes.cybertruck} className={s.accountText} style={{color}}>Сybertruck</NavLink>
                     </div>
-                    <div className={s.close} onClick={closeHandler}>X</div>
                 </div>
                 : <div className={s.menuButtonBlock}>
                     <button className={s.menuButton} onClick={onClickHandler}>Menu</button>
