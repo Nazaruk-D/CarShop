@@ -30,7 +30,7 @@ type NavDataType = {
 }
 
 const MainBlock = () => {
-    const [item, setItem] = useState(1)
+    const [item, setItem] = useState(0)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const {role} = useAppSelector(s => s.profile.user)
