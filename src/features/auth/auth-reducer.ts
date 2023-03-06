@@ -52,7 +52,7 @@ export const registrationTC = createAsyncThunk<undefined, RegistrationDataType, 
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await authAPI.registration(param)
-        if (res.status === 200) {
+        if (res.status === 201) {
             // thunkAPI.dispatch(setIsLoggedInAC({value: false}))
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
             // thunkAPI.dispatch(clearTodosDataAC())
@@ -60,7 +60,6 @@ export const registrationTC = createAsyncThunk<undefined, RegistrationDataType, 
             return
         } else {
             // handleServerAppError(res.data, thunkAPI.dispatch)
-
             return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
         }
     } catch (err: any) {
@@ -74,28 +73,11 @@ export const registrationTC = createAsyncThunk<undefined, RegistrationDataType, 
 })
 
 
-// export const updateUser =
-//     (data: { name?: string; avatar?: string }): AppThunk =>
-//         (dispatch, getState: () => AppRootStateType) => {
-//             dispatch(setAppStatusAC('loading'))
-//             const user = getState().auth.user
-//             const userUpdate = {...user, ...data}
-//             authAPI
-//                 .changeNameOrImg(data)
-//                 .then(() => dispatch(setUserDataAC(userUpdate)))
-//                 .catch((err: any) => {
-//                     let error = err.response.data.error
-//                     dispatch(setErrAC(error))
-//                     dispatch(setAppStatusAC('failed'))
-//                 })
-//                 .finally(() => dispatch(setAppStatusAC('idle')))
-//         }
-
-
 const slice = createSlice({
     name: "auth",
     initialState: {
-        isLoggedIn: false
+        isLoggedIn: false,
+        isRegistered: false
     },
     reducers: {
         setIsLoggedInAC(state, action: PayloadAction<{ value: boolean }>) {
@@ -109,8 +91,12 @@ const slice = createSlice({
         builder.addCase(logoutTC.fulfilled, (state) => {
             state.isLoggedIn = false
         })
+        builder.addCase(registrationTC.fulfilled, (state) => {
+            state.isRegistered = true
+        })
     }
 })
 
 export const authReducer = slice.reducer;
 export const {setIsLoggedInAC} = slice.actions;
+
