@@ -2,15 +2,14 @@ import React from 'react';
 import s from "./ProfileSettings.module.scss"
 import {useAppSelector} from "../../../../app/store/store";
 import {useModal} from "../../Modal/useModal";
-import Modal from "../../Modal/Modal";
 import EditNameModal from "../../Modal/EditNameModal/EditNameModal";
 import EditAddressModal from "../../Modal/EditAddressModal/EditAddressModal";
 import EditPhoneModal from "../../Modal/EditPhoneModal/EditPhoneModal";
+import EditEmailModal from "../../Modal/EditEmailModal/EditEmailModal";
+import EditPasswordModal from "../../Modal/EditPasswordModal/EditPasswordModal";
 
-export type ProfileSettingsPropsType = {
-    setModalActive: (modalActive: boolean) => void
-}
-const ProfileSettings: React.FC<ProfileSettingsPropsType> = ({setModalActive}) => {
+
+const ProfileSettings = () => {
     const {id, email, firstName, lastName, avatar, role, updatedAt, createdAt} = useAppSelector(s => s.profile.user)
     const {
         toggleEmailModal,
@@ -55,19 +54,20 @@ const ProfileSettings: React.FC<ProfileSettingsPropsType> = ({setModalActive}) =
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Email</span>
                         <span className={s.itemDescription}>{email}</span>
-                        <span className={s.itemButton}>Edit</span>
+                        <span className={s.itemButton} onClick={() => toggleEmailModal()}>Edit</span>
                     </div>
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Password</span>
                         <span className={s.itemDescription}>* * * * * * * * * * * *</span>
-                        <span className={s.itemButton}>Reset</span>
+                        <span className={s.itemButton} onClick={() => togglePasswordModal()}>Reset</span>
                     </div>
                 </div>
             </div>
-            {/*{editNameModal && <Modal setModalActive={setModalActive} hide={toggleEditNameModal}/>}*/}
             {editNameModal && <EditNameModal setModalActive={toggleEditNameModal} hide={toggleEditNameModal}/>}
             {editAddressModal && <EditAddressModal setModalActive={toggleEditAddressModal} hide={toggleEditAddressModal}/>}
             {editPhoneNumberModal && <EditPhoneModal setModalActive={togglePhoneNumberModal} hide={togglePhoneNumberModal}/>}
+            {editEmailModal && <EditEmailModal setModalActive={toggleEmailModal} hide={toggleEmailModal}/>}
+            {editPasswordModal && <EditPasswordModal setModalActive={togglePasswordModal} hide={togglePasswordModal}/>}
         </div>
     );
 };

@@ -1,29 +1,28 @@
 import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
+import Modal from "../Modal";
 import {useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
-import Modal from "../Modal";
 import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
 
-
-type EditAddressModalPropType = {
+type EditEmailModalPropType = {
     setModalActive: (modalActive: boolean) => void
     hide: () => void
 }
 
-const EditAddressModal: React.FC<EditAddressModalPropType> = ({setModalActive, hide}) => {
-    const {firstName} = useAppSelector(s => s.profile.user)
+const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive, hide}) => {
+    const email = useAppSelector(s => s.profile.user.email)
 
     const formik = useFormik({
         initialValues: {
-            address: firstName,
+            email: email,
         },
         validate: (values) => {
             const errors: FormikModalErrorType = {};
-            if (!values.address) {
-                errors.address = 'Required';
-            } else if (values.address.length < 3) {
-                errors.address = 'Must be 3 characters or more';
+            if (!values.email) {
+                errors.email = 'Email required'
+            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+                errors.email = 'Invalid email address'
             }
             return errors;
         },
@@ -35,23 +34,22 @@ const EditAddressModal: React.FC<EditAddressModalPropType> = ({setModalActive, h
     return (
         <Modal setModalActive={setModalActive} hide={hide}>
             <div className={s.titleBlock}>
-                <h1 className={s.title}>Edit Address</h1>
+                <h1 className={s.title}>Edit Email</h1>
             </div>
             <form onSubmit={formik.handleSubmit} className={s.form}>
                 <div className={s.inputsBlock}>
                     <div className={s.inputContainer}>
-                        <span className={s.label}>Address</span>
+                        <span className={s.label}>Email</span>
                         <input
-                            style={formik.errors.address && formik.touched.address ? {border: `1px solid #bd1010`} : {}}
-                            {...formik.getFieldProps('address')}
+                            style={formik.errors.email && formik.touched.email ? {border: `1px solid #bd1010`} : {}}
+                            {...formik.getFieldProps('email')}
                         />
-                        {formik.errors.address && formik.touched.address &&
-                            <span className={s.error}>{formik.errors.address}</span>}
+                        {formik.errors.email && formik.touched.email &&
+                            <span className={s.error}>{formik.errors.email}</span>}
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton} onClick={hide}
-                            disabled={!(formik.isValid && formik.dirty)}>
+                    <button type="submit" className={s.submitButton} disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>
@@ -60,5 +58,4 @@ const EditAddressModal: React.FC<EditAddressModalPropType> = ({setModalActive, h
     );
 };
 
-export default EditAddressModal;
-
+export default EditEmailModal;

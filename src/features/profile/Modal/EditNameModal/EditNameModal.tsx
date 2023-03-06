@@ -2,7 +2,6 @@ import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
 import {useAppSelector} from "../../../../app/store/store";
-import {ErrorsType} from "../../../../app/content/Schedule/ScheduleCar/ContactBlock/ContactBlock";
 import {useFormik} from "formik";
 
 type EditNameModalPropType = {
@@ -10,9 +9,18 @@ type EditNameModalPropType = {
     hide: () => void
 }
 
-const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) => {
+export type FormikModalErrorType = {
+    address?: string
+    email?: string
+    firstName?: string
+    lastName?: string
+    password?: string
+    confirmPassword?: string
+    phoneNumber?: string
+}
 
-    const {id, email, firstName, lastName, avatar, role, updatedAt, createdAt} = useAppSelector(s => s.profile.user)
+const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) => {
+    const {firstName, lastName} = useAppSelector(s => s.profile.user)
 
     const formik = useFormik({
         initialValues: {
@@ -20,7 +28,7 @@ const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) =
             lastName: lastName,
         },
         validate: (values) => {
-            const errors: ErrorsType = {};
+            const errors: FormikModalErrorType = {};
 
             if (!values.firstName) {
                 errors.firstName = 'Required';
@@ -59,7 +67,7 @@ const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) =
                     <div className={s.inputContainer}>
                         <span className={s.label}>Last Name</span>
                         <input
-                            style={formik.errors.firstName && formik.touched.firstName ? {border: `1px solid #bd1010`} : {}}
+                            style={formik.errors.lastName && formik.touched.lastName ? {border: `1px solid #bd1010`} : {}}
                             {...formik.getFieldProps('lastName')}
                         />
                         {formik.errors.lastName && formik.touched.lastName &&
@@ -67,7 +75,7 @@ const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) =
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton}>
+                    <button type="submit" className={s.submitButton} disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>
                 </div>

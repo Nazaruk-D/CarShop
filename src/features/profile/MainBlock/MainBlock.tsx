@@ -6,16 +6,11 @@ import {logoutTC} from "../../auth/auth-reducer";
 import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
-import { FiUser, FiArchive, FiLogOut, FiUsers } from "react-icons/fi";
-import {useModal} from "../Modal/useModal";
-import Modal from "../Modal/Modal";
-import {IconType} from "react-icons";
+import {FiArchive, FiLogOut, FiUser, FiUsers} from "react-icons/fi";
 import OrdersPanel from "./OrdersPanel/OrdersPanel";
 import UsersList from "./UsersList/UsersList";
 
-export type MainPropsType = {
-    setModalActive: (modalActive: boolean) => void
-}
+
 
 const userNavData: NavDataType[] = [
     {id: 0, name: 'Profile Settings', icon: <FiUser/>},
@@ -34,7 +29,7 @@ type NavDataType = {
     icon: JSX.Element
 }
 
-const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
+const MainBlock = () => {
     const [item, setItem] = useState(1)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
@@ -60,14 +55,14 @@ const MainBlock: React.FC<MainPropsType> = ({setModalActive}) => {
                             </div>)
                     }
 
-                    <div className={s.buttonBlock}>
+                    <div className={s.buttonBlock} onClick={onClickHandler}>
                         <div className={s.icon}><FiLogOut/></div>
-                        <span onClick={onClickHandler} className={s.navButton}>Sign Out</span>
+                        <span  className={s.navButton}>Sign Out</span>
                     </div>
                 </div>
             </div>
             <div className={s.contentContainer}>
-                {item === 0 && <ProfileSettings setModalActive={setModalActive}/>}
+                {item === 0 && <ProfileSettings/>}
                 {item === 1 && role === 'user' && <Orders/>}
                 {item === 1 && role === 'admin' && <OrdersPanel/>}
                 {item === 2 && role === 'admin' && <UsersList/>}

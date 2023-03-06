@@ -64,7 +64,6 @@ const Registration = () => {
             return errors
         },
         onSubmit: values => {
-            // alert(JSON.stringify(values, null, 2));
             dispatch(registrationTC(values))
             formik.resetForm()
         },

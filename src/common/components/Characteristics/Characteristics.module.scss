@@ -18,14 +18,17 @@
     @include flex(row, space-around, flex-end, nowrap);
     width: 150px;
     height: 50%;
+
     .topTextContainer {
       @include flex(row, center, flex-end, nowrap);
       width: 100%;
+
       .mainInfo {
         @include flex(row, flex-end, flex-end, nowrap);
         @include text(26px, 26px, 600);
         padding-right: 5px;
       }
+
       .measurement {
         @include flex(row, flex-start, flex-end, nowrap);
         @include text(18px, 18px, 600);
@@ -38,6 +41,7 @@
   .mainTopTextBlock {
     @include flex(row, center, flex-end, nowrap);
     height: 50%;
+
     .mainInfo {
       @include flex(row, center, flex-end, nowrap);
       @include text(26px, 26px, 600);
