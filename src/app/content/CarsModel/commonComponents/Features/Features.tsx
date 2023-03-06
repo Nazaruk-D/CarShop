@@ -38,7 +38,7 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
             }
         }, data.infoBlock[item].interval)
         return () => clearTimeout(timer);
-    }, [item])
+    }, [item, data.infoBlock])
 
     return (
         <div className={s.mainContainer}>

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import s from "./Registration.module.scss"
 import {useFormik} from "formik";
 import Logo from "../../../common/components/Logo/Logo";

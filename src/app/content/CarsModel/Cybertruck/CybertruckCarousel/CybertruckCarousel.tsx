@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./CybertruckCarousel.module.scss"
 import cybertruckFirstSet from '../../../../../common/assets/cybertruckFirstSet.jpg'
 import cybertruckSecondSet from '../../../../../common/assets/cybertruckSecondSet.jpg'

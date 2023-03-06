@@ -10,7 +10,7 @@ import EditPasswordModal from "../../Modal/EditPasswordModal/EditPasswordModal";
 
 
 const ProfileSettings = () => {
-    const {id, email, firstName, lastName, avatar, role, updatedAt, createdAt} = useAppSelector(s => s.profile.user)
+    const {email, firstName, lastName} = useAppSelector(s => s.profile.user)
     const {
         toggleEmailModal,
         editEmailModal,

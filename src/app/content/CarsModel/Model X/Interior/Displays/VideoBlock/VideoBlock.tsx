@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import s from "./VideoBlock.module.scss";
 import RoundButton from "../../../../../../../common/components/RoundButton/RoundButton";
 import {VideoType} from "../Displays";
@@ -13,20 +13,7 @@ type NewType = {
 }
 
 const VideoBlock: React.FC<VideoPlayerPropsType> = ({id, description, title, link, onClick, setDuration}) => {
-    // const [videoRef, setVideoRef] = useState<number | undefined>()
     const sumButton = [1, 2, 3, 4, 5]
-    // let videoRef: any = useRef()
-    // let refDuration: number;
-
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         refDuration = videoRef
-    //         if (videoRef) {
-    //             setDuration(videoRef)
-    //         }
-    //     }, 400)
-    //     return () => clearTimeout(timer);
-    // }, [id])
 
     return (
         <>

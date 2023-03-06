@@ -34,7 +34,7 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                backgroundSize
                                            }) => {
 
-    const mobileDirection = window. innerWidth < 1200 ? {} : {flexDirection}
+    const mobileDirection = window.innerWidth < 1200 ? {} : {flexDirection}
 
     return (
         <div className={s.mainContainer}>

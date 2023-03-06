@@ -72,7 +72,7 @@ const Displays = React.memo(() => {
             }, duration * 1000)
             return () => clearTimeout(timer);
         }
-    }, [duration])
+    }, [duration, videoId])
 
     return (
         <div className={s.displaysContainer}>

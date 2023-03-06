@@ -18,7 +18,7 @@ const ErrorWindow = () => {
             }, 3000)
             return () => clearTimeout(timer);
         }
-    }, [error])
+    }, [error, dispatch])
 
     return (
         <div className={error ? s.errorActive : s.error}>

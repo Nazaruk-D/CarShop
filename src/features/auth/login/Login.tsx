@@ -48,7 +48,7 @@ const Login = () => {
         if(isLoggedIn) {
             navigate(routes.profile)
         }
-    },[isLoggedIn])
+    },[isLoggedIn, navigate])
 
     return (
         <div className={s.loginContainer}>

@@ -1,9 +1,4 @@
 import React from 'react';
-import VideoPlayer from "../../../../common/components/VideoPlayer/VideoPlayer";
-// @ts-ignore
-import loading from "../../../../common/assets/video/loading.mp4"
-// @ts-ignore
-import DesignD from "../../../../common/assets/DesignD.jfif"
 import InverterV8D from "../../../../common/assets/InverterV8D.jpg"
 import TopBlock from "./TopBlock/TopBlock";
 import Safety from "../commonComponents/Safety/Safety";
@@ -14,9 +9,9 @@ import PWInverterHeroD from "../../../../common/assets/PWInverterHeroD.jfif";
 import SPteslaAppD from "../../../../common/assets/SPteslaAppD.jfif";
 // @ts-ignore
 import solarAssessmentDesktop from "../../../../common/assets/video/solarAssessmentDesktop.mp4";
-import Specs, {SpecsType} from "../commonComponents/Specs/Specs";
 // @ts-ignore
-import modelSBlack from "../../../../common/assets/Model-S-Specs-Hero-Desktop-LHD.jfif";
+import DesignD from "../../../../common/assets/DesignD.jfif"
+import Specs, {SpecsType} from "../commonComponents/Specs/Specs";
 // @ts-ignore
 import SpecsD from "../../../../common/assets/SpecsD.jfif";
 import SolarOrder from "../commonComponents/SolarOrder/SolarOrder";
@@ -35,20 +30,6 @@ const solarPanelSpecsData: SpecsType[] = [
 ]
 
 const SolarPanels = () => {
-
-    // if (false) {
-    //     return <div style={{
-    //         width: "100%",
-    //         height: "100vh",
-    //         display: "flex",
-    //         justifyContent: "center",
-    //         alignItems: "center",
-    //         backgroundColor: "white"
-    //     }}>
-    //         <VideoPlayer link={loading} style={{width: "80px"}}/>
-    //     </div>
-    // }
-
     return (
         <div>
             <TopBlock/>

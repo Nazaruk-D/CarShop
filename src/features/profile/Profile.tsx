@@ -20,7 +20,7 @@ const Profile = () => {
         else {
             dispatch(fetchProfileTC())
         }
-    }, [isLoggedIn])
+    }, [isLoggedIn, dispatch, navigate])
 
     return (
         <div className={s.mainPage}>
