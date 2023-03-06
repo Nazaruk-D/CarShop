@@ -38,7 +38,7 @@ const CybertruckCarousel = () => {
                 <div className={s.descriptionContainer}>
 
                     <div className={s.buttonsContainer}>
-                        {carouselData.map((c, i) => <div className={s.circleButton} onClick={() => setItem(i)} style={{
+                        {carouselData.map((c, i) => <div key={i} className={s.circleButton} onClick={() => setItem(i)} style={{
                             opacity: item === i ? 1 : 0.5,
                         }}></div>)}
                     </div>

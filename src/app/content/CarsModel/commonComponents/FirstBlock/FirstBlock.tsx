@@ -23,9 +23,8 @@ const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, 
         <PresentationBlock backgroundImage={backgroundImage} model={model} conditions={conditions}>
             <div className={s.characteristics}>
                 {characteristicsData.map((c, i) => (
-                    <div style={{marginRight: 20}}>
-                        <Characteristics key={i}
-                                         topText={c.topText}
+                    <div style={{marginRight: 20}} key={i}>
+                        <Characteristics topText={c.topText}
                                          measurement={c.measurement}
                                          bottomText={c.bottomText}/>
                     </div>
