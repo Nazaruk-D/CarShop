@@ -3,6 +3,7 @@ import {instance} from "./instance";
 
 export const profileAPI = {
     updateProfile(id: number, body: UserType) {
+        console.log(id, body)
         return instance.post<UserType>(`profile/${id}`, body)
     },
 }

@@ -1,9 +1,10 @@
 import React from 'react';
-import {useAppSelector} from "../../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
 import Modal from "../Modal";
 import s from "../ModalGeneralStyle.module.scss";
 import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
+import {updateProfileTC} from "../../profile-reducer";
 
 type EditPhoneModalPropType = {
     setModalActive: (modalActive: boolean) => void
@@ -11,11 +12,12 @@ type EditPhoneModalPropType = {
 }
 
 const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}) => {
-    const phoneNumber = useAppSelector(s => s.profile.user.firstName)
+    const dispatch = useAppDispatch()
+    const user = useAppSelector(s => s.profile.user)
 
     const formik = useFormik({
         initialValues: {
-            phoneNumber: phoneNumber,
+            phoneNumber: user.firstName,
         },
         validate: (values) => {
             const errors: FormikModalErrorType = {};
@@ -27,7 +29,10 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            if(user.id){
+                // dispatch(updateProfileTC({id: user.id, userData: {...user}}))
+            }
+            hide()
         },
     });
 

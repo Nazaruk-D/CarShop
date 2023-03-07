@@ -7,6 +7,7 @@ import EditPhoneModal from "../../Modal/EditPhoneModal/EditPhoneModal";
 import EditEmailModal from "../../Modal/EditEmailModal/EditEmailModal";
 import EditPasswordModal from "../../Modal/EditPasswordModal/EditPasswordModal";
 import EditRegionModal from "../../Modal/EditRegionModal/EditRegionModal";
+import ErrorWindow from "../../../../common/components/ErrorWindow/ErrorWindow";
 
 
 const ProfileSettings = () => {
@@ -67,6 +68,7 @@ const ProfileSettings = () => {
             {editPhoneNumberModal && <EditPhoneModal setModalActive={togglePhoneNumberModal} hide={togglePhoneNumberModal}/>}
             {editEmailModal && <EditEmailModal setModalActive={toggleEmailModal} hide={toggleEmailModal}/>}
             {editPasswordModal && <EditPasswordModal setModalActive={togglePasswordModal} hide={togglePasswordModal}/>}
+            <ErrorWindow/>
         </div>
     );
 };

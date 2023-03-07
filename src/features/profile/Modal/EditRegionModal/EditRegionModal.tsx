@@ -20,7 +20,6 @@ const EditRegionModal: React.FC<EditAddressModalPropType> = ({setModalActive, hi
             region: user.firstName,
         },
         onSubmit: values => {
-            console.log(values)
             alert(JSON.stringify(values, null, 2));
             hide()
             // if(user.id){

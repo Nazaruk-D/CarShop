@@ -1,9 +1,10 @@
 import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
-import {useAppSelector} from "../../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
 import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
+import {updateProfileTC} from "../../profile-reducer";
 
 type EditEmailModalPropType = {
     setModalActive: (modalActive: boolean) => void
@@ -11,11 +12,12 @@ type EditEmailModalPropType = {
 }
 
 const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive, hide}) => {
-    const email = useAppSelector(s => s.profile.user.email)
+    const dispatch = useAppDispatch()
+    const user = useAppSelector(s => s.profile.user)
 
     const formik = useFormik({
         initialValues: {
-            email: email,
+            email: user.email,
         },
         validate: (values) => {
             const errors: FormikModalErrorType = {};
@@ -28,6 +30,10 @@ const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive, hide}
         },
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
+            if(user.id){
+                dispatch(updateProfileTC({id: user.id, userData: {...user, email: values.email}}))
+            }
+            hide()
         },
     });
 
