@@ -1,12 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import PresentationBlock from "../../../../../common/components/PresentationBlock/PresentationBlock";
 import Characteristics from "../../../../../common/components/Characteristics/Characteristics";
 import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
-import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 import s from "./FirstBlock.module.scss"
-// @ts-ignore
-import loading from "../../../../../common/assets/video/loading.mp4";
-
 const Fade = require("react-reveal/Fade")
 
 export type FirstBlockPropsType = {
@@ -25,11 +21,10 @@ export type FirstBlockType = {
 const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, conditions, backgroundImage}) => {
     return (
         <PresentationBlock backgroundImage={backgroundImage} model={model} conditions={conditions}>
-            <div className={s.haracteristics}>
+            <div className={s.characteristics}>
                 {characteristicsData.map((c, i) => (
-                    <div style={{marginRight: 20}}>
-                        <Characteristics key={i}
-                                         topText={c.topText}
+                    <div style={{marginRight: 20}} key={i}>
+                        <Characteristics topText={c.topText}
                                          measurement={c.measurement}
                                          bottomText={c.bottomText}/>
                     </div>

@@ -3,14 +3,15 @@ import s from "./ProfileSettings.module.scss"
 import {useAppSelector} from "../../../../app/store/store";
 import {useModal} from "../../Modal/useModal";
 import EditNameModal from "../../Modal/EditNameModal/EditNameModal";
-import EditAddressModal from "../../Modal/EditAddressModal/EditAddressModal";
 import EditPhoneModal from "../../Modal/EditPhoneModal/EditPhoneModal";
 import EditEmailModal from "../../Modal/EditEmailModal/EditEmailModal";
 import EditPasswordModal from "../../Modal/EditPasswordModal/EditPasswordModal";
+import EditRegionModal from "../../Modal/EditRegionModal/EditRegionModal";
+import ErrorWindow from "../../../../common/components/ErrorWindow/ErrorWindow";
 
 
 const ProfileSettings = () => {
-    const {id, email, firstName, lastName, avatar, role, updatedAt, createdAt} = useAppSelector(s => s.profile.user)
+    const {email, firstName, lastName} = useAppSelector(s => s.profile.user)
     const {
         toggleEmailModal,
         editEmailModal,
@@ -35,11 +36,10 @@ const ProfileSettings = () => {
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Full Name</span>
                         <span className={s.itemDescription}>{firstName} {lastName}</span>
-                        {/*<span className={s.itemButton} onClick={() => setModalActive(true)}>Edit</span>*/}
                         <span className={s.itemButton} onClick={() => toggleEditNameModal()}>Edit</span>
                     </div>
                     <div className={s.itemBlock}>
-                        <span className={s.itemTitle}>Address</span>
+                        <span className={s.itemTitle}>Region</span>
                         <span className={s.itemButton} onClick={() => toggleEditAddressModal()}>Add New</span>
                     </div>
                     <div className={s.itemBlock}>
@@ -64,10 +64,11 @@ const ProfileSettings = () => {
                 </div>
             </div>
             {editNameModal && <EditNameModal setModalActive={toggleEditNameModal} hide={toggleEditNameModal}/>}
-            {editAddressModal && <EditAddressModal setModalActive={toggleEditAddressModal} hide={toggleEditAddressModal}/>}
+            {editAddressModal && <EditRegionModal setModalActive={toggleEditAddressModal} hide={toggleEditAddressModal}/>}
             {editPhoneNumberModal && <EditPhoneModal setModalActive={togglePhoneNumberModal} hide={togglePhoneNumberModal}/>}
             {editEmailModal && <EditEmailModal setModalActive={toggleEmailModal} hide={toggleEmailModal}/>}
             {editPasswordModal && <EditPasswordModal setModalActive={togglePasswordModal} hide={togglePasswordModal}/>}
+            <ErrorWindow/>
         </div>
     );
 };

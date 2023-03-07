@@ -1,9 +1,9 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 
 export const useModal = () => {
     ///packs
     const [editNameModal, setEditNameModal] = useState(false)
-    const [editAddressModal, setEditAddressModal] = useState(false)
+    const [editRegionModal, setEditRegionModal] = useState(false)
     const [editPhoneNumberModal, setEditPhoneNumberModal] = useState(false)
     const [editEmailModal, setEditEmailModal] = useState(false)
     const [editPasswordModal, setEditPasswordModal] = useState(false)
@@ -13,7 +13,7 @@ export const useModal = () => {
         setEditNameModal(!editNameModal)
     }
     function toggleEditAddressModal() {
-        setEditAddressModal(!editAddressModal)
+        setEditRegionModal(!editRegionModal)
     }
     function togglePhoneNumberModal() {
         setEditPhoneNumberModal(!editPhoneNumberModal)
@@ -28,7 +28,7 @@ export const useModal = () => {
 
     return {
         editNameModal,
-        editAddressModal,
+        editAddressModal: editRegionModal,
         editPhoneNumberModal,
         editEmailModal,
         editPasswordModal,

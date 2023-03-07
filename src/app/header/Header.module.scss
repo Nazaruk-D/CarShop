@@ -40,7 +40,7 @@
       @media screen and (max-width: $mediaWidth) {
         @include flex(row, flex-end, flex-start, wrap);
         width: 70%;
-        padding-top: 10px;
+        padding-top: 50px;
         box-sizing: border-box;
         font-size: 20px;
         cursor: pointer;

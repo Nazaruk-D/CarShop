@@ -9,7 +9,8 @@ import {clearProfileDataAC} from "../profile/profile-reducer";
 export const loginTC = createAsyncThunk<undefined, LoginDataType, { rejectValue: { errors: Array<string>, fieldErrors?: Array<any> } }>(('auth/login'), async (param: LoginDataType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
-        const res = await authAPI.login(param)
+        // const res = await authAPI.login(param)
+        await authAPI.login(param)
         // if (res.message === 'Login successful') {
         //     debugger
             // thunkAPI.dispatch(setIsLoggedInAC({value: true}))

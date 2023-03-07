@@ -38,7 +38,7 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
             }
         }, data.infoBlock[item].interval)
         return () => clearTimeout(timer);
-    }, [item])
+    }, [item, data.infoBlock])
 
     return (
         <div className={s.mainContainer}>
@@ -54,8 +54,8 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
                                 <VideoPlayer link={data.infoBlock[item].image} style={{
                                     "width": "100%",
                                     "height": "100%",
-                                    "object-fit": "cover",
-                                    "border-radius": '30px'
+                                    "objectFit": "cover",
+                                    "borderRadius": '30px'
                                 }}/>
                             </div>
                             <div className={s.infoBlock}>
@@ -86,7 +86,7 @@ const Features: React.FC<FeaturesPropsType> = ({data}) => {
                             <div className={s.map}
                                  style={{backgroundImage: `url(${data.infoBlock[item].image})`}}>
                                 <VideoPlayer link={data.infoBlock[item].image}
-                                             style={{"width": "100%", "object-fit": "cover", "height": "100%"}}/>
+                                             style={{"width": "100%", "objectFit": "cover", "height": "100%"}}/>
                             </div>
                             <div className={s.infoBlock}>
                                 {data.infoBlock.map((d, i) => <div className={s.info}

@@ -45,11 +45,11 @@ const MainBlock = () => {
             <div className={s.navBlock}>
                 <div className={s.navContainer}>
                     {role === 'admin'
-                    ? adminNavData.map((b, i) => <div className={s.buttonBlock} onClick={() => setItem(i)}>
+                    ? adminNavData.map((b, i) => <div className={s.buttonBlock} onClick={() => setItem(i)} key={i}>
                                 <div className={s.icon} style={{backgroundColor: item === i ? 'rgba(1,1,1,0.05)' : '',}}>{b.icon}</div>
                                 <span style={{color: item === i ? 'black' : '',}} className={s.navButton} >{b.name}</span>
                             </div>)
-                    : userNavData.map((b, i) => <div className={s.buttonBlock} onClick={() => setItem(i)}>
+                    : userNavData.map((b, i) => <div className={s.buttonBlock} onClick={() => setItem(i)} key={i}>
                                 <div className={s.icon} style={{backgroundColor: item === i ? 'rgba(1,1,1,0.05)' : '',}}>{b.icon}</div>
                                 <span style={{color: item === i ? 'black' : '',}} className={s.navButton} >{b.name}</span>
                             </div>)

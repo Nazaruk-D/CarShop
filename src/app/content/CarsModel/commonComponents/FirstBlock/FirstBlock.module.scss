@@ -2,7 +2,7 @@
 @import '../../../../../common/styles/sass/variables';
 
 
-.haracteristics {
+.characteristics {
   @include flex(row, center, flex-end, wrap);
   width: 100%;
   height: 80%;

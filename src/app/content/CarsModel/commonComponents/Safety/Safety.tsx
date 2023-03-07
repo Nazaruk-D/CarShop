@@ -34,7 +34,7 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                backgroundSize
                                            }) => {
 
-    const mobileDirection = window. innerWidth < 1200 ? {} : {flexDirection}
+    const mobileDirection = window.innerWidth < 1200 ? {} : {flexDirection}
 
     return (
         <div className={s.mainContainer}>
@@ -43,10 +43,11 @@ const Safety: React.FC<SafetyPropsType> = ({
                      style={{backgroundImage: `url(${backgroundImage})`, backgroundColor, backgroundSize}}>
                     <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>
                     <div className={s.characteristics}>
-                        {characteristicsData?.map((c, i) => <div style={{marginRight: 40}}><Characteristics key={i}
-                                                                                                            topText={c.topText}
-                                                                                                            measurement={c.measurement}
-                                                                                                            bottomText={c.bottomText}/>
+                        {characteristicsData?.map((c, i) => <div style={{marginRight: 40}} key={i}>
+                            <Characteristics
+                                topText={c.topText}
+                                measurement={c.measurement}
+                                bottomText={c.bottomText}/>
                         </div>)}
                     </div>
                     {characteristicsData

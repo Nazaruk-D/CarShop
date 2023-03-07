@@ -1,7 +1,5 @@
 import React from 'react';
 import s from './Advantages.module.scss'
-//@ts-ignore
-import modelYRed from '../../../../../common/assets/modelYRed.jfif'
 import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";

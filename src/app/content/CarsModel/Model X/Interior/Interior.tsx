@@ -9,8 +9,7 @@ import MSInteriorDesktop from '../../../../../common/assets/MSInteriorDesktop.jf
 import MSInteriorGridDesktop from '../../../../../common/assets/MSInteriorGridDesktop.jfif'
 // @ts-ignore
 import MXInteriorGridCDesktop from '../../../../../common/assets/MXInteriorGridCDesktop.jfif'
-// @ts-ignore
-import video from '../../../../../common/assets/video/audio.mp4'
+
 
 const data: DataProps[] = [
     {

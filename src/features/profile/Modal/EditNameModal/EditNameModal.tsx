@@ -1,8 +1,9 @@
 import React from 'react';
 import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
-import {useAppSelector} from "../../../../app/store/store";
+import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {useFormik} from "formik";
+import {updateProfileTC} from "../../profile-reducer";
 
 type EditNameModalPropType = {
     setModalActive: (modalActive: boolean) => void
@@ -20,12 +21,13 @@ export type FormikModalErrorType = {
 }
 
 const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) => {
-    const {firstName, lastName} = useAppSelector(s => s.profile.user)
+    const dispatch = useAppDispatch()
+    const user = useAppSelector(s => s.profile.user)
 
     const formik = useFormik({
         initialValues: {
-            firstName: firstName,
-            lastName: lastName,
+            firstName: user.firstName,
+            lastName: user.lastName,
         },
         validate: (values) => {
             const errors: FormikModalErrorType = {};
@@ -44,7 +46,10 @@ const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) =
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            if(user.id){
+                dispatch(updateProfileTC({id: user.id, userData: {...user, firstName: values.firstName, lastName: values.lastName}}))
+            }
+            hide()
         },
     });
 

@@ -10,13 +10,12 @@ import SolarPanels from "./SolarPanels/SolarPanels";
 import SolarRoof from "./SolarRoof/SolarRoof";
 import Accessories from "./Accessories/Accessories";
 
+const cars = ['Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
 
 const MainPage = () => {
-    const cars = ['Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
     const [scroll, setScroll] = useState(0)
 
     const handleClickScroll = (e: WheelEvent) => {
-        console.log(e.deltaY)
         if (e.deltaY > 50) {
             setScroll(prev => prev + 1)
         } else if (e.deltaY < -50) {
