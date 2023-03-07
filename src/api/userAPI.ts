@@ -9,10 +9,10 @@ export const authAPI = {
         return instance.post<UserData>(`auth/register`, data)
     },
     login(data: LoginDataType) {
-        return instance.post<UserData>('auth/login', data).then((response) => response.data)
+        return instance.post<ResponseType<UserData>>('auth/login', data).then((response) => response.data)
     },
     logout() {
-        return instance.delete<LogoutResponseType>(`auth/logout`)
+        return instance.delete<ResponseType>(`auth/logout`)
     },
 }
 // export type UserType = {
@@ -26,16 +26,21 @@ export const authAPI = {
 //     updatedAt: null | string
 // }
 
-export type UserData = {
+export type ResponseType<D = {}> = {
+    statusCode: number
+    statusText: string
     message: string
+    data: D
+}
+
+export type UserData = {
     _id: string
     email: string
     firstName: string
     lastName: string
     avatar?: string
     isAdmin: boolean
-    rememberMe: boolean
-    error?: string
+    // rememberMe: boolean
 }
 
 export type RegistrationDataType = {
