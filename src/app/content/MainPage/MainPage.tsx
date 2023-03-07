@@ -17,29 +17,48 @@ const MainPage = () => {
     const [scroll, setScroll] = useState(0)
     let shouldWait = false
 
-    const handleClickScroll = (e: WheelEvent) => {
+    const scrollUp = () => {
+        if (!shouldWait) {
+            setScroll((prev: number) => prev + 1)
+            shouldWait = true
+            setTimeout(function () {
+                shouldWait = false
+            }, 200)
+        }
+    }
+    const scrollDown = () => {
+        if (!shouldWait) {
+            setScroll((prev: number) => prev - 1)
+            shouldWait = true
+            setTimeout(function () {
+                shouldWait = false
+            }, 200)
+        }
+    }
+    const handleWheelScroll = (e: WheelEvent) => {
         if (e.deltaY > 10) {
-            if (!shouldWait) {
-                setScroll((prev: number) => prev + 1)
-                shouldWait = true
-                setTimeout(function () {
-                    shouldWait = false
-                }, 200)
-            }
+            scrollUp()
         } else if (e.deltaY < -10) {
-            if (!shouldWait) {
-                setScroll((prev: number) => prev - 1)
-                shouldWait = true
-                setTimeout(function () {
-                    shouldWait = false
-                }, 200)
-            }
+            scrollDown()
+        }
+    };
+    const handleArrowScroll = (e: KeyboardEvent) => {
+        if (e.key === "ArrowDown") {
+            scrollUp()
+        }
+        if (e.key === "ArrowUp") {
+            scrollDown()
         }
     };
 
     useEffect(() => {
-        window.addEventListener("wheel", (e) => handleClickScroll(e))
-        return window.removeEventListener("wheel", (e) => handleClickScroll(e))
+        window.addEventListener("wheel", (e) => handleWheelScroll(e))
+        return window.removeEventListener("wheel", (e) => handleWheelScroll(e))
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("keydown", (e) => handleArrowScroll(e))
+        return window.removeEventListener("keydown", (e) => handleArrowScroll(e))
     }, []);
 
     useEffect(() => {
