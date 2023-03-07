@@ -15,7 +15,16 @@ export const authAPI = {
         return instance.delete<LogoutResponseType>(`auth/logout`)
     },
 }
-
+// export type UserType = {
+//     id: null | number
+//     email: null | string
+//     firstName: null | string
+//     lastName: null | string
+//     avatar: null | string
+//     role: null | string
+//     createdAt: null | string
+//     updatedAt: null | string
+// }
 
 export type UserData = {
     message: string

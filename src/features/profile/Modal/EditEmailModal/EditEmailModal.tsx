@@ -31,7 +31,7 @@ const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive, hide}
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
             if(user.id){
-                dispatch(updateProfileTC({id: user.id, userData: {...user, email: values.email}}))
+                dispatch(updateProfileTC({...user, email: values.email}))
             }
             hide()
         },

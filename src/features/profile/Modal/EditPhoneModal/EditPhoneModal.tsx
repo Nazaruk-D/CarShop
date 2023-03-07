@@ -17,7 +17,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}
 
     const formik = useFormik({
         initialValues: {
-            phoneNumber: user.firstName,
+            phoneNumber: user.phoneNumber,
         },
         validate: (values) => {
             const errors: FormikModalErrorType = {};
@@ -30,7 +30,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}
         },
         onSubmit: values => {
             if(user.id){
-                // dispatch(updateProfileTC({id: user.id, userData: {...user}}))
+                dispatch(updateProfileTC({...user, phoneNumber: values.phoneNumber}))
             }
             hide()
         },

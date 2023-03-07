@@ -47,7 +47,7 @@ const EditNameModal: React.FC<EditNameModalPropType> = ({setModalActive,hide}) =
         },
         onSubmit: values => {
             if(user.id){
-                dispatch(updateProfileTC({id: user.id, userData: {...user, firstName: values.firstName, lastName: values.lastName}}))
+                dispatch(updateProfileTC({...user, firstName: values.firstName, lastName: values.lastName}))
             }
             hide()
         },

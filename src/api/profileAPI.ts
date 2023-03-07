@@ -2,11 +2,12 @@ import {instance} from "./instance";
 
 
 export const profileAPI = {
-    updateProfile(id: number, body: UserType) {
-        console.log(id, body)
-        return instance.post<UserType>(`profile/${id}`, body)
+    updateProfile(body: UserType) {
+        console.log(body)
+        return instance.put<UserType>(`profile/update`, body)
     },
 }
+
 
 export type UserType = {
     id: null | number
@@ -15,6 +16,8 @@ export type UserType = {
     lastName: null | string
     avatar: null | string
     role: null | string
+    phoneNumber: null | string
+    region: null | string
     createdAt: null | string
     updatedAt: null | string
 }

@@ -17,14 +17,14 @@ const EditRegionModal: React.FC<EditAddressModalPropType> = ({setModalActive, hi
 
     const formik = useFormik({
         initialValues: {
-            region: user.firstName,
+            region: user.region,
         },
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
+            if (user.id) {
+                dispatch(updateProfileTC({...user, region: values.region}))
+            }
             hide()
-            // if(user.id){
-            //     dispatch(updateProfileTC({id: user.id, userData: {...user}}))
-            // }
         },
     });
 
