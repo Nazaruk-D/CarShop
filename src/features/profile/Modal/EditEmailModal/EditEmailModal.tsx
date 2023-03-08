@@ -29,7 +29,6 @@ const EditEmailModal: React.FC<EditEmailModalPropType> = ({setModalActive, hide}
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
             if(user.id){
                 dispatch(updateProfileTC({...user, email: values.email}))
             }

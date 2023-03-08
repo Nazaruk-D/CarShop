@@ -3,6 +3,8 @@ import s from "../ModalGeneralStyle.module.scss"
 import Modal from "../Modal";
 import {useFormik} from "formik";
 import {FormikModalErrorType} from "../EditNameModal/EditNameModal";
+import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
+import {resetPasswordTC, updateProfileTC} from "../../profile-reducer";
 
 type EditPasswordModalPropType = {
     setModalActive: (modalActive: boolean) => void
@@ -10,6 +12,9 @@ type EditPasswordModalPropType = {
 }
 
 const EditPasswordModal: React.FC<EditPasswordModalPropType> = ({setModalActive, hide}) => {
+    const dispatch = useAppDispatch()
+    const user = useAppSelector(s => s.profile.user)
+
     const formik = useFormik({
         initialValues: {
             password: "",
@@ -34,7 +39,7 @@ const EditPasswordModal: React.FC<EditPasswordModalPropType> = ({setModalActive,
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            dispatch(resetPasswordTC({id: user.id, password: values.password}))
         },
     });
 

@@ -6,6 +6,10 @@ export const profileAPI = {
         console.log(body)
         return instance.put<UserType>(`profile/update`, body)
     },
+    resetPassword(passwordData: ResetUserPasswordType) {
+        console.log(passwordData)
+        return instance.put<ResetUserPasswordType>(`profile/resetPassword`, passwordData)
+    },
 }
 
 
@@ -21,4 +25,10 @@ export type UserType = {
     createdAt: null | string
     updatedAt: null | string
 }
+
+export type ResetUserPasswordType = {
+    id: null | number
+    password: null | string
+}
+
 
