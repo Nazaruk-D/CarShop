@@ -44,7 +44,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}
             <form onSubmit={formik.handleSubmit} className={s.form}>
                 <div className={s.inputsBlock}>
                     <div className={s.inputContainer}>
-                        <span className={s.label}>Address</span>
+                        <span className={s.label}>Phone Number</span>
                         <input
                             style={formik.errors.phoneNumber && formik.touched.phoneNumber ? {border: `1px solid #bd1010`} : {}}
                             {...formik.getFieldProps('phoneNumber')}
@@ -54,7 +54,7 @@ const EditPhoneModal: React.FC<EditPhoneModalPropType> = ({setModalActive, hide}
                     </div>
                 </div>
                 <div className={s.buttonBlock}>
-                    <button type="submit" className={s.submitButton} onClick={hide}
+                    <button type="submit" className={s.submitButton}
                             disabled={!(formik.isValid && formik.dirty)}>
                         Update
                     </button>

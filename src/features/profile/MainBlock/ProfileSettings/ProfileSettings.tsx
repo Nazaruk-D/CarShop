@@ -11,7 +11,7 @@ import ErrorWindow from "../../../../common/components/ErrorWindow/ErrorWindow";
 
 
 const ProfileSettings = () => {
-    const {email, firstName, lastName} = useAppSelector(s => s.profile.user)
+    const {email, firstName, lastName, region, phoneNumber} = useAppSelector(s => s.profile.user)
     const {
         toggleEmailModal,
         editEmailModal,
@@ -40,11 +40,19 @@ const ProfileSettings = () => {
                     </div>
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Region</span>
-                        <span className={s.itemButton} onClick={() => toggleEditAddressModal()}>Add New</span>
+                        <span className={s.itemDescription}>{region}</span>
+                        {region === ''
+                            ? <span className={s.itemButton} onClick={() => toggleEditAddressModal()}>Add New</span>
+                            : <span className={s.itemButton} onClick={() => toggleEditAddressModal()}>Edit</span>
+                        }
                     </div>
                     <div className={s.itemBlock}>
                         <span className={s.itemTitle}>Contact Phone Number</span>
-                        <span className={s.itemButton} onClick={() => togglePhoneNumberModal()}>Add New</span>
+                        <span className={s.itemDescription}>{phoneNumber}</span>
+                        {phoneNumber === null
+                            ? <span className={s.itemButton} onClick={() => togglePhoneNumberModal()}>Add New</span>
+                            : <span className={s.itemButton} onClick={() => togglePhoneNumberModal()}>Edit</span>
+                        }
                     </div>
                 </div>
                 <div className={s.securityTitleBlock}>

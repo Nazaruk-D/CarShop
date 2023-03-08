@@ -20,7 +20,7 @@ const EditRegionModal: React.FC<EditAddressModalPropType> = ({setModalActive, hi
             region: user.region,
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             if (user.id) {
                 dispatch(updateProfileTC({...user, region: values.region}))
             }
@@ -41,11 +41,14 @@ const EditRegionModal: React.FC<EditAddressModalPropType> = ({setModalActive, hi
                             style={formik.errors.region && formik.touched.region ? {border: `1px solid #bd1010`} : {}}
                             {...formik.getFieldProps('region')}
                         >
+                            <option value="" label="...">
+                                ...
+                            </option>
                             <option value="BLR" label="BLR">
                                 BLR
                             </option>
-                            <option value="USA" label="USA">
-                                USA
+                            <option value="US" label="US">
+                                US
                             </option>
                         </select>
                         {formik.errors.region && formik.touched.region &&

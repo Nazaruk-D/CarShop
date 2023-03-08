@@ -34,6 +34,7 @@ export const updateProfileTC = createAsyncThunk(('profile/updateProfile'), async
             console.log(res)
             // thunkAPI.dispatch(setProfileDataAC(res.data));
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
+            thunkAPI.dispatch(setProfileDataAC(res.data));
             return
         } else {
             return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
@@ -56,6 +57,7 @@ const slice = createSlice({
             firstName: null,
             lastName: null,
             avatar: null,
+            region: null,
             role: null,
             phoneNumber: null,
             createdAt: null,
