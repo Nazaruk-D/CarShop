@@ -10,7 +10,7 @@ const MainBlock = () => {
         initialValues: {
             firstName: '',
             lastName: '',
-            region: 'Belarus',
+            region: 'BLR',
             phoneNumber: '',
             email: '',
             solarPanels: false,
@@ -85,8 +85,8 @@ const MainBlock = () => {
                                 <select
                                     {...formik.getFieldProps('region')}
                                 >
-                                    <option value="BLR">Belarus</option>
-                                    <option value="US">United States</option>
+                                    <option value="BLR">BLR</option>
+                                    <option value="US">US</option>
                                 </select>
                             </div>
                             <div className={s.inputBlock}>
@@ -111,11 +111,11 @@ const MainBlock = () => {
                         <div className={s.checkboxesContainer}>
                             <h3 className={s.checkTitle}>Select Interests</h3>
                             <div className={s.checkboxBlock}>
-                                <input type="checkbox" name="solarPanels"/>
+                                <input type="checkbox" {...formik.getFieldProps('solarPanels')}/>
                                 <span className={s.title}>Solar Panels</span>
                             </div>
                             <div className={s.checkboxBlock}>
-                                <input type="checkbox" name="solarRoof"/>
+                                <input type="checkbox" {...formik.getFieldProps('solarRoof')}/>
                                 <span className={s.title}>Solar Roof</span>
                             </div>
                         </div>
@@ -129,9 +129,27 @@ const MainBlock = () => {
                         </button>
                     </form>
                 </div>
-                <div className={s.descriptionBlock}></div>
+                <div className={s.descriptionBlock}>
+                    <div className={s.descriptionContainer}>
+                        <div className={s.description}>
+                            <div className={s.informationBlock}>
+                                <h1 className={s.descriptionTitle}>Overview</h1>
+                                <p className={s.descriptionText}>Receive a virtual consultation from the comfort of your home.</p>
+                                <p className={s.descriptionText}>Upon your request, your Tesla Advisor can walk you through our solar products, financing quotes, eligibility for local incentives and answer any questions you may have.</p>
+                                <p className={s.descriptionText}>Your virtual consultation will be hosted by a Tesla Advisor on a video call, accessible on most browsers. Please RSVP with your preferred date, time and configuration. The consultations usually take between 15 to 30 minutes depending on the number of questions.</p>
+                            </div>
+                            <div className={s.informationBlock}>
+                                <h1 className={s.descriptionTitle}>Schedule</h1>
+                                <p className={s.descriptionText}>Oct 19, 2022 - Jun 30, 2023 @ Monday - Sunday: 7AM - 6PM (Pacific Standard Time)</p>
+                            </div>
+                            <div className={s.informationBlock}>
+                                <h1 className={s.descriptionTitle}>Location</h1>
+                                <p className={s.descriptionText}>United States, Belarus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     );
 };

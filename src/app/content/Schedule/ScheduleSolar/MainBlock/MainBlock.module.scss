@@ -12,7 +12,7 @@
     margin-bottom: 30px;
 
     .title {
-      @include text(50px, 50px, 600);
+      @include text(45px, 45px, 600);
       padding-right: 50px;
     }
   }
@@ -22,41 +22,43 @@
     width: 80%;
 
     .formBlock {
+      @include flex(column, center, flex-start, no-wrap);
+
       width: 35%;
 
       .formTitleBlock {
         width: 100%;
 
         .formTitle {
-          @include text(30px, 30px, 600);
+          @include text(25px, 25px, 600);
 
         }
       }
 
       .inputsContainer {
         @include flex(row, space-between, flex-start, wrap);
-        margin-top: 50px;
+        margin-top: 30px;
 
         .inputBlock {
           @include flex(column, center, flex-start, wrap);
-          width: 335px;
+          width: 310px;
           margin-bottom: 30px;
 
           .label {
-            @include text(18px, 18px, 500);
+            @include text(15px, 15px, 500);
             margin-bottom: 15px;
             color: rgba(1,1,1,0.7);
           }
 
           .error {
-            @include text(18px, 18px, 500);
+            @include text(15px, 15px, 500);
             margin-top: 7px;
             color: #bd1010;
           }
 
           & input, select {
-            @include text(18px, 18px, 600);
-            width: 335px;
+            @include text(15px, 15px, 600);
+            width: 310px;
             height: 40px;
             padding-left: 8px;
             border-radius: 5px;
@@ -70,7 +72,7 @@
           }
 
           & select {
-            width: 344px;
+            width: 318px;
           }
         }
       }
@@ -79,7 +81,7 @@
         @include flex(column, center, flex-start, wrap);
 
         .checkTitle {
-          @include text(18px, 18px, 600);
+          @include text(15px, 15px, 600);
           color: rgba(1,1,1,0.7);
 
         }
@@ -95,7 +97,7 @@
           }
 
           .title {
-            @include text(18px, 18px, 600);
+            @include text(15px, 15px, 600);
             color: rgba(1,1,1,0.7);
             margin-left: 10px;
           }
@@ -108,13 +110,13 @@
         margin-top: 30px;
 
         .formDescription {
-          @include text(18px, 21px, 400);
+          @include text(15px, 18px, 400);
         }
       }
 
       .submitButton {
         @include text(15px,0, 600);
-        width: 344px;
+        width: 318px;
         height: 45px;
         border: 0;
         border-radius: 4px;
@@ -131,9 +133,29 @@
     }
 
     .descriptionBlock {
-      border: 1px solid;
       width: 65%;
 
+      .descriptionContainer {
+        padding-left: 65px;
+        padding-right: 60px;
+
+        .description {
+          width: 100%;
+
+          .informationBlock {
+            @include flex(column, center, flex-start, wrap);
+
+            .descriptionTitle {
+              @include text(25px, 25px, 600);
+            }
+
+            .descriptionText {
+              @include text(16px, 19px, 400);
+              margin-top: 12px;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -22,9 +22,9 @@ const ContactBlock = () => {
             firstName: '',
             lastName: '',
             phoneNumber: '',
-            contactPreference: 'Phone Number',
+            contactPreference: 'PN',
             zipCode: '',
-            region: 'Belarus',
+            region: 'BLR',
             interested: false,
             updates: false
         },
@@ -141,11 +141,11 @@ const ContactBlock = () => {
                         </div>
                         <div className={s.checkboxesContainer}>
                             <div className={s.checkboxBlock}>
-                                <input type="checkbox" name="interested"/>
+                                <input type="checkbox" {...formik.getFieldProps('interested')}/>
                                 <span className={s.title}>I’m interested in solar and Powerwall</span>
                             </div>
                             <div className={s.checkboxBlock}>
-                                <input type="checkbox" name="updates"/>
+                                <input type="checkbox" {...formik.getFieldProps('updates')}/>
                                 <span className={s.title}>Get Tesla Updates</span>
                             </div>
                         </div>
