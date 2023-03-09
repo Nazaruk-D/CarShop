@@ -41,8 +41,8 @@ const EditRegionModal: React.FC<EditAddressModalPropType> = ({setModalActive, hi
                             style={formik.errors.region && formik.touched.region ? {border: `1px solid #bd1010`} : {}}
                             {...formik.getFieldProps('region')}
                         >
-                            <option disabled selected value="" label="...">
-                                ...
+                            <option disabled selected value="" label="Select your region">
+
                             </option>
                             <option value="BLR" label="BLR">
                                 BLR
