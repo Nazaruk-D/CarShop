@@ -1,8 +1,10 @@
 import React from 'react';
 import s from './ScheduleButton.module.scss'
+import {useAppDispatch} from "../../../app/store/store";
+import {ModelType, setActiveModel} from "../../../features/profile/profile-reducer";
 
 type ScheduleButtonPropsType = {
-    title: string
+    title: ModelType
     color: string
     border?: string
     onClick: () => void
@@ -10,13 +12,9 @@ type ScheduleButtonPropsType = {
 
 const ScheduleButton: React.FC<ScheduleButtonPropsType> = ({title, color, onClick, border}) => {
 
-    const onClickHandler = () => {
-        onClick()
-    }
-
     return (
         <>
-            <button style={{color, border}} onClick={onClickHandler} className={s.button}>{title}</button>
+            <button style={{color, border}} onClick={() => onClick()} className={s.button}>{title}</button>
         </>
     );
 };

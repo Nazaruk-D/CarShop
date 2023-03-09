@@ -3,11 +3,9 @@ import {instance} from "./instance";
 
 export const profileAPI = {
     updateProfile(body: UserType) {
-        console.log(body)
         return instance.put<UserType>(`profile/update`, body)
     },
     resetPassword(passwordData: ResetUserPasswordType) {
-        console.log(passwordData)
         return instance.put<ResetUserPasswordType>(`profile/resetPassword`, passwordData)
     },
 }
