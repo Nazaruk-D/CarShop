@@ -1,0 +1,139 @@
+@import '../../../../../common/styles/sass/mixins';
+
+.mainContainer {
+  @include flex(column, flex-start, center, no-wrap);
+  min-height: 150vh;
+  width: 100%;
+
+  .titleContainer {
+    @include flex(row, flex-start, center, no-wrap);
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .title {
+      @include text(50px, 50px, 600);
+      padding-right: 50px;
+    }
+  }
+
+  .contentContainer {
+    @include flex(row, center, flex-start, no-wrap);
+    width: 80%;
+
+    .formBlock {
+      width: 35%;
+
+      .formTitleBlock {
+        width: 100%;
+
+        .formTitle {
+          @include text(30px, 30px, 600);
+
+        }
+      }
+
+      .inputsContainer {
+        @include flex(row, space-between, flex-start, wrap);
+        margin-top: 50px;
+
+        .inputBlock {
+          @include flex(column, center, flex-start, wrap);
+          width: 335px;
+          margin-bottom: 30px;
+
+          .label {
+            @include text(18px, 18px, 500);
+            margin-bottom: 15px;
+            color: rgba(1,1,1,0.7);
+          }
+
+          .error {
+            @include text(18px, 18px, 500);
+            margin-top: 7px;
+            color: #bd1010;
+          }
+
+          & input, select {
+            @include text(18px, 18px, 600);
+            width: 335px;
+            height: 40px;
+            padding-left: 8px;
+            border-radius: 5px;
+            border: 0;
+            color: rgba(1,1,1,0.7);
+            background-color: rgba(0,0,0,0.05);
+
+            &:focus {
+              outline: 1px solid rgba(0,0,0,0.2);
+            }
+          }
+
+          & select {
+            width: 344px;
+          }
+        }
+      }
+
+      .checkboxesContainer {
+        @include flex(column, center, flex-start, wrap);
+
+        .checkTitle {
+          @include text(18px, 18px, 600);
+          color: rgba(1,1,1,0.7);
+
+        }
+
+        .checkboxBlock {
+          @include flex(row, center, center, wrap);
+          margin-bottom: 15px;
+
+          & input {
+            width: 25px;
+            height: 25px;
+            margin: 0;
+          }
+
+          .title {
+            @include text(18px, 18px, 600);
+            color: rgba(1,1,1,0.7);
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .formDescriptionContainer {
+        @include flex(column, center, flex-start, wrap);
+        width: 77%;
+        margin-top: 30px;
+
+        .formDescription {
+          @include text(18px, 21px, 400);
+        }
+      }
+
+      .submitButton {
+        @include text(15px,0, 600);
+        width: 344px;
+        height: 45px;
+        border: 0;
+        border-radius: 4px;
+        margin: 35px 0 10px;
+        background-color: rgba(22, 63, 246, 0.85);
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: rgba(8, 41, 178, 0.85);
+        }
+      }
+    }
+
+    .descriptionBlock {
+      border: 1px solid;
+      width: 65%;
+
+    }
+  }
+}
