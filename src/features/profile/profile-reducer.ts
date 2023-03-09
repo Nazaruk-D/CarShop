@@ -1,9 +1,8 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {authAPI, UserData} from "../../api/userAPI";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {authAPI} from "../../api/userAPI";
 import {setAppStatusAC} from "../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../utils/error-utils";
-import {loginTC} from "../auth/auth-reducer";
 import {profileAPI, ResetUserPasswordType, UserType} from "../../api/profileAPI";
 
 
@@ -82,7 +81,8 @@ const slice = createSlice({
             createdAt: null,
             updatedAt: null,
 
-        } as UserType
+        } as UserType,
+        activeModel: "ModelS" as ModelType
     },
     reducers: {
         setProfileDataAC: (state, action) => {
@@ -102,10 +102,14 @@ const slice = createSlice({
                 updatedAt: null,
             }
         },
+        setActiveModel: (state, action: PayloadAction<{ value: ModelType }>) => {
+            state.activeModel = action.payload.value
+        },
     },
 });
 
 export const profileReducer = slice.reducer;
-export const {setProfileDataAC, clearProfileDataAC} = slice.actions;
+export const {setProfileDataAC, clearProfileDataAC, setActiveModel} = slice.actions;
 
 
+export type ModelType = "Model S" | "Model 3" | "Model X" | "Model Y" | "Cybertruck" | "Solar Roof" | "Solar Panels"
