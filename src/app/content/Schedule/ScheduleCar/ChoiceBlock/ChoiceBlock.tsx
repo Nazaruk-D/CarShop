@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './ChoiceBlock.module.scss'
 import modelSSchedule from '../../../../../common/assets/modelSSchedule.jpg'
 import model3Schedule from '../../../../../common/assets/model3Schedule.jpg'
@@ -37,6 +37,10 @@ const ChoiceBlock = () => {
     const activeModel = useAppSelector(s => s.profile.activeModel)
     const activeData = data.find( d => d.title === activeModel)
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className={s.mainContainer}>
             <div className={s.contentContainer}>
@@ -44,7 +48,7 @@ const ChoiceBlock = () => {
                     <h2 className={s.title}>Schedule a Demo Drive</h2>
                     <span className={s.subtitle}>Demo Drive a Tesla at a store near you. Drivers must have a valid U.S. driver's license and be 18 years of age or older.</span>
                 </div>
-                <div className={s.imageBlock} style={{backgroundImage: `url(${activeData!.image})`}}>
+                <div className={s.imageBlock} style={{backgroundImage: `url(${activeData ? activeData.image : modelSSchedule})`}}>
                 </div>
                 <div className={s.buttonsBlock}>
                     {
