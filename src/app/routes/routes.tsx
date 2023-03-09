@@ -31,6 +31,7 @@ export const routes = {
     registration: '/CarShop/registration',
     drive: '/CarShop/drive',
     consultation: '/CarShop/consultation',
+    ordering: '/CarShop/ordering',
 }
 
 export const router = createBrowserRouter([
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.cybertruck,
+        element: <Cybertruck/>
+    },
+    {
+        path: routes.ordering,
         element: <Cybertruck/>
     },
 ])
