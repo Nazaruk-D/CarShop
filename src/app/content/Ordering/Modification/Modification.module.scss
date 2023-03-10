@@ -1,0 +1,17 @@
+@import '../../../../common/styles/sass/mixins';
+
+
+.modificationContainer {
+  @include flex(row, center, flex-end, wrap);
+  width: 25%;
+  height: 100%;
+  background-color: yellow;
+
+  .modificationBlock {
+    @include flex(column, flex-start, center, wrap);
+    width: 80%;
+    height: 95%;
+    box-sizing: border-box;
+    background-color: #9a9a9a;
+  }
+}

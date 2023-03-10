@@ -1,13 +1,7 @@
+@import '../../../common/styles/sass/mixins';
 
-
-.orderingContainer{
-
-  .imageBlock{
-
-  }
-
-  .orderBlock {
-
-  }
-
+.orderingContainer {
+  @include flex(row, center, center, wrap);
+  width: 100%;
+  height: 100vh;
 }

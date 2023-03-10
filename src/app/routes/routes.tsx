@@ -15,6 +15,7 @@ import Registration from "../../features/auth/registration/Registration";
 import ScheduleSolar from "../content/Schedule/ScheduleSolar/ScheduleSolar";
 import Profile from "../../features/profile/Profile";
 import Cybertruck from "../content/CarsModel/Cybertruck/Cybertruck";
+import Ordering from "../content/Ordering/Ordering";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -94,6 +95,6 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.ordering,
-        element: <Cybertruck/>
+        element: <Ordering/>
     },
 ])

@@ -1,0 +1,29 @@
+@import '../../../../common/styles/sass/mixins';
+
+
+.galleryContainer {
+  @include flex(row, center, center, wrap);
+  width: 75%;
+  height: 100%;
+  background-color: red;
+
+  .leftArrow {
+    @include flex(row, center, center, wrap);
+    width: 5%;
+    height: 100%;
+    background-color: blue;
+  }
+
+  .imageBlock {
+    @include flex(row, center, center, wrap);
+    width: 90%;
+    height: 100%;
+  }
+
+  .rightArrow {
+    @include flex(row, center, center, wrap);
+    width: 5%;
+    height: 100%;
+    background-color: #566cd0;
+  }
+}
