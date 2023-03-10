@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import s from "./Gallery.module.scss"
-import {IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
+import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from "react-icons/io";
 import image from "./../../../../common/assets/orders/model3/compositor.jpg"
 
 const Fade = require("react-reveal/Fade")
@@ -22,7 +22,10 @@ const Gallery = () => {
             </div>
             <div className={s.imageBlock} style={{backgroundImage: `url(${image})`}}>
                 <div className={s.image}></div>
-                {/*<VideoPlayer link={image}/>*/}
+            </div>
+            <div className={s.counterContainer}>
+                <div className={s.arrow}><IoIosArrowUp size={"20px"}/></div>
+                <div className={s.price}>$53,990 Vehicle Price</div>
             </div>
             <div className={s.rightArrowContainer}>
                 {isArrowActive &&

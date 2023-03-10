@@ -31,6 +31,41 @@
     background-color: red;
   }
 
+  .counterContainer {
+    @include flex(row, center, center, wrap);
+    position: fixed;
+    bottom: 0;
+    width: 340px;
+    height: 75px;
+    background-color: #F4F4F4;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+    .arrow {
+      @include flex(row, center, center, wrap);
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      border: 0;
+      background-color: #FFFFFF;
+      margin-right: 20px;
+      color: #393C41;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
+      transition: filter .33s ease;
+      cursor: pointer;
+
+      &:hover {
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,.2));
+        transition: filter .33s ease;
+      }
+    }
+
+    .price {
+      @include text(14px, 14px, 600);
+      color: #393C41;
+    }
+  }
+
   .rightArrowContainer {
     @include flex(row, flex-start, center, wrap);
     width: 5%;
