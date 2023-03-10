@@ -26,6 +26,16 @@
       @include flex(row, center, center, wrap);
       width: 100%;
     }
+
+    .upgradeContainer {
+      @include flex(column, center, flex-start, wrap);
+      margin-top: 40px;
+      .title {
+        @include text(26px, 26px, 600);
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
 }
 

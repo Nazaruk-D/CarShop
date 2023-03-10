@@ -1,0 +1,9 @@
+@import '../../../../../common/styles/sass/mixins';
+
+
+.designContainer {
+  @include flex(column, space-between, center, wrap);
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+}

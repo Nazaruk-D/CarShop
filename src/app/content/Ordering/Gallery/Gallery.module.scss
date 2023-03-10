@@ -1,11 +1,18 @@
 @import '../../../../common/styles/sass/mixins';
 
 
-.galleryContainer {
-  @include flex(row, center, center, wrap);
+.container {
   width: 75%;
   height: 100%;
-  //background-color: red;
+}
+
+.galleryContainer {
+  @include flex(row, flex-start, center, wrap);
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 75%;
+  height: 100%;
 
   .leftArrowContainer {
     @include flex(row, flex-end, center, wrap);
@@ -34,6 +41,8 @@
   .counterContainer {
     @include flex(row, center, center, wrap);
     position: fixed;
+    left: 30%;
+    right: 0;
     bottom: 0;
     width: 340px;
     height: 75px;

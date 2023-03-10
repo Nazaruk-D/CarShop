@@ -36,7 +36,21 @@ const Options = () => {
                 <div className={s.features}>
                     <DetailsButton title={"Feature Details"}/>
                 </div>
-
+                <div className={s.upgradeContainer}>
+                    <h2 className={s.title}>
+                        Performance Upgrade
+                    </h2>
+                    <p style={{width: "100%", textAlign: "center"}}>Included</p>
+                    <ul>
+                        <li>20’’ Überturbine Wheels</li>
+                        <li>Performance Brakes</li>
+                        <li>Carbon fiber spoiler</li>
+                        <li>Aluminum alloy pedals</li>
+                    </ul>
+                    <div className={s.features}>
+                        <DetailsButton title={"Feature Details"}/>
+                    </div>
+                </div>
             </div>
         </div>
     );
