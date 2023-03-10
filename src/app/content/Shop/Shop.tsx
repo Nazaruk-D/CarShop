@@ -8,7 +8,7 @@ import MX from "../../../common/assets/shop/MX_web.avif"
 import MY from "../../../common/assets/shop/MY_web.avif"
 import charging from "../../../common/assets/shop/Charging_web.avif"
 import LifeStyle from "../../../common/assets/shop/LifeStyle_web.avif"
-import Button from "../../../common/components/Button/Button";
+import Button from "../../../common/components/buttons/Button/Button";
 import s from "./Shop.module.scss"
 import Footer from "../CarsModel/commonComponents/Footer/Footer";
 import ClothesBlock from "./ClothesBlock/ClothesBlock";

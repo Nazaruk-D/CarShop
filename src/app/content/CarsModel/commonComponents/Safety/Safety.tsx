@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Safety.module.scss'
-import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
-import Button from "../../../../../common/components/Button/Button";
+import PrimaryButton from "../../../../../common/components/buttons/PrimaryButton/PrimaryButton";
+import Button from "../../../../../common/components/buttons/Button/Button";
 import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";

@@ -3,7 +3,7 @@ import s from "./ClothesBlock.module.scss"
 import man from "../../../../common/assets/shop/Men_web.avif"
 import women from "../../../../common/assets/shop/Women_web.avif"
 import kids from "../../../../common/assets/shop/Kids_web.avif"
-import PrimaryButton from "../../../../common/components/PrimaryButton/PrimaryButton";
+import PrimaryButton from "../../../../common/components/buttons/PrimaryButton/PrimaryButton";
 
 
 const clothesData: clothesDataType[] = [

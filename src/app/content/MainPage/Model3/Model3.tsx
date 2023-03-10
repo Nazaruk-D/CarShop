@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import model3 from "../../../../common/assets/model3.jfif";
-import Button from "../../../../common/components/Button/Button";
+import Button from "../../../../common/components/buttons/Button/Button";
 import PresentationBlock from "../../../../common/components/PresentationBlock/PresentationBlock";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../../store/store";

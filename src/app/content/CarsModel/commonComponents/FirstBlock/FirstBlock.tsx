@@ -1,7 +1,7 @@
 import React from 'react';
 import PresentationBlock from "../../../../../common/components/PresentationBlock/PresentationBlock";
 import Characteristics from "../../../../../common/components/Characteristics/Characteristics";
-import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
+import PrimaryButton from "../../../../../common/components/buttons/PrimaryButton/PrimaryButton";
 import s from "./FirstBlock.module.scss"
 const Fade = require("react-reveal/Fade")
 

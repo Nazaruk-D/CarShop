@@ -3,7 +3,7 @@ import React from 'react';
 import modelX from '../../../../common/assets/modelX.jfif'
 import PresentationBlock from "../../../../common/components/PresentationBlock/PresentationBlock";
 
-import Button from "../../../../common/components/Button/Button";
+import Button from "../../../../common/components/buttons/Button/Button";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../../store/store";
 import {setActiveModel} from "../../../../features/profile/profile-reducer";

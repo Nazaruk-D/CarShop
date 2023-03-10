@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Order.module.scss'
-import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
-import Button from "../../../../../common/components/Button/Button";
+import PrimaryButton from "../../../../../common/components/buttons/PrimaryButton/PrimaryButton";
+import Button from "../../../../../common/components/buttons/Button/Button";
 
 export type OrderPropsType = {
     carName: "Model Y" | "Model 3" | "Model S" | "Model X"

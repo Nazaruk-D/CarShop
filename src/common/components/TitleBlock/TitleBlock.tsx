@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './TitleBlock.module.scss'
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
-import Button from "../Button/Button";
+import PrimaryButton from "../buttons/PrimaryButton/PrimaryButton";
+import Button from "../buttons/Button/Button";
 
 const Fade = require("react-reveal/Fade")
 

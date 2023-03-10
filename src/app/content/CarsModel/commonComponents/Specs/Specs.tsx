@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import s from './Specs.module.scss'
-import PrimaryButton from "../../../../../common/components/PrimaryButton/PrimaryButton";
-import SpecsButton from "../../../../../common/components/SpecsButton/SpecsButton";
+import PrimaryButton from "../../../../../common/components/buttons/PrimaryButton/PrimaryButton";
+import SpecsButton from "../../../../../common/components/buttons/SpecsButton/SpecsButton";
 
 const Fade = require("react-reveal/Fade")
 

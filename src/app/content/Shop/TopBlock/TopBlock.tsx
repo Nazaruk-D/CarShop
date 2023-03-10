@@ -4,9 +4,9 @@ import PresentationBlock from "../../../../common/components/PresentationBlock/P
 import ShopConnector from "../../../../common/assets/ShopConnector.jpg";
 import ChargingPlatform from "../../../../common/assets/ShopWirelessChargingPlatform.jpg";
 import InteriorLiners from "../../../../common/assets/ShopWeatherInteriorLiners.jpg";
-import Button from "../../../../common/components/Button/Button";
+import Button from "../../../../common/components/buttons/Button/Button";
 import Header from "../../../header/Header";
-import SmallRoundButton from "../../../../common/components/SmallRoundButton/SmallRoundButton";
+import SmallRoundButton from "../../../../common/components/buttons/SmallRoundButton/SmallRoundButton";
 
 const data = [
     {

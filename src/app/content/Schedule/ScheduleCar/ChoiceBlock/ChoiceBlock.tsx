@@ -4,7 +4,7 @@ import modelSSchedule from '../../../../../common/assets/modelSSchedule.jpg'
 import model3Schedule from '../../../../../common/assets/model3Schedule.jpg'
 import modelXSchedule from '../../../../../common/assets/modelXSchedule.jpg'
 import modelYSchedule from '../../../../../common/assets/modelYSchedule.jpg'
-import ScheduleButton from "../../../../../common/components/ScheduleButton/ScheduleButton";
+import ScheduleButton from "../../../../../common/components/buttons/ScheduleButton/ScheduleButton";
 import {ModelType, setActiveModel} from "../../../../../features/profile/profile-reducer";
 import {useAppDispatch, useAppSelector} from "../../../../store/store";
 
@@ -53,10 +53,13 @@ const ChoiceBlock = () => {
                 <div className={s.buttonsBlock}>
                     {
                         data.map((c, i) => (
-                            <ScheduleButton key={i} title={c.title}
-                                            border={activeModel === c.title ? '3px solid rgba(22, 63, 246, 0.85)' : ''}
-                                            color={activeModel === c.title ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.5)'}
-                                            onClick={() =>  dispatch(setActiveModel({value: c.title}))}/>
+                            <div style={{margin: "10px"}}>
+                                <ScheduleButton key={i} title={c.title}
+                                                border={activeModel === c.title ? '3px solid rgba(22, 63, 246, 0.85)' : ''}
+                                                color={activeModel === c.title ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.5)'}
+                                                onClick={() =>  dispatch(setActiveModel({value: c.title}))}/>
+                            </div>
+
                         ))
                     }
                 </div>
