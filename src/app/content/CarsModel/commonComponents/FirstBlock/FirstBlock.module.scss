@@ -3,11 +3,14 @@
 
 
 .characteristics {
-  @include flex(row, center, flex-end, wrap);
-  width: 100%;
+  @include flex(row, space-between, flex-end, wrap);
+  width: 700px;
   height: 80%;
   padding-bottom: 30px;
   box-sizing: border-box;
+  @media screen and (max-width: $mediaWidth) {
+    width: 100%;
+  }
 }
 
 .button {

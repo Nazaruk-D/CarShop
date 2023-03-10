@@ -10,24 +10,24 @@
     }
 
     .imageBlock {
+      @include flex(row, center, center, no-wrap);
       @include background(no-repeat, center, contain);
       position: relative;
       width: 70%;
       height: 100%;
       background-color: #f4f4f4;
       @media screen and (max-width: $mediaWidth) {
+        @include flex(row, flex-start, center, no-wrap);
         width: 100%;
       }
 
-      .characteristics{
-        @include flex(row, center, center, no-wrap);
-        width: 100%;
+      .characteristics {
+        @include flex(row, space-between, center, no-wrap);
+        width: 50%;
         position: absolute;
         bottom: 8%;
         @media screen and (max-width: $mediaWidth) {
-          bottom: 15%;
-          padding-left: 40px;
-          box-sizing: border-box;
+          display: none;
         }
       }
 

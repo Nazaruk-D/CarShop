@@ -13,5 +13,10 @@
     height: 95%;
     box-sizing: border-box;
     background-color: #9a9a9a;
+
+    .characteristicsBlock{
+      @include flex(row, space-between, center, nowrap);
+      width: 100%;
+    }
   }
 }

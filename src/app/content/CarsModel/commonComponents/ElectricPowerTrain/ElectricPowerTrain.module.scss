@@ -98,7 +98,6 @@
             height: 120px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, flex-start, flex-start, wrap);
-              //height: 50%;
               height: 250px;
             }
 
@@ -120,7 +119,6 @@
             margin-top: 10px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, center, center, nowrap);
-
             }
           }
         }
@@ -172,10 +170,9 @@
             @include flex(row, center, center, nowrap);
             height: 40%;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 10px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, center, center, nowrap);
-
             }
           }
         }
