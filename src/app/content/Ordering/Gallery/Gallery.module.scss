@@ -5,25 +5,45 @@
   @include flex(row, center, center, wrap);
   width: 75%;
   height: 100%;
-  background-color: red;
+  //background-color: red;
 
-  .leftArrow {
-    @include flex(row, center, center, wrap);
+  .leftArrowContainer {
+    @include flex(row, flex-end, center, wrap);
     width: 5%;
     height: 100%;
-    background-color: blue;
+    cursor: pointer;
+
+    .leftArrowBlock {
+      @include flex(row, center, center, wrap);
+      width: 28px;
+      height: 28px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      border: 0;
+    }
   }
 
   .imageBlock {
     @include flex(row, center, center, wrap);
+    @include background(no-repeat, center, cover);
     width: 90%;
     height: 100%;
+    background-color: red;
   }
 
-  .rightArrow {
-    @include flex(row, center, center, wrap);
+  .rightArrowContainer {
+    @include flex(row, flex-start, center, wrap);
     width: 5%;
     height: 100%;
-    background-color: #566cd0;
+    cursor: pointer;
+
+    .rightArrowBlock {
+      @include flex(row, center, center, wrap);
+      width: 28px;
+      height: 28px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      border: 0;
+    }
   }
 }

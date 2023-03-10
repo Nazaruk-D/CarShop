@@ -15,8 +15,7 @@ type CarPropsType = {
 
 const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroundImage, children, color}) => {
     return (
-        <Element name={model} className={s.carContainer} style={{backgroundImage: `url(${backgroundImage})`}}
-                 id={model}>
+        <Element name={model} className={s.carContainer} style={{backgroundImage: `url(${backgroundImage})`}} id={model}>
             <div className={s.carBlock}>
                 <div className={s.titleBlock} style={{color}}>
                     <Fade bottom>
