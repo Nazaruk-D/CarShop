@@ -1,0 +1,38 @@
+@import '../../../../../../common/styles/sass/mixins';
+
+
+.paintContainer {
+  @include flex(column, center,center, wrap);
+  width: 100%;
+
+  .title {
+    @include text(30px, 30px, 600);
+  }
+
+  .colorBlock {
+    @include flex(row, space-evenly, center, wrap);
+    width: 100%;
+    margin: 15px 0;
+
+    .color {
+      @include background(no-repeat, center, cover);
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  .priceBlock {
+    @include flex(row, flex-start, center, wrap);
+
+    .colorName {
+      @include text(16px, 16px, 600);
+      margin-right: 10px;
+    }
+
+    .colorPrice {
+      @include text(16px, 16px, 400);
+    }
+  }
+}
