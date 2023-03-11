@@ -24,7 +24,7 @@
     }
 
     .features {
-      @include flex(row, center, center, wrap);
+      @include flex(row, space-evenly, center, wrap);
       width: 100%;
     }
 

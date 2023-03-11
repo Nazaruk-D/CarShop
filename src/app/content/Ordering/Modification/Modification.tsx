@@ -3,6 +3,8 @@ import s from "./Modification.module.scss"
 import Title from "./Title/Title";
 import Options from "./Options/Options";
 import Design from "./Design/Design";
+import Charging from "./Charging/Charging";
+import Order from "./Order/Order";
 
 const Modification = () => {
     return (
@@ -11,6 +13,8 @@ const Modification = () => {
                 <Title/>
                 <Options/>
                 <Design/>
+                <Charging/>
+                <Order/>
             </div>
         </div>
     );

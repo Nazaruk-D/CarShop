@@ -10,7 +10,7 @@
   }
 
   .colorBlock {
-    @include flex(row, space-evenly, center, wrap);
+    @include flex(row, center, center, wrap);
     width: 100%;
     margin: 15px 0;
 
@@ -19,6 +19,7 @@
       border-radius: 100%;
       width: 40px;
       height: 40px;
+      margin-right: 10px;
       cursor: pointer;
     }
   }

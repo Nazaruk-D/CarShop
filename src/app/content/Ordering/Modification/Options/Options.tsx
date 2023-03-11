@@ -38,16 +38,18 @@ const Options = () => {
                 </div>
                 <div className={s.upgradeContainer}>
                     <h2 className={s.title}>
-                        Performance Upgrade
+                        Enhanced Autopilot
                     </h2>
-                    <p style={{width: "100%", textAlign: "center"}}>Included</p>
+                    <p style={{width: "100%", textAlign: "center"}}>$6,000</p>
                     <ul>
-                        <li>20’’ Überturbine Wheels</li>
-                        <li>Performance Brakes</li>
-                        <li>Carbon fiber spoiler</li>
-                        <li>Aluminum alloy pedals</li>
+                        <li>Navigate on Autopilot</li>
+                        <li>Auto Lane Change</li>
+                        <li>Autopark</li>
+                        <li>Summon</li>
+                        <li>Smart Summon</li>
                     </ul>
                     <div className={s.features}>
+                        <DetailsButton title={"Add"}/>
                         <DetailsButton title={"Feature Details"}/>
                     </div>
                 </div>
