@@ -1,14 +1,19 @@
 import React from 'react';
 import s from "./Title.module.scss"
 
-const Title = () => {
+type TitlePropType = {
+    title: string
+    date: string
+}
+
+const Title: React.FC<TitlePropType> = ({title, date}) => {
     return (
         <div className={s.titleContainer}>
             <h1 className={s.title}>
-                Model 3
+                {title}
             </h1>
             <p className={s.deliveryDate}>
-                Est. Delivery: Mar 2023
+                Est. Delivery: {date}
             </p>
         </div>
     );
