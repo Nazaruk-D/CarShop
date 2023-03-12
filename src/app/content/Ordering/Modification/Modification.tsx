@@ -85,7 +85,6 @@ const Modification = () => {
                 <OptionWidget title={"Paint"} data={paintData}/>
                 <OptionWidget title={"Wheels"} data={wheelsData} firstDescr={"All-Season Tires"} secondDescr={"Range (EPA est.) : 272mi"}/>
                 <OptionWidget title={"Interior"} data={interiorData}/>
-
                 <Autopilot/>
                 <SelfDriving/>
                 <Charging/>

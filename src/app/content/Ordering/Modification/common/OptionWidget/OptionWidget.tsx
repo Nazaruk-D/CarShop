@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from "./OptionWidget.module.scss"
 import white from "../../../../../../common/assets/orders/common/color/Paint_White.avif";
 import silver from "../../../../../../common/assets/orders/common/color/Paint_Silver.avif";
@@ -7,6 +7,8 @@ import black from "../../../../../../common/assets/orders/common/color/Paint_Bla
 import red from "../../../../../../common/assets/orders/common/color/Paint_Red.avif";
 import DetailsButton from "../../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {Element, Link} from "react-scroll";
+import {useInView} from "react-intersection-observer";
+import {Context, ContextType} from "../../../Ordering";
 
 
 type OptionWidgetPropsType = {
@@ -23,10 +25,17 @@ type Image = {
 }
 
 const OptionWidget: React.FC<OptionWidgetPropsType> = ({data, title, firstDescr, secondDescr}) => {
+    const [context, setContext] = useContext<ContextType>(Context);
+    const { ref, inView, entry } = useInView({
+        threshold: 0,
+    });
+
+    if (inView) {
+        setContext(title)
+    }
+
     return (
-        <Element name={title} className={s.optionWidgetContainer} id={title} onMouseEnter={() => console.log(123)} >
-            <Link to={"galery"}>123</Link>
-        {/*<div className={s.optionWidgetContainer}>*/}
+        <div className={s.optionWidgetContainer} ref={ref}>
             <h2 className={s.title}>{title}</h2>
             <div className={s.optionBlock}>
                 {data.map( (img, i) => <img key={i} src={img.img} alt={img.colorName} className={s.color}/>)}
@@ -38,8 +47,7 @@ const OptionWidget: React.FC<OptionWidgetPropsType> = ({data, title, firstDescr,
             <p className={s.text}>{firstDescr}</p>
             <p className={s.text}>{secondDescr}</p>
             <DetailsButton title={"Learn more"}/>
-        {/*</div>*/}
-        </Element>
+        </div>
     );
 };
 

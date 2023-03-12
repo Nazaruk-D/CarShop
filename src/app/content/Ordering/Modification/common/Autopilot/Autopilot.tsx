@@ -1,12 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import s from "./Autopilot.module.scss"
 import DetailsButton from "../../../../../../common/components/buttons/DetailsButton/DetailsButton";
+import {Context, ContextType} from "../../../Ordering";
+import {useInView} from "react-intersection-observer";
 
 type AutopilotPropsType = {}
 
 const Autopilot: React.FC<AutopilotPropsType> = () => {
+    const [context, setContext] = useContext<ContextType>(Context);
+    const { ref, inView, entry } = useInView({
+        threshold: 0,
+    });
+
+    if(inView) {
+        setContext("Autopilot")
+    }
+
     return (
-        <div className={s.autopilotContainer}>
+        <div className={s.autopilotContainer} ref={ref}>
             <h2 className={s.title}>
                 Enhanced Autopilot
             </h2>
