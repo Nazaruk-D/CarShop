@@ -1,4 +1,4 @@
-@import '../../../../../common/styles/sass/mixins';
+@import '../../../../../../common/styles/sass/mixins';
 
 
 .chargingContainer {
@@ -7,7 +7,7 @@
   height: 50vh;
 
   .title {
-    @include text(22px, 22px, 600);
+    @include text(26px, 26px, 600);
     margin-bottom: 10px;
   }
 

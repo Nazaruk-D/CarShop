@@ -1,0 +1,23 @@
+@import '../../../../../../common/styles/sass/mixins';
+
+
+.selfDrivingContainer {
+  @include flex(column, center, flex-start, wrap);
+  margin-top: 40px;
+  width: 100%;
+
+  .title {
+    @include text(26px, 26px, 600);
+    width: 100%;
+    text-align: center;
+  }
+
+  .features {
+    @include flex(row, space-evenly, flex-start, wrap);
+    width: 100%;
+  }
+
+  .description {
+    @include text(14px, 16px, 400);
+  }
+}

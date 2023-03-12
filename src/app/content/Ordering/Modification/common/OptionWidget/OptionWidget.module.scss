@@ -1,15 +1,16 @@
 @import '../../../../../../common/styles/sass/mixins';
 
 
-.paintContainer {
+.optionWidgetContainer {
   @include flex(column, center,center, wrap);
   width: 100%;
+  margin: 70px 0;
 
   .title {
     @include text(30px, 30px, 600);
   }
 
-  .colorBlock {
+  .optionBlock {
     @include flex(row, center, center, wrap);
     width: 100%;
     margin: 15px 0;
@@ -35,5 +36,11 @@
     .colorPrice {
       @include text(16px, 16px, 400);
     }
+  }
+
+  .text {
+    @include text(14px, 14px, 400);
+    margin: 0;
+    margin-bottom: 10px;
   }
 }
