@@ -7,7 +7,7 @@ import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
 import {FiArchive, FiLogOut, FiUser, FiUsers} from "react-icons/fi";
-import OrdersPanel from "./OrdersPanel/OrdersPanel";
+import SchedulePanel from "./SchedulePanel/SchedulePanel";
 import UsersList from "./UsersList/UsersList";
 
 
@@ -19,7 +19,7 @@ const userNavData: NavDataType[] = [
 
 const adminNavData: NavDataType[] = [
     {id: 0, name: 'Profile Settings', icon: <FiUser/>},
-    {id: 1, name: 'Orders Panel', icon: <FiArchive/>},
+    {id: 1, name: 'Schedule Panel', icon: <FiArchive/>},
     {id: 2, name: 'Users List', icon: <FiUsers/>},
 ]
 
@@ -64,7 +64,7 @@ const MainBlock = () => {
             <div className={s.contentContainer}>
                 {item === 0 && <ProfileSettings/>}
                 {item === 1 && role === 'user' && <Orders/>}
-                {item === 1 && role === 'admin' && <OrdersPanel/>}
+                {item === 1 && role === 'admin' && <SchedulePanel/>}
                 {item === 2 && role === 'admin' && <UsersList/>}
             </div>
         </div>
