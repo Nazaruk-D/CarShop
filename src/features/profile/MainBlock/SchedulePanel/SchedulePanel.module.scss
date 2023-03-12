@@ -1,0 +1,88 @@
+@import '../../../../common/styles/sass/mixins';
+
+.mainBlock {
+  width: 100%;
+
+  .titleBlock {
+    margin-top: 130px;
+    .title {
+      @include text(35px, 35px, 600);
+      margin-top: 0;
+    }
+  }
+
+  .contentBlock {
+    @include flex(column, center, flex-start, nowrap);
+
+    .dataBlock {
+      @include flex(column, center, flex-start, nowrap);
+      width: 100%;
+
+      .data {
+        @include flex(row, space-between, center, nowrap);
+        background-color: rgba(1,1,1,0.05);
+        margin: 7px 0 7px;
+        border-radius: 15px;
+        width: 100%;
+
+        .dataField {
+          @include flex(column, center, center, nowrap);
+          @include text(15px, 15px, 500);
+          width: 130px;
+          height: 40px;
+          color: rgba(1,1,1,0.6);
+        }
+        .dataFieldEmail {
+          @include flex(column, center, flex-start, nowrap);
+          @include text(15px, 15px, 500);
+          padding-left: 30px;
+          width: 160px;
+          height: 40px;
+          color: rgba(1,1,1,0.6);
+        }
+        .dataFieldName {
+          @include flex(column, center, flex-start, nowrap);
+          @include text(15px, 15px, 500);
+          padding-left: 30px;
+          width: 130px;
+          height: 40px;
+          color: rgba(1,1,1,0.6);
+        }
+
+        .dataFieldStatus {
+          @include flex(row, center, center, nowrap);
+          @include text(15px, 15px, 500);
+          width: 130px;
+          height: 40px;
+          color: rgba(1,1,1,0.6);
+          cursor: pointer;
+
+          .status {
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+
+    .paginationBlock {
+      @include flex(row, center, center, nowrap);
+      @include text(16px, 16px, 600);
+      color: rgba(1,1,1,0.6);
+      width: 100%;
+      height: 50px;
+
+      .selectedPage {
+        color: rgba(1,1,1,1);
+        font-weight: bold;
+        margin-right: 5px;
+        cursor: pointer;
+
+      }
+
+      .page {
+        margin-right: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
