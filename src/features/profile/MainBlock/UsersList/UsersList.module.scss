@@ -1,11 +1,12 @@
 @import '../../../../common/styles/sass/mixins';
 
 .mainBlock {
-  height: 100%;
+
   width: 100%;
-  padding-top: 130px;
+  height: 100%;
 
   .titleBlock {
+    padding-top: 130px;
     .title {
       @include text(35px, 35px, 600);
       margin-top: 0;
@@ -13,49 +14,110 @@
   }
 
   .contentBlock {
-    @include flex(column, center, flex-start, nowrap);
+    @include flex(column, space-between, flex-start, nowrap);
+    width: 100%;
+    height: 60%;
 
-    .tableTitles {
-      margin-top: 20px;
-      @include flex(row, flex-start, center, nowrap);
-      border-bottom: 1px solid;
+    .table {
+      @include flex(column, flex-start, center, nowrap);
+      width: 100%;
+      box-shadow:0 0 5px rgba(1,1,1,0.3);
+      border-radius: 3px;
+
+      .tableTitles {
+        @include flex(row, space-between, center, nowrap);
+        //border: 1px solid;
+        width: 100%;
+        height: 40px;
+        position: relative;
 
 
-      .field {
-        @include flex(column, center, flex-start, nowrap);
-        @include text(15px, 15px, 500);
-        width: 140px;
-        height: 30px;
-      }
+        &::after {
+          background-color: rgba(1,1,1,0.1);
+          bottom: 0;
+          content: "";
+          height: 0.5px;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%,50%);
+          width: 97%;
+          box-shadow:0 0 5px rgba(1,1,1,0.3);
+        }
 
-      .fieldId {
-        @include flex(column, center, flex-start, nowrap);
-        @include text(15px, 15px, 500);
-        width: 40px;
-        height: 30px;
-      }
-    }
-
-    .dataBlock {
-      @include flex(column, center, flex-start, nowrap);
-
-      .data {
-        @include flex(row, flex-start, center, nowrap);
-
-        .dataField {
+        .field {
           @include flex(column, center, flex-start, nowrap);
-          @include text(13px, 13px, 400);
+          @include text(13px, 13px, 500);
+          margin-left: 30px;
           width: 140px;
-          height: 30px;
+          //border: 1px solid;
+          color: rgba(1,1,1,0.4);
         }
 
-        .dataFieldId {
-          @include flex(column, center, flex-start, nowrap);
-          @include text(13px, 13px, 400);
-          width: 40px;
-          height: 30px;
+      }
+
+      .tableData {
+        @include flex(column, space-between, center, nowrap);
+        width: 100%;
+
+
+        .data {
+          @include flex(row, space-between, center, nowrap);
+          height: 40px;
+          position: relative;
+          width: 100%;
+
+
+
+          &::after {
+            background-color: rgba(1,1,1,0.1);
+            bottom: 0;
+            content: "";
+            height: 0.2px;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,50%);
+            width: 97%;
+            box-shadow:0 0 5px rgba(1,1,1,0.3);
+          }
+
+          .dataField {
+            @include flex(column, center, flex-start, nowrap);
+            @include text(13px, 13px, 500);
+            margin-left: 30px;
+            width: 140px;
+            color: rgba(1,1,1,0.6);
+          }
         }
       }
     }
+
+    .paginator {
+      width: 100%;
+      height: 10%;
+    }
+
+
+    //
+    //.dataBlock {
+    //  @include flex(column, center, flex-start, nowrap);
+    //
+    //  .data {
+    //    @include flex(row, flex-start, center, nowrap);
+    //
+    //    .dataField {
+    //      @include flex(column, center, flex-start, nowrap);
+    //      @include text(13px, 13px, 400);
+    //      width: 140px;
+    //      height: 30px;
+    //    }
+    //
+    //    .dataFieldId {
+    //      @include flex(column, center, flex-start, nowrap);
+    //      @include text(13px, 13px, 400);
+    //      width: 40px;
+    //      height: 30px;
+    //    }
+    //  }
+    //}
   }
 }

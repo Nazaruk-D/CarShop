@@ -21,28 +21,42 @@ const UsersList = () => {
                 <h1 className={s.title}>Users List</h1>
             </div>
             <div className={s.contentBlock}>
-                <div className={s.tableTitles}>
-                    <div className={s.fieldId}>ID</div>
-                    <div className={s.field}>Email</div>
-                    <div className={s.field}>First Name</div>
-                    <div className={s.field}>Last Name</div>
-                    <div className={s.field}>Role</div>
-                    <div className={s.field}>Created At</div>
-                    <div className={s.field}>Updated At</div>
+                <div className={s.table}>
+                    <div className={s.tableTitles}>
+                        <div className={s.field}>Email</div>
+                        <div className={s.field}>Full Name</div>
+                        <div className={s.field}>Role</div>
+                        <div className={s.field}>Created At</div>
+                        <div className={s.field}>Updated At</div>
+                        <div className={s.field}>Operation</div>
+                    </div>
+                    <div className={s.tableData}>
+                            {users.map((u, i) => (
+                                <div className={s.data} key={i}>
+                                    <div className={s.dataField}>{u.email}</div>
+                                    <div className={s.dataField}>{u.firstName} {u.lastName}</div>
+                                    <div className={s.dataField}>{u.role}</div>
+                                    <div className={s.dataField}>{u.createdAt}</div>
+                                    <div className={s.dataField}>{u.updatedAt}</div>
+                                    <div className={s.dataField}>Delete</div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
-                <div className={s.dataBlock}>
-                    {users.map((u, i) => (
-                        <div className={s.data} key={i}>
-                            <div className={s.dataFieldId}>{u.userId}</div>
-                            <div className={s.dataField}>{u.email}</div>
-                            <div className={s.dataField}>{u.firstName}</div>
-                            <div className={s.dataField}>{u.lastName}</div>
-                            <div className={s.dataField}>{u.role}</div>
-                            <div className={s.dataField}>{u.createdAt}</div>
-                            <div className={s.dataField}>{u.updatedAt}</div>
-                        </div>
-                    ))}
-                </div>
+
+                {/*<div className={s.dataBlock}>*/}
+                {/*    {users.map((u, i) => (*/}
+                {/*        <div className={s.data} key={i}>*/}
+                {/*            <div className={s.dataFieldId}>{u.userId}</div>*/}
+                {/*            <div className={s.dataField}>{u.email}</div>*/}
+                {/*            <div className={s.dataField}>{u.firstName}</div>*/}
+                {/*            <div className={s.dataField}>{u.lastName}</div>*/}
+                {/*            <div className={s.dataField}>{u.role}</div>*/}
+                {/*            <div className={s.dataField}>{u.createdAt}</div>*/}
+                {/*            <div className={s.dataField}>{u.updatedAt}</div>*/}
+                {/*        </div>*/}
+                {/*    ))}*/}
+                {/*</div>*/}
             </div>
         </div>
     );
