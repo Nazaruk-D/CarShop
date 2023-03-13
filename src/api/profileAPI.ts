@@ -1,6 +1,5 @@
 import {instance} from "./instance";
 
-
 export const profileAPI = {
     updateProfile(body: UserType) {
         return instance.put<UserType>(`profile/update`, body)
@@ -8,8 +7,15 @@ export const profileAPI = {
     resetPassword(passwordData: ResetUserPasswordType) {
         return instance.put<ResetUserPasswordType>(`profile/resetPassword`, passwordData)
     },
+    getUsers({limit, page}:GetUsersType) {
+        return instance.get(`profile/users?limit=${limit}&page=${page}`)
+    },
 }
 
+export type GetUsersType = {
+    limit: null | number
+    page: null | number
+}
 
 export type UserType = {
     id: null | number
