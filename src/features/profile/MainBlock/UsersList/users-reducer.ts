@@ -4,14 +4,14 @@ import {setAppStatusAC} from "../../../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../../../utils/error-utils";
 
-export const getUsersTC = createAsyncThunk(('profile/users'), async (param: GetUsersType, thunkAPI) => {
+export const getUsersTC = createAsyncThunk(('users/getUsers'), async (param: GetUsersType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await profileAPI.getUsers(param)
         if (res.status === 200) {
             console.log(res)
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
-            return
+            return {value: res.data}
         } else {
             return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
         }
@@ -31,27 +31,27 @@ const slice = createSlice({
         pageSize: 10,
         totalUsersCount: 0,
         currentPage: 1,
-    },
+    } as UserState,
     reducers: {
 
     },
     extraReducers: builder => {
-        builder.addCase(getUsersTC.fulfilled, (state, action: any) => {
-            state.users = action.payload.data.users
-            state.pageSize = action.payload.data.pageSize
-            state.totalUsersCount = action.payload.data.totalUsersCount
-            state.currentPage = action.payload.data.currentPage
+        builder.addCase(getUsersTC.fulfilled, (state, action) => {
+            state.users = action.payload.value.data.users
+            state.pageSize = action.payload.value.data.pageSize
+            state.totalUsersCount = action.payload.value.data.totalUsersCount
+            state.currentPage = action.payload.value.data.currentPage
         })
     }
 });
 
-export type UsersDataType = {
-    data: [
-        users: [],
-        pageSize: number,
-        totalUsersCount: number,
-        currentPage: number
-    ]
+export type UserState = {
+    users: UserType[]
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number
 }
 
 export const usersReducer = slice.reducer;
+
+
