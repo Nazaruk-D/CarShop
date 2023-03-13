@@ -17,7 +17,7 @@ const ScheduleButton: React.FC<ScheduleButtonPropsType> = ({title, color, onClic
 
     return (
         <>
-            <button style={{color, border, width, justifyContent}} onClick={() => onClick()} className={s.button}><p>{title}</p> <p>{price}</p></button>
+            <button style={{color, border, width, justifyContent}} onClick={() => onClick()} className={s.button}><p>{title}</p> <p>${price}</p></button>
         </>
     );
 };
