@@ -1,12 +1,12 @@
 @import '../../../../common/styles/sass/mixins';
 
 .mainBlock {
-
   width: 100%;
   height: 100%;
 
   .titleBlock {
     padding-top: 130px;
+
     .title {
       @include text(35px, 35px, 600);
       margin-top: 0;
@@ -16,7 +16,7 @@
   .contentBlock {
     @include flex(column, space-between, flex-start, nowrap);
     width: 100%;
-    height: 60%;
+    height: 63%;
 
     .table {
       @include flex(column, flex-start, center, nowrap);
@@ -26,11 +26,9 @@
 
       .tableTitles {
         @include flex(row, space-between, center, nowrap);
-        //border: 1px solid;
         width: 100%;
         height: 40px;
         position: relative;
-
 
         &::after {
           background-color: rgba(1,1,1,0.1);
@@ -49,24 +47,19 @@
           @include text(13px, 13px, 500);
           margin-left: 30px;
           width: 140px;
-          //border: 1px solid;
           color: rgba(1,1,1,0.4);
         }
-
       }
 
       .tableData {
         @include flex(column, space-between, center, nowrap);
         width: 100%;
 
-
         .data {
           @include flex(row, space-between, center, nowrap);
           height: 40px;
           position: relative;
           width: 100%;
-
-
 
           &::after {
             background-color: rgba(1,1,1,0.1);
@@ -87,37 +80,37 @@
             width: 140px;
             color: rgba(1,1,1,0.6);
           }
+
+          .dataFieldDelete {
+            @include flex(column, center, flex-start, nowrap);
+            @include text(13px, 13px, 500);
+            margin-left: 30px;
+            width: 140px;
+            color: rgba(1,1,1,0.6);
+            cursor: pointer;
+          }
         }
       }
     }
 
-    .paginator {
+    .paginationBlock {
+      @include flex(row, center, center, nowrap);
+      @include text(13px, 13px, 500);
+      color: rgba(1,1,1,0.4);
       width: 100%;
-      height: 10%;
+      height: 20%;
+
+      .selectedPage {
+        color: rgba(1,1,1,0.6);
+        font-weight: bold;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+
+      .page {
+        margin-right: 5px;
+        cursor: pointer;
+      }
     }
-
-
-    //
-    //.dataBlock {
-    //  @include flex(column, center, flex-start, nowrap);
-    //
-    //  .data {
-    //    @include flex(row, flex-start, center, nowrap);
-    //
-    //    .dataField {
-    //      @include flex(column, center, flex-start, nowrap);
-    //      @include text(13px, 13px, 400);
-    //      width: 140px;
-    //      height: 30px;
-    //    }
-    //
-    //    .dataFieldId {
-    //      @include flex(column, center, flex-start, nowrap);
-    //      @include text(13px, 13px, 400);
-    //      width: 40px;
-    //      height: 30px;
-    //    }
-    //  }
-    //}
   }
 }

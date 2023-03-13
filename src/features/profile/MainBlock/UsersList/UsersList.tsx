@@ -1,5 +1,7 @@
 import React from 'react';
-import s from "./UsersList.module.scss"
+import s from "./UsersList.module.scss";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+
 
 const users = [
     {userId: '1', email: 'nikita.znak@mail.ru', firstName: 'Nikita', lastName: 'Znak', role: 'admin', createdAt: '01.01.2023', updatedAt: '01.01.2023'},
@@ -15,6 +17,16 @@ const users = [
 ]
 
 const UsersList = () => {
+    let pagesCount = Math.ceil(10 / 10);
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i);
+    }
+    let currentPage = 1;
+    let currentPageFirst = ((currentPage - 5) < 0 ? 0 : currentPage - 5);
+    let currentPageLast = currentPage + 4;
+    let slicedPages = pages.slice(currentPageFirst, currentPageLast);
+
     return (
         <div className={s.mainBlock}>
             <div className={s.titleBlock}>
@@ -38,25 +50,16 @@ const UsersList = () => {
                                     <div className={s.dataField}>{u.role}</div>
                                     <div className={s.dataField}>{u.createdAt}</div>
                                     <div className={s.dataField}>{u.updatedAt}</div>
-                                    <div className={s.dataField}>Delete</div>
+                                    <div className={s.dataFieldDelete}><AiFillDelete onClick={() => {}}/></div>
                                 </div>
                             ))}
                     </div>
                 </div>
-
-                {/*<div className={s.dataBlock}>*/}
-                {/*    {users.map((u, i) => (*/}
-                {/*        <div className={s.data} key={i}>*/}
-                {/*            <div className={s.dataFieldId}>{u.userId}</div>*/}
-                {/*            <div className={s.dataField}>{u.email}</div>*/}
-                {/*            <div className={s.dataField}>{u.firstName}</div>*/}
-                {/*            <div className={s.dataField}>{u.lastName}</div>*/}
-                {/*            <div className={s.dataField}>{u.role}</div>*/}
-                {/*            <div className={s.dataField}>{u.createdAt}</div>*/}
-                {/*            <div className={s.dataField}>{u.updatedAt}</div>*/}
-                {/*        </div>*/}
-                {/*    ))}*/}
-                {/*</div>*/}
+                <div className={s.paginationBlock}>
+                    {slicedPages.map((p, index) => <span key={index}
+                                                         className={currentPage === p ? s.selectedPage : s.page}
+                                                         onClick={() => {}}>{p + " "}</span>)}
+                </div>
             </div>
         </div>
     );
