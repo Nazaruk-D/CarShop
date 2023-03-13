@@ -6,10 +6,10 @@ import {getUsersTC} from "./users-reducer";
 
 
 const UsersList = () => {
-    const {currentPage, pageSize, users} = useAppSelector(s => s.users)
+    const {currentPage, pageSize, users, totalUsersCount} = useAppSelector(s => s.users)
     const dispatch = useAppDispatch();
 
-    let pagesCount = Math.ceil(10 / 10);
+    let pagesCount = Math.ceil(totalUsersCount / pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
@@ -21,7 +21,11 @@ const UsersList = () => {
 
     useEffect(() => {
         dispatch(getUsersTC({limit: pageSize, page: currentPage}))
-    },[pageSize, currentPage])
+    },[])
+
+    const onPageChange = (page: number) => {
+        dispatch(getUsersTC({limit: pageSize, page: page}))
+    }
 
     return (
         <div className={s.mainBlock}>
@@ -54,7 +58,7 @@ const UsersList = () => {
                 <div className={s.paginationBlock}>
                     {slicedPages.map((p, index) => <span key={index}
                                                          className={currentPage === p ? s.selectedPage : s.page}
-                                                         onClick={() => {}}>{p + " "}</span>)}
+                                                         onClick={() => {onPageChange(p)}}>{p + " "}</span>)}
                 </div>
             </div>
         </div>

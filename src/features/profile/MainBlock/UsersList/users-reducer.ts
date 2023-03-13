@@ -38,7 +38,6 @@ const slice = createSlice({
     extraReducers: builder => {
         builder.addCase(getUsersTC.fulfilled, (state, action) => {
             state.users = action.payload.value.data.users
-            state.pageSize = action.payload.value.data.pageSize
             state.totalUsersCount = action.payload.value.data.totalUsersCount
             state.currentPage = action.payload.value.data.currentPage
         })
