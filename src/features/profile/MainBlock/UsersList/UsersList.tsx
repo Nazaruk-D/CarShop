@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import s from "./UsersList.module.scss";
 import { AiFillDelete } from "react-icons/ai";
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
-import {getUsersTC} from "./users-reducer";
+import {deleteUserTC, getUsersTC} from "./users-reducer";
 
 
 const UsersList = () => {
@@ -21,10 +21,14 @@ const UsersList = () => {
 
     useEffect(() => {
         dispatch(getUsersTC({limit: pageSize, page: currentPage}))
-    },[])
+    },[totalUsersCount])
 
     const onPageChange = (page: number) => {
         dispatch(getUsersTC({limit: pageSize, page: page}))
+    }
+
+    const onDeleteUser = (email: string | null) => {
+        dispatch(deleteUserTC({email}))
     }
 
     return (
@@ -50,7 +54,7 @@ const UsersList = () => {
                                     <div className={s.dataField}>{u.role}</div>
                                     <div className={s.dataField}>{u.createdAt}</div>
                                     <div className={s.dataField}>{u.updatedAt}</div>
-                                    <div className={s.dataFieldDelete}><AiFillDelete onClick={() => {}}/></div>
+                                    <div className={s.dataFieldDelete}><AiFillDelete onClick={() => {onDeleteUser(u.email)}}/></div>
                                 </div>
                             ))}
                     </div>

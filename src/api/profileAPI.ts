@@ -10,11 +10,18 @@ export const profileAPI = {
     getUsers({limit, page}:GetUsersType) {
         return instance.get(`profile/users?limit=${limit}&page=${page}`)
     },
+    deleteUser(deleteData: DeleteUserType) {
+        return instance.delete(`profile/delete`, {data: deleteData})
+    },
 }
 
 export type GetUsersType = {
     limit: null | number
     page: null | number
+}
+
+export type DeleteUserType = {
+    email: null | string
 }
 
 export type UserType = {
