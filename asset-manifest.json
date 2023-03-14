@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.857d6726.css",
-    "main.js": "/CarShop/static/js/main.996dfedf.js",
+    "main.css": "/CarShop/static/css/main.7488f38e.css",
+    "main.js": "/CarShop/static/js/main.f3dedf55.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
     "static/media/hammerVideo.mp4": "/CarShop/static/media/hammerVideo.ba2f129cf21c5f7e4eac.mp4",
@@ -111,6 +111,7 @@
     "static/media/modelYBlack.jfif": "/CarShop/static/media/modelYBlack.10dd2876d72f9ab17c37.jfif",
     "static/media/sideModelY.jfif": "/CarShop/static/media/sideModelY.a65381979d35ce10ffa5.jfif",
     "static/media/compositor.jpg": "/CarShop/static/media/compositor.04ea789bedcb0f49601e.jpg",
+    "static/media/compositorY.jpg": "/CarShop/static/media/compositorY.1d4465b4fe4d6687cff3.jpg",
     "static/media/MX_web.avif": "/CarShop/static/media/MX_web.a41d958fba5e767677bc.avif",
     "static/media/cybertruckSkeleton.jpg": "/CarShop/static/media/cybertruckSkeleton.4350a4afaeb9184f270b.jpg",
     "static/media/AirFilter.avif": "/CarShop/static/media/AirFilter.28aecd73023041a3e8f2.avif",
@@ -131,7 +132,11 @@
     "static/media/Gen3WC.avif": "/CarShop/static/media/Gen3WC.1612be1692fd241109b8.avif",
     "static/media/Kids_web.avif": "/CarShop/static/media/Kids_web.2809a06a6ec46d4cb173.avif",
     "static/media/option-wheels-19-sport.avif": "/CarShop/static/media/option-wheels-19-sport.c620a20f0834a270e317.avif",
+    "static/media/option-wheels-20-uberturbine.avif": "/CarShop/static/media/option-wheels-20-uberturbine.9cb3680b0657672023ff.avif",
+    "static/media/uberturbine_wheels21.avif": "/CarShop/static/media/uberturbine_wheels21.7b7528eb18e49a3a6c2a.avif",
+    "static/media/gemini-wheels-19.avif": "/CarShop/static/media/gemini-wheels-19.860644ad536eca2c5fb8.avif",
     "static/media/option-wheels-18-aero.avif": "/CarShop/static/media/option-wheels-18-aero.70911db55b4aa894aac1.avif",
+    "static/media/induction_wheels20.avif": "/CarShop/static/media/induction_wheels20.c135e4457864ab7c8c90.avif",
     "static/media/Paint_Red.avif": "/CarShop/static/media/Paint_Red.1f62f3bde8fecb3277d9.avif",
     "static/media/Paint_Blue.avif": "/CarShop/static/media/Paint_Blue.ef3b2cb26e0aefc4e357.avif",
     "static/media/Paint_Black.avif": "/CarShop/static/media/Paint_Black.26afaaea31752114631a.avif",
@@ -143,12 +148,12 @@
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.857d6726.css.map": "/CarShop/static/css/main.857d6726.css.map",
-    "main.996dfedf.js.map": "/CarShop/static/js/main.996dfedf.js.map",
+    "main.7488f38e.css.map": "/CarShop/static/css/main.7488f38e.css.map",
+    "main.f3dedf55.js.map": "/CarShop/static/js/main.f3dedf55.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.857d6726.css",
-    "static/js/main.996dfedf.js"
+    "static/css/main.7488f38e.css",
+    "static/js/main.f3dedf55.js"
   ]
 }
