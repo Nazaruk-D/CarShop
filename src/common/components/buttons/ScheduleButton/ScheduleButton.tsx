@@ -8,7 +8,7 @@ type ScheduleButtonPropsType = {
     color: string
     border?: string
     width?: string
-    price?: string
+    price?: number
     justifyContent?: string
     onClick: () => void
 }

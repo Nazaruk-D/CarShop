@@ -10,7 +10,7 @@ type TitlePropType = {
 
 const Title: React.FC<TitlePropType> = ({title, date}) => {
     const [context, setContext] = useContext<ContextType>(Context);
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         threshold: 0,
     });
 

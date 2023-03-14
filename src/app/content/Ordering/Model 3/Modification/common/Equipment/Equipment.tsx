@@ -2,13 +2,14 @@ import React from 'react';
 import s from "./Equipment.module.scss"
 import ScheduleButton from "../../../../../../../common/components/buttons/ScheduleButton/ScheduleButton";
 import DetailsButton from "../../../../../../../common/components/buttons/DetailsButton/DetailsButton";
-import {ActiveType} from "../../Modification";
+import {OrderType} from "../../../../order-reducer";
+import {model3DataTypeChild} from "../../../Model3Data";
 
 
 type EquipmentPropsType = {
-    data: any[]
-    changeEquipment: (value: string) => void
-    active: ActiveType
+    data: model3DataTypeChild[]
+    changeEquipment: (title: string, price: number) => void
+    active: OrderType
 }
 
 type DataType = {
@@ -26,13 +27,13 @@ const Equipment: React.FC<EquipmentPropsType> = ({data, changeEquipment, active}
                                                                price={d.price}
                                                                width={"100%"}
                                                                justifyContent={"space-between"}
-                                                               border={active.model === d.model ? '3px solid rgba(22, 63, 246, 0.85)' : ''}
-                                                               color={active.model === d.model ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.5)'}
-                                                               onClick={() => changeEquipment(d.model)}/>
+                                                               border={active.model.title === d.model ? '3px solid rgba(22, 63, 246, 0.85)' : ''}
+                                                               color={active.model.title === d.model ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.5)'}
+                                                               onClick={() => changeEquipment(d.model, d.price)}/>
                 </div>
             </div>)}
             <div className={s.button}>
-                <DetailsButton title={"Feature Details"}/>
+                <DetailsButton title={"Feature Details"} onClick={()=>{}}/>
             </div>
         </div>
     );

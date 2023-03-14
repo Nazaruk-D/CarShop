@@ -3,12 +3,17 @@ import s from "./Autopilot.module.scss"
 import DetailsButton from "../../../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
 import {Context, ContextType} from "../../../Model3Order";
+import {useAppDispatch, useAppSelector} from "../../../../../../store/store";
+import {OrderType} from "../../../../order-reducer";
 
-type AutopilotPropsType = {}
+type AutopilotPropsType = {
+    active: OrderType
+    onChangeAutopilotStatus: (payload: {status: boolean, price: number}) => void
+}
 
-const Autopilot: React.FC<AutopilotPropsType> = () => {
+const Autopilot: React.FC<AutopilotPropsType> = ({active, onChangeAutopilotStatus}) => {
     const [context, setContext] = useContext<ContextType>(Context);
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         threshold: 0,
     });
 
@@ -30,11 +35,16 @@ const Autopilot: React.FC<AutopilotPropsType> = () => {
                 <li>Smart Summon</li>
             </ul>
             <div className={s.features}>
-                <DetailsButton title={"Add"}/>
-                <DetailsButton title={"Feature Details"}/>
+                {active.autopilot.status
+                    ? <DetailsButton title={"Remove"} onClick={() => onChangeAutopilotStatus({status: false, price: 0})}/>
+                    : <DetailsButton title={"Add"} backgroundColor={"#3E6AE1"} color={"white"} onClick={() => onChangeAutopilotStatus({status: true, price: 6000})}/>
+
+                }
+                <DetailsButton title={"Feature Details"} onClick={()=>{}}/>
             </div>
         </div>
     );
 };
 
 export default Autopilot;
+
