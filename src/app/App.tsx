@@ -13,7 +13,8 @@ const App = () => {
         dispatch(initializeAppTC())
     }, [dispatch])
 
-    if (!isInitialized){
+    // if (!isInitialized){
+    if (true){
         return <Preloader/>
     }
 

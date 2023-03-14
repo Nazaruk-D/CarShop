@@ -4,6 +4,7 @@
 .container {
   width: 75%;
   height: 100%;
+  z-index: 0;
 }
 
 .galleryContainer {
@@ -13,7 +14,6 @@
   top:0;
   width: 75%;
   height: 100%;
-
 
   .leftArrowContainer {
     @include flex(row, flex-end, center, wrap);
