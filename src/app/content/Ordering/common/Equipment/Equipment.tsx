@@ -1,13 +1,13 @@
 import React from 'react';
 import s from "./Equipment.module.scss"
-import ScheduleButton from "../../../../../../../common/components/buttons/ScheduleButton/ScheduleButton";
-import DetailsButton from "../../../../../../../common/components/buttons/DetailsButton/DetailsButton";
-import {OrderType} from "../../../../order-reducer";
-import {model3DataTypeChild} from "../../../Model3Data";
+import ScheduleButton from "../../../../../common/components/buttons/ScheduleButton/ScheduleButton";
+import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
+import {OrderType} from "../../order-reducer";
+import {modelDataTypeChild} from "../../DataType";
 
 
 type EquipmentPropsType = {
-    data: model3DataTypeChild[]
+    data: modelDataTypeChild[]
     changeEquipment: (title: string, price: number) => void
     active: OrderType
 }

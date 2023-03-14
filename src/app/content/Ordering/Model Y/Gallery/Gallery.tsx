@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import s from "./Gallery.module.scss"
 import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from "react-icons/io";
-import image from "../../../../../common/assets/orders/model3/compositor.jpg"
+import image from "../../../../../common/assets/orders/modelY/compositorY.jpg"
 import blackInterior from "../../../../../common/assets/orders/model3/Model3_Black.jpg"
 // @ts-ignore
 import video1 from "../../../../../common/assets/video/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4"

@@ -1,0 +1,103 @@
+@import '../../../../../common/styles/sass/mixins';
+
+
+.container {
+  width: 75%;
+  height: 100%;
+}
+
+.galleryContainer {
+  @include flex(row, flex-start, center, wrap);
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 75%;
+  height: 100%;
+
+
+  .leftArrowContainer {
+    @include flex(row, flex-end, center, wrap);
+    position: absolute;
+    left: 5%;
+    width: 5%;
+    height: 100%;
+    cursor: pointer;
+
+    .leftArrowBlock {
+      @include flex(row, center, center, wrap);
+      width: 28px;
+      height: 28px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      border: 0;
+    }
+  }
+
+  .imageBlock {
+    @include flex(row, center, flex-end, wrap);
+    width: 100%;
+    height: 100%;
+
+    .image {
+      @include flex(row, center, center, wrap);
+      @include background(no-repeat, center, cover);
+      width: 100%;
+      height: 93%;
+    }
+  }
+
+  .counterContainer {
+    @include flex(row, center, center, wrap);
+    position: fixed;
+    left: 30%;
+    right: 0;
+    bottom: 0;
+    width: 340px;
+    height: 75px;
+    background-color: #F4F4F4;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+    .arrow {
+      @include flex(row, center, center, wrap);
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      border: 0;
+      background-color: #FFFFFF;
+      margin-right: 20px;
+      color: #393C41;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
+      transition: filter .33s ease;
+      cursor: pointer;
+
+      &:hover {
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,.2));
+        transition: filter .33s ease;
+      }
+    }
+
+    .price {
+      @include text(14px, 14px, 600);
+      color: #393C41;
+    }
+  }
+
+  .rightArrowContainer {
+    @include flex(row, flex-start, center, wrap);
+    position: absolute;
+    left: 90%;
+    width: 5%;
+    height: 100%;
+    cursor: pointer;
+
+    .rightArrowBlock {
+      @include flex(row, center, center, wrap);
+      width: 28px;
+      height: 28px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      border: 0;
+    }
+  }
+}

@@ -26,8 +26,7 @@ const Model3 = () => {
                            conditions={'Leasing starting at $349/mo'}>
             <Fade bottom>
                 <Button title={'Custom Order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
-                        onClick={() => {
-                        }}/>
+                        onClick={() => navigate(routes.orderingModel3)}/>
             </Fade>
             <Fade bottom>
                 <Button title={'Demo Drive'} backgroundColor={'rgba(244, 244, 244, 0.65)'}

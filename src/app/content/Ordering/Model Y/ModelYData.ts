@@ -1,6 +1,6 @@
-import wheels18aero from "../../../../common/assets/orders/common/wheels/option-wheels-18-aero.avif";
-import wheels19sport from "../../../../common/assets/orders/common/wheels/option-wheels-19-sport.avif";
-import wheels20sport from "../../../../common/assets/orders/common/wheels/option-wheels-20-uberturbine.avif";
+import geminiWheels19 from "../../../../common/assets/orders/common/wheels/gemini-wheels-19.avif";
+import inductionWheels20 from "../../../../common/assets/orders/common/wheels/induction_wheels20.avif";
+import uberturbineWheels21 from "../../../../common/assets/orders/common/wheels/uberturbine_wheels21.avif";
 import white from "../../../../common/assets/orders/common/color/Paint_White.avif";
 import silver from "../../../../common/assets/orders/common/color/Paint_Silver.avif";
 import blue from "../../../../common/assets/orders/common/color/Paint_Blue.avif";
@@ -11,37 +11,37 @@ import whiteInterior from "../../../../common/assets/orders/common/interior_colo
 import {modelDataType} from "../DataType";
 
 
-export const model3Data: modelDataType = [
+export const modelYData: modelDataType = [
     {
-        model: "Model 3",
-        delivery: "Mar 2023",
+        model: "Model Y",
+        delivery: "Est. Delivery: Apr – Jun 2023",
         title: "Rear-Wheel Drive",
-        price: 42990,
+        price: 54990,
         characteristics: [
             {
-                topText: "272", measurement: "mi", bottomText: "Range (EPA est.)", color: "black"
+                topText: "330", measurement: "mi", bottomText: "Range (EPA est.)", color: "black"
             },
             {
-                topText: "140", measurement: "mph", bottomText: "Top speed", color: "black"
+                topText: "135", measurement: "mph", bottomText: "Top speed", color: "black"
             },
             {
-                topText: "5.8", measurement: "sec", bottomText: "0-60 mph", color: "black"
+                topText: "4.8", measurement: "sec", bottomText: "0-60 mph", color: "black"
             },
         ],
         wheels: [
             {
-                type: "18’’ Aero Wheels",
+                type: "19’’ Gemini Wheels",
                 price: 0,
                 season: "All-Season Tires",
-                range: "Range (EPA est.) : 272mi",
-                img: wheels18aero
+                range: "Range (EPA est.) : 330mi",
+                img: geminiWheels19
             },
             {
-                type: "19’’ Sport Wheels",
-                price: 1500,
+                type: "20’’ Induction Wheels",
+                price: 2000,
                 season: "All-Season Tires",
-                range: "Range (est.) : 267mi",
-                img: wheels19sport
+                range: "Range (est.) : 318mi",
+                img: inductionWheels20
             }
         ],
         color: [
@@ -91,13 +91,13 @@ export const model3Data: modelDataType = [
         price: 53990,
         characteristics: [
             {
-                topText: "315", measurement: "mi", bottomText: "Range (EPA est.)", color: "black"
+                topText: "303", measurement: "mi", bottomText: "Range (EPA est.)", color: "black"
             },
             {
-                topText: "162", measurement: "mph", bottomText: "Top speed", color: "black"
+                topText: "155", measurement: "mph", bottomText: "Top speed", color: "black"
             },
             {
-                topText: "3.1", measurement: "sec", bottomText: "0-60 mph", color: "black"
+                topText: "3.5", measurement: "sec", bottomText: "0-60 mph", color: "black"
             },
         ],
         wheels: [
@@ -106,7 +106,7 @@ export const model3Data: modelDataType = [
                 price: 0,
                 season: "Summer Tires",
                 range: "Range (EPA est.) : 315mi",
-                img: wheels20sport
+                img: uberturbineWheels21
             }
         ],
         color: [
