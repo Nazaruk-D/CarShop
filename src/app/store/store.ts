@@ -5,12 +5,14 @@ import {configureStore} from "@reduxjs/toolkit";
 import {appReducer} from "../app-reducer";
 import {authReducer} from "../../features/auth/auth-reducer";
 import {profileReducer} from "../../features/profile/profile-reducer";
+import {orderReducer} from "../content/Ordering/order-reducer";
 
 
 const rootReducer = combineReducers({
     app: appReducer,
     auth: authReducer,
-    profile: profileReducer
+    profile: profileReducer,
+    order: orderReducer
 })
 
 

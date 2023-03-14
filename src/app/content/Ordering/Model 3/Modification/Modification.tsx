@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./Modification.module.scss"
 import Title from "./common/Title/Title";
 import Order from "./common/Order/Order";
@@ -8,50 +8,75 @@ import Autopilot from "./common/Autopilot/Autopilot";
 import OptionWidget from "./common/OptionWidget/OptionWidget";
 import SelfDriving from "./common/SelfDriving/SelfDriving";
 import Charging from "./common/Charging/Charging";
-import {model3Data} from "../Model3Data";
+import {model3Data, model3DataTypeChild} from "../Model3Data";
+import {useAppDispatch} from "../../../../store/store";
+import {OrderType, totalSumAC} from "../../order-reducer";
 
-
-export type ActiveType = {
-    model: string
-    color: string
-    wheels: string
-    interiorColor: string
-    autopilot: boolean
-    selfDriving: boolean
-    wallConnector: boolean
-    mobileConnector: boolean
-    totalPrice: number
-}
 
 const Modification = () => {
+    const dispatch = useAppDispatch()
+    const [active, setActive] = useState<OrderType>({
+            model: {title: "Model 3", price: 42990},
+            color: {title: "Pearl White Multi-Coat", price: null},
+            wheels: {title: "18’’ Aero Wheels", price: null},
+            interiorColor: {title: "All Black", price: null},
+            autopilot: {status: false, price: null},
+            selfDriving: {status: false, price: null},
+            wallConnector: {status: false, price: null},
+            mobileConnector: {status: false, price: null},
+        })
+    const data = model3Data.find((m: model3DataTypeChild) => m.model === active.model.title)!
 
-    const [active, setActive] = useState<ActiveType>({
-        model: "Model 3",
-        color: "Pearl White Multi-Coat",
-        wheels: "18’’ Aero Wheels",
-        interiorColor: "All Black",
-        autopilot: false,
-        selfDriving: false,
-        wallConnector: false,
-        mobileConnector: false,
-        totalPrice: 0
-    })
-
-    const data = model3Data.find(m => m.model === active.model)!
-
-    const changeEquipment = (value: string) => {
-        setActive({...active, model: value})
+    const changeEquipment = (title: string, price: number) => {
+        setActive({...active, model: {title, price}})
     }
 
-    const changeWidget = (value: string, title: string) => {
-        if (title === "Paint") {
-            setActive({...active, color: value})
-        } else if (title === "Wheels") {
-            setActive({...active, wheels: value})
-        } else {
-            setActive({...active, interiorColor: value})
+    const changeWidget = (value: string, title: string, price: number) => {
+        if (value === "Paint") {
+            setActive({...active, color: {title, price}})
+        } else if (value === "Wheels") {
+            setActive({...active, wheels: {title, price}})
+        } else if (value === "Interior") {
+            setActive({...active, interiorColor: {title, price}})
         }
     }
+
+    const onChangeAutopilotStatus = (payload: {status: boolean, price: number}) => {
+        setActive({...active, autopilot: payload})
+    }
+
+    const onChangeSelfDrivingStatus = (payload: {status: boolean, price: number}) => {
+        setActive({...active, selfDriving: payload})
+    }
+
+    const onChangeWallConnector = (status: boolean) => {
+        if (status) {
+            setActive({...active, wallConnector: {status, price: 425}})
+        } else {
+            setActive({...active, wallConnector: {status, price: 0}})
+        }
+    }
+
+    const onChangeMobileConnector = (status: boolean) => {
+        if (status) {
+            setActive({...active, mobileConnector: {status, price: 425}})
+        } else {
+            setActive({...active, mobileConnector: {status, price: 0}})
+        }
+    }
+
+    useEffect(() => {
+        const totalSum = () => {
+            let total = 0;
+            for (let prop in active) {
+                if (active.hasOwnProperty(prop) && prop !== 'totalPrice') {
+                    total += (active as any)[prop].price;
+                }
+            }
+            dispatch(totalSumAC(total))
+        }
+        totalSum()
+    },[active])
 
     return (
         <div className={s.modificationContainer}>
@@ -60,12 +85,12 @@ const Modification = () => {
                 <CharacteristicsBlock data={data.characteristics}/>
                 <Equipment data={model3Data} changeEquipment={changeEquipment} active={active}/>
                 <OptionWidget type={"color"} title={"Paint"} data={data.color} active={active} changeWidget={changeWidget}/>
-                <OptionWidget type={"wheels"} title={"Wheels"} data={data.wheels} active={active} changeWidget={changeWidget} firstDescr={"All-Season Tires"} secondDescr={"Range (EPA est.) : 272mi"}/>
+                <OptionWidget type={"wheels"} title={"Wheels"} data={data.wheels} active={active} changeWidget={changeWidget} firstDescription={"All-Season Tires"} secondDescription={"Range (EPA est.) : 272mi"}/>
                 <OptionWidget type={"interiorColor"} title={"Interior"} data={data.interiorColor} active={active} changeWidget={changeWidget}/>
-                <Autopilot/>
-                <SelfDriving/>
-                <Charging/>
-                <Order title={"Model 3"}/>
+                <Autopilot active={active} onChangeAutopilotStatus={onChangeAutopilotStatus}/>
+                <SelfDriving active={active} onChangeSelfDrivingStatus={onChangeSelfDrivingStatus}/>
+                <Charging active={active} onChangeWallConnector={onChangeWallConnector} onChangeMobileConnector={onChangeMobileConnector}/>
+                <Order title={"Model 3"} active={active} />
             </div>
         </div>
     );

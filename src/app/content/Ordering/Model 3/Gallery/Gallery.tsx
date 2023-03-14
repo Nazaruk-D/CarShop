@@ -7,10 +7,12 @@ import blackInterior from "../../../../../common/assets/orders/model3/Model3_Bla
 import video1 from "../../../../../common/assets/video/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4"
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 import {Context, ContextType} from "../Model3Order";
+import {useAppSelector} from "../../../../store/store";
 
 const Fade = require("react-reveal/Fade")
 
 const Gallery = () => {
+    const totalPrice = useAppSelector(s => s.order.totalPrice)
     const [isArrowActive, setIsArrowActive] = useState(false)
     const [context, setContext] = useContext<ContextType>(Context);
     const [isActive, setIsActive] = useState(1)
@@ -53,7 +55,7 @@ const Gallery = () => {
                 </div>
                 <div className={s.counterContainer}>
                     <div className={s.arrow}><IoIosArrowUp size={"20px"}/></div>
-                    <div className={s.price}>$53,990 Vehicle Price</div>
+                    <div className={s.price}>${totalPrice} Vehicle Price</div>
                 </div>
                 <div className={s.rightArrowContainer}>
                     {isArrowActive &&

@@ -9,21 +9,8 @@ import red from "../../../../common/assets/orders/common/color/Paint_Red.avif";
 import blackInterior from "../../../../common/assets/orders/common/interior_color/Interior_Black.avif";
 import whiteInterior from "../../../../common/assets/orders/common/interior_color/Interior_White.avif";
 
-const order = {
-    model: "Model 3",
-    color: "Pearl White Multi-Coat",
-    wheels: "18’’ Aero Wheels",
-    interiorColor: "All Black",
-    autopilot: false,
-    selfDriving: false,
-    wallConnector: false,
-    mobileConnector: false,
-    totalPrice: 0
-}
 
-
-
-export const model3Data = [
+export const model3Data: model3DataType = [
     {
         model: "Model 3",
         delivery: "Mar 2023",
@@ -186,3 +173,55 @@ export const model3Data = [
         }
     },
 ]
+
+
+export type model3DataType = model3DataTypeChild[];
+export type Model3DataTypeChildCharacteristics = {
+	topText: string;
+	measurement: string;
+	bottomText: string;
+	color: string;
+}
+export type Model3DataTypeChildWheels = {
+	type: string;
+	price: number;
+	season: string;
+	range: string;
+	img: string;
+}
+export type Model3DataTypeChildColor = {
+	type: string;
+	price: number;
+	img: string;
+}
+export type Model3DataTypeChildInteriorColor = {
+	type: string;
+	price: number;
+	img: string;
+}
+export type Model3DataTypeChildAutopilot = {
+	price: number;
+}
+export type Model3DataTypeChildSelfDriving = {
+	price: number;
+}
+export type Model3DataTypeChildWallConnector = {
+	price: number;
+}
+export type Model3DataTypeChildMobileConnector = {
+	price: number;
+}
+export type model3DataTypeChild = {
+	model: string;
+	delivery: string;
+	title: string;
+	price: number;
+	characteristics: Model3DataTypeChildCharacteristics[];
+	wheels: Model3DataTypeChildWheels[];
+	color: Model3DataTypeChildColor[];
+	interiorColor: Model3DataTypeChildInteriorColor[];
+	autopilot: Model3DataTypeChildAutopilot;
+	selfDriving: Model3DataTypeChildSelfDriving;
+	wallConnector: Model3DataTypeChildWallConnector;
+	mobileConnector: Model3DataTypeChildMobileConnector;
+}
