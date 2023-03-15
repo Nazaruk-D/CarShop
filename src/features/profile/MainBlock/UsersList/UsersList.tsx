@@ -1,13 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./UsersList.module.scss";
 import { AiFillDelete } from "react-icons/ai";
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {deleteUserTC, getUsersTC} from "./users-reducer";
+import {useModal} from "../../Modal/useModal";
+import DeleteUserModal from "../../Modal/DeleteUserModal/DeleteUserModal";
 
 
 const UsersList = () => {
     const {currentPage, pageSize, users, totalUsersCount} = useAppSelector(s => s.users)
     const dispatch = useAppDispatch();
+
+    const {deleteUserModal, toggleDeleteUserModal} = useModal();
+    const [deleteUserEmail, setDeleteUserEmail] = useState<string | null>('');
 
     let pagesCount = Math.ceil(totalUsersCount / pageSize);
     let pages = [];
@@ -28,7 +33,8 @@ const UsersList = () => {
     }
 
     const onDeleteUser = (email: string | null) => {
-        dispatch(deleteUserTC({email}))
+        setDeleteUserEmail(email);
+        toggleDeleteUserModal()
     }
 
     return (
@@ -65,6 +71,8 @@ const UsersList = () => {
                                                          onClick={() => {onPageChange(p)}}>{p + " "}</span>)}
                 </div>
             </div>
+            {deleteUserModal && <DeleteUserModal email={deleteUserEmail} setModalActive={toggleDeleteUserModal} hide={toggleDeleteUserModal}/>}
+
         </div>
     );
 };

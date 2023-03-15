@@ -1,0 +1,65 @@
+@import '../../../../common/styles/sass/mixins';
+@import '../../../../common/styles/sass/variables';
+
+.titleBlock {
+  @include flex(row, flex-start, center, wrap);
+  width: 100%;
+
+  .title {
+    @include text(30px, 30px, 600);
+    padding-left: 45px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.descriptionBlock {
+  @include flex(row, flex-start, center, wrap);
+  width: 100%;
+
+  .description {
+    @include text(16px, 16px, 500);
+    padding-left: 45px;
+    margin-bottom: 30px;
+    color: rgba(1,1,1,0.7);
+    padding-right: 45px;
+
+    .email {
+      color: black;
+    }
+  }
+
+  .buttonBlock {
+    @include flex(row, space-evenly, center, no-wrap);
+    width: 100%;
+
+    .submitButton {
+      @include text(15px, 0, 600);
+      width: 320px;
+      height: 40px;
+      border: 0;
+      border-radius: 4px;
+      background-color: rgba(22, 63, 246, 0.85);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+      margin-bottom: 30px;
+
+      &:hover {
+        background-color: rgba(8, 41, 178, 0.85);
+      }
+
+      &:disabled {
+        background-color: #9a9a9a;
+        cursor: unset;
+      }
+
+      @media screen and (max-width: $mediaWidth) {
+        width: 180px;
+      }
+    }
+  }
+
+}
+
+

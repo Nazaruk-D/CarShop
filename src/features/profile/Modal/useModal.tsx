@@ -7,6 +7,7 @@ export const useModal = () => {
     const [editPhoneNumberModal, setEditPhoneNumberModal] = useState(false)
     const [editEmailModal, setEditEmailModal] = useState(false)
     const [editPasswordModal, setEditPasswordModal] = useState(false)
+    const [deleteUserModal, setDeleteUserModal] = useState(false)
 
 
     function toggleEditNameModal() {
@@ -24,6 +25,9 @@ export const useModal = () => {
     function togglePasswordModal() {
         setEditPasswordModal(!editPasswordModal)
     }
+    function toggleDeleteUserModal() {
+        setDeleteUserModal(!deleteUserModal)
+    }
 
 
     return {
@@ -32,11 +36,13 @@ export const useModal = () => {
         editPhoneNumberModal,
         editEmailModal,
         editPasswordModal,
+        deleteUserModal,
 
         toggleEditNameModal,
         toggleEditAddressModal,
         togglePhoneNumberModal,
         toggleEmailModal,
         togglePasswordModal,
+        toggleDeleteUserModal,
     }
 }
