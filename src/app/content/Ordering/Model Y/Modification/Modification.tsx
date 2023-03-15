@@ -8,7 +8,7 @@ import Autopilot from "../../common/Autopilot/Autopilot";
 import OptionWidget from "../../common/OptionWidget/OptionWidget";
 import SelfDriving from "../../common/SelfDriving/SelfDriving";
 import Charging from "../../common/Charging/Charging";
-import {model3Data} from "../Model3Data";
+import {modelYData} from "../ModelYData";
 import {useAppDispatch} from "../../../../store/store";
 import {OrderType, totalSumAC} from "../../order-reducer";
 import {modelDataTypeChild} from "../../DataType";
@@ -17,16 +17,16 @@ import {modelDataTypeChild} from "../../DataType";
 const Modification = () => {
     const dispatch = useAppDispatch()
     const [active, setActive] = useState<OrderType>({
-            model: {title: "Model 3", price: 42990},
+            model: {title: "Model Y", price: 54990},
             color: {title: "Pearl White Multi-Coat", price: null},
-            wheels: {title: "18’’ Aero Wheels", price: null},
+            wheels: {title: "19’’ Gemini Wheels", price: null},
             interiorColor: {title: "All Black", price: null},
             autopilot: {status: false, price: null},
             selfDriving: {status: false, price: null},
             wallConnector: {status: false, price: null},
             mobileConnector: {status: false, price: null},
         })
-    const data = model3Data.find((m: modelDataTypeChild) => m.model === active.model.title)!
+    const data = modelYData.find((m: modelDataTypeChild) => m.model === active.model.title)!
 
     const changeEquipment = (title: string, price: number) => {
         setActive({...active, model: {title, price}})
@@ -84,14 +84,14 @@ const Modification = () => {
             <div className={s.modificationBlock}>
                 <Title title={data.model} date={data.delivery}/>
                 <CharacteristicsBlock data={data.characteristics}/>
-                <Equipment data={model3Data} changeEquipment={changeEquipment} active={active}/>
+                <Equipment data={modelYData} changeEquipment={changeEquipment} active={active}/>
                 <OptionWidget type={"color"} title={"Paint"} data={data.color} active={active} changeWidget={changeWidget}/>
-                <OptionWidget type={"wheels"} title={"Wheels"} data={data.wheels} active={active} changeWidget={changeWidget} firstDescription={"All-Season Tires"} secondDescription={"Range (EPA est.) : 272mi"}/>
+                <OptionWidget type={"wheels"} title={"Wheels"} data={data.wheels} active={active} changeWidget={changeWidget} firstDescription={"All-Season Tires"} secondDescription={"Range (EPA est.) : 330mi"}/>
                 <OptionWidget type={"interiorColor"} title={"Interior"} data={data.interiorColor} active={active} changeWidget={changeWidget}/>
                 <Autopilot active={active} onChangeAutopilotStatus={onChangeAutopilotStatus}/>
                 <SelfDriving active={active} onChangeSelfDrivingStatus={onChangeSelfDrivingStatus}/>
                 <Charging active={active} onChangeWallConnector={onChangeWallConnector} onChangeMobileConnector={onChangeMobileConnector}/>
-                <Order title={"Model 3"} active={active} />
+                <Order title={"Model Y"} active={active} />
             </div>
         </div>
     );

@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import s from "./Order.module.scss"
-import DetailsButton from "../../../../../../../common/components/buttons/DetailsButton/DetailsButton";
+import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
-import {Context, ContextType} from "../../../Model3Order";
-import {useAppDispatch} from "../../../../../../store/store";
-import {OrderType, setOrderState} from "../../../../order-reducer";
+import {Context, ContextType} from "../../Context";
+import {useAppDispatch} from "../../../../store/store";
+import {OrderType, setOrderState} from "../../order-reducer";
 
 type OrderPropsType = {
     title: string

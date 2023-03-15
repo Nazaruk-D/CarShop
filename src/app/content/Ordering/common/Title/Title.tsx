@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import s from "./Title.module.scss"
 import {useInView} from "react-intersection-observer";
-import {Context, ContextType} from "../../../Model3Order";
+import {Context, ContextType} from "../../Context";
 
 type TitlePropType = {
     title: string

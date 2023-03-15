@@ -1,15 +1,15 @@
 import React, {useContext} from 'react';
 import s from "./OptionWidget.module.scss"
-import DetailsButton from "../../../../../../../common/components/buttons/DetailsButton/DetailsButton";
+import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
-import {Context, ContextType} from "../../../Model3Order";
-import {OrderType} from "../../../../order-reducer";
-import {Model3DataTypeChildColor} from "../../../Model3Data";
+import {Context, ContextType} from "../../Context";
+import {OrderType} from "../../order-reducer";
+import {ModelDataTypeChildColor} from "../../DataType";
 
 
 type OptionWidgetPropsType = {
     title: string
-    data: Model3DataTypeChildColor[]
+    data: ModelDataTypeChildColor[]
     firstDescription?: string
     secondDescription?: string
     active: OrderType

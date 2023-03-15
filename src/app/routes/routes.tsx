@@ -16,6 +16,7 @@ import ScheduleSolar from "../content/Schedule/ScheduleSolar/ScheduleSolar";
 import Profile from "../../features/profile/Profile";
 import Cybertruck from "../content/CarsModel/Cybertruck/Cybertruck";
 import Model3Order from "../content/Ordering/Model 3/Model3Order";
+import ModelYOrder from "../content/Ordering/Model Y/ModelYOrder";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -32,7 +33,9 @@ export const routes = {
     registration: '/CarShop/registration',
     drive: '/CarShop/drive',
     consultation: '/CarShop/consultation',
-    ordering: '/CarShop/ordering',
+    ordering: '/CarShop/ordering/',
+    orderingModel3: '/CarShop/ordering/model3',
+    orderingModelY: '/CarShop/ordering/modelY',
 }
 
 export const router = createBrowserRouter([
@@ -95,6 +98,15 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.ordering,
-        element: <Model3Order/>
-    },
+        children: [
+            {
+                path: "model3",
+                element: <Model3Order/>,
+            },
+            {
+                path: "modelY",
+                element: <ModelYOrder/>,
+            }
+        ]
+    }
 ])

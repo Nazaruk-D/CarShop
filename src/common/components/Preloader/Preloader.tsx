@@ -7,7 +7,7 @@ import loading from "../../assets/video/loading.mp4";
 const Preloader = () => {
     return (
         <div className={s.preloader}>
-            <VideoPlayer link={loading} style={{width: "55px"}}/>
+            <VideoPlayer link={loading} style={{width: "53px"}}/>
         </div>
     );
 };

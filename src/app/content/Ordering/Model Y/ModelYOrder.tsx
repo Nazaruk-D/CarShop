@@ -6,7 +6,7 @@ import HeaderBlock from "../HeaderBlock/HeaderBlock";
 import {Context} from "../Context";
 
 
-const Model3Order = () => {
+const ModelYOrder = () => {
     const [context, setContext] = useState("default context value");
     return (
         <Context.Provider value={[context, setContext]}>
@@ -19,4 +19,4 @@ const Model3Order = () => {
     );
 };
 
-export default Model3Order;
+export default ModelYOrder;

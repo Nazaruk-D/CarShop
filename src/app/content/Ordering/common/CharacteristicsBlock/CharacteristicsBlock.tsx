@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./CharacteristicsBlock.module.scss";
 import Characteristics, {
     CharacteristicsPropsType
-} from "../../../../../../../common/components/Characteristics/Characteristics";
+} from "../../../../../common/components/Characteristics/Characteristics";
 
 
 type CharacteristicsBlockPropsType = {
