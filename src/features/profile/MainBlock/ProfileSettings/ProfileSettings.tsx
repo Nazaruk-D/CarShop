@@ -8,6 +8,7 @@ import EditEmailModal from "../../Modal/EditEmailModal/EditEmailModal";
 import EditPasswordModal from "../../Modal/EditPasswordModal/EditPasswordModal";
 import EditRegionModal from "../../Modal/EditRegionModal/EditRegionModal";
 import ErrorWindow from "../../../../common/components/ErrorWindow/ErrorWindow";
+import DeleteUserModal from "../../Modal/DeleteUserModal/DeleteUserModal";
 
 
 const ProfileSettings = () => {
@@ -23,6 +24,8 @@ const ProfileSettings = () => {
         togglePhoneNumberModal,
         editPhoneNumberModal,
         editAddressModal,
+        deleteUserModal,
+        toggleDeleteUserModal
     } = useModal()
 
 
@@ -70,12 +73,16 @@ const ProfileSettings = () => {
                         <span className={s.itemButton} onClick={() => togglePasswordModal()}>Reset</span>
                     </div>
                 </div>
+                <div className={s.deleteBlock}>
+                    <span className={s.delete} onClick={() => toggleDeleteUserModal()}>Delete Account</span>
+                </div>
             </div>
             {editNameModal && <EditNameModal setModalActive={toggleEditNameModal} hide={toggleEditNameModal}/>}
             {editAddressModal && <EditRegionModal setModalActive={toggleEditAddressModal} hide={toggleEditAddressModal}/>}
             {editPhoneNumberModal && <EditPhoneModal setModalActive={togglePhoneNumberModal} hide={togglePhoneNumberModal}/>}
             {editEmailModal && <EditEmailModal setModalActive={toggleEmailModal} hide={toggleEmailModal}/>}
             {editPasswordModal && <EditPasswordModal setModalActive={togglePasswordModal} hide={togglePasswordModal}/>}
+            {deleteUserModal && <DeleteUserModal email={email} setModalActive={toggleDeleteUserModal} hide={toggleDeleteUserModal}/>}
             <ErrorWindow/>
         </div>
     );
