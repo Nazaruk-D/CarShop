@@ -67,8 +67,9 @@
     height: 100vh;
     margin-left: 10px;
     @media screen and (max-width: $mediaWidth) {
-      @include flex(column, center, center, wrap);
+      @include flex(column, center, flex-start, wrap);
       width: 80%;
+      margin-left: 0;
     }
   }
 }

@@ -24,6 +24,11 @@
     color: rgba(1,1,1,0.7);
     padding-right: 45px;
 
+    @media screen and (max-width: $mediaWidth) {
+      @include text(14px, 16px, 500);
+
+    }
+
     .email {
       color: black;
     }
@@ -32,6 +37,7 @@
   .buttonBlock {
     @include flex(row, space-evenly, center, no-wrap);
     width: 100%;
+
 
     .submitButton {
       @include text(15px, 0, 600);
@@ -55,7 +61,8 @@
       }
 
       @media screen and (max-width: $mediaWidth) {
-        width: 180px;
+        width: 110px;
+        height: 30px;
       }
     }
   }

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import s from "./UsersList.module.scss";
 import { AiFillDelete } from "react-icons/ai";
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
-import {deleteUserTC, getUsersTC} from "./users-reducer";
+import {getUsersTC} from "./users-reducer";
 import {useModal} from "../../Modal/useModal";
 import DeleteUserModal from "../../Modal/DeleteUserModal/DeleteUserModal";
 
@@ -45,21 +45,21 @@ const UsersList = () => {
             <div className={s.contentBlock}>
                 <div className={s.table}>
                     <div className={s.tableTitles}>
-                        <div className={s.field}>Email</div>
-                        <div className={s.field}>Full Name</div>
-                        <div className={s.field}>Role</div>
-                        <div className={s.field}>Created At</div>
-                        <div className={s.field}>Updated At</div>
+                        <div className={s.fieldEmail}>Email</div>
+                        <div className={s.fieldHide}>Full Name</div>
+                        <div className={s.fieldHide}>Role</div>
+                        <div className={s.fieldHide}>Created At</div>
+                        <div className={s.fieldHide}>Updated At</div>
                         <div className={s.field}>Operation</div>
                     </div>
                     <div className={s.tableData}>
                             {users.map((u, i) => (
                                 <div className={s.data} key={i}>
-                                    <div className={s.dataField}>{u.email}</div>
-                                    <div className={s.dataField}>{u.firstName} {u.lastName}</div>
-                                    <div className={s.dataField}>{u.role}</div>
-                                    <div className={s.dataField}>{u.createdAt}</div>
-                                    <div className={s.dataField}>{u.updatedAt}</div>
+                                    <div className={s.dataFieldEmail}>{u.email}</div>
+                                    <div className={s.dataFieldHide}>{u.firstName} {u.lastName}</div>
+                                    <div className={s.dataFieldHide}>{u.role}</div>
+                                    <div className={s.dataFieldHide}>{u.createdAt}</div>
+                                    <div className={s.dataFieldHide}>{u.updatedAt}</div>
                                     <div className={s.dataFieldDelete}><AiFillDelete onClick={() => {onDeleteUser(u.email)}}/></div>
                                 </div>
                             ))}

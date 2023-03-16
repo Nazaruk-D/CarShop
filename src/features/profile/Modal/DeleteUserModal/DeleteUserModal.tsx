@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./DeleteUserModal.module.scss"
 import Modal from "../Modal";
-import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
+import {useAppDispatch} from "../../../../app/store/store";
 import {deleteUserTC} from "../../MainBlock/UsersList/users-reducer";
 
 type EditPasswordModalPropType = {
