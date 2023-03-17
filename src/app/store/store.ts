@@ -7,6 +7,7 @@ import {authReducer} from "../../features/auth/auth-reducer";
 import {profileReducer} from "../../features/profile/profile-reducer";
 import {usersReducer} from "../../features/profile/MainBlock/UsersList/users-reducer";
 import {orderReducer} from "../content/Ordering/order-reducer";
+import {scheduleReducer} from "../../features/profile/MainBlock/SchedulePanel/schedule-reducer";
 
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     profile: profileReducer,
     users: usersReducer,
     order: orderReducer,
+    schedule: scheduleReducer,
 })
 
 

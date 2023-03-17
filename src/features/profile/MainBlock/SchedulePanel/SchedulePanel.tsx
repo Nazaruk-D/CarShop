@@ -1,39 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import s from "./SchedulePanel.module.scss"
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
-import {getUsersTC} from "../UsersList/users-reducer";
-
-const users = [
-    {
-        model: 'Model Y',
-        email: 'nikita.znak@mail.ru',
-        firstName: 'Nikita',
-        lastName: 'Znak',
-        region: 'BLR',
-        phoneNumber:'+375445316892',
-        status: 'pending',
-        contactPreference: 'Phone Number',
-        updatedAt: '01.01.2023 18:00:03',
-    },
-    {
-        model: 'Model S',
-        email: 'nazaruk-dima@mail.ru',
-        firstName: 'Dima',
-        lastName: 'Nazaruk',
-        region: 'BLR',
-        phoneNumber:'+375293562308',
-        status: 'pending',
-        contactPreference: 'Phone Number',
-        updatedAt: '01.01.2023 17:00:01',
-    },
-]
-
+import {changeScheduleStatusTC, getScheduleListTC} from "./schedule-reducer";
 
 const SchedulePanel = () => {
-    const {currentPage, pageSize, totalUsersCount} = useAppSelector(s => s.users)
+    const {currentPage, pageSize, totalScheduleCount, orders} = useAppSelector(s => s.schedule)
     const dispatch = useAppDispatch();
+    // const [shouldFetchData, setShouldFetchData] = useState(false);
 
-    let pagesCount = Math.ceil(totalUsersCount / pageSize);
+
+    let pagesCount = Math.ceil(totalScheduleCount / pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
@@ -44,11 +20,23 @@ const SchedulePanel = () => {
     let slicedPages = pages.slice(currentPageFirst, currentPageLast);
 
     useEffect(() => {
-        dispatch(getUsersTC({limit: pageSize, page: currentPage}))
-    },[totalUsersCount])
+        dispatch(getScheduleListTC({limit: pageSize, page: currentPage}))
+    },[])
+
+    // useEffect(() => {
+    //     if (shouldFetchData) {
+    //         dispatch(getScheduleListTC({limit: pageSize, page: currentPage}));
+    //         setShouldFetchData(false);
+    //     }
+    // }, [shouldFetchData, currentPage, pageSize, dispatch]);
 
     const onPageChange = (page: number) => {
-        dispatch(getUsersTC({limit: pageSize, page: page}))
+        dispatch(getScheduleListTC({limit: pageSize, page: page}))
+    }
+
+    const onStatusChange = (event: React.ChangeEvent<HTMLSelectElement>, id: number | null) => {
+        const status = event.currentTarget.value
+        dispatch(changeScheduleStatusTC({status, id}));
     }
 
     return (
@@ -69,17 +57,17 @@ const SchedulePanel = () => {
                         <div className={s.fieldDefault}>Status</div>
                     </div>
                     <div className={s.tableData}>
-                        {users.map((u, i) => (
+                        {orders.map((o, i) => (
                             <div className={s.data} key={i}>
-                                <div className={s.dataFieldRegion}>{u.model}</div>
-                                <div className={s.dataFieldBig}>{u.email}</div>
-                                <div className={s.dataFieldDefault}>{u.firstName} {u.lastName}</div>
-                                <div className={s.dataFieldRegion}>{u.region}</div>
-                                <div className={s.dataFieldDefault}>{u.phoneNumber}</div>
-                                <div className={s.dataFieldDefault}>{u.contactPreference}</div>
-                                <div className={s.dataFieldDefault}>{u.updatedAt}</div>
+                                <div className={s.dataFieldRegion}>{o.model}</div>
+                                <div className={s.dataFieldBig}>{o.email}</div>
+                                <div className={s.dataFieldDefault}>{o.firstName} {o.lastName}</div>
+                                <div className={s.dataFieldRegion}>BLR</div>
+                                <div className={s.dataFieldDefault}>{o.phoneNumber}</div>
+                                <div className={s.dataFieldDefault}>{o.contactPreference}</div>
+                                <div className={s.dataFieldDefault}>{o.updatedAt}</div>
                                 <div className={s.dataFieldDefault}>
-                                    <select value={u.status} onChange={() => {}}>
+                                    <select value={o.status!} onChange={(e) => {onStatusChange(e, o.id)}}>
                                         <option value="pending" label="pending">pending</option>
                                         <option value="received" label="received">received</option>
                                         <option value="completed" label="completed">completed</option>
