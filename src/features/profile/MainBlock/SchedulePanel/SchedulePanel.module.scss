@@ -53,25 +53,12 @@
           box-shadow:0 0 5px rgba(1,1,1,0.3);
         }
 
-        .field {
-          @include flex(column, center, flex-start, nowrap);
-          @include text(13px, 13px, 500);
-          margin-left: 30px;
-          width: 140px;
-          color: rgba(1,1,1,0.4);
-          border: 1px solid;
-
-          @media screen and (max-width: $mediaWidth) {
-            @include text(10px, 10px, 500);
-          }
-        }
         .fieldBig {
           @include flex(column, center, flex-start, nowrap);
           @include text(13px, 13px, 500);
           margin-left: 30px;
-          width: 170px;
+          width: 210px;
           color: rgba(1,1,1,0.4);
-          border: 1px solid;
 
           @media screen and (max-width: $mediaWidth) {
             @include text(10px, 10px, 500);
@@ -84,7 +71,6 @@
           margin-left: 30px;
           width: 70px;
           color: rgba(1,1,1,0.4);
-          border: 1px solid;
 
           @media screen and (max-width: $mediaWidth) {
             @include text(10px, 10px, 500);
@@ -98,7 +84,6 @@
           margin-left: 30px;
           width: 140px;
           color: rgba(1,1,1,0.4);
-          border: 1px solid;
 
           @media screen and (max-width: $mediaWidth) {
             display: none;
@@ -128,26 +113,12 @@
             box-shadow:0 0 5px rgba(1,1,1,0.3);
           }
 
-          .dataField {
+          .dataFieldBig {
             @include flex(column, center, flex-start, nowrap);
             @include text(13px, 13px, 500);
             margin-left: 30px;
-            width: 140px;
+            width: 210px;
             color: rgba(1,1,1,0.6);
-            border: 1px solid;
-
-            @media screen and (max-width: $mediaWidth) {
-              @include text(10px, 10px, 500);
-            }
-          }
-
-          .dataFieldEmail {
-            @include flex(column, center, flex-start, nowrap);
-            @include text(13px, 13px, 500);
-            margin-left: 30px;
-            width: 170px;
-            color: rgba(1,1,1,0.6);
-            border: 1px solid;
 
             @media screen and (max-width: $mediaWidth) {
               @include text(10px, 10px, 500);
@@ -156,13 +127,12 @@
             }
           }
 
-          .dataFieldHide {
+          .dataFieldDefault {
             @include flex(column, center, flex-start, nowrap);
             @include text(13px, 13px, 500);
             margin-left: 30px;
             width: 140px;
             color: rgba(1,1,1,0.6);
-            border: 1px solid;
 
             @media screen and (max-width: $mediaWidth) {
               display: none;
@@ -175,7 +145,6 @@
             margin-left: 30px;
             width: 70px;
             color: rgba(1,1,1,0.6);
-            border: 1px solid;
 
             @media screen and (max-width: $mediaWidth) {
               display: none;

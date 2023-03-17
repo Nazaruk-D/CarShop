@@ -13,7 +13,18 @@ const users = [
         phoneNumber:'+375445316892',
         status: 'pending',
         contactPreference: 'Phone Number',
-        updatedAt: '01.01.2023',
+        updatedAt: '01.01.2023 18:00:03',
+    },
+    {
+        model: 'Model S',
+        email: 'nazaruk-dima@mail.ru',
+        firstName: 'Dima',
+        lastName: 'Nazaruk',
+        region: 'BLR',
+        phoneNumber:'+375293562308',
+        status: 'pending',
+        contactPreference: 'Phone Number',
+        updatedAt: '01.01.2023 17:00:01',
     },
 ]
 
@@ -55,19 +66,25 @@ const SchedulePanel = () => {
                         <div className={s.fieldDefault}>Phone Number</div>
                         <div className={s.fieldDefault}>Contact Preference</div>
                         <div className={s.fieldDefault}>Updated At</div>
-                        <div className={s.fieldSmall}>Status</div>
+                        <div className={s.fieldDefault}>Status</div>
                     </div>
                     <div className={s.tableData}>
                         {users.map((u, i) => (
                             <div className={s.data} key={i}>
                                 <div className={s.dataFieldRegion}>{u.model}</div>
-                                <div className={s.dataFieldEmail}>{u.email}</div>
-                                <div className={s.dataFieldHide}>{u.firstName} {u.lastName}</div>
+                                <div className={s.dataFieldBig}>{u.email}</div>
+                                <div className={s.dataFieldDefault}>{u.firstName} {u.lastName}</div>
                                 <div className={s.dataFieldRegion}>{u.region}</div>
-                                <div className={s.dataFieldHide}>{u.phoneNumber}</div>
-                                <div className={s.dataFieldHide}>{u.contactPreference}</div>
-                                <div className={s.dataFieldHide}>{u.updatedAt}</div>
-                                <div className={s.dataFieldRegion}>{u.status}</div>
+                                <div className={s.dataFieldDefault}>{u.phoneNumber}</div>
+                                <div className={s.dataFieldDefault}>{u.contactPreference}</div>
+                                <div className={s.dataFieldDefault}>{u.updatedAt}</div>
+                                <div className={s.dataFieldDefault}>
+                                    <select value={u.status} onChange={() => {}}>
+                                        <option value="pending" label="pending">pending</option>
+                                        <option value="received" label="received">received</option>
+                                        <option value="completed" label="completed">completed</option>
+                                    </select>
+                                </div>
                             </div>
                         ))}
                     </div>
