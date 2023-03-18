@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.7488f38e.css",
-    "main.js": "/CarShop/static/js/main.f3dedf55.js",
+    "main.css": "/CarShop/static/css/main.db44b799.css",
+    "main.js": "/CarShop/static/js/main.c91efa3a.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
     "static/media/hammerVideo.mp4": "/CarShop/static/media/hammerVideo.ba2f129cf21c5f7e4eac.mp4",
@@ -128,7 +128,7 @@
     "static/media/Men_web.avif": "/CarShop/static/media/Men_web.4f7a4a71b5844915ff70.avif",
     "static/media/SAEJ1772ChargingAdapter.avif": "/CarShop/static/media/SAEJ1772ChargingAdapter.4022020fb0ee0a98daa1.avif",
     "static/media/Women_web.avif": "/CarShop/static/media/Women_web.9e3a15bec180ab6fa9ae.avif",
-    "static/media/teslaTopViewIcon.svg": "/CarShop/static/media/teslaTopViewIcon.0e27a7036741f9083cf1fc6ca339f485.svg",
+    "static/media/teslaTopViewIcon.svg": "/CarShop/static/media/teslaTopViewIcon.524288b98059b99e96b702413067f465.svg",
     "static/media/Gen3WC.avif": "/CarShop/static/media/Gen3WC.1612be1692fd241109b8.avif",
     "static/media/Kids_web.avif": "/CarShop/static/media/Kids_web.2809a06a6ec46d4cb173.avif",
     "static/media/option-wheels-19-sport.avif": "/CarShop/static/media/option-wheels-19-sport.c620a20f0834a270e317.avif",
@@ -148,12 +148,12 @@
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.7488f38e.css.map": "/CarShop/static/css/main.7488f38e.css.map",
-    "main.f3dedf55.js.map": "/CarShop/static/js/main.f3dedf55.js.map",
+    "main.db44b799.css.map": "/CarShop/static/css/main.db44b799.css.map",
+    "main.c91efa3a.js.map": "/CarShop/static/js/main.c91efa3a.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7488f38e.css",
-    "static/js/main.f3dedf55.js"
+    "static/css/main.db44b799.css",
+    "static/js/main.c91efa3a.js"
   ]
 }
