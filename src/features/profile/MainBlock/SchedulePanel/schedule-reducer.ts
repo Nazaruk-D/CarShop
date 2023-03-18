@@ -37,8 +37,9 @@ export const changeScheduleStatusTC = createAsyncThunk(('users/changeStatus'), a
         const res = await profileAPI.changeStatus(param);
         if (res.status === 200) {
             console.log(res)
+            await param.callback();
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
-            return {value: param}
+            return
         } else {
             return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
         }
@@ -68,11 +69,11 @@ const slice = createSlice({
             state.totalScheduleCount = action.payload.value.data.totalScheduleCount
             state.currentPage = action.payload.value.data.currentPage
         })
-        builder.addCase(changeScheduleStatusTC.fulfilled, (state, action: PayloadAction<{ value: ChangeStatusType }>) => {
-            const { status, id } = action.payload.value;
-            state.orders = state.orders.map((order) => (order.id === id ? { ...order, status } : order));
-            return state;
-        });
+        // builder.addCase(changeScheduleStatusTC.fulfilled, (state, action: PayloadAction<{ value: ChangeStatusType }>) => {
+        //     const { status, id } = action.payload.value;
+        //     state.orders = state.orders.map((order) => (order.id === id ? { ...order, status } : order));
+        //     return state;
+        // });
     }
 });
 

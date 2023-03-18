@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import s from "./SchedulePanel.module.scss"
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {changeScheduleStatusTC, getScheduleListTC} from "./schedule-reducer";
@@ -6,8 +6,6 @@ import {changeScheduleStatusTC, getScheduleListTC} from "./schedule-reducer";
 const SchedulePanel = () => {
     const {currentPage, pageSize, totalScheduleCount, orders} = useAppSelector(s => s.schedule)
     const dispatch = useAppDispatch();
-    // const [shouldFetchData, setShouldFetchData] = useState(false);
-
 
     let pagesCount = Math.ceil(totalScheduleCount / pageSize);
     let pages = [];
@@ -23,20 +21,14 @@ const SchedulePanel = () => {
         dispatch(getScheduleListTC({limit: pageSize, page: currentPage}))
     },[])
 
-    // useEffect(() => {
-    //     if (shouldFetchData) {
-    //         dispatch(getScheduleListTC({limit: pageSize, page: currentPage}));
-    //         setShouldFetchData(false);
-    //     }
-    // }, [shouldFetchData, currentPage, pageSize, dispatch]);
-
     const onPageChange = (page: number) => {
         dispatch(getScheduleListTC({limit: pageSize, page: page}))
     }
 
     const onStatusChange = (event: React.ChangeEvent<HTMLSelectElement>, id: number | null) => {
         const status = event.currentTarget.value
-        dispatch(changeScheduleStatusTC({status, id}));
+        const callback = dispatch(getScheduleListTC({limit: pageSize, page: currentPage}));
+        dispatch(changeScheduleStatusTC({status, id, callback}));
     }
 
     return (

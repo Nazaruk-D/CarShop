@@ -1,6 +1,7 @@
 import {instance} from "./instance";
 import React from "react";
 
+
 export const profileAPI = {
     updateProfile(body: UserType) {
         return instance.put<UserType>(`profile/update`, body)
@@ -30,6 +31,8 @@ export type GetUsersType = {
 export type ChangeStatusType = {
     status: string
     id: null | number
+    // callback: () => Promise<void>;
+    callback: any;
 }
 
 export type DeleteUserType = {
