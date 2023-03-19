@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import s from './ChoiceBlock.module.scss'
 import modelSSchedule from '../../../../../common/assets/modelSSchedule.jpg'
 import model3Schedule from '../../../../../common/assets/model3Schedule.jpg'

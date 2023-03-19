@@ -9,10 +9,10 @@ import ModelX from "../content/CarsModel/Model X/ModelX";
 import SolarPanels from "../content/CarsModel/Solar Panels/SolarPanels";
 import SolarRoof from "../content/CarsModel/Solar Roof/SolarRoof";
 import Shop from "../content/Shop/Shop";
-import ScheduleCar from "../content/Schedule/ScheduleCar/ScheduleCar";
+import DemoCar from "../content/Demo/DemoCar/DemoCar";
 import Login from "../../features/auth/login/Login";
 import Registration from "../../features/auth/registration/Registration";
-import ScheduleSolar from "../content/Schedule/ScheduleSolar/ScheduleSolar";
+import DemoSolar from "../content/Demo/DemoSolar/DemoSolar";
 import Profile from "../../features/profile/Profile";
 import Cybertruck from "../content/CarsModel/Cybertruck/Cybertruck";
 import Model3Order from "../content/Ordering/Model 3/Model3Order";
@@ -86,11 +86,11 @@ export const router = createBrowserRouter([
     },
     {
         path: routes.drive,
-        element: <ScheduleCar/>
+        element: <DemoCar/>
     },
     {
         path: routes.consultation,
-        element: <ScheduleSolar/>
+        element: <DemoSolar/>
     },
     {
         path: routes.cybertruck,

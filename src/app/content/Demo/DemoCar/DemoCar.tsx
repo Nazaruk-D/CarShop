@@ -1,19 +1,19 @@
 import React from 'react';
-import s from './ScheduleSolar.module.scss'
+import s from './DemoCar.module.scss'
 import Header from "../../../header/Header";
+import ChoiceBlock from "./ChoiceBlock/ChoiceBlock";
+import ContactBlock from "./ContactBlock/ContactBlock";
 import Footer from "../../CarsModel/commonComponents/Footer/Footer";
-import ImageBlock from "./ImageBlock/ImageBlock";
-import MainBlock from "./MainBlock/MainBlock";
 
-const ScheduleSolar = () => {
+const DemoCar = () => {
     return (
         <div className={s.mainContainer}>
             <Header/>
-            <ImageBlock/>
-            <MainBlock/>
+            <ChoiceBlock/>
+            <ContactBlock/>
             <Footer description={false}/>
         </div>
     );
 };
 
-export default ScheduleSolar;
+export default DemoCar;

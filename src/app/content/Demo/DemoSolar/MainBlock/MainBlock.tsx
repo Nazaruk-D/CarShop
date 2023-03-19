@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './MainBlock.module.scss'
 import {useFormik} from "formik";
-import {ErrorsType} from "../../ScheduleCar/ContactBlock/ContactBlock";
+import {ErrorsType} from "../../DemoCar/ContactBlock/ContactBlock";
 //@ts-ignore
 
 const MainBlock = () => {
