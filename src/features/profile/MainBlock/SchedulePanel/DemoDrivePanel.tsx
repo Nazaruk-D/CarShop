@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import s from "./SchedulePanel.module.scss"
+import s from "./DemoDrivePanel.module.scss"
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {changeDemoDriveStatusTC, getDemoDriveListTC} from "./demo-drive-reducer";
 
-const SchedulePanel = () => {
+const DemoDrivePanel = () => {
     const {currentPage, pageSize, totalDemoDriveOrdersCount, orders} = useAppSelector(s => s.demoDrive)
     const dispatch = useAppDispatch();
 
@@ -34,7 +34,7 @@ const SchedulePanel = () => {
     return (
         <div className={s.mainBlock}>
             <div className={s.titleBlock}>
-                <h1 className={s.title}>Schedule List</h1>
+                <h1 className={s.title}>Demo Drive List</h1>
             </div>
             <div className={s.contentBlock}>
                 <div className={s.table}>
@@ -79,4 +79,4 @@ const SchedulePanel = () => {
     )
 };
 
-export default SchedulePanel;
+export default DemoDrivePanel;

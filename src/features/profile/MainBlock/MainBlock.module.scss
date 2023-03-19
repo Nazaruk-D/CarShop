@@ -22,7 +22,7 @@
       .buttonBlock {
         @include flex(row, flex-start, center, nowrap);
         margin-left: 60px;
-        width: 200px;
+        width: 250px;
         height: 70px;
         cursor: pointer;
         @media screen and (max-width: $mediaWidth) {

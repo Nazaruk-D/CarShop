@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {DemoDriveType} from "../../../../api/profileAPI";
+import {DemoDriveType} from "../../../../api/demoDriveAPI";
 import {setAppStatusAC} from "../../../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../../../utils/error-utils";

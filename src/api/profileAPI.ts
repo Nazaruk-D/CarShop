@@ -37,20 +37,6 @@ export type UserType = {
     updatedAt: null | string
 }
 
-export type DemoDriveType = {
-    model: null | string
-    id: null | number
-    email: null | string
-    firstName: null | string
-    lastName: null | string
-    status: null | string
-    contactPreference: null | string
-    phoneNumber: null | string
-    createdAt: null | string
-    updatedAt: null | string
-    // region: null | string
-}
-
 export type ResetUserPasswordType = {
     id: null | number
     password: null | string
