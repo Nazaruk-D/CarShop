@@ -1,21 +1,14 @@
-import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {
-    ChangeStatusType,
-    DeleteUserType,
-    GetUsersType,
-    profileAPI,
-    ScheduleType,
-    UserType
-} from "../../../../api/profileAPI";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {DemoDriveType} from "../../../../api/profileAPI";
 import {setAppStatusAC} from "../../../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../../../utils/error-utils";
-import {ModelType} from "../../profile-reducer";
+import {ChangeStatusType, demoDriveAPI} from "../../../../api/demoDriveAPI";
 
-export const getScheduleListTC = createAsyncThunk(('users/getScheduleList'), async (param: any, thunkAPI) => {
+export const getDemoDriveListTC = createAsyncThunk(('users/getDemoDriveList'), async (param: any, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
-        const res = await profileAPI.getScheduleList(param)
+        const res = await demoDriveAPI.getDemoDriveOrders(param)
         if (res.status === 200) {
             console.log(res)
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
@@ -30,11 +23,12 @@ export const getScheduleListTC = createAsyncThunk(('users/getScheduleList'), asy
         handleServerNetworkError(error, thunkAPI.dispatch)
         return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
     }
-})
-export const changeScheduleStatusTC = createAsyncThunk(('users/changeStatus'), async (param: ChangeStatusType, thunkAPI) => {
+});
+
+export const changeDemoDriveStatusTC = createAsyncThunk(('users/changeDemoDriveStatus'), async (param: ChangeStatusType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
-        const res = await profileAPI.changeStatus(param);
+        const res = await demoDriveAPI.updateDemoDriveStatus(param);
         if (res.status === 200) {
             console.log(res)
             await param.callback();
@@ -50,23 +44,23 @@ export const changeScheduleStatusTC = createAsyncThunk(('users/changeStatus'), a
         handleServerNetworkError(error, thunkAPI.dispatch)
         return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
     }
-})
+});
 
 const slice = createSlice({
-    name: "schedule",
+    name: "demoDrive",
     initialState: {
         orders: [],
         pageSize: 10,
-        totalScheduleCount: 0,
+        totalDemoDriveOrdersCount: 0,
         currentPage: 1,
-    } as ScheduleState,
+    } as DemoDriveState,
     reducers: {
 
     },
     extraReducers: builder => {
-        builder.addCase(getScheduleListTC.fulfilled, (state, action) => {
+        builder.addCase(getDemoDriveListTC.fulfilled, (state, action) => {
             state.orders = action.payload.value.data.orders
-            state.totalScheduleCount = action.payload.value.data.totalScheduleCount
+            state.totalDemoDriveOrdersCount = action.payload.value.data.totalDemoDriveOrdersCount
             state.currentPage = action.payload.value.data.currentPage
         })
         // builder.addCase(changeScheduleStatusTC.fulfilled, (state, action: PayloadAction<{ value: ChangeStatusType }>) => {
@@ -77,13 +71,13 @@ const slice = createSlice({
     }
 });
 
-export type ScheduleState = {
-    orders: ScheduleType[];
+export type DemoDriveState = {
+    orders: DemoDriveType[];
     pageSize: number
-    totalScheduleCount: number
+    totalDemoDriveOrdersCount: number
     currentPage: number
 }
 
-export const scheduleReducer = slice.reducer;
+export const demoDriveReducer = slice.reducer;
 
 

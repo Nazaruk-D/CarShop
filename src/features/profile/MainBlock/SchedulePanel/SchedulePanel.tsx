@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import s from "./SchedulePanel.module.scss"
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
-import {changeScheduleStatusTC, getScheduleListTC} from "./schedule-reducer";
+import {changeDemoDriveStatusTC, getDemoDriveListTC} from "./demo-drive-reducer";
 
 const SchedulePanel = () => {
-    const {currentPage, pageSize, totalScheduleCount, orders} = useAppSelector(s => s.schedule)
+    const {currentPage, pageSize, totalDemoDriveOrdersCount, orders} = useAppSelector(s => s.demoDrive)
     const dispatch = useAppDispatch();
 
-    let pagesCount = Math.ceil(totalScheduleCount / pageSize);
+    let pagesCount = Math.ceil(totalDemoDriveOrdersCount / pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
@@ -18,17 +18,17 @@ const SchedulePanel = () => {
     let slicedPages = pages.slice(currentPageFirst, currentPageLast);
 
     useEffect(() => {
-        dispatch(getScheduleListTC({limit: pageSize, page: currentPage}))
+        dispatch(getDemoDriveListTC({limit: pageSize, page: currentPage}))
     },[])
 
     const onPageChange = (page: number) => {
-        dispatch(getScheduleListTC({limit: pageSize, page: page}))
+        dispatch(getDemoDriveListTC({limit: pageSize, page: page}))
     }
 
     const onStatusChange = (event: React.ChangeEvent<HTMLSelectElement>, id: number | null) => {
         const status = event.currentTarget.value
-        const callback = dispatch(getScheduleListTC({limit: pageSize, page: currentPage}));
-        dispatch(changeScheduleStatusTC({status, id, callback}));
+        const callback = dispatch(getDemoDriveListTC({limit: pageSize, page: currentPage}));
+        dispatch(changeDemoDriveStatusTC({status, id, callback}));
     }
 
     return (

@@ -1,6 +1,4 @@
 import {instance} from "./instance";
-import React from "react";
-
 
 export const profileAPI = {
     updateProfile(body: UserType) {
@@ -15,24 +13,11 @@ export const profileAPI = {
     deleteUser(deleteData: DeleteUserType) {
         return instance.delete(`profile/delete`, {data: deleteData})
     },
-    changeStatus(changeData: ChangeStatusType) {
-        return instance.put(`profile/updateScheduleStatus`, changeData)
-    },
-    getScheduleList({limit, page}:GetUsersType) {
-        return instance.get(`profile/schedules?limit=${limit}&page=${page}`)
-    },
 }
 
 export type GetUsersType = {
     limit: null | number
     page: null | number
-}
-
-export type ChangeStatusType = {
-    status: string
-    id: null | number
-    // callback: () => Promise<void>;
-    callback: any;
 }
 
 export type DeleteUserType = {
@@ -52,7 +37,7 @@ export type UserType = {
     updatedAt: null | string
 }
 
-export type ScheduleType = {
+export type DemoDriveType = {
     model: null | string
     id: null | number
     email: null | string
