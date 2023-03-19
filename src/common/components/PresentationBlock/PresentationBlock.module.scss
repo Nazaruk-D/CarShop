@@ -47,7 +47,7 @@
         transition: color 0.2s ease-in-out;
         cursor: pointer;
         text-decoration: none;
-        margin-top: 17px;
+        margin-top: 25px;
 
         &::before {
           @include pseudo(absolute, '', 1px, 210px, 106px, '', rgba(255, 255, 255, 0.75));
@@ -67,11 +67,13 @@
       }
 
       .virtualConsultation {
-        @include text(20px, 25px, 500);
+        @include text(20px, 40px, 500);
         color: rgba(255, 255, 255, 0.75);
         position: relative;
         transition: color 0.2s ease-in-out;
         cursor: pointer;
+        text-decoration: none;
+        margin-top: 17px;
 
         &::before {
           @include pseudo(absolute, '', 1px, 284px, 143px, '', rgba(255, 255, 255, 0.75));

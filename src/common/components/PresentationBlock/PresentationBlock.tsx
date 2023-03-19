@@ -31,7 +31,7 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                         && conditions !== 'Schedule a Virtual Consultation'
                         && <Fade bottom><h3 className={s.conditions}>{conditions}</h3></Fade>}
                     {conditions === 'Schedule a Virtual Consultation'
-                        && <Fade bottom><h3 className={s.virtualConsultation}>{conditions}</h3></Fade>}
+                        && <Fade bottom><NavLink to={routes.consultation} className={s.virtualConsultation}>{conditions}</NavLink></Fade>}
                 </div>
                 <div className={s.bottomBlock}>
                     {children}
