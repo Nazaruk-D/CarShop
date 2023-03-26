@@ -1,6 +1,7 @@
 import React from "react"
 import s from './ContactBlock.module.scss'
 import {useFormik} from 'formik';
+import {useAppSelector} from "../../../../store/store";
 
 export type ErrorsType = {
     email?: string
@@ -16,8 +17,12 @@ export type ErrorsType = {
 
 const ContactBlock = () => {
 
+    const activeModel = useAppSelector(s => s.profile.activeModel)
+
+
     const formik = useFormik({
         initialValues: {
+            model: activeModel,
             email: '',
             firstName: '',
             lastName: '',
@@ -25,8 +30,6 @@ const ContactBlock = () => {
             contactPreference: 'PN',
             zipCode: '',
             region: 'BLR',
-            interested: false,
-            updates: false
         },
         validate: (values) => {
             const errors: ErrorsType = {};
@@ -137,16 +140,6 @@ const ContactBlock = () => {
                                     {...formik.getFieldProps('zipCode')}
                                 />
                                 {formik.errors.zipCode && formik.touched.zipCode && <span className={s.error}>{formik.errors.zipCode}</span>}
-                            </div>
-                        </div>
-                        <div className={s.checkboxesContainer}>
-                            <div className={s.checkboxBlock}>
-                                <input type="checkbox" {...formik.getFieldProps('interested')}/>
-                                <span className={s.title}>I’m interested in solar and Powerwall</span>
-                            </div>
-                            <div className={s.checkboxBlock}>
-                                <input type="checkbox" {...formik.getFieldProps('updates')}/>
-                                <span className={s.title}>Get Tesla Updates</span>
                             </div>
                         </div>
                         <div className={s.descriptionContainer}>

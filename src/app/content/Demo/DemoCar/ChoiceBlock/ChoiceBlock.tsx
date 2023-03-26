@@ -59,7 +59,6 @@ const ChoiceBlock = () => {
                                                 color={activeModel === c.title ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.5)'}
                                                 onClick={() =>  dispatch(setActiveModel({value: c.title}))}/>
                             </div>
-
                         ))
                     }
                 </div>

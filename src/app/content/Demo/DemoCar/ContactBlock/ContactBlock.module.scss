@@ -70,28 +70,6 @@
           }
         }
 
-        .checkboxesContainer {
-          @include flex(column, center, flex-start, wrap);
-          margin-top: 30px;
-
-          .checkboxBlock {
-            @include flex(row, center, center, wrap);
-            margin-left: 10px;
-            margin-bottom: 5px;
-
-            & input {
-              width: 25px;
-              height: 25px;
-            }
-
-            .title {
-              @include text(15px, 15px, 500);
-              color: rgba(1,1,1,0.7);
-              margin-left: 5px;
-            }
-          }
-        }
-
         .descriptionContainer {
           margin-left: 10px;
           margin-top: 20px;
