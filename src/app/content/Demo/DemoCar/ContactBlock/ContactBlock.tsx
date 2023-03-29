@@ -1,7 +1,6 @@
 import React from "react"
 import s from './ContactBlock.module.scss'
 import {useFormik} from 'formik';
-import {useAppSelector} from "../../../../store/store";
 
 export type ErrorsType = {
     email?: string
@@ -17,12 +16,8 @@ export type ErrorsType = {
 
 const ContactBlock = () => {
 
-    const activeModel = useAppSelector(s => s.profile.activeModel)
-
-
     const formik = useFormik({
         initialValues: {
-            model: activeModel,
             email: '',
             firstName: '',
             lastName: '',
