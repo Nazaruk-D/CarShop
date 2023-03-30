@@ -1,6 +1,7 @@
-import React from "react"
+import React, {useEffect} from "react"
 import s from './ContactBlock.module.scss'
-import {useFormik} from 'formik';
+import {useFormik, useFormikContext} from 'formik';
+import {useAppSelector} from "../../../../store/store";
 
 export type ErrorsType = {
     email?: string
@@ -15,9 +16,11 @@ export type ErrorsType = {
 }
 
 const ContactBlock = () => {
+    const activeModel = useAppSelector(s => s.profile.activeModel)
 
     const formik = useFormik({
         initialValues: {
+            model: activeModel,
             email: '',
             firstName: '',
             lastName: '',
@@ -64,6 +67,13 @@ const ContactBlock = () => {
             alert(JSON.stringify(values, null, 2));
         },
     });
+
+    useEffect(() => {
+        formik.setValues({
+            ...formik.values,
+            model: activeModel,
+        });
+    }, [activeModel]);
 
     return (
         <div className={s.mainBlock}>
