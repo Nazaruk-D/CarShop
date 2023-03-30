@@ -31,6 +31,7 @@ const DemoDrivePanel = () => {
         dispatch(changeDemoDriveStatusTC({status, id, callback}));
     }
 
+    //зафиксить прием региона для загаза тут и в бэке
     return (
         <div className={s.mainBlock}>
             <div className={s.titleBlock}>
@@ -56,7 +57,10 @@ const DemoDrivePanel = () => {
                                 <div className={s.dataFieldDefault}>{o.firstName} {o.lastName}</div>
                                 <div className={s.dataFieldRegion}>BLR</div>
                                 <div className={s.dataFieldDefault}>{o.phoneNumber}</div>
-                                <div className={s.dataFieldDefault}>{o.contactPreference}</div>
+                                <div className={s.dataFieldDefault}>
+                                    {o.contactPreference === "PN" && "Phone Number"}
+                                    {o.contactPreference === "EA" && "Email Address"}
+                                </div>
                                 <div className={s.dataFieldDefault}>{o.updatedAt}</div>
                                 <div className={s.dataFieldDefault}>
                                     <select value={o.status!} onChange={(e) => {onStatusChange(e, o.id)}}>

@@ -68,7 +68,7 @@ const ContactBlock = () => {
         onSubmit: (values, {resetForm}) => {
             // alert(JSON.stringify(values, null, 2));
             dispatch(createDemoDriveOrderTC(values));
-            // resetForm();
+            resetForm();
         },
     });
 
