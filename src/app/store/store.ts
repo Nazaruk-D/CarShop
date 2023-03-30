@@ -7,7 +7,7 @@ import {authReducer} from "../../features/auth/auth-reducer";
 import {profileReducer} from "../../features/profile/profile-reducer";
 import {usersReducer} from "../../features/profile/MainBlock/UsersList/users-reducer";
 import {orderReducer} from "../content/Ordering/order-reducer";
-import {demoDriveReducer} from "../../features/profile/MainBlock/SchedulePanel/demo-drive-reducer";
+import {demoDriveReducer} from "../../features/profile/MainBlock/DemoDrivePanel/demo-drive-reducer";
 
 
 const rootReducer = combineReducers({

@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {DemoDriveType} from "../../../../api/demoDriveAPI";
+import {CreateOrderType, DemoDriveType} from "../../../../api/demoDriveAPI";
 import {setAppStatusAC} from "../../../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../../../utils/error-utils";
@@ -32,6 +32,26 @@ export const changeDemoDriveStatusTC = createAsyncThunk(('users/changeDemoDriveS
         if (res.status === 200) {
             console.log(res)
             await param.callback();
+            thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
+            return
+        } else {
+            return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
+        }
+    } catch (err: any) {
+        console.log(err)
+        thunkAPI.dispatch(setAppStatusAC({status: 'failed'}))
+        const error: AxiosError = err.response.data
+        handleServerNetworkError(error, thunkAPI.dispatch)
+        return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
+    }
+});
+
+export const createDemoDriveOrderTC = createAsyncThunk(('users/createDemoDriveOrder'), async (param: CreateOrderType, thunkAPI) => {
+    thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
+    try {
+        const res = await demoDriveAPI.createDemoDriveOrder(param);
+        if (res.status === 201) {
+            console.log(res)
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
             return
         } else {

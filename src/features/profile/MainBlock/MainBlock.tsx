@@ -7,7 +7,7 @@ import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
 import {FiArchive, FiLogOut, FiUser, FiUsers} from "react-icons/fi";
-import DemoDrivePanel from "./SchedulePanel/DemoDrivePanel";
+import DemoDrivePanel from "./DemoDrivePanel/DemoDrivePanel";
 import UsersList from "./UsersList/UsersList";
 
 

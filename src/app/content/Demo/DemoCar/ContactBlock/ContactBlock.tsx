@@ -1,7 +1,8 @@
 import React, {useEffect} from "react"
 import s from './ContactBlock.module.scss'
 import {useFormik, useFormikContext} from 'formik';
-import {useAppSelector} from "../../../../store/store";
+import {useAppDispatch, useAppSelector} from "../../../../store/store";
+import {createDemoDriveOrderTC} from "../../../../../features/profile/MainBlock/DemoDrivePanel/demo-drive-reducer";
 
 export type ErrorsType = {
     email?: string
@@ -17,6 +18,7 @@ export type ErrorsType = {
 
 const ContactBlock = () => {
     const activeModel = useAppSelector(s => s.profile.activeModel)
+    const dispatch = useAppDispatch()
 
     const formik = useFormik({
         initialValues: {
@@ -63,8 +65,10 @@ const ContactBlock = () => {
 
             return errors;
         },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit: (values, {resetForm}) => {
+            // alert(JSON.stringify(values, null, 2));
+            dispatch(createDemoDriveOrderTC(values));
+            // resetForm();
         },
     });
 

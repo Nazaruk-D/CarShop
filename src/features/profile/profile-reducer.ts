@@ -82,7 +82,7 @@ const slice = createSlice({
             updatedAt: null,
 
         } as UserType,
-        activeModel: "ModelS" as ModelType
+        activeModel: "Model S" as ModelType
     },
     reducers: {
         setProfileDataAC: (state, action) => {
