@@ -6,15 +6,17 @@ import {logoutTC} from "../../auth/auth-reducer";
 import {routes} from "../../../app/routes/routes";
 import ProfileSettings from "./ProfileSettings/ProfileSettings";
 import Orders from "./Orders/Orders";
-import {FiArchive, FiLogOut, FiUser, FiUsers} from "react-icons/fi";
+import {FiArchive, FiLogOut, FiUser, FiUsers, FiMapPin} from "react-icons/fi";
 import DemoDrivePanel from "./DemoDrivePanel/DemoDrivePanel";
 import UsersList from "./UsersList/UsersList";
+import DemoDriveOrders from "./DemoDriveOrders/DemoDriveOrders";
 
 
 
 const userNavData: NavDataType[] = [
     {id: 0, name: 'Profile Settings', icon: <FiUser/>},
     {id: 1, name: 'Orders History', icon: <FiArchive/>},
+    {id: 2, name: 'Demo Drive', icon: <FiMapPin/>},
 ]
 
 const adminNavData: NavDataType[] = [
@@ -64,6 +66,7 @@ const MainBlock = () => {
             <div className={s.contentContainer}>
                 {item === 0 && <ProfileSettings/>}
                 {item === 1 && role === 'user' && <Orders/>}
+                {item === 2 && role === 'user' && <DemoDriveOrders/>}
                 {item === 1 && role === 'admin' && <DemoDrivePanel/>}
                 {item === 2 && role === 'admin' && <UsersList/>}
             </div>

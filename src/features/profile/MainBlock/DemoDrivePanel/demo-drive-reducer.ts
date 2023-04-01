@@ -4,8 +4,9 @@ import {setAppStatusAC} from "../../../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../../../utils/error-utils";
 import {ChangeStatusType, demoDriveAPI} from "../../../../api/demoDriveAPI";
+import {GetUsersType} from "../../../../api/profileAPI";
 
-export const getDemoDriveListTC = createAsyncThunk(('users/getDemoDriveList'), async (param: any, thunkAPI) => {
+export const getDemoDriveListTC = createAsyncThunk(('users/getDemoDriveList'), async (param: GetUsersType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await demoDriveAPI.getDemoDriveOrders(param)
