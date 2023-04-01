@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.db44b799.css",
-    "main.js": "/CarShop/static/js/main.c91efa3a.js",
+    "main.css": "/CarShop/static/css/main.7dcd0b9f.css",
+    "main.js": "/CarShop/static/js/main.cb978989.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
     "static/media/hammerVideo.mp4": "/CarShop/static/media/hammerVideo.ba2f129cf21c5f7e4eac.mp4",
@@ -114,6 +114,7 @@
     "static/media/compositorY.jpg": "/CarShop/static/media/compositorY.1d4465b4fe4d6687cff3.jpg",
     "static/media/MX_web.avif": "/CarShop/static/media/MX_web.a41d958fba5e767677bc.avif",
     "static/media/cybertruckSkeleton.jpg": "/CarShop/static/media/cybertruckSkeleton.4350a4afaeb9184f270b.jpg",
+    "static/media/Gotham-Book.ttf": "/CarShop/static/media/Gotham-Book.4c2cf6d6bc07b328e8d0.ttf",
     "static/media/AirFilter.avif": "/CarShop/static/media/AirFilter.28aecd73023041a3e8f2.avif",
     "static/media/ConsoleTrays.avif": "/CarShop/static/media/ConsoleTrays.e6e877dd62e822f4c430.avif",
     "static/media/WeatherInteriorLiners.avif": "/CarShop/static/media/WeatherInteriorLiners.8c0fbf2d7ba6a7aa10c0.avif",
@@ -124,8 +125,10 @@
     "static/media/1616599-00-A_0_2000.avif": "/CarShop/static/media/1616599-00-A_0_2000.52be8131d8eb5ea5fd36.avif",
     "static/media/model3Black.jfif": "/CarShop/static/media/model3Black.3f307399b5d810615844.jfif",
     "static/media/RearCargoLinerSet.avif": "/CarShop/static/media/RearCargoLinerSet.043b781efd659af1a845.avif",
+    "static/media/Gotham-Book.woff": "/CarShop/static/media/Gotham-Book.e872be4db2fd5c800fd8.woff",
     "static/media/KeyFob.avif": "/CarShop/static/media/KeyFob.c0438993c6e2cb8554d0.avif",
     "static/media/Men_web.avif": "/CarShop/static/media/Men_web.4f7a4a71b5844915ff70.avif",
+    "static/media/Gotham-Book.woff2": "/CarShop/static/media/Gotham-Book.b39f02e9da64e0412f20.woff2",
     "static/media/SAEJ1772ChargingAdapter.avif": "/CarShop/static/media/SAEJ1772ChargingAdapter.4022020fb0ee0a98daa1.avif",
     "static/media/Women_web.avif": "/CarShop/static/media/Women_web.9e3a15bec180ab6fa9ae.avif",
     "static/media/teslaTopViewIcon.svg": "/CarShop/static/media/teslaTopViewIcon.524288b98059b99e96b702413067f465.svg",
@@ -148,12 +151,12 @@
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.db44b799.css.map": "/CarShop/static/css/main.db44b799.css.map",
-    "main.c91efa3a.js.map": "/CarShop/static/js/main.c91efa3a.js.map",
+    "main.7dcd0b9f.css.map": "/CarShop/static/css/main.7dcd0b9f.css.map",
+    "main.cb978989.js.map": "/CarShop/static/js/main.cb978989.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.db44b799.css",
-    "static/js/main.c91efa3a.js"
+    "static/css/main.7dcd0b9f.css",
+    "static/js/main.cb978989.js"
   ]
 }
