@@ -13,6 +13,7 @@
 
   .titleBlock {
     padding-top: 130px;
+    @include flex(row, flex-start, flex-start, nowrap);
 
     @media screen and (max-width: $mediaWidth) {
       padding-top: 170px;
@@ -21,6 +22,12 @@
     .title {
       @include text(35px, 35px, 600);
       margin-top: 0;
+      margin-right: 20px;
+    }
+
+    .modelSelect {
+      @include text(13px, 13px, 500);
+      height: 35px;
     }
   }
 

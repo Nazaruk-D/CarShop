@@ -1,12 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {CreateOrderType, DemoDriveType} from "../../../../api/demoDriveAPI";
+import {CreateOrderType, DemoDriveType, GetDemoDriveOrdersType} from "../../../../api/demoDriveAPI";
 import {setAppStatusAC} from "../../../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../../../utils/error-utils";
 import {ChangeStatusType, demoDriveAPI} from "../../../../api/demoDriveAPI";
-import {GetUsersType} from "../../../../api/profileAPI";
 
-export const getDemoDriveListTC = createAsyncThunk(('users/getDemoDriveList'), async (param: GetUsersType, thunkAPI) => {
+export const getDemoDriveListTC = createAsyncThunk(('users/getDemoDriveList'), async (param: GetDemoDriveOrdersType, thunkAPI) => {
     thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
     try {
         const res = await demoDriveAPI.getDemoDriveOrders(param)

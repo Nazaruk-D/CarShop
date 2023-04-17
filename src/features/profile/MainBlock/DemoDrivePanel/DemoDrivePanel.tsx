@@ -31,11 +31,22 @@ const DemoDrivePanel = () => {
         dispatch(changeDemoDriveStatusTC({status, id, callback}));
     }
 
+    const onSelectedModelChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        dispatch(getDemoDriveListTC({limit: pageSize, page: currentPage, model: event.currentTarget.value}));
+    }
+
     //зафиксить прием региона для загаза тут и в бэке
     return (
         <div className={s.mainBlock}>
             <div className={s.titleBlock}>
                 <h1 className={s.title}>Demo Drive List</h1>
+                <select className={s.modelSelect} onChange={(e) => {onSelectedModelChange(e)}}>
+                    <option value="" label="All Models">All Models</option>
+                    <option value="Model Y" label="Model Y">Model Y</option>
+                    <option value="Model S" label="Model S">Model S</option>
+                    <option value="Model 3" label="Model 3">Model 3</option>
+                    <option value="Model X" label="Model X">Model X</option>
+                </select>
             </div>
             <div className={s.contentBlock}>
                 <div className={s.table}>

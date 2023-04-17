@@ -5,12 +5,18 @@ export const demoDriveAPI = {
     updateDemoDriveStatus(changeData: ChangeStatusType) {
         return instance.put(`demo-drive/updateDemoDriveStatus`, changeData)
     },
-    getDemoDriveOrders({limit, page}:GetUsersType) {
-        return instance.get(`demo-drive/getDemoDriveOrders?limit=${limit}&page=${page}`)
+    getDemoDriveOrders({limit, page, model = ''}:GetDemoDriveOrdersType) {
+        return instance.get(`demo-drive/getDemoDriveOrders?limit=${limit}&page=${page}&model=${model}`)
     },
     createDemoDriveOrder(orderData: CreateOrderType) {
         return instance.put(`demo-drive/createDemoDriveOrder`, orderData)
     },
+}
+
+export type GetDemoDriveOrdersType = {
+    limit: null | number
+    page: null | number
+    model?: null | string
 }
 
 export type ChangeStatusType = {
