@@ -80,12 +80,14 @@ const Safety: React.FC<SafetyPropsType> = ({
                         </div>
                         <div className={s.buttonsBlock}>
                             <Fade bottom>
-                                <PrimaryButton title={'Order now'} color={'black'} secondColor={'white'}
-                                               onClick={() => {
-                                               }}/>
-                                <Button title={'View Inventory'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
-                                        color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
-                                }}/>
+                                <div className={s.buttons}>
+                                    <PrimaryButton title={'Order now'} color={'black'} secondColor={'white'}
+                                                   onClick={() => {
+                                                   }}/>
+                                    <Button title={'View Inventory'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
+                                            color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
+                                    }}/>
+                                </div>
                             </Fade>
                         </div>
                     </div>

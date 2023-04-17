@@ -148,8 +148,12 @@
           @include flex(column, space-around, center, no-wrap);
           width: 100%;
           margin-bottom: 35px;
-          & button {
+          .buttons {
             width: 100%;
+
+            & button {
+              width: 100%;
+            }
           }
         }
       }
