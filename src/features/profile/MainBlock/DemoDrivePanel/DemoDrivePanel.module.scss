@@ -28,6 +28,12 @@
     .modelSelect {
       @include text(13px, 13px, 500);
       height: 35px;
+      margin-right: 20px;
+    }
+
+    .getJSON {
+      @include text(13px, 13px, 500);
+      height: 35px;
     }
   }
 
