@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import s from './Header.module.scss'
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import {routes} from "../routes/routes";
 import Logo from "../../common/components/Logo/Logo";
 import {IoMdClose} from "react-icons/io";
@@ -12,6 +12,7 @@ type HeaderPropsType = {
 }
 
 const Header: React.FC<HeaderPropsType> = ({position, color}) => {
+    const { pathname } = useLocation();
     const [toggleMenu, setToggleMenu] = useState(false)
     const [logo, setLogo] = useState(true)
     const mobileMenuColor = window.innerWidth < 1200 ? 'black' : color
@@ -32,6 +33,10 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
             setToggleMenu(true)
         }
     },[])
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Сброс прокрутки при изменении URL
+    }, [pathname]);
 
     return (
         <div className={s.headerContainer} style={{position, color}}>
