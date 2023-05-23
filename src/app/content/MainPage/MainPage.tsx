@@ -9,6 +9,7 @@ import ModelX from "./ModelX/ModelX";
 import SolarPanels from "./SolarPanels/SolarPanels";
 import SolarRoof from "./SolarRoof/SolarRoof";
 import Accessories from "./Accessories/Accessories";
+import UpArrow from "../../../common/components/UpArrow/UpArrow";
 
 
 const cars = ['Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
