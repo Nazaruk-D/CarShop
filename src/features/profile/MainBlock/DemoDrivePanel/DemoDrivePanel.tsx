@@ -5,7 +5,6 @@ import {changeDemoDriveStatusTC, getDemoDriveListTC} from "./demo-drive-reducer"
 
 const DemoDrivePanel = () => {
     const {currentPage, pageSize, totalDemoDriveOrdersCount, orders} = useAppSelector(s => s.demoDrive)
-    const {status} = useAppSelector(s => s.app)
     const dispatch = useAppDispatch();
 
     let pagesCount = Math.ceil(totalDemoDriveOrdersCount / pageSize);
@@ -36,16 +35,6 @@ const DemoDrivePanel = () => {
         dispatch(getDemoDriveListTC({limit: pageSize, page: currentPage, model: event.currentTarget.value}));
     }
 
-    const onDownloadJSON = () => {
-        const data = JSON.stringify(orders);
-        const blob = new Blob([data], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = 'demo-drive-orders.json';
-        link.click();
-    }
-
     //зафиксить прием региона для загаза тут и в бэке
     return (
         <div className={s.mainBlock}>
@@ -58,7 +47,6 @@ const DemoDrivePanel = () => {
                     <option value="Model 3" label="Model 3">Model 3</option>
                     <option value="Model X" label="Model X">Model X</option>
                 </select>
-                <button className={s.getJSON} onClick={onDownloadJSON} disabled={status !== 'succeeded'}>DOWNLOAD JSON FILE</button>
             </div>
             <div className={s.contentBlock}>
                 <div className={s.table}>
