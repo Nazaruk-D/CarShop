@@ -4,6 +4,8 @@
 .carContainer {
   @include flex(column, center, center, wrap);
   @include background(no-repeat, center, cover);
+  position: relative;
+
   width: 100%;
   height: 100vh;
 
@@ -12,6 +14,8 @@
     width: 90%;
     height: 75%;
     padding-top: 60px;
+    position: absolute;
+
     @media screen and (max-width: $mediaWidth) {
       padding-top: 0;
     }
@@ -50,7 +54,7 @@
         margin-top: 25px;
 
         &::before {
-          @include pseudo(absolute, '', 1px, 230px, 116px, '', rgba(255, 255, 255, 0.75));
+          @include pseudo(absolute, '', 1px, 100%, 50%, '', rgba(255, 255, 255, 0.75));
           bottom: 0;
           transform: translate(-50%, 50%);
           transition: 0.2s ease-in-out;
@@ -76,7 +80,7 @@
         margin-top: 17px;
 
         &::before {
-          @include pseudo(absolute, '', 1px, 284px, 143px, '', rgba(255, 255, 255, 0.75));
+          @include pseudo(absolute, '', 1px, 100%, 50%, '', rgba(255, 255, 255, 0.75));
           bottom: 0;
           transform: translate(-50%, 50%);
           transition: 0.2s ease-in-out;
