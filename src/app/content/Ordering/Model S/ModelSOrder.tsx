@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import s from "./../Ordering.module.scss"
-import Gallery from "../common/Gallery/Gallery";
-import HeaderBlock from "../common/HeaderBlock/HeaderBlock";
 import {Context} from "../Context";
-import {modelYData} from "./ModelYData";
+import s from "../Ordering.module.scss";
+import HeaderBlock from "../common/HeaderBlock/HeaderBlock";
+import Gallery from "../common/Gallery/Gallery";
+import {modelSData} from "./ModelSData";
 //@ts-ignore
 import video from "../../../../common/assets/video/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4"
-import image from "../../../../common/assets/orders/modelY/compositorY.jpg"
-import interior from "../../../../common/assets/orders/modelY/interior_modely.jpg"
+import image from "../../../../common/assets/orders/modelS/compositor_models.jpg"
+import interior from "../../../../common/assets/orders/modelS/interior_models.jpg"
 import Modification from "../common/Modification/Modification";
 
-const ModelYOrder = () => {
+
+const ModelSOrder = () => {
     const [context, setContext] = useState("default context value");
 
     useEffect(() => {
@@ -21,11 +22,11 @@ const ModelYOrder = () => {
         <Context.Provider value={[context, setContext]}>
             <div className={s.orderingContainer}>
                 <HeaderBlock/>
-                <Gallery image={image} video={video} interior={interior}/>
-                <Modification modelData={modelYData}/>
+                <Gallery image={image} interior={interior} video={video}/>
+                <Modification modelData={modelSData}/>
             </div>
         </Context.Provider>
     );
 };
 
-export default ModelYOrder;
+export default ModelSOrder;

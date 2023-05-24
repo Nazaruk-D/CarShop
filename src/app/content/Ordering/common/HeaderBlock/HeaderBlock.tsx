@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./HeaderBlock.module.scss"
-import Logo from "../../../../common/components/Logo/Logo";
+import Logo from "../../../../../common/components/Logo/Logo";
 
 const HeaderBlock = () => {
     return (

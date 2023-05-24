@@ -35,7 +35,7 @@ const Header: React.FC<HeaderPropsType> = ({position, color}) => {
     },[])
 
     useEffect(() => {
-        window.scrollTo(0, 0); // Сброс прокрутки при изменении URL
+        window.scrollTo(0, 0);
     }, [pathname]);
 
     return (

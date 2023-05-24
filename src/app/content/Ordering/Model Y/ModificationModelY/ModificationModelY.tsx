@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import s from "./Modification.module.scss"
+import s from "../../common/Modification/Modification.module.scss";
 import Title from "../../common/Title/Title";
 import Order from "../../common/Order/Order";
 import CharacteristicsBlock from "../../common/CharacteristicsBlock/CharacteristicsBlock";
@@ -11,10 +11,10 @@ import Charging from "../../common/Charging/Charging";
 import {modelYData} from "../ModelYData";
 import {useAppDispatch} from "../../../../store/store";
 import {OrderType, totalSumAC} from "../../order-reducer";
-import {modelDataTypeChild} from "../../DataType";
+import {modelDataTypeChild} from "../../../../../types/DataType";
 
 
-const Modification = () => {
+const ModificationModelY = () => {
     const dispatch = useAppDispatch()
     const [active, setActive] = useState<OrderType>({
             model: {title: "Model Y", price: 54990},
@@ -97,4 +97,4 @@ const Modification = () => {
     );
 };
 
-export default Modification;
+export default ModificationModelY;

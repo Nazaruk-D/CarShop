@@ -4,7 +4,7 @@ import DetailsButton from "../../../../../common/components/buttons/DetailsButto
 import {useInView} from "react-intersection-observer";
 import {Context, ContextType} from "../../Context";
 import {OrderType} from "../../order-reducer";
-import {ModelDataTypeChildColor} from "../../DataType";
+import {ModelDataTypeChildColor} from "../../../../../types/DataType";
 
 
 type OptionWidgetPropsType = {
