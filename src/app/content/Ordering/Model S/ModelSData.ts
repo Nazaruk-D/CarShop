@@ -9,12 +9,13 @@ import blackInterior from "../../../../common/assets/orders/common/interior_colo
 import whiteInterior from "../../../../common/assets/orders/common/interior_color/Interior_White.avif";
 import creamInterior from "../../../../common/assets/orders/common/interior_color/Interior_Cream.avif";
 import {modelDataType} from "../../../../types/DataType";
+import {getFutureDate} from "../../../../utils/getFutureDate";
 
 
 export const modelSData: modelDataType = [
     {
         model: "Model S",
-        delivery: "Est. Delivery: Apr – Jun 2023",
+        delivery: getFutureDate(2),
         title: "Rear-Wheel Drive",
         price: 88490,
         characteristics: [
@@ -91,7 +92,7 @@ export const modelSData: modelDataType = [
     },
     {
         model: "Model S Performance",
-        delivery: "Mar 2023",
+        delivery: getFutureDate(2),
         title: "Dual Motor All-Wheel Drive",
         price: 108490,
         characteristics: [

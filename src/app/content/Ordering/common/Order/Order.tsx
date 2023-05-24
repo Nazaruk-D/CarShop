@@ -5,6 +5,7 @@ import {useInView} from "react-intersection-observer";
 import {Context, ContextType} from "../../Context";
 import {useAppDispatch} from "../../../../store/store";
 import {OrderType, setOrderState} from "../../order-reducer";
+import {getFutureDate} from "../../../../../utils/getFutureDate";
 
 type OrderPropsType = {
     title: string
@@ -28,10 +29,12 @@ const Order: React.FC<OrderPropsType> = ({title, active}) => {
         }
     },[inView])
 
+    const deliveryData = getFutureDate(2)
+
     return (
         <div className={s.orderContainer} ref={ref}>
             <h2 className={s.title}>Order your {title}</h2>
-            <p>Est. Delivery: Mar 2023</p>
+            <p>Est. Delivery: {deliveryData}</p>
             <DetailsButton title={"Continue to Payment"} onClick={onClickHandler}/>
         </div>
     );

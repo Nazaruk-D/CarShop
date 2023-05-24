@@ -9,12 +9,13 @@ import red from "../../../../common/assets/orders/common/color/Paint_Red.avif";
 import blackInterior from "../../../../common/assets/orders/common/interior_color/Interior_Black.avif";
 import whiteInterior from "../../../../common/assets/orders/common/interior_color/Interior_White.avif";
 import {modelDataType} from "../../../../types/DataType";
+import {getFutureDate} from "../../../../utils/getFutureDate";
 
 
 export const model3Data: modelDataType = [
     {
         model: "Model 3",
-        delivery: "Mar 2023",
+        delivery: getFutureDate(2),
         title: "Rear-Wheel Drive",
         price: 42990,
         characteristics: [
@@ -86,7 +87,7 @@ export const model3Data: modelDataType = [
     },
     {
         model: "Model 3 Performance",
-        delivery: "Mar 2023",
+        delivery: getFutureDate(2),
         title: "Dual Motor All-Wheel Drive",
         price: 53990,
         characteristics: [
