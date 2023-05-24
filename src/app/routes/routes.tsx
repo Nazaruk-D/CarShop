@@ -18,6 +18,7 @@ import Cybertruck from "../content/CarsModel/Cybertruck/Cybertruck";
 import Model3Order from "../content/Ordering/Model 3/Model3Order";
 import ModelYOrder from "../content/Ordering/Model Y/ModelYOrder";
 import ModelSOrder from "../content/Ordering/Model S/ModelSOrder";
+import ModelXOrder from "../content/Ordering/Model X/ModelXOrder";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -38,6 +39,7 @@ export const routes = {
     orderingModel3: '/CarShop/ordering/model3',
     orderingModelY: '/CarShop/ordering/modelY',
     orderingModelS: '/CarShop/ordering/modelS',
+    orderingModelX: '/CarShop/ordering/modelX',
 }
 
 export const router = createBrowserRouter([
@@ -112,6 +114,10 @@ export const router = createBrowserRouter([
             {
                 path: "modelS",
                 element: <ModelSOrder/>,
+            },
+            {
+                path: "modelX",
+                element: <ModelXOrder/>,
             }
         ]
     }

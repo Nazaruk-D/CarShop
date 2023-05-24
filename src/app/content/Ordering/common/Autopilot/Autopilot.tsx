@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import s from "./Autopilot.module.scss"
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
@@ -16,9 +16,11 @@ const Autopilot: React.FC<AutopilotPropsType> = ({active, onChangeAutopilotStatu
         threshold: 0,
     });
 
-    if(inView) {
-        setContext("Autopilot")
-    }
+    useEffect(()=>{
+        if(inView) {
+            setContext("Autopilot")
+        }
+    },[inView])
 
     return (
         <div className={s.autopilotContainer} ref={ref}>

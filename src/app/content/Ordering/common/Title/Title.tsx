@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import s from "./Title.module.scss"
 import {useInView} from "react-intersection-observer";
 import {Context, ContextType} from "../../Context";
@@ -14,9 +14,13 @@ const Title: React.FC<TitlePropType> = ({title, date}) => {
         threshold: 0,
     });
 
-    if(inView) {
-        setContext("Title")
-    }
+
+    useEffect(() => {
+        if (inView) {
+            setContext("Title")
+        }
+    }, [inView])
+
     return (
         <div className={s.titleContainer} id={title} ref={ref}>
             <h1 className={s.title}>

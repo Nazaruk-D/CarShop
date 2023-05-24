@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import s from "./Order.module.scss"
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
@@ -18,13 +18,15 @@ const Order: React.FC<OrderPropsType> = ({title, active}) => {
         threshold: 0,
     });
 
-    if(inView) {
-        setContext("Order")
-    }
-
     const onClickHandler = () => {
         dispatch(setOrderState(active))
     }
+
+    useEffect(()=>{
+        if(inView) {
+            setContext("Order")
+        }
+    },[inView])
 
     return (
         <div className={s.orderContainer} ref={ref}>
