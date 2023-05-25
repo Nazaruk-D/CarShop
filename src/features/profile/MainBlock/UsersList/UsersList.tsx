@@ -3,7 +3,7 @@ import s from "./UsersList.module.scss";
 import { AiFillDelete } from "react-icons/ai";
 import {useAppDispatch, useAppSelector} from "../../../../app/store/store";
 import {getUsersTC} from "./users-reducer";
-import {useModal} from "../../Modal/useModal";
+import {useModal} from "../../../../hooks/useModal";
 import DeleteUserModal from "../../Modal/DeleteUserModal/DeleteUserModal";
 
 

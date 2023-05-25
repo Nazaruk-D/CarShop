@@ -1,0 +1,25 @@
+@import '../../../../common/styles/sass/mixins';
+
+
+.orderContainer {
+  @include flex(column, flex-start, flex-start, wrap);
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .titleBlock {
+    @include flex(column, flex-start, center, wrap);
+    width: 100%;
+  }
+
+  .carInfoBlock {
+    @include flex(column, flex-start, flex-start, wrap);
+    width: 100%;
+
+    .totalBlock {
+      @include flex(row, space-between, flex-start, wrap);
+      width: 100%;
+    }
+  }
+}

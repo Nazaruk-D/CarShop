@@ -2,8 +2,8 @@ import React from 'react';
 import s from "./Equipment.module.scss"
 import ScheduleButton from "../../../../../common/components/buttons/ScheduleButton/ScheduleButton";
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
-import {OrderType} from "../../order-reducer";
 import {modelDataTypeChild} from "../../../../../types/DataType";
+import {OrderType} from "../../../../../types/OrderType";
 
 
 type EquipmentPropsType = {

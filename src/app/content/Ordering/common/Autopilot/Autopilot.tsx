@@ -2,8 +2,8 @@ import React, {useContext, useEffect} from 'react';
 import s from "./Autopilot.module.scss"
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
-import {OrderType} from "../../order-reducer";
 import {Context, ContextType} from "../../Context";
+import {OrderType} from "../../../../../types/OrderType";
 
 type AutopilotPropsType = {
     active: OrderType

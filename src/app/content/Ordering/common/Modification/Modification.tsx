@@ -9,8 +9,10 @@ import OptionWidget from "../../common/OptionWidget/OptionWidget";
 import SelfDriving from "../../common/SelfDriving/SelfDriving";
 import Charging from "../../common/Charging/Charging";
 import {useAppDispatch} from "../../../../store/store";
-import {OrderType, totalSumAC} from "../../order-reducer";
+import {setOrderState, totalSumAC} from "../../order-reducer";
 import {modelDataType, modelDataTypeChild} from "../../../../../types/DataType";
+import {OrderType} from "../../../../../types/OrderType";
+import {useModal} from "../../../../../hooks/useModal";
 
 
 type ModificationPropsType = {
@@ -31,6 +33,7 @@ const Modification: FC<ModificationPropsType> = ({modelData}) => {
             mobileConnector: {status: false, price: null},
         })
     const data = modelData.find((m: modelDataTypeChild) => m.model === active.model.title)!
+    const {orderConfirmationModal, toggleOrderConfirmationModal} = useModal()
 
     const changeEquipment = (title: string, price: number) => {
         setActive({...active, model: {title, price}})
@@ -81,7 +84,8 @@ const Modification: FC<ModificationPropsType> = ({modelData}) => {
             dispatch(totalSumAC(total))
         }
         totalSum()
-    },[active])
+        dispatch(setOrderState(active))
+    },[active, dispatch])
 
     return (
         <div className={s.modificationContainer}>

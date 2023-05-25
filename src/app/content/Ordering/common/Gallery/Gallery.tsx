@@ -1,13 +1,11 @@
 import React, {FC, useContext, useEffect, useState} from 'react';
 import s from "./Gallery.module.scss"
 import {IoIosArrowBack, IoIosArrowForward, IoIosArrowUp} from "react-icons/io";
-import image from "../../../../../common/assets/orders/modelY/compositorY.jpg"
-import blackInterior from "../../../../../common/assets/orders/model3/Model3_Black.jpg"
-// @ts-ignore
-
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
 import {useAppSelector} from "../../../../store/store";
 import {Context, ContextType} from "../../Context";
+import OrderConfirmation from "../../OrderСonfirmation/OrderСonfirmation";
+import {useModal} from "../../../../../hooks/useModal";
 
 const Fade = require("react-reveal/Fade")
 
@@ -23,6 +21,7 @@ const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
     const [isArrowActive, setIsArrowActive] = useState(false)
     const [context, setContext] = useContext<ContextType>(Context);
     const [isActive, setIsActive] = useState(1)
+    const {orderConfirmationModal, toggleOrderConfirmationModal} = useModal()
 
     useEffect(() => {
         if (context === "Title") {
@@ -61,8 +60,12 @@ const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
                     {isActive === 4 && <div className={s.image} style={{backgroundImage: `url(${image})`}}></div>}
                 </div>
                 <div className={s.counterContainer}>
-                    <div className={s.arrow}><IoIosArrowUp size={"20px"}/></div>
-                    <div className={s.price}>${totalPrice} Vehicle Price</div>
+                    <div className={s.arrow} onClick={() => toggleOrderConfirmationModal()}>
+                        <IoIosArrowUp size={"20px"}/>
+                    </div>
+                    <div className={s.price}>
+                        ${totalPrice} Vehicle Price
+                    </div>
                 </div>
                 <div className={s.rightArrowContainer}>
                     {isArrowActive &&
@@ -74,6 +77,7 @@ const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
                     }
                 </div>
             </div>
+            {orderConfirmationModal && <OrderConfirmation setModalActive={toggleOrderConfirmationModal} hide={toggleOrderConfirmationModal}/>}
         </>
     );
 };

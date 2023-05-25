@@ -3,8 +3,8 @@ import s from "./OptionWidget.module.scss"
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
 import {useInView} from "react-intersection-observer";
 import {Context, ContextType} from "../../Context";
-import {OrderType} from "../../order-reducer";
 import {ModelDataTypeChildColor} from "../../../../../types/DataType";
+import {OrderType} from "../../../../../types/OrderType";
 
 
 type OptionWidgetPropsType = {

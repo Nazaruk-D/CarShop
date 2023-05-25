@@ -19,6 +19,7 @@ import Model3Order from "../content/Ordering/Model 3/Model3Order";
 import ModelYOrder from "../content/Ordering/Model Y/ModelYOrder";
 import ModelSOrder from "../content/Ordering/Model S/ModelSOrder";
 import ModelXOrder from "../content/Ordering/Model X/ModelXOrder";
+import OrderConfirmation from "../content/Ordering/OrderСonfirmation/OrderСonfirmation";
 
 export const routes = {
     mainPage: '/CarShop/',
@@ -118,7 +119,7 @@ export const router = createBrowserRouter([
             {
                 path: "modelX",
                 element: <ModelXOrder/>,
-            }
+            },
         ]
     }
 ])

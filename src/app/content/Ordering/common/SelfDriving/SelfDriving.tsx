@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./SelfDriving.module.scss"
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
-import {OrderType} from "../../order-reducer";
+import {OrderType} from "../../../../../types/OrderType";
 
 type SelfDrivingPropsType = {
     active: OrderType

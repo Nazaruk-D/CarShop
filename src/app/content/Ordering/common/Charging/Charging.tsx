@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./Charging.module.scss"
 import DetailsButton from "../../../../../common/components/buttons/DetailsButton/DetailsButton";
-import {OrderType} from "../../order-reducer";
+import {OrderType} from "../../../../../types/OrderType";
 
 type ChargingPropsType = {
     active: OrderType
