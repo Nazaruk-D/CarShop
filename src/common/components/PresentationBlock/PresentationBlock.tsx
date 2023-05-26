@@ -3,6 +3,7 @@ import s from "./PresentationBlock.module.scss";
 import {Element} from "react-scroll";
 import {NavLink} from "react-router-dom";
 import {routes} from "../../../app/routes/routes";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 const Fade = require("react-reveal/Fade")
 
 type CarPropsType = {
@@ -16,6 +17,7 @@ type CarPropsType = {
 const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroundImage, children, color}) => {
     return (
         <Element name={model} className={s.carContainer} style={{backgroundImage: `url(${backgroundImage})`}} id={model}>
+            <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>
             <div className={s.carBlock}>
                 <div className={s.titleBlock} style={{color}}>
                     <Fade bottom>
@@ -24,11 +26,14 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
                     {conditions === 'Schedule a Demo Drive'
                         && color === 'black'
                         && <Fade bottom><NavLink to={routes.drive} className={s.demoDriveBlack}>{conditions}</NavLink></Fade>}
+                    {conditions === 'Schedule a Demo Drive Today'
+                        && color === 'white'
+                        && <Fade bottom><NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink></Fade>}
                     {conditions === 'Schedule a Demo Drive'
                         && color !== 'black'
                         && <Fade bottom><NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink></Fade>}
                     {conditions !== 'Schedule a Demo Drive'
-                        && conditions !== 'Schedule a Virtual Consultation'
+                        && conditions !== 'Schedule a Virtual Consultation' && conditions !== 'Schedule a Demo Drive Today'
                         && <Fade bottom><h3 className={s.conditions}>{conditions}</h3></Fade>}
                     {conditions === 'Schedule a Virtual Consultation'
                         && <Fade bottom><NavLink to={routes.consultation} className={s.virtualConsultation}>{conditions}</NavLink></Fade>}

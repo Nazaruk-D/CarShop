@@ -9,9 +9,13 @@ import ModelX from "./ModelX/ModelX";
 import SolarPanels from "./SolarPanels/SolarPanels";
 import SolarRoof from "./SolarRoof/SolarRoof";
 import Accessories from "./Accessories/Accessories";
+import PresentationBlock from "../../../common/components/PresentationBlock/PresentationBlock";
+//@ts-ignore
+import HomepageVideo from "../../../common/assets/video/Homepage-video.mp4"
+import PrimaryButton from "../../../common/components/buttons/PrimaryButton/PrimaryButton";
 
-
-const cars = ['Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
+const cars = ['Experience Tesla', 'Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
+const Fade = require("react-reveal/Fade")
 
 const MainPage = () => {
     const [scroll, setScroll] = useState(0)
@@ -83,7 +87,12 @@ const MainPage = () => {
 
     return (
         <div className={s.contentContainer}>
-            <Header position={'fixed'}/>
+            <Header position={'fixed'} color={scroll > 1 ? 'black' : 'white'}/>
+            <PresentationBlock backgroundImage={HomepageVideo} color={'white'} conditions={'Schedule a Demo Drive Today'} model={'Experience Tesla'}>
+                <Fade bottom>
+                    <PrimaryButton title={'Demo Drive'} color={'white'} secondColor={'black'} onClick={()=>{}}/>
+                </Fade>
+            </PresentationBlock>
             <Model3/>
             <ModelY/>
             <ModelS/>
