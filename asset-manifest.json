@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CarShop/static/css/main.0b24e5d3.css",
-    "main.js": "/CarShop/static/js/main.4a76493d.js",
+    "main.css": "/CarShop/static/css/main.0d96231f.css",
+    "main.js": "/CarShop/static/js/main.0cfc8f9b.js",
     "static/js/787.28cb0dcd.chunk.js": "/CarShop/static/js/787.28cb0dcd.chunk.js",
     "static/media/PlaidRangeWebDesktop8mb.mp4": "/CarShop/static/media/PlaidRangeWebDesktop8mb.4a641a1d7d20b16f405e.mp4",
     "static/media/hammerVideo.mp4": "/CarShop/static/media/hammerVideo.ba2f129cf21c5f7e4eac.mp4",
@@ -9,6 +9,7 @@
     "static/media/cybertruckVideo.mp4": "/CarShop/static/media/cybertruckVideo.ea1c37cc85e7bec54fb5.mp4",
     "static/media/Carousel_Installation2.mp4": "/CarShop/static/media/Carousel_Installation2.1983e7e89d272517d189.mp4",
     "static/media/solarAssessmentDesktop.mp4": "/CarShop/static/media/solarAssessmentDesktop.291ef57cb1c0b697a47b.mp4",
+    "static/media/Homepage-video.mp4": "/CarShop/static/media/Homepage-video.35c5785563349d254873.mp4",
     "static/media/1.mp4": "/CarShop/static/media/1.dc4f8f3f1304bc6b3771.mp4",
     "static/media/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.mp4": "/CarShop/static/media/0GSNWC_Model_S_Navigate_0.mp4-2000_OY92ST.f2e72fd66de0cb134f4b.mp4",
     "static/media/modelYRangeVideo.mp4": "/CarShop/static/media/modelYRangeVideo.75ecf8a163c21c5026d4.mp4",
@@ -161,12 +162,12 @@
     "static/media/teslaLogoBlack.svg": "/CarShop/static/media/teslaLogoBlack.503b8efb8bcc0fc0442ec4fa5d192076.svg",
     "static/media/teslaLogoWhite.svg": "/CarShop/static/media/teslaLogoWhite.f144bb665461dcbd2ee8ad0b99b95bc2.svg",
     "index.html": "/CarShop/index.html",
-    "main.0b24e5d3.css.map": "/CarShop/static/css/main.0b24e5d3.css.map",
-    "main.4a76493d.js.map": "/CarShop/static/js/main.4a76493d.js.map",
+    "main.0d96231f.css.map": "/CarShop/static/css/main.0d96231f.css.map",
+    "main.0cfc8f9b.js.map": "/CarShop/static/js/main.0cfc8f9b.js.map",
     "787.28cb0dcd.chunk.js.map": "/CarShop/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b24e5d3.css",
-    "static/js/main.4a76493d.js"
+    "static/css/main.0d96231f.css",
+    "static/js/main.0cfc8f9b.js"
   ]
 }
