@@ -23,7 +23,9 @@ const TopBlock = () => {
             <FirstBlock characteristicsData={characteristicsData}
                         model={'Solar for Existing Roofs'}
                         conditions={'Schedule a Virtual Consultation'}
-                        backgroundImage={HeroD}/>
+                        backgroundImage={HeroD}
+                        orderLink=''
+            />
         </>
     );
 };

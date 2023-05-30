@@ -26,7 +26,9 @@ const TopBlock = () => {
             <FirstBlock characteristicsData={characteristicsData}
                         model={'Model X'}
                         conditions={'Plaid'}
-                        backgroundImage={modelX}/>
+                        backgroundImage={modelX}
+                        orderLink={'modelX'}
+            />
         </>
     );
 };

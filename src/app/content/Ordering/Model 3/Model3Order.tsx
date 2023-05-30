@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./../Ordering.module.scss"
 import HeaderBlock from "../common/HeaderBlock/HeaderBlock";
 import {Context} from "../Context";
@@ -12,6 +12,11 @@ import Modification from "../common/Modification/Modification";
 
 const Model3Order = () => {
     const [context, setContext] = useState("default context value");
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Context.Provider value={[context, setContext]}>
             <div className={s.orderingContainer}>
