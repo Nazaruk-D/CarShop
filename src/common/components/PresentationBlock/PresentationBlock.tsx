@@ -15,29 +15,20 @@ type CarPropsType = {
 }
 
 const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroundImage, children, color}) => {
+    const defaultConditions  = conditions ? conditions : ""
+    const defaultColor  = color ? color : ""
     return (
         <Element name={model} className={s.carContainer} style={{backgroundImage: `url(${backgroundImage})`}} id={model}>
             <VideoPlayer link={backgroundImage} style={{width: "100%", height: "100%", objectFit: "cover"}}/>
             <div className={s.carBlock}>
-                <div className={s.titleBlock} style={{color}}>
-                    <Fade bottom>
-                        <h1 className={s.description}>{model}</h1>
-                    </Fade>
-                    {conditions === 'Schedule a Demo Drive'
-                        && color === 'black'
-                        && <Fade bottom><NavLink to={routes.drive} className={s.demoDriveBlack}>{conditions}</NavLink></Fade>}
-                    {conditions === 'Schedule a Demo Drive Today'
-                        && color === 'white'
-                        && <Fade bottom><NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink></Fade>}
-                    {conditions === 'Schedule a Demo Drive'
-                        && color !== 'black'
-                        && <Fade bottom><NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink></Fade>}
-                    {conditions !== 'Schedule a Demo Drive'
-                        && conditions !== 'Schedule a Virtual Consultation' && conditions !== 'Schedule a Demo Drive Today'
-                        && <Fade bottom><h3 className={s.conditions}>{conditions}</h3></Fade>}
-                    {conditions === 'Schedule a Virtual Consultation'
-                        && <Fade bottom><NavLink to={routes.consultation} className={s.virtualConsultation}>{conditions}</NavLink></Fade>}
-                </div>
+                    <div className={s.titleBlock} style={{color}}>
+                        <Fade bottom>
+                            <h1 className={s.description}>{model}</h1>
+                        </Fade>
+                        <Fade bottom>
+                            {renderConditionComponent(defaultConditions, defaultColor)}
+                        </Fade>
+                    </div>
                 <div className={s.bottomBlock}>
                     {children}
                 </div>
@@ -47,3 +38,39 @@ const PresentationBlock: React.FC<CarPropsType> = ({model, conditions, backgroun
 };
 
 export default PresentationBlock;
+
+const renderConditionComponent = (conditions: string, color: string) => {
+    switch (conditions) {
+        case 'Schedule a Demo Drive':
+            if (color === 'black') {
+                return (
+                    <NavLink to={routes.drive} className={s.demoDriveBlack}>{conditions}</NavLink>
+                );
+            } else {
+                return (
+                    <NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink>
+                );
+            }
+        case 'Schedule a Demo Drive Today':
+            if (color === 'white') {
+                return (
+                    <NavLink to={routes.drive} className={s.demoDrive}>{conditions}</NavLink>
+                );
+            }
+            break;
+        case 'Schedule a Virtual Consultation':
+            return (
+                <NavLink to={routes.consultation} className={s.virtualConsultation}>{conditions}</NavLink>
+            );
+        default:
+            if (
+                conditions !== 'Schedule a Virtual Consultation' &&
+                conditions !== 'Schedule a Demo Drive Today'
+            ) {
+                return (
+                    <h3 className={s.conditions}>{conditions}</h3>
+                );
+            }
+            break;
+    }
+};
