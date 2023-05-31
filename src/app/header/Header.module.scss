@@ -54,7 +54,6 @@
       @media screen and (max-width: $mediaWidth) {
         @include flex(column, flex-start, flex-start, nowrap);
         width: 80%;
-        //height: 150%;
       }
 
       .menuText {
@@ -67,7 +66,7 @@
         color: black;
         box-sizing: border-box;
         @media screen and (max-width: $mediaWidth) {
-          width: 110px;
+          width: 130px;
           padding: 25px 15px;
         }
 

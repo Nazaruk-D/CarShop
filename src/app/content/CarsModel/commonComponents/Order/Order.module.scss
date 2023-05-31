@@ -29,11 +29,20 @@
   }
 
   .orderContainer {
-    @include flex(column, center, center, no-wrap);
+    @include flex(column, center, center, nowrap);
     width: 50%;
+
+    @media screen and (max-width: $mediaWidth) {
+      width: 100%;
+    }
 
     .titleBlock {
       margin-left: 50px;
+      @media screen and (max-width: $mediaWidth) {
+        @include flex(column, center, center, nowrap);
+        width: 90%;
+        margin-left: 0;
+      }
 
       .title {
         @include text(32px, 32px, 600);

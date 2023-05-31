@@ -49,6 +49,7 @@
       width: 65%;
       color: white;
       @media screen and (max-width: $mediaWidth) {
+        @include text(14px, 14px, 400);
         width: 90%;
       }
 

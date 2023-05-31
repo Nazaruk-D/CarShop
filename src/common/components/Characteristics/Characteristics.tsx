@@ -26,8 +26,8 @@ const Characteristics: React.FC<CharacteristicsPropsType> = ({bottomText, topTex
                         <div className={s.mainInfo}>{topText}</div>
                     </div>
                 }
-                <div className={s.bottomText}>
-                    <p>{bottomText}</p>
+                <div>
+                    <p  className={s.bottomText}>{bottomText}</p>
                 </div>
             </div>
         </Fade>

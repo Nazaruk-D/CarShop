@@ -14,7 +14,7 @@
     height: 100%;
     @media screen and (max-width: $mediaWidth) {
       @include flex(column, flex-start, flex-start, nowrap);
-      width: 80%;
+      width: 90%;
       margin: 0;
       box-sizing: border-box;
     }
@@ -54,12 +54,12 @@
     }
 
     .descriptionBlock {
+      @include flex(column, flex-start, center, nowrap);
       height: 60%;
       width: 60%;
-      @include flex(column, flex-start, center, no-wrap);
       margin-top: 40px;
       @media screen and (max-width: $mediaWidth) {
-        @include flex(column, flex-start, flex-start, no-wrap);
+        @include flex(column, flex-start, flex-start, nowrap);
         height: 60%;
         width: 100%;
       }
@@ -67,6 +67,7 @@
       .description {
         margin-top: 0;
         @media screen and (max-width: $mediaWidth) {
+          @include text(13px, 13px, 400);
           padding: 10px;
           box-sizing: border-box;
         }

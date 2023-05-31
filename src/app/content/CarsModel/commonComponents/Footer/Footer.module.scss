@@ -16,6 +16,10 @@
     .description {
       @include text(14px, 14px, 400);
       color: rgb(119, 119, 119);
+
+      @media screen and (max-width: $mediaWidth) {
+        @include text(8px, 8px, 400);
+      }
     }
 
     .link {
@@ -30,6 +34,10 @@
     @include flex(row, center, center, wrap);
     width: 60%;
     height: 8vh;
+
+    @media screen and (max-width: $mediaWidth) {
+      width: 90%;
+    }
 
     .menuText {
       @include text(13px, 14px, 600);

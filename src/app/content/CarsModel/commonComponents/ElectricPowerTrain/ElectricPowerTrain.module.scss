@@ -7,7 +7,7 @@
   height: 100vh;
   background-color: #eee;
   @media screen and (max-width: $mediaWidth) {
-    height: 130vh;
+    height: 150vh;
   }
 
   .electricBlock {
@@ -24,7 +24,7 @@
       margin: 0 20px;
       @media screen and (max-width: $mediaWidth) {
         width: 90%;
-        height: 30%;
+        height: 25%;
         padding: 10px 0;
         box-sizing: border-box;
       }
@@ -72,7 +72,6 @@
       height: 30%;
       @media screen and (max-width: $mediaWidth) {
         @include flex(row, flex-start, flex-start, wrap);
-        //height: 180%;
       }
 
       .firstContainer {
@@ -109,6 +108,9 @@
 
             .description {
               @include text(16px, 16px, 400);
+              @media screen and (max-width: $mediaWidth) {
+                @include text(14px, 14px, 400);
+              }
             }
           }
 
@@ -127,12 +129,10 @@
       .secondContainer {
         @include flex(row, flex-start, center, wrap);
         width: 50%;
-        //height: 80%;
         padding-left: 10px;
         box-sizing: border-box;
         cursor: pointer;
         @media screen and (max-width: $mediaWidth) {
-          //height: 180%;
         }
 
         .secondBlock {
@@ -150,7 +150,6 @@
             height: 120px;
             @media screen and (max-width: $mediaWidth) {
               @include flex(column, flex-start, flex-start, wrap);
-              //height: 50%;
               height: 250px;
             }
 
@@ -162,6 +161,9 @@
 
             .description {
               @include text(16px, 16px, 400);
+              @media screen and (max-width: $mediaWidth) {
+                @include text(14px, 14px, 400);
+              }
             }
           }
 
