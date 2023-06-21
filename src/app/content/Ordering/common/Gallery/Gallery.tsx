@@ -56,7 +56,7 @@ const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
                 <div className={s.imageBlock}>
                     {isActive === 1 && <div className={s.image} style={{backgroundImage: `url(${image})`}}></div>}
                     {isActive === 2 && <div className={s.image} style={{backgroundImage: `url(${interior})`}}></div>}
-                    {isActive === 3 && <VideoPlayer link={video}/>}
+                    {isActive === 3 && <VideoPlayer link={video} style={{width: "100%"}}/>}
                     {isActive === 4 && <div className={s.image} style={{backgroundImage: `url(${image})`}}></div>}
                 </div>
                 <div className={s.counterContainer}>
