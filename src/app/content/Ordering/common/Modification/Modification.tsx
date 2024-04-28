@@ -8,32 +8,32 @@ import Autopilot from "../../common/Autopilot/Autopilot";
 import OptionWidget from "../../common/OptionWidget/OptionWidget";
 import SelfDriving from "../../common/SelfDriving/SelfDriving";
 import Charging from "../../common/Charging/Charging";
-import {useAppDispatch} from "../../../../store/store";
-import {setOrderState, totalSumAC} from "../../order-reducer";
-import {modelDataType, modelDataTypeChild} from "../../../../../types/DataType";
+import {useAppDispatch, useAppSelector} from "../../../../store/store";
+import {clearModelTitle, setOrderState, totalSumAC} from "../../order-reducer";
+import {ModelData, modelDataTypeChild} from "../../../../../types/DataType";
 import {OrderType} from "../../../../../types/OrderType";
-import {useModal} from "../../../../../hooks/useModal";
-
 
 type ModificationPropsType = {
-    modelData: modelDataType
-
+    modelData: ModelData
 }
 
 const Modification: FC<ModificationPropsType> = ({modelData}) => {
     const dispatch = useAppDispatch()
-    const [active, setActive] = useState<OrderType>({
-            model: {title: modelData[0].model, price: modelData[0].price},
-            color: {title: "Pearl White Multi-Coat", price: null},
-            wheels: {title: modelData[0].wheels[0].type, price: null},
-            interiorColor: {title: "All Black", price: null},
-            autopilot: {status: false, price: null},
-            selfDriving: {status: false, price: null},
-            wallConnector: {status: false, price: null},
-            mobileConnector: {status: false, price: null},
-        })
+    const orderStore = useAppSelector(s => s.order.order);
+
+    const defaultActiveValues: OrderType = {
+        model: {title: modelData[0].model, price: modelData[0].price},
+        color: {title: "Pearl White Multi-Coat", price: null},
+        wheels: {title: modelData[0].wheels[0].type, price: null},
+        interiorColor: {title: "All Black", price: null},
+        autopilot: {status: false, price: null},
+        selfDriving: {status: false, price: null},
+        wallConnector: {status: false, price: null},
+        mobileConnector: {status: false, price: null},
+    }
+
+    const [active, setActive] = useState<OrderType>(orderStore?.model?.title ? orderStore : defaultActiveValues)
     const data = modelData.find((m: modelDataTypeChild) => m.model === active.model.title)!
-    const {orderConfirmationModal, toggleOrderConfirmationModal} = useModal()
 
     const changeEquipment = (title: string, price: number) => {
         setActive({...active, model: {title, price}})
@@ -86,6 +86,14 @@ const Modification: FC<ModificationPropsType> = ({modelData}) => {
         totalSum()
         dispatch(setOrderState(active))
     },[active, dispatch])
+
+    const clearOrderData = () => {
+        dispatch(clearModelTitle())
+    }
+
+    useEffect(() => {
+        return () => clearOrderData()
+    }, [])
 
     return (
         <div className={s.modificationContainer}>
