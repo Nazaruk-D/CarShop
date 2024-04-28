@@ -77,7 +77,7 @@ const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
                     }
                 </div>
             </div>
-            {orderConfirmationModal && <OrderConfirmation setModalActive={toggleOrderConfirmationModal} hide={toggleOrderConfirmationModal}/>}
+            {orderConfirmationModal && <OrderConfirmation setSecondModalActive={()=>{}} setModalActive={toggleOrderConfirmationModal} hide={toggleOrderConfirmationModal}/>}
         </>
     );
 };

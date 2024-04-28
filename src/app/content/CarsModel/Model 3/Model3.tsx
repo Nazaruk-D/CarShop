@@ -6,13 +6,15 @@ import Interior from "../commonComponents/Interior/Interior";
 import SpecsAndOrder from "./SpecsAndOrder/SpecsAndOrder";
 import Footer from "../commonComponents/Footer/Footer";
 
+
+
 const Model3 = () => {
     return (
         <div>
             <TopBlock/>
             <SafetyAndAdvantages/>
             <RangeAndAutopilot/>
-            <Interior/>
+            <Interior model={'Model 3'}/>
             <SpecsAndOrder/>
             <Footer/>
         </div>

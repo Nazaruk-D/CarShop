@@ -51,15 +51,18 @@ const SafetyAndAdvantages = () => {
                     backgroundColor={'white'}
                     subtitle={'Safety'}
                     title={'Built for Safety'}
+                    model={'Model 3'}
                     description={'Safety is the most important part of every Tesla. We design our vehicles to exceed safety standards. 5-Star Rating Model Y achieved NHTSA 5-star safety ratings in every category and subcategory. Top Safety Pick Model Y received the IIHS Top Safety Pick+ award, with top ratings in all crashworthiness and front crash prevention categories.'}/>
             <Advantages data={performanceAdvantagesData}
                         backgroundImage={model3Red}
                         title={'Quickest Acceleration'}
                         subtitle={'Performance'}
+                        model={'Model 3'}
                         description={'Model 3 comes with the option of dual motor all-wheel drive, 20” Überturbine Wheels and Performance Brakes for total control in all weather conditions. A carbon fiber spoiler improves stability at high speeds, all allowing Model 3 to accelerate from 0-60 mph* in as little as 3.1 seconds. Chat with a Tesla Advisor to learn more about Model 3 or schedule a demo drive today.'}/>
             <Advantages data={awdAdvantagesData}
                         backgroundImage={model3Blue}
                         title={'Dual Motor'}
+                        model={'Model 3'}
                         subtitle={'All-Wheel Drive'}
                         description={'Tesla All-Wheel Drive has two independent motors for improved redundancy, each with only one moving part for minimal maintenance and maximum durability. Unlike traditional all-wheel drive systems, they digitally control torque to the front and rear wheels for far better handling and traction control.'}/>
         </>

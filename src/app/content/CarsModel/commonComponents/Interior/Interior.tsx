@@ -7,7 +7,11 @@ import teslaTopViewIcon from '../../../../../common/assets/teslaTopViewIcon.svg'
 //@ts-ignore
 import modelYInterior from '../../../../../common/assets/modelYInterior.jfif';
 
-const Interior = () => {
+type InteriorPropsType = {
+    model?: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs' | 'Solar Roof'
+}
+
+const Interior: React.FC<InteriorPropsType> = ({model}) => {
     return (
         <div className={s.mainContainer}>
             <div className={s.interiorContainer} style={{backgroundImage: `url(${modelYInterior})`}}>
@@ -22,6 +26,7 @@ const Interior = () => {
             </div>
             <TitleBlock title={'Built Around the Driver'}
                         subtitle={'Interior'}
+                        model={model}
                         description={'With an elevated seating position and low dash, the driver has a commanding view of the road ahead. The interior of Model Y is simple and clean, with a 15-inch touch screen, immersive sound system and an expansive all-glass roof that creates extra headroom and provides a seamless view of the sky.'}/>
         </div>
     );

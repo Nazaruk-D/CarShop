@@ -5,7 +5,7 @@ import Interior from "../../commonComponents/Interior/Interior";
 const AutopilotAndInterior = () => {
     return (
         <>
-            <Autopilot/>
+            <Autopilot model={'Model Y'}/>
             <Interior/>
         </>
     );

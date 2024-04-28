@@ -15,6 +15,7 @@ type AdvantagesPropsType = {
     description: string
     textColor?: 'white' | 'black'
     secondColor?: 'white' | 'black'
+    model?: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs' | 'Solar Roof'
 }
 
 const Advantages: React.FC<AdvantagesPropsType> = ({
@@ -24,7 +25,8 @@ const Advantages: React.FC<AdvantagesPropsType> = ({
                                                        subtitle,
                                                        description,
                                                        textColor,
-                                                       secondColor
+                                                       secondColor,
+                                                        model
                                                    }) => {
     return (
         <div style={{color: textColor}}>
@@ -38,7 +40,7 @@ const Advantages: React.FC<AdvantagesPropsType> = ({
                     </div>)}
                 </div>
             </div>
-            <TitleBlock title={title} subtitle={subtitle} description={description} color={textColor}
+            <TitleBlock model={model} title={title} subtitle={subtitle} description={description} color={textColor}
                         secondColor={secondColor}/>
         </div>
     );

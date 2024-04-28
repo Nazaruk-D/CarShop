@@ -4,7 +4,7 @@ import model3 from "../../../../common/assets/model3.jfif";
 import Button from "../../../../common/components/buttons/Button/Button";
 import PresentationBlock from "../../../../common/components/PresentationBlock/PresentationBlock";
 import {useNavigate} from "react-router-dom";
-import {useAppDispatch} from "../../../store/store";
+import {useAppDispatch, useAppSelector} from "../../../store/store";
 import {setActiveModel} from "../../../../features/profile/profile-reducer";
 import {routes} from "../../../routes/routes";
 
@@ -15,6 +15,7 @@ const Fade = require("react-reveal/Fade")
 const Model3 = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
+    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
 
     const onClickHandler = () => {
         dispatch(setActiveModel({value: "Model 3"}))
@@ -26,7 +27,7 @@ const Model3 = () => {
                            conditions={'Leasing starting at $349/mo'}>
             <Fade bottom>
                 <Button title={'Custom Order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
-                        onClick={() => navigate(routes.orderingModel3)}/>
+                        onClick={() => navigate(isLoggedIn ? routes.orderingModel3 : routes.login)}/>
             </Fade>
             <Fade bottom>
                 <Button title={'Demo Drive'} backgroundColor={'rgba(244, 244, 244, 0.65)'}

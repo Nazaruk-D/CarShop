@@ -47,6 +47,7 @@ const CarDesign = () => {
                         subtitle={'Exterior'}
                         textColor={'white'}
                         secondColor={'black'}
+                        model={'Model X'}
                         description={'Model X has a drag coefficient of just .24 Cd, the lowest of any production SUV on the planet. Refined aerodynamic elements work together with new wheels and tires to help you travel farther, with sharper handling and better ride comfort.'}/>
             <CollageBlock data={data}/>
         </div>

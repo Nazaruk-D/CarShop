@@ -4,13 +4,14 @@ import modelS from '../../../../common/assets/modelS.jfif'
 import PresentationBlock from "../../../../common/components/PresentationBlock/PresentationBlock";
 import Button from "../../../../common/components/buttons/Button/Button";
 import {useNavigate} from "react-router-dom";
-import {useAppDispatch} from "../../../store/store";
+import {useAppDispatch, useAppSelector} from "../../../store/store";
 import {setActiveModel} from "../../../../features/profile/profile-reducer";
 import {routes} from "../../../routes/routes";
 
 const ModelS = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
+    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
 
     const onClickHandler = () => {
         dispatch(setActiveModel({value: "Model S"}))
@@ -19,8 +20,8 @@ const ModelS = () => {
     return (
         <PresentationBlock color={'black'} backgroundImage={modelS} model={'Model S'} conditions={'Schedule a Demo Drive'}>
             <Button title={'Custom Order'} backgroundColor={'rgba(23, 26, 32, 0.8)'} color={'white'}
-                    onClick={() => navigate(routes.orderingModelS)}/>
-            <Button title={'View Inventory'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
+                    onClick={() => navigate(isLoggedIn ? routes.orderingModelS : routes.login)}/>
+            <Button title={'Demo Drive'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
                     color={'rgba(23, 26, 32, 0.8)'} onClick={onClickHandler}/>
         </PresentationBlock>
     );

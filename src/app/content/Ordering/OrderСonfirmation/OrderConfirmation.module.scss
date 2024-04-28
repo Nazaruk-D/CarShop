@@ -5,7 +5,7 @@
   @include flex(column, flex-start, flex-start, wrap);
   width: 100%;
   min-height: 100%;
-  padding: 20px;
+  padding: 0px 40px 20px;
   box-sizing: border-box;
 
   .titleBlock {
@@ -16,6 +16,7 @@
   .carInfoBlock {
     @include flex(column, flex-start, flex-start, wrap);
     width: 100%;
+
 
     .totalBlock {
       @include flex(row, space-between, flex-start, wrap);

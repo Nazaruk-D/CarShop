@@ -21,6 +21,7 @@ const Comfort = () => {
         <div className={s.mainContainer}>
             <TitleBlock title={'A Place For Everything'}
                         subtitle={'Utility'}
+                        model={'Model Y'}
                         description={'Model Y provides maximum versatility—able to carry 7 passengers and their cargo. Each second row seat folds flat independently, creating flexible storage for skis, furniture, luggage and more. The liftgate opens to a low trunk floor that makes loading and unloading easy and quick. Chat with a Tesla Advisor to learn more about Model Y or schedule a demo drive today.'}/>
             <div className={s.comfortContainer}>
                 <div className={s.imageBlock}>

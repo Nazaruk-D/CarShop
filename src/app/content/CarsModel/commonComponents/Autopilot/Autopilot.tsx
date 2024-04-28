@@ -6,7 +6,11 @@ import Technologies from "../../../../../common/components/Technologies/Technolo
 import autopilotImage from '../../../../../common/assets/autopilotImage.jfif';
 import cameraLens from '../../../../../common/assets/cameraLens.png';
 
-const Autopilot = () => {
+type AutopilotPropsType = {
+    model?: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs' | 'Solar Roof'
+}
+
+const Autopilot: React.FC<AutopilotPropsType> = ({model}) => {
     return (
         <div className={s.mainContainer}>
             <div className={s.autopilotContainer} style={{backgroundImage: `url(${autopilotImage})`}}>
@@ -21,6 +25,7 @@ const Autopilot = () => {
             </div>
             <TitleBlock title={'Future of Driving'}
                         subtitle={'Autopilot'}
+                        model={model}
                         description={'Autopilot\'s advanced safety and convenience features are designed to assist you with the most burdensome parts of driving.'}/>
         </div>
     );

@@ -102,6 +102,7 @@ const SmartControl = () => {
                 title={'Go Anywhere'}
                 backgroundImage={PlaidRangeWebDesktop8mb}
                 characteristicsData={characteristicsData}
+                model={'Model S'}
                 description={'With up to 405 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.'}/>
             <Features data={travelData}/>
             <Safety
@@ -110,8 +111,9 @@ const SmartControl = () => {
                 backgroundImage={ModelSSafetyHeroDesktopGlobal}
                 backgroundColor={'white'}
                 flexDirection={'row-reverse'}
+                model={'Model S'}
                 description={'Model S is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack for incredible occupant protection and low rollover risk. Every new Model S includes Tesla’s latest active safety features, such as Automatic Emergency Braking, at no extra cost.'}/>
-            <Autopilot/>
+            <Autopilot model={'Model S'}/>
             <Features data={featuresData}/>
         </>
     );

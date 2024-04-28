@@ -6,6 +6,9 @@ import Characteristics, {
     CharacteristicsPropsType
 } from "../../../../../common/components/Characteristics/Characteristics";
 import VideoPlayer from "../../../../../common/components/VideoPlayer/VideoPlayer";
+import {routes} from "../../../../routes/routes";
+import {useNavigate} from "react-router-dom";
+import {useAppSelector} from "../../../../store/store";
 
 const Fade = require("react-reveal/Fade")
 
@@ -20,6 +23,7 @@ type SafetyPropsType = {
     characteristicsData?: CharacteristicsPropsType[]
     backgroundColor?: string
     backgroundSize?: string
+    model?: 'Model Y' | 'Model 3' | 'Model X' | 'Model S' | 'Solar for Existing Roofs' | 'Solar Roof'
 }
 
 const Safety: React.FC<SafetyPropsType> = ({
@@ -31,10 +35,32 @@ const Safety: React.FC<SafetyPropsType> = ({
                                                description,
                                                characteristicsData,
                                                backgroundColor,
-                                               backgroundSize
+                                               backgroundSize,
+                                               model
                                            }) => {
 
     const mobileDirection = window.innerWidth < 1200 ? {} : {flexDirection}
+    const navigate = useNavigate()
+    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
+
+    let route: string;
+    switch (model) {
+        case 'Model Y':
+            route = routes.orderingModelY;
+            break;
+        case 'Model X':
+            route = routes.orderingModelX;
+            break;
+        case 'Model S':
+            route = routes.orderingModelS;
+            break;
+        case 'Model 3':
+            route = routes.orderingModel3;
+            break;
+        default:
+            route = routes.orderingModelY;
+            break;
+    }
 
     return (
         <div className={s.mainContainer}>
@@ -82,8 +108,7 @@ const Safety: React.FC<SafetyPropsType> = ({
                             <Fade bottom>
                                 <div className={s.buttons}>
                                     <PrimaryButton title={'Order now'} color={'black'} secondColor={'white'}
-                                                   onClick={() => {
-                                                   }}/>
+                                                   onClick={() => navigate(isLoggedIn ? route : routes.login)}/>
                                     <Button title={'View Inventory'} backgroundColor={'rgba(244, 244, 244, 0.65)'}
                                             color={'rgba(23, 26, 32, 0.8)'} onClick={() => {
                                     }}/>

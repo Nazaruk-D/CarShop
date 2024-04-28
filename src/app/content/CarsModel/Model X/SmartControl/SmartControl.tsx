@@ -103,6 +103,7 @@ const SmartControl = () => {
                 backgroundSize={"cover"}
                 backgroundImage={ModelXRangeHeroDesktopLHD}
                 characteristicsData={characteristicsData}
+                model={'Model X'}
                 description={'With up to 348 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model X or schedule a demo drive today.'}/>
             <Features data={travelData}/>
             <Safety
@@ -111,8 +112,9 @@ const SmartControl = () => {
                 backgroundImage={ModelXSafetyHeroDesktop}
                 backgroundColor={'white'}
                 flexDirection={'row-reverse'}
+                model={'Model X'}
                 description={'Model X is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack that enable exceptional occupant protection and low rollover risk. Every Model X includes Tesla’s latest active safety features, such as Automatic Emergency Braking, at no extra cost.'}/>
-            <Autopilot/>
+            <Autopilot model={'Model X'}/>
             <Features data={featuresData}/>
         </>
     );

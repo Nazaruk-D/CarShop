@@ -65,7 +65,7 @@ const PowerAndElectricity = () => {
 
     return (
         <>
-            <Advantages data={advantagesData} backgroundImage={ModelXPerformanceHeroDesktopLHD} title={'Beyond Ludicrous'} subtitle={'Plaid'} description={'With the most power and quickest acceleration of any SUV, Model X Plaid is the highest performing SUV ever built. Updated battery architecture enables both Long Range and Plaid configurations to complete back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model X or schedule a demo drive today.'}/>
+            <Advantages model={'Model X'} data={advantagesData} backgroundImage={ModelXPerformanceHeroDesktopLHD} title={'Beyond Ludicrous'} subtitle={'Plaid'} description={'With the most power and quickest acceleration of any SUV, Model X Plaid is the highest performing SUV ever built. Updated battery architecture enables both Long Range and Plaid configurations to complete back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model X or schedule a demo drive today.'}/>
             <ElectricPowerTrain data={electricPowerTrainData} title={"Electric Powertrain"} description={"Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions."}/>
             <Safety backgroundImage={ModelXUtilityHeroDesktopLHD}
                     subtitle={'Utility'}
@@ -74,6 +74,7 @@ const PowerAndElectricity = () => {
                     characteristicsData={characteristicsData}
                     backgroundSize={"cover"}
                     backgroundColor={"white"}
+                    model={'Model X'}
                     description={'With ample storage and 5,000 lbs of towing capacity, Model X is built for maximum utility. Front doors open and close automatically, Falcon Wing rear doors allow for easier loading and a trailer hitch comes standard, so you can bring your gear with you wherever you go.'}/>
 
         </>

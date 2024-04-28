@@ -40,6 +40,7 @@ const CarDesign = () => {
     return (
         <div className={s.carDesignContainer}>
             <Advantages
+                model={'Model S'}
                 data={[]}
                 backgroundImage={ModelSPerformanceHero}
                 title={'Exterior'}

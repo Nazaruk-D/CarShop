@@ -1,4 +1,4 @@
-export type modelDataType = modelDataTypeChild[];
+export type ModelData = modelDataTypeChild[];
 export type ModelDataTypeChildCharacteristics = {
     topText: string;
     measurement: string;

@@ -48,6 +48,7 @@ const AdvantagesAndRange = () => {
             <Advantages data={advantagesData}
                         backgroundImage={modelYRed}
                         title={'Dual Motor'}
+                        model={'Model Y'}
                         subtitle={'All-Wheel Drive'}
                         description={'Tesla All-Wheel Drive has two ultra-responsive, independent electric motors that digitally control torque to the front and rear wheels—for far better handling, traction and stability control. Model Y is capable in rain, snow, mud and off-road.'}/>
             <Safety subtitle={'Range'}
