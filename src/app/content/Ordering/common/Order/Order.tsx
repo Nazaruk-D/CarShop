@@ -7,6 +7,8 @@ import {getFutureDate} from "../../../../../utils/getFutureDate";
 import {OrderType} from "../../../../../types/OrderType";
 import OrderConfirmation from "../../OrderСonfirmation/OrderСonfirmation";
 import {useModal} from "../../../../../hooks/useModal";
+import {useAppSelector} from "../../../../store/store";
+import SuccessfulOrder from "../../SuccessfulOrder/SuccessfulOrder";
 
 type OrderPropsType = {
     title: string
@@ -19,6 +21,9 @@ const Order: React.FC<OrderPropsType> = ({title, active}) => {
         threshold: 0,
     });
     const {orderConfirmationModal, toggleOrderConfirmationModal} = useModal()
+    const {successfulOrderModal, toggleSuccessfulOrderModal} = useModal()
+    const orderInformation = useAppSelector(s => s.order.order)
+    const orderTotalPrice = useAppSelector(s => s.order.totalPrice)
 
     useEffect(() => {
         if (inView) {
@@ -28,14 +33,20 @@ const Order: React.FC<OrderPropsType> = ({title, active}) => {
 
     const deliveryData = getFutureDate(2)
 
+    const onClickHandler = () => {
+        console.log(orderInformation, orderTotalPrice)
+        toggleOrderConfirmationModal()
+    }
+
     return (
         <>
             <div className={s.orderContainer} ref={ref}>
                 <h2 className={s.title}>Order your {title}</h2>
                 <p>Est. Delivery: {deliveryData}</p>
-                <DetailsButton title={"Continue to Payment"} onClick={() => toggleOrderConfirmationModal()}/>
+                <DetailsButton title={"Continue to Payment"} onClick={onClickHandler}/>
             </div>
-            {orderConfirmationModal && <OrderConfirmation setModalActive={toggleOrderConfirmationModal} hide={toggleOrderConfirmationModal}/>}
+            {orderConfirmationModal && <OrderConfirmation setSecondModalActive={toggleSuccessfulOrderModal} setModalActive={toggleOrderConfirmationModal} hide={toggleOrderConfirmationModal}/>}
+            {successfulOrderModal && <SuccessfulOrder setModalActive={toggleSuccessfulOrderModal} hide={toggleSuccessfulOrderModal}/>}
         </>
     );
 };
