@@ -8,11 +8,10 @@ import black from "../../../../common/assets/orders/common/color/Paint_Black.avi
 import red from "../../../../common/assets/orders/common/color/Paint_Red.avif";
 import blackInterior from "../../../../common/assets/orders/common/interior_color/Interior_Black.avif";
 import whiteInterior from "../../../../common/assets/orders/common/interior_color/Interior_White.avif";
-import {modelDataType} from "../../../../types/DataType";
+import {ModelData} from "../../../../types/DataType";
 import {getFutureDate} from "../../../../utils/getFutureDate";
 
-
-export const modelYData: modelDataType = [
+export const modelYData: ModelData = [
     {
         model: "Model Y",
         delivery: getFutureDate(2),
@@ -86,10 +85,10 @@ export const modelYData: modelDataType = [
         ],
     },
     {
-        model: "Model 3 Performance",
+        model: "Model Y Performance",
         delivery: getFutureDate(2),
         title: "Dual Motor All-Wheel Drive",
-        price: 53990,
+        price: 63990,
         characteristics: [
             {
                 topText: "303", measurement: "mi", bottomText: "Range (EPA est.)", color: "black"
@@ -103,8 +102,22 @@ export const modelYData: modelDataType = [
         ],
         wheels: [
             {
-                type: "20’’ Überturbine Wheels",
+                type: "19’’ Gemini Wheels",
                 price: 0,
+                season: "All-Season Tires",
+                range: "Range (EPA est.) : 330mi",
+                img: geminiWheels19
+            },
+            {
+                type: "20’’ Induction Wheels",
+                price: 2000,
+                season: "All-Season Tires",
+                range: "Range (est.) : 318mi",
+                img: inductionWheels20
+            },
+            {
+                type: "20’’ Überturbine Wheels",
+                price: 3000,
                 season: "Summer Tires",
                 range: "Range (EPA est.) : 315mi",
                 img: uberturbineWheels21

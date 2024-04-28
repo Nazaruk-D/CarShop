@@ -8,11 +8,11 @@ import black from "../../../../common/assets/orders/common/color/Paint_Black.avi
 import red from "../../../../common/assets/orders/common/color/Paint_Red.avif";
 import blackInterior from "../../../../common/assets/orders/common/interior_color/Interior_Black.avif";
 import whiteInterior from "../../../../common/assets/orders/common/interior_color/Interior_White.avif";
-import {modelDataType} from "../../../../types/DataType";
+import {ModelData} from "../../../../types/DataType";
 import {getFutureDate} from "../../../../utils/getFutureDate";
 
 
-export const model3Data: modelDataType = [
+export const model3Data: ModelData = [
     {
         model: "Model 3",
         delivery: getFutureDate(2),
@@ -103,8 +103,22 @@ export const model3Data: modelDataType = [
         ],
         wheels: [
             {
-                type: "20’’ Überturbine Wheels",
+                type: "18’’ Aero Wheels",
                 price: 0,
+                season: "All-Season Tires",
+                range: "Range (EPA est.) : 272mi",
+                img: wheels18aero
+            },
+            {
+                type: "19’’ Sport Wheels",
+                price: 1500,
+                season: "All-Season Tires",
+                range: "Range (est.) : 267mi",
+                img: wheels19sport
+            },
+            {
+                type: "20’’ Überturbine Wheels",
+                price: 2000,
                 season: "Summer Tires",
                 range: "Range (EPA est.) : 315mi",
                 img: wheels20sport

@@ -8,11 +8,11 @@ import red from "../../../../common/assets/orders/common/color/Paint_Red.avif";
 import blackInterior from "../../../../common/assets/orders/common/interior_color/Interior_Black.avif";
 import whiteInterior from "../../../../common/assets/orders/common/interior_color/Interior_White.avif";
 import creamInterior from "../../../../common/assets/orders/common/interior_color/Interior_Cream.avif";
-import {modelDataType} from "../../../../types/DataType";
+import {ModelData} from "../../../../types/DataType";
 import {getFutureDate} from "../../../../utils/getFutureDate";
 
 
-export const modelXData: modelDataType = [
+export const modelXData: ModelData = [
     {
         model: "Model X",
         delivery: getFutureDate(2),
