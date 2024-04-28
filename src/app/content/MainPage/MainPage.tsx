@@ -13,6 +13,10 @@ import PresentationBlock from "../../../common/components/PresentationBlock/Pres
 //@ts-ignore
 import HomepageVideo from "../../../common/assets/video/Homepage-video.mp4"
 import PrimaryButton from "../../../common/components/buttons/PrimaryButton/PrimaryButton";
+import {useNavigate} from "react-router-dom";
+import {routes} from "../../routes/routes";
+import {useModal} from "../../../hooks/useModal";
+import RecommendationQuestionnaire from "../Ordering/RecommendationQuestionnaire/RecommendationQuestionnaire";
 
 const cars = ['Experience Tesla', 'Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
 const Fade = require("react-reveal/Fade")
@@ -20,6 +24,12 @@ const Fade = require("react-reveal/Fade")
 const MainPage = () => {
     const [scroll, setScroll] = useState(0)
     let shouldWait = false
+
+    const navigate = useNavigate()
+
+    const onClickHandler = () => {
+        navigate(routes.drive)
+    }
 
     const scrollUp = () => {
         if (!shouldWait) {
@@ -85,22 +95,32 @@ const MainPage = () => {
         }, 210)
     }, [scroll])
 
+    const {recommendationQuestionnaireModal, toggleRecommendationQuestionnaireModal} = useModal()
+
     return (
-        <div className={s.contentContainer}>
-            <Header position={'fixed'} color={scroll > 1 ? 'black' : 'white'}/>
-            <PresentationBlock backgroundImage={HomepageVideo} color={'white'} conditions={'Schedule a Demo Drive Today'} model={'Experience Tesla'}>
-                <Fade bottom>
-                    <PrimaryButton title={'Demo Drive'} color={'white'} secondColor={'black'} onClick={()=>{}}/>
-                </Fade>
-            </PresentationBlock>
-            <Model3/>
-            <ModelY/>
-            <ModelS/>
-            <ModelX/>
-            <SolarPanels/>
-            <SolarRoof/>
-            <Accessories/>
-        </div>
+        <>
+            <div className = {s.contentContainer}>
+                <Header position = {'fixed'} color = {scroll > 1 ? 'black' : 'white'}/>
+                <PresentationBlock backgroundImage = {HomepageVideo} color = {'white'}
+                                   conditions = {'Schedule a Demo Drive Today'} model = {'Experience Tesla'}>
+                    <Fade bottom>
+                        <PrimaryButton title = {'Demo Drive'} color = {'white'} secondColor = {'black'}
+                                       onClick = {onClickHandler}/>
+                        <PrimaryButton title = {'Get Recommendation'} color = {'white'} secondColor = {'black'}
+                                       onClick = {toggleRecommendationQuestionnaireModal}/>
+                    </Fade>
+                </PresentationBlock>
+                <Model3/>
+                <ModelY/>
+                <ModelS/>
+                <ModelX/>
+                <SolarPanels/>
+                <SolarRoof/>
+                <Accessories/>
+            </div>
+            {recommendationQuestionnaireModal && <RecommendationQuestionnaire setModalActive={toggleRecommendationQuestionnaireModal}
+                                                      hide={toggleRecommendationQuestionnaireModal}/>}
+        </>
     );
 };
 
