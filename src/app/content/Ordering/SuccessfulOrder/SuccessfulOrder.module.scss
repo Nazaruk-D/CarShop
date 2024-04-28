@@ -1,0 +1,25 @@
+@import '../../../../common/styles/sass/mixins';
+
+
+.successfulOrderContainer {
+  @include flex(column, flex-start, flex-start, wrap);
+  width: 100%;
+  min-height: 100%;
+  padding: 0px 40px 20px;
+  box-sizing: border-box;
+
+  .titleBlock {
+    @include flex(column, flex-start, center, wrap);
+    width: 100%;
+  }
+
+  .infoBlock {
+    @include flex(column, flex-start, flex-start, wrap);
+    width: 100%;
+  }
+
+  .buttonBlock {
+    @include flex(column, flex-start, center, wrap);
+    width: 100%;
+  }
+}

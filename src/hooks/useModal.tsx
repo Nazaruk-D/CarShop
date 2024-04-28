@@ -9,6 +9,8 @@ export const useModal = () => {
     const [editPasswordModal, setEditPasswordModal] = useState(false)
     const [deleteUserModal, setDeleteUserModal] = useState(false)
     const [orderConfirmationModal, setOrderConfirmationModal] = useState(false)
+    const [successfulOrderModal, setSuccessfulOrderModal] = useState(false)
+    const [recommendationQuestionnaireModal, setRecommendationQuestionnaireModal] = useState(false)
 
 
     function toggleEditNameModal() {
@@ -34,6 +36,14 @@ export const useModal = () => {
         setOrderConfirmationModal(!orderConfirmationModal)
     }
 
+    function toggleSuccessfulOrderModal() {
+        setSuccessfulOrderModal(!successfulOrderModal)
+    }
+
+    function toggleRecommendationQuestionnaireModal() {
+        setRecommendationQuestionnaireModal(!recommendationQuestionnaireModal)
+    }
+
 
     return {
         editNameModal,
@@ -43,6 +53,8 @@ export const useModal = () => {
         editPasswordModal,
         deleteUserModal,
         orderConfirmationModal,
+        successfulOrderModal,
+        recommendationQuestionnaireModal,
 
         toggleEditNameModal,
         toggleEditAddressModal,
@@ -51,5 +63,7 @@ export const useModal = () => {
         togglePasswordModal,
         toggleDeleteUserModal,
         toggleOrderConfirmationModal,
+        toggleSuccessfulOrderModal,
+        toggleRecommendationQuestionnaireModal
     }
 }
