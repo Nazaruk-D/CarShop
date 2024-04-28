@@ -3,6 +3,9 @@ import PresentationBlock from "../../../../../common/components/PresentationBloc
 import Characteristics from "../../../../../common/components/Characteristics/Characteristics";
 import PrimaryButton from "../../../../../common/components/buttons/PrimaryButton/PrimaryButton";
 import s from "./FirstBlock.module.scss"
+import {routes} from "../../../../routes/routes";
+import {useNavigate} from "react-router-dom";
+import {useAppSelector} from "../../../../store/store";
 const Fade = require("react-reveal/Fade")
 
 export type FirstBlockPropsType = {
@@ -19,6 +22,28 @@ export type FirstBlockType = {
 }
 
 const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, conditions, backgroundImage}) => {
+    const navigate = useNavigate()
+    const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
+
+    let route: string;
+    switch (model) {
+        case 'Model Y':
+            route = routes.orderingModelY;
+            break;
+        case 'Model X':
+            route = routes.orderingModelX;
+            break;
+        case 'Model S':
+            route = routes.orderingModelS;
+            break;
+        case 'Model 3':
+            route = routes.orderingModel3;
+            break;
+        default:
+            route = routes.orderingModelY;
+            break;
+    }
+
     return (
         <PresentationBlock backgroundImage={backgroundImage} model={model} conditions={conditions}>
             <div className={s.characteristics}>
@@ -33,7 +58,7 @@ const FirstBlock: React.FC<FirstBlockPropsType> = ({model, characteristicsData, 
             </div>
             <div className={s.button}>
                 <Fade bottom>
-                    <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={()=>{}}/>
+                    <PrimaryButton title={'Order now'} color={'white'} secondColor={'black'} onClick={() => navigate(isLoggedIn ? route : routes.login)}/>
                 </Fade>
             </div>
         </PresentationBlock>
