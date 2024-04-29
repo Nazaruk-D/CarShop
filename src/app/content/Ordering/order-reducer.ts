@@ -1,11 +1,12 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {OrderType} from "../../../types/OrderType";
 
 const slice = createSlice({
     name: "order",
     initialState: {
         order: {} as OrderType,
-        totalPrice: 0
+        totalPrice: 0,
+        orderModalActive: false
     },
     reducers: {
         setOrderState: (state, action) => {
@@ -16,11 +17,14 @@ const slice = createSlice({
         },
         clearModelTitle: (state) => {
             state.order.model.title = ''
+        },
+        toggleOrderModalStatus: (state) => {
+            state.orderModalActive = !state.orderModalActive
         }
     },
 });
 
 export const orderReducer = slice.reducer;
-export const {totalSumAC, setOrderState, clearModelTitle} = slice.actions;
+export const {totalSumAC, setOrderState, clearModelTitle, toggleOrderModalStatus} = slice.actions;
 
 

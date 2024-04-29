@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import s from './VideoPlayer.module.scss'
-
+import {useAppSelector} from "../../../app/store/store";
 
 type VideoPlayerPropsType = {
     link: string
@@ -12,6 +12,7 @@ type VideoPlayerPropsType = {
 const VideoPlayer: React.FC<VideoPlayerPropsType> = ({link, setDuration, id, style}) => {
     let videoRef: any = useRef()
     let refDuration: number;
+    const orderModalActive = useAppSelector(s => s.order.orderModalActive);
 
     useEffect(() => {
         refDuration = videoRef.current.duration
@@ -20,6 +21,15 @@ const VideoPlayer: React.FC<VideoPlayerPropsType> = ({link, setDuration, id, sty
         }
     }, [id])
 
+    useEffect(() => {
+        if (videoRef.current) {
+            if (!orderModalActive) {
+                videoRef.current.play(); // Воспроизводим видео, если isPlaying === true
+            } else {
+                videoRef.current.pause(); // Останавливаем видео, если isPlaying === false
+            }
+        }
+    }, [orderModalActive]);
 
     return (
         <video

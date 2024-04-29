@@ -17,6 +17,8 @@ import {useNavigate} from "react-router-dom";
 import {routes} from "../../routes/routes";
 import {useModal} from "../../../hooks/useModal";
 import RecommendationQuestionnaire from "../Ordering/RecommendationQuestionnaire/RecommendationQuestionnaire";
+import {useAppDispatch} from "../../store/store";
+import {toggleOrderModalStatus} from "../Ordering/order-reducer";
 
 const cars = ['Experience Tesla', 'Model 3', 'Model Y', 'Model S', 'Model X', 'Solar Panels', 'Solar Roof', 'Accessories']
 const Fade = require("react-reveal/Fade")
@@ -26,9 +28,17 @@ const MainPage = () => {
     let shouldWait = false
 
     const navigate = useNavigate()
+    const dispatch = useAppDispatch()
 
-    const onClickHandler = () => {
+    const {recommendationQuestionnaireModal, toggleRecommendationQuestionnaireModal} = useModal()
+
+    const demoDriveButtonHandler = () => {
         navigate(routes.drive)
+    }
+
+    const getRecommendationButtonHandler = () => {
+        toggleRecommendationQuestionnaireModal()
+        dispatch(toggleOrderModalStatus())
     }
 
     const scrollUp = () => {
@@ -84,7 +94,6 @@ const MainPage = () => {
         }
     }, [scroll, cars])
 
-
     useEffect(() => {
         setTimeout(function () {
             scroller.scrollTo(cars[scroll], {
@@ -95,8 +104,6 @@ const MainPage = () => {
         }, 210)
     }, [scroll])
 
-    const {recommendationQuestionnaireModal, toggleRecommendationQuestionnaireModal} = useModal()
-
     return (
         <>
             <div className = {s.contentContainer}>
@@ -105,9 +112,9 @@ const MainPage = () => {
                                    conditions = {'Schedule a Demo Drive Today'} model = {'Experience Tesla'}>
                     <Fade bottom>
                         <PrimaryButton title = {'Demo Drive'} color = {'white'} secondColor = {'black'}
-                                       onClick = {onClickHandler}/>
+                                       onClick = {demoDriveButtonHandler}/>
                         <PrimaryButton title = {'Get Recommendation'} color = {'white'} secondColor = {'black'}
-                                       onClick = {toggleRecommendationQuestionnaireModal}/>
+                                       onClick = {getRecommendationButtonHandler}/>
                     </Fade>
                 </PresentationBlock>
                 <Model3/>

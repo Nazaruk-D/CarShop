@@ -56,7 +56,7 @@ const getOptionsType = (values: InitialValues) => {
 }
 
 export const getRecommendedParameters = (values: InitialValues) => {
-    const mod = values.modification ? ` ${values.modification}` : ''
+    // const mod = values.modification ? ` ${values.modification}` : ''
     // const currentModel = models[values.model as ModelsKeys[number]].find(el => el.model === `${values.model}${mod}`)
     const currentModel = models[values.model as ModelsKeys[number]][values.modification ? 1 : 0]
 

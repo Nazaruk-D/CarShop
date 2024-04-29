@@ -4,7 +4,7 @@ import s from './RecommendationQuestionnaire.module.scss'
 import {useFormik} from "formik";
 import {routes} from "../../../routes/routes";
 import {useNavigate} from "react-router-dom";
-import {setOrderState} from "../order-reducer";
+import {setOrderState, toggleOrderModalStatus} from "../order-reducer";
 import {useAppDispatch} from "../../../store/store";
 import {getRecommendedParameters, initialValues} from "./RecommendationQuestionnaire.helpers";
 
@@ -40,6 +40,10 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
             setQuestionNumber(questionNumber - 1)
         }
     }
+    const hideHandler = () => {
+        hide()
+        dispatch(toggleOrderModalStatus())
+    }
 
     const formik = useFormik({
         initialValues: initialValues,
@@ -74,6 +78,7 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
         onSubmit: (values, {resetForm}) => {
             const recommendedParameters = getRecommendedParameters(values)
             dispatch(setOrderState(recommendedParameters))
+            dispatch(toggleOrderModalStatus())
 
             switch (values.model) {
                 case "Model 3": navigate(routes.orderingModel3)
@@ -93,7 +98,7 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
     });
 
     return (
-        <Modal setModalActive = {setModalActive} hide = {hide}>
+        <Modal setModalActive = {setModalActive} hide = {hideHandler}>
             <div className = {s.successfulOrderContainer}>
                 <div className = {s.titleBlock}>
                     <h1>We are inviting you to fill out a mini-questionnaire to draw up a prefect recommendation in
