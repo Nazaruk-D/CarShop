@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {OrderType} from "../../../types/OrderType";
-import {orderAPI} from "../../../api/orderAPI";
+import {GetUserOrderType, orderAPI} from "../../../api/orderAPI";
 import {setAppStatusAC} from "../../app-reducer";
 import {AxiosError} from "axios/index";
 import {handleServerNetworkError} from "../../../utils/error-utils";
@@ -14,6 +14,26 @@ export const createOrderTC = createAsyncThunk(('order/createOrder'), async (para
             console.log(res)
             thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
             return
+        } else {
+            return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
+        }
+    } catch (err: any) {
+        console.log(err)
+        thunkAPI.dispatch(setAppStatusAC({status: 'failed'}))
+        const error: AxiosError = err.response.data
+        handleServerNetworkError(error, thunkAPI.dispatch)
+        return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
+    }
+});
+
+export const getUserOrdersTC = createAsyncThunk(('order/getUserOrders'), async (param: GetUserOrderType, thunkAPI) => {
+    thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
+    try {
+        const res = await orderAPI.getUserOrders(param)
+        if (res.status === 200) {
+            console.log(res)
+            thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
+            return {value: res.data}
         } else {
             return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
         }
@@ -46,7 +66,7 @@ const slice = createSlice({
         toggleOrderModalStatus: (state) => {
             state.orderModalActive = !state.orderModalActive
         }
-    },
+    }
 });
 
 export const orderReducer = slice.reducer;

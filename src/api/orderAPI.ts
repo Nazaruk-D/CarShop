@@ -3,6 +3,9 @@ import {instance} from "./instance";
 export const orderAPI = {
     createOrder(orderData: CreateOrderType) {
         return instance.put(`order/createOrder`, orderData)
+    },
+    getUserOrders({userId}: GetUserOrderType) {
+        return instance.get(`order/getUserOrders?user_id=${userId}`)
     }
 }
 
@@ -20,5 +23,8 @@ export type CreateOrderType = {
     mobileConnector: {status: boolean, price: number | null}
     userId: number | null
     totalPrice: number | null
+}
+export type GetUserOrderType = {
+    userId: number | null
 }
 

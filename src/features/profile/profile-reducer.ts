@@ -4,6 +4,8 @@ import {setAppStatusAC} from "../../app/app-reducer";
 import {AxiosError} from "axios";
 import {handleServerNetworkError} from "../../utils/error-utils";
 import {profileAPI, ResetUserPasswordType, UserType} from "../../api/profileAPI";
+import {getDemoDriveListTC} from "./MainBlock/DemoDrivePanel/demo-drive-reducer";
+import {getUserOrdersTC} from "../../app/content/Ordering/order-reducer";
 
 
 export const fetchProfileTC = createAsyncThunk(('profile/me'), async (param, thunkAPI) => {
@@ -82,7 +84,8 @@ const slice = createSlice({
             updatedAt: null,
 
         } as UserType,
-        activeModel: "Model S" as ModelType
+        activeModel: "Model S" as ModelType,
+        orders: [] as UserOrderType[]
     },
     reducers: {
         setProfileDataAC: (state, action) => {
@@ -106,6 +109,11 @@ const slice = createSlice({
             state.activeModel = action.payload.value
         },
     },
+    extraReducers: builder => {
+        builder.addCase(getUserOrdersTC.fulfilled, (state, action) => {
+            state.orders = action.payload.value.data
+        })
+    }
 });
 
 export const profileReducer = slice.reducer;
@@ -113,3 +121,22 @@ export const {setProfileDataAC, clearProfileDataAC, setActiveModel} = slice.acti
 
 
 export type ModelType = "Model S" | "Model 3" | "Model X" | "Model Y" | "Cybertruck" | "Solar Roof" | "Solar Panels"
+
+export type UserOrderType = {
+        id: number
+        model: string
+        color: string
+        interiorColor: string
+        seatingLayout: string
+        autopilot: number
+        steeringControl: string
+        towHitch: boolean
+        selfDriving: boolean
+        wallConnector: boolean
+        mobileConnector: boolean
+        createdAt: string
+        updatedAt: string
+        status: string
+        total_price: number
+}
+
