@@ -24,9 +24,9 @@ const VideoPlayer: React.FC<VideoPlayerPropsType> = ({link, setDuration, id, sty
     useEffect(() => {
         if (videoRef.current) {
             if (!orderModalActive) {
-                videoRef.current.play(); // Воспроизводим видео, если isPlaying === true
+                videoRef.current.play();
             } else {
-                videoRef.current.pause(); // Останавливаем видео, если isPlaying === false
+                videoRef.current.pause();
             }
         }
     }, [orderModalActive]);

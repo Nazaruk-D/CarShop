@@ -114,8 +114,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                         <div className = {s.inputsContainer}>
                             {questionNumber === 1 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>1. Do you often go on trips with your family?</span>
-                                <select {...formik.getFieldProps('model')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('model')} value={formik.values.model}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "Model X">Often</option>
@@ -126,8 +126,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 2 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>2. Is high performance and mobility important to you (to the prejudices of range)?</span>
-                                <select {...formik.getFieldProps('modification')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('modification')} value={formik.values.modification}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "Performance">Yes</option>
@@ -136,8 +136,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 3 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>3. What car color do you prefer?</span>
-                                <select {...formik.getFieldProps('color')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('color')} value={formik.values.color}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "Pearl White Multi-Coat">White</option>
@@ -149,8 +149,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 4 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>4. Do you prefer dynamic handling and a high degree of controllability, or are you a more into comfortable and smooth ride?</span>
-                                <select {...formik.getFieldProps('wheels')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('wheels')} value={formik.values.wheels}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "advanced">Controllability</option>
@@ -159,8 +159,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 5 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>5. Do you live in a country with a hot climate?</span>
-                                <select {...formik.getFieldProps('interiorColor')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('interiorColor')} value={formik.values.interiorColor}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "Black and White">Yes</option>
@@ -169,8 +169,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 6 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>6. Do you plan to use the autopilot system? If so, would you prefer a full self-driving system or an autopilot with advanced cruise control and lane-keeping assistance?</span>
-                                <select {...formik.getFieldProps('autopilot')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('autopilot')} value={formik.values.autopilot}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "fsd">Full-self-driving system</option>
@@ -180,8 +180,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 7 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>7. Do you live in a private house?</span>
-                                <select {...formik.getFieldProps('wallConnector')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('wallConnector')} value={formik.values.wallConnector}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "true">Yes</option>
@@ -190,8 +190,8 @@ const RecommendationQuestionnaire: FC<RecommendationQuestionnairePropType> = ({s
                             </div>}
                             {questionNumber === 8 && <div className = {s.inputBlock}>
                                 <span className = {s.label}>8. Do you plan to charge the car from charging stations or from home wall charger?</span>
-                                <select {...formik.getFieldProps('mobileConnector')}>
-                                    <option disabled selected value = "" label = "Choose your answer">Choose your
+                                <select {...formik.getFieldProps('mobileConnector')} value={formik.values.mobileConnector}>
+                                    <option disabled value = "" label = "Choose your answer">Choose your
                                                                                                       answer
                                     </option>
                                     <option value = "true">Yes</option>
