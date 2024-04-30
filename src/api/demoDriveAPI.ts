@@ -8,7 +8,7 @@ export const demoDriveAPI = {
     getDemoDriveOrders({limit, page, model = ''}:GetDemoDriveOrdersType) {
         return instance.get(`demo-drive/getDemoDriveOrders?limit=${limit}&page=${page}&model=${model}`)
     },
-    createDemoDriveOrder(orderData: CreateOrderType) {
+    createDemoDriveOrder(orderData: CreateDemoOrderType) {
         return instance.put(`demo-drive/createDemoDriveOrder`, orderData)
     },
 }
@@ -25,7 +25,7 @@ export type ChangeStatusType = {
     // callback: () => Promise<void>;
     callback: any;
 }
-export type CreateOrderType = {
+export type CreateDemoOrderType = {
     model: null | string
     email: null | string
     firstName: null | string

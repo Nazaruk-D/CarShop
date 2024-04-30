@@ -1,8 +1,9 @@
 import React, {FC} from 'react';
-import {useAppSelector} from "../../../store/store";
+import {useAppDispatch, useAppSelector} from "../../../store/store";
 import Modal from "../../../../features/profile/Modal/Modal";
 import s from './OrderConfirmation.module.scss'
 import PrimaryButton from "../../../../common/components/buttons/PrimaryButton/PrimaryButton";
+import {createOrderTC} from "../order-reducer";
 
 type OrderConfirmationPropType = {
     setModalActive: (modalActive: boolean) => void
@@ -12,9 +13,13 @@ type OrderConfirmationPropType = {
 
 const OrderConfirmation: FC<OrderConfirmationPropType> = ({setModalActive, hide, setSecondModalActive}) => {
     const order = useAppSelector(state => state.order.order)
+    const userId = useAppSelector(state => state.profile.user.id)
     const totalPrice = useAppSelector(state => state.order.totalPrice)
 
+    const dispatch = useAppDispatch()
+
     const onClickHandler = () => {
+        dispatch(createOrderTC({...order, userId, totalPrice}));
         setSecondModalActive()
         hide()
     }

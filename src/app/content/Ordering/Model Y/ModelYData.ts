@@ -15,7 +15,7 @@ export const modelYData: ModelData = [
     {
         model: "Model Y",
         delivery: getFutureDate(2),
-        title: "Rear-Wheel Drive",
+        title: "All-Wheel Drive",
         price: 54990,
         characteristics: [
             {

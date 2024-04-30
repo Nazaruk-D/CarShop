@@ -1,5 +1,30 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {OrderType} from "../../../types/OrderType";
+import {orderAPI} from "../../../api/orderAPI";
+import {setAppStatusAC} from "../../app-reducer";
+import {AxiosError} from "axios/index";
+import {handleServerNetworkError} from "../../../utils/error-utils";
+import {CreateOrderType} from "../../../api/orderAPI";
+
+export const createOrderTC = createAsyncThunk(('order/createOrder'), async (param: CreateOrderType, thunkAPI) => {
+    thunkAPI.dispatch(setAppStatusAC({status: 'loading'}))
+    try {
+        const res = await orderAPI.createOrder(param);
+        if (res.status === 201) {
+            console.log(res)
+            thunkAPI.dispatch(setAppStatusAC({status: 'succeeded'}))
+            return
+        } else {
+            return thunkAPI.rejectWithValue({errors: ["error"], fieldErrors: []})
+        }
+    } catch (err: any) {
+        console.log(err)
+        thunkAPI.dispatch(setAppStatusAC({status: 'failed'}))
+        const error: AxiosError = err.response.data
+        handleServerNetworkError(error, thunkAPI.dispatch)
+        return thunkAPI.rejectWithValue({errors: [error.message], fieldErrors: undefined})
+    }
+});
 
 const slice = createSlice({
     name: "order",

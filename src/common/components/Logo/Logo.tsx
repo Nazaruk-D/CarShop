@@ -11,7 +11,7 @@ type LogoPropsType = {
 
 const Logo: React.FC<LogoPropsType> = ({color}) => {
     return (
-        <div className={s.logoBlock} onClick={() => console.log(123)}>
+        <div className={s.logoBlock} onClick={() => {}}>
             <NavLink to={routes.mainPage} className={s.menuText}><img src={color === 'white' ? teslaLogoWhite : teslaLogoBlack} alt="teslaLogo" className={s.logo}/></NavLink>
         </div>
     );
