@@ -6,22 +6,43 @@ import {useAppSelector} from "../../../../store/store";
 import {Context, ContextType} from "../../Context";
 import OrderConfirmation from "../../OrderСonfirmation/OrderСonfirmation";
 import {useModal} from "../../../../../hooks/useModal";
+import {ModelImages} from "../../../../../types/DataType";
 
 const Fade = require("react-reveal/Fade")
 
-
 type GalleryPropsType = {
-    image: string
+    images: ModelImages
     interior: string
     video: string
 }
 
-const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
+const Gallery: FC<GalleryPropsType> = ({images, interior, video}) => {
     const totalPrice = useAppSelector(s => s.order.totalPrice)
     const [isArrowActive, setIsArrowActive] = useState(false)
     const [context, setContext] = useContext<ContextType>(Context);
     const [isActive, setIsActive] = useState(1)
     const {orderConfirmationModal, toggleOrderConfirmationModal} = useModal()
+
+    const [currentImage, setCurrentImage] = useState(images.gray)
+    const modelOrderColor = useAppSelector(s => s.order?.order?.color?.title);
+
+    useEffect(() => {
+        if (modelOrderColor === 'Pearl White Multi-Coat') {
+            setCurrentImage(images.white);
+        }
+        if (modelOrderColor === 'Midnight Silver Metallic') {
+            setCurrentImage(images.gray);
+        }
+        if (modelOrderColor === 'Deep Blue Metallic') {
+            setCurrentImage(images.blue);
+        }
+        if (modelOrderColor === 'Solid Black') {
+            setCurrentImage(images.black);
+        }
+        if (modelOrderColor === 'Red Multi-Coat') {
+            setCurrentImage(images.red);
+        }
+    }, [modelOrderColor]);
 
     useEffect(() => {
         if (context === "Title") {
@@ -54,10 +75,10 @@ const Gallery: FC<GalleryPropsType> = ({image, interior, video}) => {
                     }
                 </div>
                 <div className={s.imageBlock}>
-                    {isActive === 1 && <div className={s.image} style={{backgroundImage: `url(${image})`}}></div>}
+                    {isActive === 1 && <div className={s.image} style={{backgroundImage: `url(${currentImage})`}}></div>}
                     {isActive === 2 && <div className={s.image} style={{backgroundImage: `url(${interior})`}}></div>}
                     {isActive === 3 && <VideoPlayer link={video}/>}
-                    {isActive === 4 && <div className={s.image} style={{backgroundImage: `url(${image})`}}></div>}
+                    {isActive === 4 && <div className={s.image} style={{backgroundImage: `url(${currentImage})`}}></div>}
                 </div>
                 <div className={s.counterContainer}>
                     <div className={s.arrow} onClick={() => toggleOrderConfirmationModal()}>

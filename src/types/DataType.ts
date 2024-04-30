@@ -33,3 +33,11 @@ export type modelDataTypeChild = {
     color: ModelDataTypeChildColor[];
     interiorColor: ModelDataTypeChildInteriorColor[];
 }
+
+export type ModelImages = {
+    red: string,
+    blue: string,
+    white: string,
+    gray: string,
+    black: string
+};
