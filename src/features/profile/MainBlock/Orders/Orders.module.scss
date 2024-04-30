@@ -24,13 +24,14 @@
       margin-bottom: 15px;
 
       .imageContainer {
+        @include background(no-repeat, center, contain);
         width: 100%;
         height: 70%;
-        background-color: rgba(1,1,1,0.04);
       }
 
       .descriptionBlock {
         @include flex(row, space-between, center, no-wrap);
+        background-color: rgba(1,1,1,0.04);
         height: 30%;
 
         .description {
